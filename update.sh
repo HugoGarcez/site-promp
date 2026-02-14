@@ -21,6 +21,8 @@ fi
 
 # Build the application
 echo "🏗️  Building application..."
+# Force Node.js to use up to 4GB of memory (utilizing swap)
+export NODE_OPTIONS="--max-old-space-size=4096"
 npm run build
 
 # Restart PM2 process
