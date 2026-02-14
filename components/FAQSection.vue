@@ -44,7 +44,7 @@ const toggle = (index) => {
                     <div v-show="openIndex === index"
                         class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed text-base border-t border-slate-100 dark:border-slate-700/50 pt-4 animate-fade-in-down">
                         <div
-                            v-html="faq.answer.replace(/\*\*(.*?)\*\*/g, '<strong class=\'text-primary dark:text-white\'>$1</strong>')">
+                            v-html="String(faq.answer || '').replace(/\*\*(.*?)\*\*/g, '<strong class=\'text-primary dark:text-white\'>$1</strong>')">
                         </div>
                     </div>
                 </div>
