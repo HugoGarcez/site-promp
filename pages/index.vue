@@ -68,7 +68,6 @@ useSeoMeta({
 </style>
 
 <template>
-  <div>
     <!-- Header -->
     <header
       class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
@@ -1765,5 +1764,4 @@ useSeoMeta({
     </div>
   </section>
   <GlobalPresence />
-  </div>
 </template>
