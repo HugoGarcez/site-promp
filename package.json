@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "@nuxt/image": "^2.0.0",
-    "lottie-web": "^5.13.0"
+    "lottie-web": "^5.13.0",
+    "sharp": "^0.34.5"
   },
   "engines": {
     "node": ">=20.0.0"
