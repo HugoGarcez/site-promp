@@ -6,3 +6,10 @@ cmds = ["npm run build"]
 
 [start]
 cmd = "node .output/server/index.mjs"
+
+[variables]
+NUXT_HOST = "0.0.0.0"
+NUXT_PORT = "3000"
+NITRO_HOST = "0.0.0.0"
+NITRO_PORT = "3000"
+NODE_ENV = "production"
