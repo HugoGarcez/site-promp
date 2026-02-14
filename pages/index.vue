@@ -533,14 +533,8 @@ onUnmounted(() => {
               class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_40s_linear_infinite_reverse]">
             </div>
 
-            <video
-              src="/video/funcionalidades-promp.mp4"
-              autoplay
-              loop
-              muted
-              playsinline
-              class="relative z-10 w-full max-w-[500px] object-contain bg-transparent"
-            ></video>
+            <video src="/video/funcionalidades-promp.mp4" autoplay loop muted playsinline
+              class="relative z-10 w-full max-w-[500px] object-contain bg-transparent"></video>
             <!-- <DeviceMockup3D /> -->
           </div>
 
@@ -1588,6 +1582,9 @@ onUnmounted(() => {
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <FAQSection />
+
     <!-- Mobile App Section -->
     <section class="pt-20 pb-0 bg-slate-50 dark:bg-slate-800 overflow-hidden relative">
       <div class="container mx-auto px-4">
@@ -1650,6 +1647,7 @@ onUnmounted(() => {
         </div>
       </div>
     </section>
+
 
     <!-- Final CTA -->
     <section class="py-24 bg-primary relative overflow-hidden">

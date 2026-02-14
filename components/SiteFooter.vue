@@ -38,21 +38,29 @@
                 <!-- Brand Column -->
                 <div class="lg:col-span-2">
                     <!-- Logo -->
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-2xl font-bold tracking-tight text-white">promp</span>
-                        <span class="bg-secondary text-white text-xs font-bold px-1 py-0.5 rounded">IA</span>
+                    <div class="mb-4">
+                        <img src="/images/logo-black.png" alt="Promp" class="h-8 md:h-10 w-auto" />
                     </div>
 
                     <p class="text-slate-400 text-sm mb-6">Inteligência artificial para empresas</p>
 
                     <!-- Status -->
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="bg-slate-700 text-xs font-bold px-2 py-1 rounded-l text-slate-300 uppercase tracking-wider">
-                            Status</div>
-                        <div
-                            class="bg-green-500 text-xs font-bold px-2 py-1 rounded-r text-white uppercase tracking-wider">
-                            UP</div>
+                    <div class="flex gap-4 mb-6">
+                        <a href="https://status.promp.com.br" target="_blank"
+                            class="flex flex-col gap-1 items-start group">
+                            <span
+                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">Agente
+                                IA</span>
+                            <img src="https://status.promp.com.br/api/badge/4/status?style=for-the-badge"
+                                alt="Status IA" class="h-5 object-contain" />
+                        </a>
+                        <a href="https://status.promp.com.br" target="_blank"
+                            class="flex flex-col gap-1 items-start group">
+                            <span
+                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">Sistema</span>
+                            <img src="https://status.promp.com.br/api/badge/2/status?style=for-the-badge"
+                                alt="Status App" class="h-5 object-contain" />
+                        </a>
                     </div>
 
                     <!-- Socials -->
