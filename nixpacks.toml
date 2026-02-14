@@ -2,7 +2,7 @@
 nixPkgs = ["nodejs_18", "npm-9_x"]
 
 [phases.build]
-cmds = ["npm run build", "mkdir -p .output/server/chunks/public && cp -r .output/public/. .output/server/chunks/public/"]
+cmds = ["npm run build"]
 
 [start]
 cmd = "node .output/server/index.mjs"
@@ -13,5 +13,5 @@ NUXT_PORT = "3000"
 NITRO_HOST = "0.0.0.0"
 NITRO_PORT = "3000"
 NODE_ENV = "production"
-NITRO_PRESET = "node-server"
+NITRO_PRESET = "node"
 NITRO_SERVE_STATIC = "true"
