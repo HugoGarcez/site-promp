@@ -192,6 +192,82 @@ useSeoMeta({
   </section>
 
 
+  <!-- Interactive Demo with Bia -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900 overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-3xl rounded-full translate-x-1/2"></div>
+
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Sua Equipe com Superpoderes</h2>
+        <p class="text-xl text-slate-600 dark:text-slate-400">
+          Transforme cada conversa em uma oportunidade de negócio com nossa IA especialista.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Chat Preview -->
+        <div class="lg:col-span-12">
+          <div
+            class="bg-white dark:bg-slate-800 rounded-3xl p-4 md:p-8 shadow-2xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+            <!-- Glassmorphism decorations -->
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="space-y-6 relative z-10">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="relative">
+                    <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
+                      class="w-16 h-16 rounded-2xl shadow-lg" alt="Bia - IA da Promp" />
+                    <span
+                      class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold">Conheça a Bia</h3>
+                    <p class="text-primary text-sm font-semibold">Sua Nova Especialista de Vendas</p>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <div v-for="(feature, idx) in ['Atendimento 24/7', 'Escalabilidade Infinita', 'Integração com CRM']"
+                    :key="idx"
+                    class="flex items-center gap-3 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-xl border border-slate-100 dark:border-slate-600 hover:border-primary/30 transition-colors">
+                    <span
+                      class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary text-sm">✓</span>
+                    <span class="font-medium">{{ feature }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative">
+                <div
+                  class="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-inner">
+                  <!-- Simulated Chat Messages -->
+                  <div class="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                    <div class="flex flex-col gap-1 items-start max-w-[85%]">
+                      <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm">
+                        Olá! Gostaria de saber os preços do plano Starter.
+                      </div>
+                      <span class="text-[10px] text-slate-400 ml-1">Cliente, 10:30</span>
+                    </div>
+                    <div class="flex flex-col gap-1 items-end ml-auto max-w-[85%]">
+                      <div class="bg-primary text-white p-3 rounded-2xl rounded-tr-none shadow-md text-sm">
+                        Claro! O plano Starter custa apenas R$ 49/mês e inclui IA humanizada e até 500 atendimentos.
+                        Quer que eu envie o link para teste grátis?
+                      </div>
+                      <span class="text-[10px] text-slate-400 mr-1">Bia IA, 10:31</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Bento Grid Section -->
   <section class="py-20 bg-slate-100 dark:bg-slate-900">
     <div class="container mx-auto px-4">
@@ -1346,7 +1422,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
