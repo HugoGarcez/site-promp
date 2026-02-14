@@ -165,37 +165,35 @@ useSeoMeta({
             </div>
           </div>
 
-          <!-- Global Presence Section -->
-          <GlobalPresence />
-    </section>
-  </div>
 
-  <!-- Feature Image / Mockup -->
-  <div class="relative animate-fade-in-right lg:col-span-7">
-    <div
-      class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 rounded-2xl blur-2xl opacity-20 animate-pulse">
-    </div>
-    <PrompChatMockup class="rotate-1 hover:rotate-0 transition-transform duration-500" />
 
-    <!-- Floating Statistic Card -->
-    <div
-      class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 flex items-center gap-4 animate-bounce-slow">
-      <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-          <polyline points="17 6 23 6 23 12"></polyline>
-        </svg>
+          <!-- Feature Image / Mockup -->
+          <div class="relative animate-fade-in-right lg:col-span-7">
+            <div
+              class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 rounded-2xl blur-2xl opacity-20 animate-pulse">
+            </div>
+            <PrompChatMockup class="rotate-1 hover:rotate-0 transition-transform duration-500" />
+
+            <!-- Floating Statistic Card -->
+            <div
+              class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 flex items-center gap-4 animate-bounce-slow">
+              <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Conversão</p>
+                <p class="text-lg font-bold text-slate-900 dark:text-white">+ 47%</p>
+              </div>
+            </div>
+
+            <!-- Floating Statistics Card - Clients Removed -->
+          </div>
+        </div>
       </div>
-      <div>
-        <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Conversão</p>
-        <p class="text-lg font-bold text-slate-900 dark:text-white">+ 47%</p>
-      </div>
-    </div>
-
-    <!-- Floating Statistics Card - Clients Removed -->
-  </div>
-  </div>
   </div>
   </section>
 
@@ -1768,5 +1766,6 @@ useSeoMeta({
       </div>
     </div>
   </section>
+  <GlobalPresence />
   </div>
 </template>
