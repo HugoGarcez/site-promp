@@ -89,7 +89,8 @@ onUnmounted(() => {
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/55..."
+              <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
+                target="_blank"
                 :style="{ backgroundColor: currentPlatform.color, color: currentPlatform.btnTextColor, boxShadow: `0 10px 15px -3px ${currentPlatform.color}66` }"
                 class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all hover:-translate-y-1 hover:brightness-90">
                 Falar com Especialista
@@ -1667,7 +1668,8 @@ onUnmounted(() => {
             class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-secondary bg-white hover:bg-slate-50 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
             Começar Teste Grátis
           </a>
-          <a href="https://wa.me/..."
+          <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
+            target="_blank"
             class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors">
             Falar no WhatsApp
           </a>
