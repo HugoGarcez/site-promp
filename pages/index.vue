@@ -1,6 +1,12 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 
+const colorMode = useColorMode();
+
+const toggleTheme = () => {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
+};
+
 const platforms = [
   { name: 'WhatsApp', color: '#25D366', textColor: '#25D366', btnTextColor: '#FFFFFF' },
   { name: 'Instagram', color: '#E1306C', textColor: '#E1306C', btnTextColor: '#FFFFFF' },
@@ -83,7 +89,7 @@ useSeoMeta({
         <a href="#funcionalidades" class="text-sm font-medium hover:text-primary transition-colors">{{
           $t('header.features') }}</a>
         <a href="#beneficios" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.benefits')
-          }}</a>
+        }}</a>
         <a href="#planos" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.plans') }}</a>
 
         <!-- Language Switcher -->
@@ -1730,7 +1736,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
