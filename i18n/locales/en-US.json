@@ -264,5 +264,45 @@
     "global_presence": {
         "title": "Global Presence of Promp",
         "subtitle": "Promp is present and active in the following countries and languages:"
+    },
+    "mockups": {
+        "chat": {
+            "welcome_user": "Welcome, User!",
+            "access_features": "Quickly access main system features",
+            "dashboard": "Dashboard",
+            "dashboard_desc": "View statistics and performance metrics",
+            "attendance": "Support",
+            "attendance_desc": "Manage your tickets and conversations",
+            "contacts": "Contacts",
+            "contacts_desc": "View and manage your contact list",
+            "quick_info": "Quick Info",
+            "access_dashboard_hint": "Access dashboard for detailed analysis",
+            "system_optimized": "System optimized for better performance",
+            "browse_features": "Browse menu for more features",
+            "quick_links": "Quick Links",
+            "reports": "Reports",
+            "reports_desc": "View reports and analytics",
+            "funnel": "Sales Funnel",
+            "kanban": "KANBAN",
+            "list": "LIST",
+            "new_contact": "New Contact",
+            "open": "OPEN",
+            "pending": "PENDING",
+            "search_placeholder": "Search...",
+            "online": "Online",
+            "today": "Today",
+            "encryption_msg": "This conversation is encrypted.",
+            "finish_purchase": "Finish Purchase",
+            "sent_by": "Sent by Promp AI",
+            "type_message": "Type a message...",
+            "closing": "Closing",
+            "protocol": "Protocol",
+            "open_status": "Open",
+            "started_on": "Started on",
+            "transfer": "Transfer",
+            "finish": "Finish",
+            "control_panel": "Control Panel",
+            "generate": "Generate"
+        }
     }
 }

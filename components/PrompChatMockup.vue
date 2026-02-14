@@ -209,10 +209,9 @@
             <div
               class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-8 flex justify-between items-center relative overflow-hidden">
               <div class="relative z-10">
-                <h1 class="text-3xl font-bold text-[#0E1F4A] dark:text-secondary mb-2">Bem-vindo, Usuário!</h1>
-                <p class="text-slate-500 dark:text-slate-400 text-sm">Acesse rapidamente as principais funcionalidades
-                  do
-                  sistema</p>
+                <h1 class="text-3xl font-bold text-[#0E1F4A] dark:text-secondary mb-2">{{
+                  $t('mockups.chat.welcome_user') }}</h1>
+                <p class="text-slate-500 dark:text-slate-400 text-sm">{{ $t('mockups.chat.access_features') }}</p>
               </div>
               <div class="w-24 h-24 bg-secondary rounded-lg flex flex-wrap p-2 gap-1 opacity-90 relative z-10">
                 <div class="w-[45%] h-[45%] bg-white/20 rounded-sm"></div>
@@ -238,8 +237,8 @@
                     d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4" />
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800 dark:text-white mb-2">Dashboard</h3>
-              <p class="text-[10px] text-slate-500">Visualize estatísticas e métricas de desempenho</p>
+              <h3 class="font-bold text-slate-800 dark:text-white mb-2">{{ $t('mockups.chat.dashboard') }}</h3>
+              <p class="text-[10px] text-slate-500">{{ $t('mockups.chat.dashboard_desc') }}</p>
             </div>
             <div @click="currentTab = 'chat'"
               class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center group text-center">
@@ -251,8 +250,8 @@
                     d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800 dark:text-white mb-2">Atendimentos</h3>
-              <p class="text-[10px] text-slate-500">Gerencie seus tickets e conversas</p>
+              <h3 class="font-bold text-slate-800 dark:text-white mb-2">{{ $t('mockups.chat.attendance') }}</h3>
+              <p class="text-[10px] text-slate-500">{{ $t('mockups.chat.attendance_desc') }}</p>
             </div>
             <div @click="currentTab = 'contacts'"
               class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col items-center group text-center">
@@ -264,8 +263,8 @@
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800 dark:text-white mb-2">Contatos</h3>
-              <p class="text-[10px] text-slate-500">Visualize e gerencie sua lista de contatos</p>
+              <h3 class="font-bold text-slate-800 dark:text-white mb-2">{{ $t('mockups.chat.contacts') }}</h3>
+              <p class="text-[10px] text-slate-500">{{ $t('mockups.chat.contacts_desc') }}</p>
             </div>
           </div>
 
@@ -279,26 +278,27 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <h2 class="font-bold text-slate-800 dark:text-white">Informações Rápidas</h2>
+                <h2 class="font-bold text-slate-800 dark:text-white">{{ $t('mockups.chat.quick_info') }}</h2>
               </div>
               <div class="space-y-4">
                 <div
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-yellow-500 text-lg">⚡</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Acesse o dashboard para análises detalhadas
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.access_dashboard_hint')
+                  }}
                   </p>
                 </div>
                 <div
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-green-500 text-lg">✅</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Sistema otimizado para melhor performance
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.system_optimized') }}
                   </p>
                 </div>
                 <div
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <div class="w-6 h-6 bg-secondary rounded flex items-center justify-center text-[10px] text-white">📊
                   </div>
-                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">Navegue pelo menu para mais funcionalidades
+                  <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.browse_features') }}
                   </p>
                 </div>
               </div>
@@ -311,7 +311,7 @@
                   stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-                <h2 class="font-bold text-slate-800 dark:text-white">Links Rápidos</h2>
+                <h2 class="font-bold text-slate-800 dark:text-white">{{ $t('mockups.chat.quick_links') }}</h2>
               </div>
               <div class="space-y-2">
                 <div @click="currentTab = 'reports'"
@@ -322,8 +322,9 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4" />
                     </svg>
                     <div>
-                      <h4 class="text-xs font-bold text-slate-800 dark:text-white">Dashboard</h4>
-                      <p class="text-[9px] text-slate-500">Visualize estatísticas e métricas de desempenho</p>
+                      <h4 class="text-xs font-bold text-slate-800 dark:text-white">{{ $t('mockups.chat.dashboard') }}
+                      </h4>
+                      <p class="text-[9px] text-slate-500">{{ $t('mockups.chat.dashboard_desc') }}</p>
                     </div>
                   </div>
                   <svg xmlns="http://www.w3.org/2000/svg"
@@ -342,8 +343,8 @@
                       <rect x="5" y="5" width="4" height="14" rx="1" />
                     </svg>
                     <div>
-                      <h4 class="text-xs font-bold text-slate-800 dark:text-white">Relatórios</h4>
-                      <p class="text-[9px] text-slate-500">Visualize relatórios e análises</p>
+                      <h4 class="text-xs font-bold text-slate-800 dark:text-white">{{ $t('mockups.chat.reports') }}</h4>
+                      <p class="text-[9px] text-slate-500">{{ $t('mockups.chat.reports_desc') }}</p>
                     </div>
                   </div>
                   <svg xmlns="http://www.w3.org/2000/svg"
@@ -362,11 +363,11 @@
           <div
             class="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between px-6 shrink-0 z-10">
             <div class="flex items-center gap-4">
-              <h2 class="text-xl font-bold text-slate-800 dark:text-white">Funil de Vendas</h2>
+              <h2 class="text-xl font-bold text-slate-800 dark:text-white">{{ $t('mockups.chat.funnel') }}</h2>
               <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1">
-                <button
-                  class="px-3 py-1 bg-white dark:bg-slate-700 rounded shadow-sm text-[10px] font-bold">KANBAN</button>
-                <button class="px-3 py-1 text-[10px] text-slate-500 font-bold">LISTA</button>
+                <button class="px-3 py-1 bg-white dark:bg-slate-700 rounded shadow-sm text-[10px] font-bold">{{
+                  $t('mockups.chat.kanban') }}</button>
+                <button class="px-3 py-1 text-[10px] text-slate-500 font-bold">{{ $t('mockups.chat.list') }}</button>
               </div>
             </div>
             <button
@@ -375,7 +376,7 @@
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
               </svg>
-              Novo Contato
+              {{ $t('mockups.chat.new_contact') }}
             </button>
           </div>
 
@@ -456,9 +457,11 @@
               <div class="flex items-center gap-2 mb-4">
                 <div class="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1 flex-1">
                   <button
-                    class="flex-1 px-2 lg:px-3 py-1.5 bg-white dark:bg-slate-700 rounded-md shadow-sm text-[10px] lg:text-xs font-bold text-slate-900 dark:text-white">ABERTOS</button>
+                    class="flex-1 px-2 lg:px-3 py-1.5 bg-white dark:bg-slate-700 rounded-md shadow-sm text-[10px] lg:text-xs font-bold text-slate-900 dark:text-white">{{
+                      $t('mockups.chat.open') }}</button>
                   <button
-                    class="flex-1 px-2 lg:px-3 py-1.5 text-[10px] lg:text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">PENDENTES</button>
+                    class="flex-1 px-2 lg:px-3 py-1.5 text-[10px] lg:text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white">{{
+                      $t('mockups.chat.pending') }}</button>
                 </div>
                 <button
                   class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-primary">
@@ -470,7 +473,7 @@
                 </button>
               </div>
               <div class="relative">
-                <input type="text" placeholder="Buscar..."
+                <input type="text" :placeholder="$t('mockups.chat.search_placeholder')"
                   class="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg text-xs focus:ring-1 focus:ring-primary/30 text-slate-900 dark:text-white placeholder-slate-400">
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-2.5 w-4 h-4 text-slate-400"
                   fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -539,7 +542,7 @@
                   <h3 class="font-bold text-slate-900 dark:text-white truncate">{{ activeChat.name }}</h3>
                   <p class="text-xs text-slate-500 flex items-center gap-1">
                     <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                    Online
+                    {{ $t('mockups.chat.online') }}
                   </p>
                 </div>
               </div>
@@ -563,7 +566,8 @@
               <!-- Date Divider -->
               <div class="flex justify-center">
                 <span
-                  class="px-3 py-1 bg-white/80 dark:bg-slate-800/80 rounded-lg text-xs font-medium text-slate-500 shadow-sm">Hoje</span>
+                  class="px-3 py-1 bg-white/80 dark:bg-slate-800/80 rounded-lg text-xs font-medium text-slate-500 shadow-sm">{{
+                    $t('mockups.chat.today') }}</span>
               </div>
 
               <!-- System Msg -->
@@ -575,7 +579,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
-                  <span class="truncate">Esta conversa é protegida com criptografia.</span>
+                  <span class="truncate">{{ $t('mockups.chat.encryption_msg') }}</span>
                 </div>
               </div>
 
@@ -654,7 +658,7 @@
                       </div>
                       <div
                         class="bg-green-600 text-white text-center py-1.5 rounded font-bold cursor-pointer hover:bg-green-700 transition-colors shadow-sm">
-                        Finalizar Compra
+                        {{ $t('mockups.chat.finish_purchase') }}
                       </div>
                     </div>
 
@@ -663,7 +667,8 @@
                         msg.time
                       }}</span>
                     <span v-if="msg.sender === 'ai'"
-                      class="text-[9px] text-slate-400 font-medium pr-1 self-end italic">Enviado por Promp AI</span>
+                      class="text-[9px] text-slate-400 font-medium pr-1 self-end italic">{{ $t('mockups.chat.sent_by')
+                      }}</span>
                   </div>
 
                 </div>
@@ -681,7 +686,7 @@
               </button>
               <div
                 class="flex-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm text-slate-600 dark:text-slate-300 min-w-0 truncate select-none opacity-80">
-                Digite uma mensagem...
+                {{ $t('mockups.chat.type_message') }}
               </div>
               <button
                 class="bg-secondary hover:bg-secondary/90 text-white p-3 rounded-xl transition-all shadow-lg shadow-secondary/20 transform hover:scale-105">
@@ -728,31 +733,37 @@
             </div>
 
             <div class="p-6 flex-1 overflow-y-auto no-scrollbar">
-              <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Funil de Vendas</h4>
+              <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">{{
+                $t('mockups.chat.funnel') }}</h4>
               <div
                 class="bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800 rounded-xl p-3 mb-6">
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-                  <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">Fechamento</span>
+                  <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t('mockups.chat.closing')
+                  }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
                   <div class="h-full w-[70%] bg-green-500 rounded-full"></div>
                 </div>
               </div>
 
-              <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Protocolo</h4>
+              <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">{{
+                $t('mockups.chat.protocol') }}</h4>
               <div
                 class="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl p-4 shadow-sm">
                 <div class="flex justify-between items-center mb-1">
                   <span class="text-xs font-black text-slate-800 dark:text-white">#2F02</span>
-                  <span class="text-[10px] text-green-500 font-black uppercase tracking-tighter">Aberto</span>
+                  <span class="text-[10px] text-green-500 font-black uppercase tracking-tighter">{{
+                    $t('mockups.chat.open_status') }}</span>
                 </div>
-                <p class="text-[10px] text-slate-400 mb-4">Iniciado em 12/02/2026</p>
+                <p class="text-[10px] text-slate-400 mb-4">{{ $t('mockups.chat.started_on') }} 12/02/2026</p>
                 <div class="flex gap-2">
                   <button
-                    class="flex-1 py-1.5 text-[10px] font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all">Transferir</button>
+                    class="flex-1 py-1.5 text-[10px] font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all">{{
+                      $t('mockups.chat.transfer') }}</button>
                   <button
-                    class="flex-1 py-1.5 text-[10px] font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all">Finalizar</button>
+                    class="flex-1 py-1.5 text-[10px] font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all">{{
+                      $t('mockups.chat.finish') }}</button>
                 </div>
               </div>
             </div>
@@ -764,7 +775,7 @@
           <!-- Dashboard Header -->
           <div
             class="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between px-6 z-10 shrink-0">
-            <h2 class="text-xl font-bold text-[#0E1F4A] dark:text-secondary">Painel de Controle</h2>
+            <h2 class="text-xl font-bold text-[#0E1F4A] dark:text-secondary">{{ $t('mockups.chat.control_panel') }}</h2>
 
             <div class="flex items-center gap-2">
               <div
@@ -792,7 +803,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                Gerar
+                {{ $t('mockups.chat.generate') }}
               </button>
             </div>
           </div>

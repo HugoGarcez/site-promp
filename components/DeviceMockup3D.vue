@@ -7,7 +7,10 @@
         <div class="laptop-lid">
           <div class="laptop-screen">
             <div class="screen-notch"></div>
-            <img src="/images/chat-desktop.png" alt="Desktop App" class="screen-content" />
+            <!-- Live Component for Desktop -->
+            <div class="w-[1280px] h-[800px] origin-top-left bg-white dark:bg-slate-900" style="transform: scale(0.39)">
+              <PrompChatMockup :embedded="true" />
+            </div>
           </div>
         </div>
         <!-- Base logic -->
@@ -22,7 +25,10 @@
         <div class="phone-frame">
           <div class="phone-screen">
             <div class="phone-dynamic-island"></div>
-            <img src="/images/chat-mobile.png" alt="Mobile App" class="screen-content" />
+            <!-- Live Component for Mobile -->
+            <div class="w-[375px] h-[812px] origin-top-left bg-white dark:bg-slate-900" style="transform: scale(0.34)">
+              <PrompChatMockup :embedded="true" />
+            </div>
           </div>
           <!-- Buttons and Details -->
           <div class="phone-button volume-up"></div>
@@ -82,8 +88,8 @@
   border-radius: 12px 12px 2px 2px;
   padding: 10px;
   position: relative;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .laptop-screen {
@@ -114,7 +120,7 @@
   margin-left: -2%;
   border-radius: 0 0 20px 20px;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Phone Design - Detailed */
@@ -137,9 +143,9 @@
   border-radius: 34px;
   padding: 8px;
   border: 3px solid #333;
-  box-shadow: 
-    -20px 20px 50px rgba(0,0,0,0.4),
-    inset 0 0 10px rgba(255,255,255,0.05);
+  box-shadow:
+    -20px 20px 50px rgba(0, 0, 0, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
   position: relative;
 }
 
@@ -171,9 +177,25 @@
   border-radius: 2px 0 0 2px;
 }
 
-.volume-up { top: 60px; left: -5px; height: 30px; }
-.volume-down { top: 100px; left: -5px; height: 30px; }
-.power { top: 80px; right: -5px; height: 45px; width: 3px; border-radius: 0 2px 2px 0; }
+.volume-up {
+  top: 60px;
+  left: -5px;
+  height: 30px;
+}
+
+.volume-down {
+  top: 100px;
+  left: -5px;
+  height: 30px;
+}
+
+.power {
+  top: 80px;
+  right: -5px;
+  height: 45px;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+}
 
 .screen-content {
   width: 100%;
@@ -194,26 +216,67 @@
 }
 
 @keyframes float-phone {
-  0%, 100% { transform: translate(-50%, -50%) translateZ(120px) rotateY(-15deg) rotateX(5deg) scale(1.1); }
-  50% { transform: translate(-50%, -55%) translateZ(140px) rotateY(-10deg) rotateX(8deg) scale(1.15); }
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateZ(120px) rotateY(-15deg) rotateX(5deg) scale(1.1);
+  }
+
+  50% {
+    transform: translate(-50%, -55%) translateZ(140px) rotateY(-10deg) rotateX(8deg) scale(1.15);
+  }
 }
 
 /* Responsividade Aprimorada */
 @media (max-width: 1024px) {
-  .laptop-device { width: 400px; }
-  .laptop-lid { height: 260px; }
-  .phone-device { left: 75%; width: 110px; height: 220px; }
+  .laptop-device {
+    width: 400px;
+  }
+
+  .laptop-lid {
+    height: 260px;
+  }
+
+  .phone-device {
+    left: 75%;
+    width: 110px;
+    height: 220px;
+  }
 }
 
 @media (max-width: 768px) {
-  .laptop-device { width: 300px; left: 45%; }
-  .laptop-lid { height: 200px; }
-  .phone-device { left: 80%; width: 85px; height: 170px; }
+  .laptop-device {
+    width: 300px;
+    left: 45%;
+  }
+
+  .laptop-lid {
+    height: 200px;
+  }
+
+  .phone-device {
+    left: 80%;
+    width: 85px;
+    height: 170px;
+  }
 }
 
 @media (max-width: 480px) {
-  .laptop-device { width: 220px; left: 35%; top: 40%; }
-  .laptop-lid { height: 140px; }
-  .phone-device { left: 85%; top: 65%; width: 70px; height: 140px; }
+  .laptop-device {
+    width: 220px;
+    left: 35%;
+    top: 40%;
+  }
+
+  .laptop-lid {
+    height: 140px;
+  }
+
+  .phone-device {
+    left: 85%;
+    top: 65%;
+    width: 70px;
+    height: 140px;
+  }
 }
 </style>

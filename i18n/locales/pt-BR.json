@@ -288,5 +288,45 @@
     "global_presence": {
         "title": "Presença Global da Promp",
         "subtitle": "A Promp está presente e ativa nos seguintes países e idiomas:"
+    },
+    "mockups": {
+        "chat": {
+            "welcome_user": "Bem-vindo, Usuário!",
+            "access_features": "Acesse rapidamente as principais funcionalidades do sistema",
+            "dashboard": "Dashboard",
+            "dashboard_desc": "Visualize estatísticas e métricas de desempenho",
+            "attendance": "Atendimentos",
+            "attendance_desc": "Gerencie seus tickets e conversas",
+            "contacts": "Contatos",
+            "contacts_desc": "Visualize e gerencie sua lista de contatos",
+            "quick_info": "Informações Rápidas",
+            "access_dashboard_hint": "Acesse o dashboard para análises detalhadas",
+            "system_optimized": "Sistema otimizado para melhor performance",
+            "browse_features": "Navegue pelo menu para mais funcionalidades",
+            "quick_links": "Links Rápidos",
+            "reports": "Relatórios",
+            "reports_desc": "Visualize relatórios e análises",
+            "funnel": "Funil de Vendas",
+            "kanban": "KANBAN",
+            "list": "LISTA",
+            "new_contact": "Novo Contato",
+            "open": "ABERTOS",
+            "pending": "PENDENTES",
+            "search_placeholder": "Buscar...",
+            "online": "Online",
+            "today": "Hoje",
+            "encryption_msg": "Esta conversa é protegida com criptografia.",
+            "finish_purchase": "Finalizar Compra",
+            "sent_by": "Enviado por Promp AI",
+            "type_message": "Digite uma mensagem...",
+            "closing": "Fechamento",
+            "protocol": "Protocolo",
+            "open_status": "Aberto",
+            "started_on": "Iniciado em",
+            "transfer": "Transferir",
+            "finish": "Finalizar",
+            "control_panel": "Painel de Controle",
+            "generate": "Gerar"
+        }
     }
 }

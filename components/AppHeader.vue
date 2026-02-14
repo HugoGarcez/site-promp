@@ -1,91 +1,83 @@
 <template>
   <header
-    class="fixed w-full top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-      <!-- Logo -->
+    class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink to="/" class="flex items-center gap-2 group">
-        <img :src="isDark ? '/images/logo-black.png' : '/images/logo-white.png'" alt="Promp" class="h-8 w-auto" />
+        <NuxtImg src="/images/logo-black.png" alt="Promp" class="h-8 w-auto dark:hidden" />
+        <NuxtImg src="/images/logo-white.png" alt="Promp" class="h-8 w-auto hidden dark:block" />
       </NuxtLink>
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8">
-        <a href="#hero"
-          class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Início</a>
-        <a href="#benefits"
-          class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Benefícios</a>
-        <a href="#features"
-          class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Recursos</a>
-        <a href="#pricing"
-          class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Planos</a>
-        <a href="#faq"
-          class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">FAQ</a>
-      </nav>
+        <a href="#funcionalidades" class="text-sm font-medium hover:text-primary transition-colors">{{
+          $t('header.features') }}</a>
+        <a href="#beneficios" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.benefits')
+        }}</a>
+        <a href="#planos" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.plans') }}</a>
 
-      <!-- Actions -->
-      <div class="flex items-center gap-4">
+        <!-- Language Switcher -->
+        <LanguageSwitcher />
+
         <!-- Theme Toggle -->
         <button @click="toggleTheme"
-          class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors"
-          aria-label="Toggle Dark Mode">
-          <!-- Sun Icon -->
-          <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+          aria-label="Alternar Tema">
+          <svg v-if="colorMode.value === 'dark'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
-          <!-- Moon Icon -->
-          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700 dark:text-slate-200" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
 
-        <!-- CTA Button -->
-        <a href="https://app.promp.com.br/#/signup"
-          class="inline-flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 dark:text-white bg-transparent border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors mr-2">
-          Cadastro
-        </a>
-        <a href="https://app.promp.com.br/login"
-          class="inline-flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-          Entrar
-        </a>
+        <!-- Actions -->
+        <div class="flex items-center gap-4">
+          <a href="https://app.promp.com.br/register"
+            class="text-sm font-bold text-slate-700 dark:text-white hover:text-primary transition-colors">
+            {{ $t('header.register') }}
+          </a>
+          <a href="https://app.promp.com.br/login"
+            class="px-5 py-2.5 rounded-xl bg-primary hover:bg-red-600 text-white transition-all text-sm font-bold shadow-lg shadow-primary/20">
+            {{ $t('header.login') }}
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center gap-4">
+        <LanguageSwitcher />
+        <button @click="toggleTheme"
+          class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+          <svg v-if="colorMode.value === 'dark'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700 dark:text-slate-200" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+        <button class="p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-
-const isDark = ref(false)
+const colorMode = useColorMode();
 
 const toggleTheme = () => {
-  isDark.value = !isDark.value
-  if (isDark.value) {
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', 'light')
-  }
-}
-
-onMounted(() => {
-  // Check system preference or localStorage
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    isDark.value = true
-    document.documentElement.classList.add('dark')
-  } else {
-    isDark.value = false
-    document.documentElement.classList.remove('dark')
-  }
-})
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
+};
 </script>
