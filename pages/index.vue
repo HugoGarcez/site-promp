@@ -1363,7 +1363,6 @@ useSeoMeta({
           </div>
           <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
             ChatGPT</div>
-        </div>
 
         <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
           <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
