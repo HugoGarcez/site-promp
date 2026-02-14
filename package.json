@@ -20,5 +20,8 @@
   },
   "dependencies": {
     "lottie-web": "^5.13.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

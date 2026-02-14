@@ -21,8 +21,8 @@ Se você já tinha um aplicativo criado no Easypanel que estava dando erro, a re
 
 ### 4. Configurar o Build (MUITO IMPORTANTE)
 1. Vá na aba **Build**.
-2. Em **Build Method**, selecione **Nixpacks** (NÃO use Dockerfile).
-3. Certifique-se de que os campos de configuração do Nixpacks estejam vazios (padrão) ou automáticos.
+2. Em **Build Method**, selecione **Nixpacks**.
+3. Como adicionamos o arquivo `nixpacks.json`, o Easypanel vai ler a configuração automaticamente (Node 20).
 4. Clique em **Save**.
 
 ### 5. Configurar Variáveis (Opcional, mas Recomendado)
