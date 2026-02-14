@@ -91,11 +91,13 @@ useSeoMeta({
           </div>
 
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
-            {{ $t('hero.title_start') }} <span :style="{ color: currentPlatform.color }">{{ currentPlatform.name
-              }}</span> {{
-                $t('hero.title_end') }} <br class="hidden md:block" />
+            {{ $t('hero.title_start') }}
+            <span :style="{ color: currentPlatform.color }" class="whitespace-nowrap">{{ currentPlatform.name }}</span>
+            <br class="md:hidden" />
+            {{ $t('hero.title_end') }}
+            <br class="hidden md:block" />
             <span class="relative inline-block mt-2">
-              <span class="relative z-10 text-slate-800 dark:text-white">
+              <span class="relative z-10 text-slate-800 dark:text-white whitespace-nowrap">
                 {{ $t('hero.title_highlight') }}
               </span>
               <span class="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -rotate-1 rounded-full -z-0"></span>
@@ -1664,7 +1666,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
