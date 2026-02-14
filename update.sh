@@ -10,14 +10,10 @@ echo "🚀 Starting update process..."
 echo "📥 Pulling latest changes..."
 git pull origin master
 
-# Install dependencies (cleaner approach)
+# Install dependencies (robust approach)
 echo "📦 Installing dependencies..."
-# We use 'npm ci' if package-lock.json exists for faster/cleaner install, fall back to install
-if [ -f "package-lock.json" ]; then
-    npm ci
-else
-    npm install
-fi
+# We use 'npm install' to ensure lockfile is updated if needed (fixes CI mismatches)
+npm install
 
 # Build the application
 echo "🏗️  Building application..."
