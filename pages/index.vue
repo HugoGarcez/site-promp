@@ -192,73 +192,166 @@ useSeoMeta({
   </section>
 
 
-  <!-- Interactive Demo with Bia -->
-  <section class="py-24 bg-slate-50 dark:bg-slate-900 overflow-hidden relative">
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-3xl rounded-full translate-x-1/2"></div>
-
+  <!-- Comparison Section -->
+  <section class="py-20 bg-white dark:bg-slate-900 overflow-hidden">
     <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">Sua Equipe com Superpoderes</h2>
-        <p class="text-xl text-slate-600 dark:text-slate-400">
-          Transforme cada conversa em uma oportunidade de negócio com nossa IA especialista.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <!-- Chat Preview -->
-        <div class="lg:col-span-12">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="space-y-6">
           <div
-            class="bg-white dark:bg-slate-800 rounded-3xl p-4 md:p-8 shadow-2xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
-            <!-- Glassmorphism decorations -->
+            class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold border border-secondary/20">
+            A SOLUÇÃO DEFINITIVA
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
+            A IA da sua empresa <br>
+            <span class="text-4xl md:text-6xl text-secondary drop-shadow-sm font-black">pronta em 5 minutos</span>
+            <br>
+            <span class="text-slate-500 font-normal">e treinada para vender</span>
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400">
+            Chega de configurações complexas. Com a Promp, você sobe seus documentos, site ou manuais e nossa IA
+            aprende
+            tudo sobre seu negócio instantaneamente. Tenha um especialista digital que trabalha 24h por dia,
+            qualificando e fechando vendas sem você precisar mover um dedo.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
             <div
-              class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+              class="flex items-center gap-2 px-4 py-2 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded-full text-sm font-bold border border-green-100 dark:border-green-800">
+              <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+              IA Humanizada
+            </div>
+            <div
+              class="flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-bold border border-blue-100 dark:border-blue-800">
+              ⚡ Setup em Segundos
+            </div>
+          </div>
+          <a href="#pricing"
+            class="inline-flex items-center justify-center px-10 py-4 text-lg font-black text-white bg-primary hover:bg-primary/90 rounded-2xl shadow-xl shadow-secondary/20 hover:-translate-y-1 transition-all group">
+            Começar Agora
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- AI Power Showcase Visual -->
+        <div class="relative py-10">
+          <!-- Floating IA Icon -->
+          <NuxtImg src="/images/3d-icon-ia-promp.svg"
+            class="absolute top-20 -right-10 w-24 h-24 z-50 drop-shadow-2xl animate-float-slow select-none pointer-events-none"
+            alt="Agente IA" width="96" height="96" loading="lazy" />
+
+          <!-- Background Decorative Elements -->
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl scale-125 -z-10 animate-pulse-soft">
+          </div>
+
+          <!-- Main AI Framework Container -->
+          <div
+            class="relative bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden p-6 min-h-[480px]">
+
+            <!-- Dashboard Header Simulation -->
+            <div class="flex items-center justify-between mb-8 border-b border-slate-100 dark:border-slate-700 pb-4">
+              <div class="flex gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-400/50"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-400/50"></div>
+                <div class="w-3 h-3 rounded-full bg-green-400/50"></div>
+              </div>
+              <div
+                class="bg-primary/10 px-4 py-1.5 rounded-full text-[10px] font-bold text-secondary animate-pulse italic">
+                TREINANDO AGENTE INTELIGENTE...
+              </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-              <div class="space-y-6 relative z-10">
-                <div class="flex items-center gap-4 mb-4">
-                  <div class="relative">
-                    <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
-                      class="w-16 h-16 rounded-2xl shadow-lg" alt="Bia - IA da Promp" />
-                    <span
-                      class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-bold">Conheça a Bia</h3>
-                    <p class="text-primary text-sm font-semibold">Sua Nova Especialista de Vendas</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+              <!-- Training Progress Card -->
+              <div class="space-y-4">
+                <div
+                  class="bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-4 border border-slate-100 dark:border-slate-800 animate-float shadow-sm relative overflow-hidden">
+                  <div class="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-bl-3xl"></div>
+                  <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Base de
+                    Conhecimento</h4>
+                  <div class="space-y-3">
+                    <div
+                      class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 group hover:border-secondary/30 transition-colors">
+                      <div
+                        class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-lg flex items-center justify-center font-black text-[10px]">
+                        PDF</div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-[11px] font-bold text-slate-700 dark:text-white truncate">Cidades Atendidas.pdf
+                        </p>
+                        <div class="mt-1.5 w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                          <div class="h-full bg-secondary rounded-full animate-progress"></div>
+                        </div>
+                      </div>
+                      <span class="text-[10px] font-bold text-secondary">100%</span>
+                    </div>
                   </div>
                 </div>
 
-                <div class="space-y-4">
-                  <div v-for="(feature, idx) in ['Atendimento 24/7', 'Escalabilidade Infinita', 'Integração com CRM']"
-                    :key="idx"
-                    class="flex items-center gap-3 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-xl border border-slate-100 dark:border-slate-600 hover:border-primary/30 transition-colors">
-                    <span
-                      class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary text-sm">✓</span>
-                    <span class="font-medium">{{ feature }}</span>
+                <!-- Persona Preview Card -->
+                <div
+                  class="bg-secondary/5 dark:bg-primary/10 rounded-2xl p-5 border border-primary/10 animate-float-delayed relative">
+                  <div
+                    class="absolute -top-3 -right-3 bg-green-500 text-white text-[8px] font-black px-2 py-1 rounded-full shadow-lg animate-pulse uppercase">
+                    Follow-up Inteligente [ON]
+                  </div>
+
+                  <div class="flex items-center gap-4 mb-4">
+                    <div class="relative">
+                      <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
+                        class="w-12 h-12 rounded-2xl shadow-lg border-2 border-white dark:border-slate-700"
+                        alt="Bia Agent" width="48" height="48" loading="lazy" />
+                      <div
+                        class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-white dark:border-slate-800 animate-pulse">
+                      </div>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-black text-slate-900 dark:text-white">Bia (Agente IA)</h4>
+                      <p class="text-[10px] text-secondary font-black uppercase tracking-widest">Tom: Entusiasta 🚀
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="relative">
+              <!-- Live Interaction Mockup -->
+              <div class="flex flex-col justify-end relative">
                 <div
-                  class="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-inner">
-                  <!-- Simulated Chat Messages -->
-                  <div class="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
-                    <div class="flex flex-col gap-1 items-start max-w-[85%]">
-                      <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm">
-                        Olá! Gostaria de saber os preços do plano Starter.
+                  class="bg-slate-50 dark:bg-slate-900/80 rounded-[2rem] p-6 border border-slate-100 dark:border-slate-700 shadow-xl space-y-4 relative z-10 overflow-hidden">
+                  <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    Conversa em Tempo Real
+                  </h4>
+
+                  <div class="space-y-4">
+                    <div class="flex justify-end animate-slide-up" style="animation-delay: 1.2s">
+                      <div
+                        class="bg-primary text-white text-[11px] font-medium px-4 py-2.5 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] uppercase tracking-tight">
+                        quero contratar a SUA EMPRESA aqui em aparecida
                       </div>
-                      <span class="text-[10px] text-slate-400 ml-1">Cliente, 10:30</span>
                     </div>
-                    <div class="flex flex-col gap-1 items-end ml-auto max-w-[85%]">
-                      <div class="bg-primary text-white p-3 rounded-2xl rounded-tr-none shadow-md text-sm">
-                        Claro! O plano Starter custa apenas R$ 49/mês e inclui IA humanizada e até 500 atendimentos.
-                        Quer que eu envie o link para teste grátis?
+
+                    <div class="flex gap-2 animate-slide-up" style="animation-delay: 2.2s">
+                      <div
+                        class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center flex-none text-[8px] font-bold">
+                        IA</div>
+                      <div
+                        class="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[11px] leading-relaxed p-4 rounded-2xl rounded-tl-none border border-slate-200 dark:border-slate-700 shadow-sm max-w-[85%] font-medium">
+                        Ótima escolha! A SUA EMPRESA oferece muitos benefícios. O valor do plano é a partir de <span
+                          class="text-secondary font-bold">R$ 20,90 por mês</span>. Posso enviar o link? 🏠✨
                       </div>
-                      <span class="text-[10px] text-slate-400 mr-1">Bia IA, 10:31</span>
                     </div>
                   </div>
+                </div>
+
+                <!-- Floating 24/7 Badge -->
+                <div
+                  class="absolute -bottom-10 -right-4 bg-slate-900 border-4 border-white dark:border-slate-900 text-white px-8 py-5 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-40 transform hover:scale-105 transition-all group cursor-default">
+                  <div class="text-4xl font-black italic tracking-tighter text-white transition-colors leading-none">
+                    24/7</div>
+                  <div class="text-[10px] font-black uppercase tracking-[0.2em] opacity-60 mt-2">Sempre Online</div>
                 </div>
               </div>
             </div>
@@ -1422,7 +1515,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
