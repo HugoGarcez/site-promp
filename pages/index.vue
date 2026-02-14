@@ -105,11 +105,11 @@ useSeoMeta({
             </span>
           </h1>
 
-          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed">
             {{ $t('hero.subtitle') }}
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div class="flex flex-col sm:flex-row gap-4 justify-start items-center lg:items-start">
             <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
               target="_blank"
               :style="{ backgroundColor: currentPlatform.color, color: currentPlatform.btnTextColor, boxShadow: `0 10px 15px -3px ${currentPlatform.color}66` }"
@@ -1667,7 +1667,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
