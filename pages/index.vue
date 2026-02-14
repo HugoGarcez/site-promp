@@ -444,9 +444,9 @@ useSeoMeta({
           </div>
 
           <!-- Image -->
-          <div class="relative w-full md:w-1/2 shrink-0">
+          <div class="relative w-full md:w-1/2 shrink-0 flex justify-end">
             <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação"
-              class="w-full h-auto object-contain object-bottom" width="600" height="600" loading="lazy" />
+              class="max-w-full h-auto object-contain object-bottom block" width="600" height="600" quality="100" />
           </div>
         </div>
 
@@ -1568,7 +1568,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
@@ -1613,8 +1613,8 @@ useSeoMeta({
           <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full translate-y-4 scale-75"></div>
 
           <NuxtImg src="/images/modelo-app.png" alt="App Mobile Promp"
-            class="relative z-10 w-72 md:w-[24rem] h-auto object-contain transition-transform duration-500 hover:scale-105 origin-center"
-            width="400" height="714" loading="lazy" />
+            class="relative z-10 w-auto max-w-full h-auto max-h-[500px] object-contain transition-transform duration-500 hover:scale-105 origin-center block"
+            width="400" height="714" quality="100" />
 
           <!-- Floating Lottie Notification -->
           <div class="absolute -left-12 top-1/4 z-20 hidden md:block w-72">

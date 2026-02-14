@@ -39,7 +39,7 @@
                 <div class="lg:col-span-2">
                     <!-- Logo -->
                     <div class="mb-4">
-                        <img src="/images/logo-black.png" alt="Promp" class="h-8 md:h-10 w-auto" />
+                        <NuxtImg src="/images/logo-white.png" alt="Promp" class="h-8 md:h-10 w-auto" quality="100" />
                     </div>
 
                     <p class="text-slate-400 text-sm mb-6">Inteligência artificial para empresas</p>
