@@ -1568,7 +1568,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
@@ -1608,13 +1608,13 @@ useSeoMeta({
         </div>
 
         <!-- Mockup Image -->
-        <div class="w-full md:w-1/2 flex justify-center relative mt-10 md:mt-0">
+        <div class="w-full md:w-1/2 flex justify-center items-center relative mt-10 md:mt-0">
           <!-- Background Blob -->
           <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full translate-y-4 scale-75"></div>
 
           <NuxtImg src="/images/modelo-app.png" alt="App Mobile Promp"
-            class="relative z-10 w-80 md:w-[28rem] transition-transform duration-500 hover:scale-105 origin-bottom"
-            width="448" height="800" loading="lazy" />
+            class="relative z-10 w-72 md:w-[24rem] h-auto object-contain transition-transform duration-500 hover:scale-105 origin-center"
+            width="400" height="714" loading="lazy" />
 
           <!-- Floating Lottie Notification -->
           <div class="absolute -left-12 top-1/4 z-20 hidden md:block w-72">
