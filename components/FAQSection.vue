@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { tm, t } = useI18n();
+const { tm, t, rt } = useI18n();
 const openIndex = ref(null);
 
 const faqs = computed(() => tm('faq.items'));
@@ -30,7 +30,8 @@ const toggle = (index) => {
                     :class="{ 'bg-slate-50 dark:bg-slate-800/50 border-primary/20': openIndex === index, 'bg-white dark:bg-slate-900': openIndex !== index }">
                     <button @click="toggle(index)"
                         class="w-full flex items-center justify-between p-6 text-left transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/80">
-                        <span class="text-lg font-bold text-slate-900 dark:text-white pr-8">{{ faq.question }}</span>
+                        <span class="text-lg font-bold text-slate-900 dark:text-white pr-8">{{ rt(faq.question)
+                            }}</span>
                         <span class="flex-shrink-0 transition-transform duration-300"
                             :class="{ 'rotate-180': openIndex === index }">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-400" viewBox="0 0 24 24"
@@ -44,7 +45,7 @@ const toggle = (index) => {
                     <div v-show="openIndex === index"
                         class="px-6 pb-6 text-slate-600 dark:text-slate-300 leading-relaxed text-base border-t border-slate-100 dark:border-slate-700/50 pt-4 animate-fade-in-down">
                         <div
-                            v-html="String(faq.answer || '').replace(/\*\*(.*?)\*\*/g, '<strong class=\'text-primary dark:text-white\'>$1</strong>')">
+                            v-html="rt(faq.answer || '').replace(/\*\*(.*?)\*\*/g, '<strong class=\'text-primary dark:text-white\'>$1</strong>')">
                         </div>
                     </div>
                 </div>
