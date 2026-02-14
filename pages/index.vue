@@ -421,8 +421,8 @@ useSeoMeta({
 
         <!-- Card 1: IA Humanizada (Large - Left) -->
         <div
-          class="md:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-          <div class="flex-1 z-10 text-left">
+          class="md:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 pb-0 md:pb-0 relative overflow-hidden flex flex-col md:flex-row items-center md:items-end gap-8 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex-1 z-10 text-left pb-8 md:pb-12">
             <div
               class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-secondary">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
@@ -444,9 +444,9 @@ useSeoMeta({
           </div>
 
           <!-- Image -->
-          <div class="relative w-full md:w-1/2 rounded-[2.5rem] overflow-hidden shrink-0 aspect-[4/5] md:aspect-square">
-            <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-cover"
-              width="600" height="400" loading="lazy" />
+          <div class="relative w-full md:w-1/2 shrink-0">
+            <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação"
+              class="w-full h-auto object-contain object-bottom" width="600" height="600" loading="lazy" />
           </div>
         </div>
 
@@ -1568,7 +1568,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
