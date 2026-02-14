@@ -1,0 +1,24 @@
+{
+    "services": [
+        {
+            "type": "app",
+            "name": "site-promp",
+            "source": {
+                "type": "git",
+                "repo": "https://github.com/HugoGarcez/site-promp",
+                "branch": "master"
+            },
+            "build": {
+                "method": "dockerfile",
+                "file": "Dockerfile"
+            },
+            "env": "PORT=3000\nHOST=0.0.0.0\nNITRO_PORT=3000\nNITRO_HOST=0.0.0.0",
+            "domains": [
+                {
+                    "host": "$(PRIMARY_DOMAIN)",
+                    "port": 3000
+                }
+            ]
+        }
+    ]
+}
