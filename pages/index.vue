@@ -287,6 +287,22 @@ useSeoMeta({
                       </div>
                       <span class="text-[10px] font-bold text-secondary">100%</span>
                     </div>
+
+                    <div
+                      class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 group hover:border-secondary/30 transition-colors delay-150">
+                      <div
+                        class="w-8 h-8 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-lg flex items-center justify-center font-black text-[10px]">
+                        XLSX</div>
+                      <div class="flex-1 min-w-0">
+                        <p class="text-[11px] font-bold text-slate-700 dark:text-white truncate">Tabela de Preços
+                          V2.xlsx
+                        </p>
+                        <div class="mt-1.5 w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                          <div class="h-full bg-emerald-500 rounded-full animate-progress-slow"></div>
+                        </div>
+                      </div>
+                      <span class="text-[10px] font-bold text-emerald-500">100%</span>
+                    </div>
                   </div>
                 </div>
 
@@ -298,18 +314,36 @@ useSeoMeta({
                     Follow-up Inteligente [ON]
                   </div>
 
-                  <div class="flex items-center gap-4 mb-4">
-                    <div class="relative">
-                      <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
-                        class="w-12 h-12 rounded-2xl shadow-lg border-2 border-white dark:border-slate-700"
-                        alt="Bia Agent" width="48" height="48" loading="lazy" />
-                      <div
-                        class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-white dark:border-slate-800 animate-pulse">
+                  <div class="flex flex-col gap-4 mb-2">
+                    <div class="flex items-center gap-4">
+                      <div class="relative">
+                        <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
+                          class="w-12 h-12 rounded-2xl shadow-lg border-2 border-white dark:border-slate-700"
+                          alt="Bia Agent" width="48" height="48" loading="lazy" />
+                        <div
+                          class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-white dark:border-slate-800 animate-pulse">
+                        </div>
+                      </div>
+                      <div>
+                        <h4 class="text-sm font-black text-slate-900 dark:text-white">Bia (Agente IA)</h4>
+                        <p class="text-[10px] text-secondary font-black uppercase tracking-widest">Tom: Entusiasta 🚀
+                        </p>
                       </div>
                     </div>
-                    <div>
-                      <h4 class="text-sm font-black text-slate-900 dark:text-white">Bia (Agente IA)</h4>
-                      <p class="text-[10px] text-secondary font-black uppercase tracking-widest">Tom: Entusiasta 🚀
+
+                    <div class="bg-white/50 dark:bg-slate-800/50 rounded-xl p-3 border border-primary/5">
+                      <div class="flex items-center gap-2 mb-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-secondary" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span class="text-[10px] font-bold text-slate-600 dark:text-slate-300">Follow-up
+                          Automático</span>
+                      </div>
+                      <p class="text-[9px] text-slate-500 dark:text-slate-400 leading-tight">
+                        Recupera o assunto das conversas anteriores para um atendimento personalizado.
                       </p>
                     </div>
                   </div>
@@ -339,8 +373,27 @@ useSeoMeta({
                         IA</div>
                       <div
                         class="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[11px] leading-relaxed p-4 rounded-2xl rounded-tl-none border border-slate-200 dark:border-slate-700 shadow-sm max-w-[85%] font-medium">
-                        Ótima escolha! A SUA EMPRESA oferece muitos benefícios. O valor do plano é a partir de <span
-                          class="text-secondary font-bold">R$ 20,90 por mês</span>. Posso enviar o link? 🏠✨
+                        Ótima escolha! Atendemos toda a região de Aparecida com instalação imediata. O valor do plano é
+                        a partir de <span class="text-secondary font-bold">R$ 20,90 por mês</span>. Posso enviar o link
+                        de contratação direto para seu WhatsApp? 🏠✨
+                      </div>
+                    </div>
+
+                    <div class="flex justify-end animate-slide-up" style="animation-delay: 4.2s">
+                      <div
+                        class="bg-primary text-white text-[11px] font-medium px-4 py-2.5 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] uppercase tracking-tight">
+                        Sim! Por favor.
+                      </div>
+                    </div>
+
+                    <div class="flex gap-2 animate-slide-up" style="animation-delay: 5.2s">
+                      <div
+                        class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center flex-none text-[8px] font-bold">
+                        IA</div>
+                      <div
+                        class="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[11px] leading-relaxed p-4 rounded-2xl rounded-tl-none border border-slate-200 dark:border-slate-700 shadow-sm max-w-[85%] font-medium">
+                        Perfeito! 🎉 Link enviado. Vou deixar o suporte avisado para priorizar seu atendimento assim que
+                        concluir. Algo mais que posso ajudar?
                       </div>
                     </div>
                   </div>
@@ -1515,7 +1568,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
