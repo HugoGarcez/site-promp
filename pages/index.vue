@@ -90,11 +90,13 @@ useSeoMeta({
             {{ $t('hero.badge') }}
           </div>
 
-          <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
-            {{ $t('hero.title_start') }}
-            <span :style="{ color: currentPlatform.color }" class="whitespace-nowrap">{{ currentPlatform.name }}</span>
-            <br class="md:hidden" />
-            {{ $t('hero.title_end') }}
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.2]">
+            <span class="block">{{ $t('hero.title_start') }}</span>
+            <span class="inline-block">
+              <span :style="{ color: currentPlatform.color }" class="whitespace-nowrap">{{ currentPlatform.name
+                }}</span>
+              <span class="whitespace-nowrap ml-2">{{ $t('hero.title_end') }}</span>
+            </span>
             <br class="hidden md:block" />
             <span class="relative inline-block mt-2">
               <span class="relative z-10 text-slate-800 dark:text-white whitespace-nowrap px-2 py-1">
@@ -532,8 +534,8 @@ useSeoMeta({
           </div>
 
           <!-- Image -->
-          <div class="relative w-full md:w-1/2 h-64 md:h-auto rounded-[2.5rem] overflow-hidden shrink-0">
-            <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-cover"
+          <div class="relative w-full md:w-1/2 h-auto rounded-[2.5rem] overflow-hidden shrink-0">
+            <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-contain"
               width="600" height="400" loading="lazy" />
 
             <!-- Float Element -->
