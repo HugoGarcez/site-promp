@@ -90,20 +90,21 @@ useSeoMeta({
             {{ $t('hero.badge') }}
           </div>
 
-          <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.2]">
-            <span class="block">{{ $t('hero.title_start') }}</span>
-            <span class="inline-block">
+          <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.2]">
+            <span class="block mb-1 opacity-90 font-medium text-slate-600 dark:text-slate-400 text-xl md:text-2xl">{{
+              $t('hero.title_start') }}</span>
+            <div class="flex flex-wrap items-baseline gap-x-2">
               <span :style="{ color: currentPlatform.color }" class="whitespace-nowrap">{{ currentPlatform.name
                 }}</span>
-              <span class="whitespace-nowrap ml-2">{{ $t('hero.title_end') }}</span>
-            </span>
+              <span class="whitespace-nowrap">{{ $t('hero.title_end') }}</span>
+            </div>
             <br class="hidden md:block" />
-            <span class="relative inline-block mt-2">
-              <span class="relative z-10 text-slate-800 dark:text-white whitespace-nowrap px-2 py-1">
+            <span class="relative inline-block mt-4 md:mt-2">
+              <span class="relative z-10 text-slate-800 dark:text-white whitespace-nowrap px-3 py-1">
                 {{ $t('hero.title_highlight') }}
               </span>
-              <span class="absolute inset-0 bg-primary/5 dark:bg-primary/10 -rotate-1 rounded-lg -z-0"></span>
-              <span class="absolute bottom-1 left-0 w-full h-1.5 bg-primary/30 rounded-full -z-0"></span>
+              <span class="absolute inset-0 bg-primary/10 dark:bg-primary/20 -rotate-1 rounded-lg -z-0"></span>
+              <span class="absolute bottom-1 left-0 w-full h-2 bg-primary/40 rounded-full -z-0"></span>
             </span>
           </h1>
 
@@ -180,23 +181,240 @@ useSeoMeta({
     <div class="container mx-auto px-4 text-center">
       <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Empresas que escalam com a Promp
       </p>
-      <div class="flex flex-row flex-wrap justify-center items-center gap-8 md:gap-16 transition-all duration-500">
-        <!-- Client Logos -->
-        <NuxtImg src="/images/clients/empresa-dmboat.png" alt="DM Boat"
-          class="h-10 md:h-14 w-auto object-contain transition-all duration-300" width="120" height="56"
-          loading="lazy" />
-        <NuxtImg src="/images/clients/empresa-fripet.jpg" alt="Fripet"
-          class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg"
-          width="120" height="56" loading="lazy" />
-        <NuxtImg src="/images/clients/empresa-jit.jpeg" alt="JIT"
-          class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg"
-          width="120" height="56" loading="lazy" />
+      <div
+        class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
+        <NuxtImg src="/images/clients/empresa-dmboat.png" alt="DM Boat" class="h-8 md:h-12 w-auto object-contain" />
+        <NuxtImg src="/images/clients/empresa-fripet.jpg" alt="Fripet" class="h-8 md:h-12 w-auto object-contain" />
+        <NuxtImg src="/images/clients/empresa-jit.jpeg" alt="JIT" class="h-8 md:h-12 w-auto object-contain" />
         <NuxtImg src="/images/clients/empresa-planminas.png" alt="Planminas"
-          class="h-10 md:h-14 w-auto object-contain transition-all duration-300" width="120" height="56"
-          loading="lazy" />
-        <NuxtImg src="/images/clients/empresa-unifahe.png" alt="Unifahe"
-          class="h-10 md:h-14 w-auto object-contain transition-all duration-300" width="120" height="56"
-          loading="lazy" />
+          class="h-8 md:h-12 w-auto object-contain" />
+        <NuxtImg src="/images/clients/empresa-unifahe.png" alt="Unifahe" class="h-8 md:h-12 w-auto object-contain" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem & Solution -->
+  <section id="funcionalidades" class="py-24 bg-white dark:bg-slate-950">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-30"></div>
+          <div
+            class="relative bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-2xl border border-slate-100 dark:border-slate-700">
+            <NuxtImg src="/images/3d-icon-ia-promp.svg" alt="IA em ação" class="w-full h-auto rounded-2xl" />
+
+            <!-- Floating Feature -->
+            <div
+              class="absolute -right-8 top-1/4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed">
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">✓
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500 font-medium tracking-tight">Qualificação</p>
+                  <p class="text-sm font-bold">Lead pronto para compra</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8 order-1 lg:order-2">
+          <div
+            class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold border border-secondary/20">
+            A SOLUÇÃO DEFINITIVA
+          </div>
+          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
+            {{ $t('benefits.title') }}
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400">
+            {{ $t('benefits.subtitle') }}
+          </p>
+
+          <div class="space-y-6">
+            <div v-for="i in 3" :key="i" class="flex gap-4">
+              <div
+                class="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold text-xl">
+                {{ i }}
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-1">
+                  {{ $t(`benefits.step${i}_title`) }}
+                </h4>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">
+                  {{ $t(`benefits.step${i}_text`) }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo with Bia -->
+  <section class="py-24 bg-slate-50 dark:bg-slate-900 overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-3xl rounded-full translate-x-1/2"></div>
+
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Sua Equipe com Superpoderes</h2>
+        <p class="text-xl text-slate-600 dark:text-slate-400">
+          Transforme cada conversa em uma oportunidade de negócio com nossa IA especialista.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Chat Preview -->
+        <div class="lg:col-span-12">
+          <div
+            class="bg-white dark:bg-slate-800 rounded-3xl p-4 md:p-8 shadow-2xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+            <!-- Glassmorphism decorations -->
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+              <div class="space-y-6 relative z-10">
+                <div class="flex items-center gap-4 mb-4">
+                  <div class="relative">
+                    <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
+                      class="w-16 h-16 rounded-2xl shadow-lg" alt="Bia - IA da Promp" />
+                    <span
+                      class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold">Conheça a Bia</h3>
+                    <p class="text-primary text-sm font-semibold">Sua Nova Especialista de Vendas</p>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <div v-for="(feature, idx) in ['Atendimento 24/7', 'Escalabilidade Infinita', 'Integração com CRM']"
+                    :key="idx"
+                    class="flex items-center gap-3 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-xl border border-slate-100 dark:border-slate-600 hover:border-primary/30 transition-colors">
+                    <span
+                      class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary text-sm">✓</span>
+                    <span class="font-medium">{{ feature }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative">
+                <div
+                  class="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-inner">
+                  <!-- Simulated Chat Messages -->
+                  <div class="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                    <div class="flex flex-col gap-1 items-start max-w-[85%]">
+                      <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm">
+                        Olá! Gostaria de saber os preços do plano Starter.
+                      </div>
+                      <span class="text-[10px] text-slate-400 ml-1">Cliente, 10:30</span>
+                    </div>
+                    <div class="flex flex-col gap-1 items-end ml-auto max-w-[85%]">
+                      <div class="bg-primary text-white p-3 rounded-2xl rounded-tr-none shadow-md text-sm">
+                        Claro! O plano Starter custa apenas R$ 49/mês e inclui IA humanizada e até 500 atendimentos.
+                        Quer que eu envie o link para teste grátis?
+                      </div>
+                      <span class="text-[10px] text-slate-400 mr-1">Bia IA, 10:31</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Statistics -->
+  <section class="py-24 bg-secondary text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent">
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid md:grid-cols-4 gap-12 text-center">
+        <div v-for="(stat, idx) in [
+          { val: '24/7', label: 'Disponibilidade' },
+          { val: '+45%', label: 'Taxa de Conversão' },
+          { val: '-70%', label: 'Custo Operacional' },
+          { val: '100%', label: 'Humanizada' }
+        ]" :key="idx" class="space-y-2">
+          <div class="text-4xl md:text-6xl font-black tracking-tighter">{{ stat.val }}</div>
+          <div class="text-white/60 font-medium uppercase tracking-widest text-xs md:text-sm">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Benefits Matrix -->
+  <section id="beneficios" class="py-24 bg-white dark:bg-slate-950">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Escolha a Inteligência que Vende</h2>
+        <p class="text-slate-600 dark:text-slate-400">Mais que um chatbot, um membro da sua equipe.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div v-for="(item, idx) in [
+          { title: 'Qualificação Ativa', desc: 'Identifica o perfil do cliente e filtra curiosos automaticamente.', icon: '🎯' },
+          { title: 'Memória de Longo Prazo', desc: 'Sua IA lembra de interações passadas para um atendimento personalizado.', icon: '🧠' },
+          { title: 'Múltiplos Agentes', desc: 'Crie um especialista para Vendas, outro para Suporte e outro para FAQ.', icon: '👥' },
+          { title: 'Transferência Inteligente', desc: 'Transfira para um humano apenas quando for realmente necessário.', icon: '🔄' },
+          { title: 'Fácil Integração', desc: 'Compatível com as principais plataformas do mercado sem complicação.', icon: '🔌' },
+          { title: 'Dashboards Completos', desc: 'Veja métricas de vendas, tempo de resposta e taxa de conversão.', icon: '📊' }
+        ]" :key="idx"
+          class="p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all group">
+          <div class="text-4xl mb-6 group-hover:scale-110 transition-transform inline-block">{{ item.icon }}</div>
+          <h4 class="text-xl font-bold mb-4">{{ item.title }}</h4>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">{{ item.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Bento Grid Section -->
+  <section class="py-20 bg-slate-100 dark:bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Card 1: IA Humanizada (Large - Left) -->
+        <!-- Card 1: IA Humanizada (Large - Left) -->
+        <div
+          class="md:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex-1 z-10 text-left">
+            <div
+              class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                <path d="M21.18 8.02c-.99-2.62-3.23-4.57-5.96-5.2"></path>
+                <path d="M2.82 15.98C3.81 18.6 6.05 20.55 8.78 21.2"></path>
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.human_ai.title') }}
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6">
+              {{ $t('bento_grid.human_ai.desc') }}
+            </p>
+            <a href="#"
+              class="inline-block px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors">
+              {{ $t('bento_grid.human_ai.cta') }}
+            </a>
+          </div>
+
+          <!-- Image -->
+          <div class="relative w-full md:w-1/2 rounded-[2.5rem] overflow-hidden shrink-0 aspect-[4/5] md:aspect-square">
+            <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-cover"
+              width="600" height="400" loading="lazy" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1669,7 +1887,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
