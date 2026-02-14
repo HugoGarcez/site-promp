@@ -198,7 +198,6 @@ useSeoMeta({
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
         <!-- Card 1: IA Humanizada (Large - Left) -->
-        <!-- Card 1: IA Humanizada (Large - Left) -->
         <div
           class="md:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
           <div class="flex-1 z-10 text-left">
@@ -228,197 +227,148 @@ useSeoMeta({
               width="600" height="400" loading="lazy" />
           </div>
         </div>
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
-            <!-- Card 1: IA Humanizada (Large - Left) -->
-            <!-- Card 1: IA Humanizada (Large - Left) -->
-            <div
-              class="md:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-              <div class="flex-1 z-10">
-                <div
-                  class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
-                    <path d="M21.18 8.02c-.99-2.62-3.23-4.57-5.96-5.2"></path>
-                    <path d="M2.82 15.98C3.81 18.6 6.05 20.55 8.78 21.2"></path>
-                  </svg>
-                </div>
-                <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.human_ai.title') }}
-                </h3>
-                <p class="text-slate-600 dark:text-slate-400 mb-6">
-                  {{ $t('bento_grid.human_ai.desc') }}
-                </p>
-                <a href="#"
-                  class="inline-block px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors">
-                  {{ $t('bento_grid.human_ai.cta') }}
-                </a>
-              </div>
+        <!-- Card 2: Segurança (Small - Top Right) -->
+        <div
+          class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow relative">
 
-              <!-- Image -->
-              <div class="relative w-full md:w-1/2 h-auto rounded-[2.5rem] overflow-hidden shrink-0">
-                <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-contain"
-                  width="600" height="400" loading="lazy" />
-
-                <!-- Float Element -->
-                <div
-                  class="absolute top-1/2 left-0 -translate-x-4 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center animate-bounce-slow">
-                  <div
-                    class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs">
-                    IA</div>
-                </div>
-              </div>
+          <!-- Floating Statistics Card - Clients -->
+          <div
+            class="absolute top-6 right-6 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-2 animate-bounce-slow delay-700 z-30 max-w-[150px] transform scale-90 origin-top-right">
+            <div class="flex -space-x-2 items-center overflow-hidden py-1">
+              <img
+                class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-contain bg-white"
+                src="/images/clients/empresa-dmboat.png" alt="Client 1" />
+              <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
+                src="/images/clients/empresa-fripet.jpg" alt="Client 2" />
+              <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
+                src="/images/clients/empresa-jit.jpeg" alt="Client 3" />
+              <div
+                class="h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                +500</div>
             </div>
-
-
-            <!-- Card 2: Segurança (Small - Top Right) -->
-            <div
-              class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow relative">
-
-              <!-- Floating Statistics Card - Clients -->
-              <div
-                class="absolute top-6 right-6 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-2 animate-bounce-slow delay-700 z-30 max-w-[150px] transform scale-90 origin-top-right">
-                <div class="flex -space-x-2 items-center overflow-hidden py-1">
-                  <img
-                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-contain bg-white"
-                    src="/images/clients/empresa-dmboat.png" alt="Client 1" />
-                  <img
-                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
-                    src="/images/clients/empresa-fripet.jpg" alt="Client 2" />
-                  <img
-                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
-                    src="/images/clients/empresa-jit.jpeg" alt="Client 3" />
-                  <div
-                    class="h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-500">
-                    +500</div>
-                </div>
-                <div>
-                  <p class="text-[9px] text-slate-500 dark:text-slate-400 font-medium leading-tight">Empresas que
-                    confiam
-                  </p>
-                  <div class="flex items-center gap-1 mt-0.5">
-                    <span class="flex h-1.5 w-1.5 relative">
-                      <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
-                    </span>
-                    <p class="text-[9px] font-bold text-slate-900 dark:text-gray-200">Ativas agora</p>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.security.title') }}
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-                {{ $t('bento_grid.security.desc') }}
+            <div>
+              <p class="text-[9px] text-slate-500 dark:text-slate-400 font-medium leading-tight">Empresas que confiam
               </p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
-                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  {{ $t('bento_grid.security.item1') }}
-                </li>
-                <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
-                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  {{ $t('bento_grid.security.item2') }}
-                </li>
-              </ul>
-            </div>
-
-            <!-- Card 3: Atendimento (Small - Bottom Left) -->
-            <div
-              class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow">
-              <div
-                class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path
-                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                  </path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.support.title') }}
-              </h3>
-              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-                {{ $t('bento_grid.support.desc') }}
-              </p>
-              <ul class="space-y-3">
-                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  WhatsApp
-                </li>
-                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  Instagram Direct
-                </li>
-                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  Telegram
-                </li>
-                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  WebChat nativo
-                </li>
-              </ul>
-            </div>
-
-            <!-- Card 4: Integre (Large - Bottom Right) -->
-            <div
-              class="md:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden gap-8 shadow-sm hover:shadow-md transition-shadow">
-              <div class="relative z-10 max-w-sm text-left">
-                <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.integration.title')
-                  }}
-                </h3>
-                <p class="text-slate-600 dark:text-slate-400 mb-8">
-                  {{ $t('bento_grid.integration.desc') }}
-                </p>
-                <a href="#"
-                  class="inline-block px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-700/20">
-                  {{ $t('bento_grid.integration.cta') }}
-                </a>
-              </div>
-
-              <!-- Integration Animation -->
-              <!-- Updated: Floating Integrations Component -->
-              <div class="relative w-full md:w-1/2 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0 min-h-[300px]">
-                <FloatingIntegrations />
+              <div class="flex items-center gap-1 mt-0.5">
+                <span class="flex h-1.5 w-1.5 relative">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                </span>
+                <p class="text-[9px] font-bold text-slate-900 dark:text-gray-200">Ativas agora</p>
               </div>
             </div>
           </div>
+
+          <div
+            class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.security.title') }}
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+            {{ $t('bento_grid.security.desc') }}
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              {{ $t('bento_grid.security.item1') }}
+            </li>
+            <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              {{ $t('bento_grid.security.item2') }}
+            </li>
+          </ul>
         </div>
 
+        <!-- Card 3: Atendimento (Small - Bottom Left) -->
+        <div
+          class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow">
+          <div
+            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.support.title') }}
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+            {{ $t('bento_grid.support.desc') }}
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              WhatsApp
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Instagram Direct
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Telegram
+            </li>
+            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              WebChat nativo
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Integre (Large - Bottom Right) -->
+        <div
+          class="md:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden gap-8 shadow-sm hover:shadow-md transition-shadow">
+          <div class="relative z-10 max-w-sm text-left">
+            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.integration.title') }}
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-8">
+              {{ $t('bento_grid.integration.desc') }}
+            </p>
+            <a href="#"
+              class="inline-block px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-700/20">
+              {{ $t('bento_grid.integration.cta') }}
+            </a>
+          </div>
+
+          <!-- Integration Animation -->
+          <div class="relative w-full md:w-1/2 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0 min-h-[300px]">
+            <FloatingIntegrations />
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 
