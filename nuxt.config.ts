@@ -9,6 +9,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: ['@nuxt/image'],
+  image: {
+    format: ['webp', 'avif', 'jpeg'],
+    quality: 80,
+  },
   nitro: {
     preset: 'node-server',
     serveStatic: true

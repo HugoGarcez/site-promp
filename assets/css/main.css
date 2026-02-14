@@ -6,4 +6,8 @@
   body {
     @apply font-sans antialiased text-slate-900 bg-white dark:bg-slate-900 dark:text-slate-50 transition-colors duration-300;
   }
+
+  @font-face {
+    font-display: swap;
+  }
 }

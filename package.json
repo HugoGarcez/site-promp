@@ -19,6 +19,7 @@
     "vue-router": "^4.3.3"
   },
   "dependencies": {
+    "@nuxt/image": "^2.0.0",
     "lottie-web": "^5.13.0"
   },
   "engines": {

@@ -109,12 +109,13 @@ onUnmounted(() => {
             <!-- Social Proof -->
             <div class="pt-4 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
               <div class="flex -space-x-2">
-                <img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-contain bg-white"
-                  src="/images/clients/empresa-dmboat.png" alt="Empresa 1" />
-                <img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
-                  src="/images/clients/empresa-fripet.jpg" alt="Empresa 2" />
-                <img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
-                  src="/images/clients/empresa-jit.jpeg" alt="Empresa 3" />
+                <NuxtImg
+                  class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-contain bg-white"
+                  src="/images/clients/empresa-dmboat.png" alt="Empresa 1" width="32" height="32" loading="lazy" />
+                <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
+                  src="/images/clients/empresa-fripet.jpg" alt="Empresa 2" width="32" height="32" loading="lazy" />
+                <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
+                  src="/images/clients/empresa-jit.jpeg" alt="Empresa 3" width="32" height="32" loading="lazy" />
               </div>
               <p>+500 empresas confiam na Promp</p>
             </div>
@@ -156,16 +157,21 @@ onUnmounted(() => {
         </p>
         <div class="flex flex-row flex-wrap justify-center items-center gap-8 md:gap-16 transition-all duration-500">
           <!-- Client Logos -->
-          <img src="/images/clients/empresa-dmboat.png" alt="DM Boat"
-            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
-          <img src="/images/clients/empresa-fripet.jpg" alt="Fripet"
-            class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg" />
-          <img src="/images/clients/empresa-jit.jpeg" alt="JIT"
-            class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg" />
-          <img src="/images/clients/empresa-planminas.png" alt="Planminas"
-            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
-          <img src="/images/clients/empresa-unifahe.png" alt="Unifahe"
-            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
+          <NuxtImg src="/images/clients/empresa-dmboat.png" alt="DM Boat"
+            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" width="120" height="56"
+            loading="lazy" />
+          <NuxtImg src="/images/clients/empresa-fripet.jpg" alt="Fripet"
+            class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg"
+            width="120" height="56" loading="lazy" />
+          <NuxtImg src="/images/clients/empresa-jit.jpeg" alt="JIT"
+            class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg"
+            width="120" height="56" loading="lazy" />
+          <NuxtImg src="/images/clients/empresa-planminas.png" alt="Planminas"
+            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" width="120" height="56"
+            loading="lazy" />
+          <NuxtImg src="/images/clients/empresa-unifahe.png" alt="Unifahe"
+            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" width="120" height="56"
+            loading="lazy" />
         </div>
       </div>
     </section>
@@ -213,9 +219,9 @@ onUnmounted(() => {
           <!-- AI Power Showcase Visual -->
           <div class="relative py-10">
             <!-- Floating IA Icon (Moved outside to avoid overflow-hidden clipping) -->
-            <img src="/images/3d-icon-ia-promp.svg"
+            <NuxtImg src="/images/3d-icon-ia-promp.svg"
               class="absolute top-20 -right-10 w-24 h-24 z-50 drop-shadow-2xl animate-float-slow select-none pointer-events-none"
-              alt="Agente IA" />
+              alt="Agente IA" width="96" height="96" loading="lazy" />
 
             <!-- Background Decorative Elements -->
             <div
@@ -300,9 +306,9 @@ onUnmounted(() => {
 
                     <div class="flex items-center gap-4 mb-4">
                       <div class="relative">
-                        <img src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
+                        <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
                           class="w-12 h-12 rounded-2xl shadow-lg border-2 border-white dark:border-slate-700"
-                          alt="Bia Agent" />
+                          alt="Bia Agent" width="48" height="48" loading="lazy" />
                         <div
                           class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-white dark:border-slate-800 animate-pulse">
                         </div>
@@ -637,7 +643,8 @@ onUnmounted(() => {
 
             <!-- Image -->
             <div class="relative w-full md:w-1/2 h-64 md:h-auto rounded-[2.5rem] overflow-hidden shrink-0">
-              <img src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-cover">
+              <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-cover"
+                width="600" height="400" loading="lazy" />
 
               <!-- Float Element -->
               <div
@@ -1675,8 +1682,9 @@ onUnmounted(() => {
             <!-- Background Blob -->
             <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full translate-y-4 scale-75"></div>
 
-            <img src="/images/modelo-app.png" alt="App Mobile Promp"
-              class="relative z-10 w-80 md:w-[28rem] transition-transform duration-500 hover:scale-105 origin-bottom">
+            <NuxtImg src="/images/modelo-app.png" alt="App Mobile Promp"
+              class="relative z-10 w-80 md:w-[28rem] transition-transform duration-500 hover:scale-105 origin-bottom"
+              width="448" height="800" loading="lazy" />
 
             <!-- Floating Lottie Notification -->
             <div class="absolute -left-12 top-1/4 z-20 hidden md:block w-72">
@@ -1688,7 +1696,6 @@ onUnmounted(() => {
         </div>
       </div>
     </section>
-
 
     <!-- Final CTA -->
     <section class="py-24 bg-primary relative overflow-hidden">
@@ -1703,10 +1710,10 @@ onUnmounted(() => {
         <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">Junte-se a mais de 500 empresas que já modernizaram
           suas vendas no WhatsApp.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://app.promp.com.br/#/signup"
+          <NuxtLink to="https://app.promp.com.br/#/signup"
             class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-secondary bg-white hover:bg-slate-50 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
             Começar Teste Grátis
-          </a>
+          </NuxtLink>
           <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
             target="_blank"
             class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors">
