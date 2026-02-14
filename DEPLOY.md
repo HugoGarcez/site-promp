@@ -20,18 +20,18 @@ Se você já tinha um aplicativo criado no Easypanel que estava dando erro, a re
 5. Clique em **Save**.
 
 ### 4. Configurar o Build (MUITO IMPORTANTE)
-1. Vá na aba **Build**.
-2. Em **Build Method**, selecione **Nixpacks**.
-3. Como adicionamos o arquivo `nixpacks.json`, o Easypanel vai ler a configuração automaticamente (Node 20).
-4. Clique em **Save**.
+1. Vá na aba **General** > **Source**.
+2. Mude o tipo de **Git** para **Docker Image**.
+3. No campo **Image**, coloque: `ghcr.io/hugogarcez/site-promp:latest`
+4. Se o repositório for privado, você precisará configurar o **Username** e **Password** (seu token do GitHub) em "Private Registry Authentication". Se for público, não precisa.
+5. Clique em **Save**.
 
-### 5. Configurar Variáveis (Opcional, mas Recomendado)
+### 5. Configurar Variáveis
 1. Vá na aba **Environment**.
-2. Adicione as seguintes variáveis para garantir:
-   - `HOST`: `0.0.0.0`
+2. Adicione:
    - `PORT`: `3000`
-   - `NITRO_PRESET`: `node-server`
 3. Clique em **Save**.
+
 
 ### 6. Implantar
 1. Clique no botão **Deploy** (no topo à direita).
