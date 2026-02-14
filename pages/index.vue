@@ -109,9 +109,12 @@ onUnmounted(() => {
             <!-- Social Proof -->
             <div class="pt-4 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
               <div class="flex -space-x-2">
-                <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white dark:border-slate-900"></div>
-                <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white dark:border-slate-900"></div>
-                <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white dark:border-slate-900"></div>
+                <img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-contain bg-white"
+                  src="/images/clients/empresa-dmboat.png" alt="Empresa 1" />
+                <img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
+                  src="/images/clients/empresa-fripet.jpg" alt="Empresa 2" />
+                <img class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
+                  src="/images/clients/empresa-jit.jpeg" alt="Empresa 3" />
               </div>
               <p>+500 empresas confiam na Promp</p>
             </div>
@@ -139,6 +142,8 @@ onUnmounted(() => {
                 <p class="text-lg font-bold text-slate-900 dark:text-white">+ 47%</p>
               </div>
             </div>
+
+            <!-- Floating Statistics Card - Clients Removed -->
           </div>
         </div>
       </div>
@@ -149,14 +154,18 @@ onUnmounted(() => {
       <div class="container mx-auto px-4 text-center">
         <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Empresas que escalam com a Promp
         </p>
-        <div
-          class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-          <!-- Placeholder Logos -->
-          <div class="text-xl font-bold text-slate-400 dark:text-slate-500">LOGO 1</div>
-          <div class="text-xl font-bold text-slate-400 dark:text-slate-500">LOGO 2</div>
-          <div class="text-xl font-bold text-slate-400 dark:text-slate-500">LOGO 3</div>
-          <div class="text-xl font-bold text-slate-400 dark:text-slate-500">LOGO 4</div>
-          <div class="text-xl font-bold text-slate-400 dark:text-slate-500">LOGO 5</div>
+        <div class="flex flex-row flex-wrap justify-center items-center gap-8 md:gap-16 transition-all duration-500">
+          <!-- Client Logos -->
+          <img src="/images/clients/empresa-dmboat.png" alt="DM Boat"
+            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
+          <img src="/images/clients/empresa-fripet.jpg" alt="Fripet"
+            class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg" />
+          <img src="/images/clients/empresa-jit.jpeg" alt="JIT"
+            class="h-10 md:h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-normal transition-all duration-300 rounded-lg" />
+          <img src="/images/clients/empresa-planminas.png" alt="Planminas"
+            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
+          <img src="/images/clients/empresa-unifahe.png" alt="Unifahe"
+            class="h-10 md:h-14 w-auto object-contain transition-all duration-300" />
         </div>
       </div>
     </section>
@@ -643,7 +652,39 @@ onUnmounted(() => {
 
           <!-- Card 2: Segurança (Small - Top Right) -->
           <div
-            class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow">
+            class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow relative">
+
+            <!-- Floating Statistics Card - Clients -->
+            <div
+              class="absolute top-6 right-6 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-2 animate-bounce-slow delay-700 z-30 max-w-[150px] transform scale-90 origin-top-right">
+              <div class="flex -space-x-2 items-center overflow-hidden py-1">
+                <img
+                  class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-contain bg-white"
+                  src="/images/clients/empresa-dmboat.png" alt="Client 1" />
+                <img
+                  class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
+                  src="/images/clients/empresa-fripet.jpg" alt="Client 2" />
+                <img
+                  class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
+                  src="/images/clients/empresa-jit.jpeg" alt="Client 3" />
+                <div
+                  class="h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                  +500</div>
+              </div>
+              <div>
+                <p class="text-[9px] text-slate-500 dark:text-slate-400 font-medium leading-tight">Empresas que confiam
+                </p>
+                <div class="flex items-center gap-1 mt-0.5">
+                  <span class="flex h-1.5 w-1.5 relative">
+                    <span
+                      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                  </span>
+                  <p class="text-[9px] font-bold text-slate-900 dark:text-gray-200">Ativas agora</p>
+                </div>
+              </div>
+            </div>
+
             <div
               class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
@@ -1256,7 +1297,7 @@ onUnmounted(() => {
         <div class="grid md:grid-cols-4 gap-6 items-start">
           <!-- Profissional Liberal -->
           <div
-            class="p-6 rounded-2xl border border-slate-200 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white flex flex-col h-full transform hover:-translate-y-1 duration-300">
+            class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full transform hover:-translate-y-1 duration-300">
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Profissional Liberal</h3>
             <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">Para quem está começando.</p>
             <div class="flex items-baseline mb-6">
@@ -1328,7 +1369,7 @@ onUnmounted(() => {
 
           <!-- Starter -->
           <div
-            class="p-6 rounded-2xl border border-slate-200 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white flex flex-col h-full transform hover:-translate-y-1 duration-300">
+            class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full transform hover:-translate-y-1 duration-300">
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Starter</h3>
             <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">Pequenas equipes.</p>
             <div class="flex items-baseline mb-6">
@@ -1506,7 +1547,7 @@ onUnmounted(() => {
 
           <!-- Prime -->
           <div
-            class="p-6 rounded-2xl border border-slate-200 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white flex flex-col h-full relative overflow-hidden">
+            class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full relative overflow-hidden">
             <div class="absolute -right-12 -top-12 w-24 h-24 bg-orange-200 rounded-full blur-2xl opacity-50"></div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Prime</h3>
             <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">Máxima potência e escala.</p>
@@ -1662,7 +1703,7 @@ onUnmounted(() => {
         <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">Junte-se a mais de 500 empresas que já modernizaram
           suas vendas no WhatsApp.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#"
+          <a href="https://app.promp.com.br/#/signup"
             class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-secondary bg-white hover:bg-slate-50 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
             Começar Teste Grátis
           </a>

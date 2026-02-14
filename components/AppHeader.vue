@@ -49,8 +49,12 @@
         </button>
 
         <!-- CTA Button -->
+        <a href="https://app.promp.com.br/#/signup"
+          class="inline-flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-slate-700 dark:text-white bg-transparent border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors mr-2">
+          Cadastro
+        </a>
         <a href="https://app.promp.com.br/login"
-          class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+          class="inline-flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
           Entrar
         </a>
       </div>
