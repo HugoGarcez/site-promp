@@ -2,7 +2,7 @@
 nixPkgs = ["nodejs_18", "npm-9_x"]
 
 [phases.build]
-cmds = ["npm run build", "cp -r .output/public/. .output/server/chunks/public/"]
+cmds = ["npm run build", "mkdir -p .output/server/chunks/public && cp -r .output/public/. .output/server/chunks/public/"]
 
 [start]
 cmd = "node .output/server/index.mjs"
