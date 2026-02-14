@@ -39,7 +39,8 @@ onMounted(() => {
   }
 });
 
-if (intervalId) clearInterval(intervalId);
+onUnmounted(() => {
+  if (intervalId) clearInterval(intervalId);
 });
 
 useSeoMeta({
