@@ -90,21 +90,19 @@ useSeoMeta({
             {{ $t('hero.badge') }}
           </div>
 
-          <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.2]">
-            <span class="block mb-1 opacity-90 font-medium text-slate-600 dark:text-slate-400 text-xl md:text-2xl">{{
-              $t('hero.title_start') }}</span>
-            <div class="flex flex-wrap items-baseline gap-x-2">
-              <span :style="{ color: currentPlatform.color }" class="whitespace-nowrap">{{ currentPlatform.name
-                }}</span>
-              <span class="whitespace-nowrap">{{ $t('hero.title_end') }}</span>
-            </div>
+          <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+            {{ $t('hero.title_start') }}
+            <span class="whitespace-nowrap">
+              <span :style="{ color: currentPlatform.color }">{{ currentPlatform.name }}</span>
+              <span class="ml-2">{{ $t('hero.title_end') }}</span>
+            </span>
             <br class="hidden md:block" />
-            <span class="relative inline-block mt-4 md:mt-2">
-              <span class="relative z-10 text-slate-800 dark:text-white whitespace-nowrap px-3 py-1">
+            <span class="relative inline-block mt-2">
+              <span class="relative z-10 text-slate-800 dark:text-white whitespace-nowrap px-2 py-1">
                 {{ $t('hero.title_highlight') }}
               </span>
-              <span class="absolute inset-0 bg-primary/10 dark:bg-primary/20 -rotate-1 rounded-lg -z-0"></span>
-              <span class="absolute bottom-1 left-0 w-full h-2 bg-primary/40 rounded-full -z-0"></span>
+              <span class="absolute inset-0 bg-primary/5 dark:bg-primary/10 -rotate-1 rounded-lg -z-0"></span>
+              <span class="absolute bottom-1 left-0 w-full h-1.5 bg-primary/30 rounded-full -z-0"></span>
             </span>
           </h1>
 
@@ -176,207 +174,22 @@ useSeoMeta({
     </div>
   </section>
 
-  <!-- Authority Strip -->
   <section class="border-y border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 py-8">
     <div class="container mx-auto px-4 text-center">
       <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Empresas que escalam com a Promp
       </p>
-      <div
-        class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
-        <NuxtImg src="/images/clients/empresa-dmboat.png" alt="DM Boat" class="h-8 md:h-12 w-auto object-contain" />
-        <NuxtImg src="/images/clients/empresa-fripet.jpg" alt="Fripet" class="h-8 md:h-12 w-auto object-contain" />
-        <NuxtImg src="/images/clients/empresa-jit.jpeg" alt="JIT" class="h-8 md:h-12 w-auto object-contain" />
+      <div class="flex flex-row flex-wrap justify-center items-center gap-8 md:gap-16 transition-all duration-300">
+        <NuxtImg src="/images/clients/empresa-dmboat.png" alt="DM Boat" class="h-10 md:h-14 w-auto object-contain" />
+        <NuxtImg src="/images/clients/empresa-fripet.jpg" alt="Fripet"
+          class="h-10 md:h-14 w-auto object-contain rounded-lg" />
+        <NuxtImg src="/images/clients/empresa-jit.jpeg" alt="JIT"
+          class="h-10 md:h-14 w-auto object-contain rounded-lg" />
         <NuxtImg src="/images/clients/empresa-planminas.png" alt="Planminas"
-          class="h-8 md:h-12 w-auto object-contain" />
-        <NuxtImg src="/images/clients/empresa-unifahe.png" alt="Unifahe" class="h-8 md:h-12 w-auto object-contain" />
+          class="h-10 md:h-14 w-auto object-contain" />
+        <NuxtImg src="/images/clients/empresa-unifahe.png" alt="Unifahe" class="h-10 md:h-14 w-auto object-contain" />
       </div>
     </div>
   </section>
-
-  <!-- Problem & Solution -->
-  <section id="funcionalidades" class="py-24 bg-white dark:bg-slate-950">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div class="relative order-2 lg:order-1">
-          <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-30"></div>
-          <div
-            class="relative bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-2xl border border-slate-100 dark:border-slate-700">
-            <NuxtImg src="/images/3d-icon-ia-promp.svg" alt="IA em ação" class="w-full h-auto rounded-2xl" />
-
-            <!-- Floating Feature -->
-            <div
-              class="absolute -right-8 top-1/4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 animate-float-delayed">
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold">✓
-                </div>
-                <div>
-                  <p class="text-xs text-slate-500 font-medium tracking-tight">Qualificação</p>
-                  <p class="text-sm font-bold">Lead pronto para compra</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-8 order-1 lg:order-2">
-          <div
-            class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold border border-secondary/20">
-            A SOLUÇÃO DEFINITIVA
-          </div>
-          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
-            {{ $t('benefits.title') }}
-          </h2>
-          <p class="text-lg text-slate-600 dark:text-slate-400">
-            {{ $t('benefits.subtitle') }}
-          </p>
-
-          <div class="space-y-6">
-            <div v-for="i in 3" :key="i" class="flex gap-4">
-              <div
-                class="w-12 h-12 shrink-0 bg-primary/10 rounded-xl flex items-center justify-center text-primary font-bold text-xl">
-                {{ i }}
-              </div>
-              <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-1">
-                  {{ $t(`benefits.step${i}_title`) }}
-                </h4>
-                <p class="text-slate-600 dark:text-slate-400 text-sm">
-                  {{ $t(`benefits.step${i}_text`) }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Demo with Bia -->
-  <section class="py-24 bg-slate-50 dark:bg-slate-900 overflow-hidden relative">
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-3xl rounded-full translate-x-1/2"></div>
-
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6">Sua Equipe com Superpoderes</h2>
-        <p class="text-xl text-slate-600 dark:text-slate-400">
-          Transforme cada conversa em uma oportunidade de negócio com nossa IA especialista.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <!-- Chat Preview -->
-        <div class="lg:col-span-12">
-          <div
-            class="bg-white dark:bg-slate-800 rounded-3xl p-4 md:p-8 shadow-2xl border border-slate-100 dark:border-slate-700 relative overflow-hidden">
-            <!-- Glassmorphism decorations -->
-            <div
-              class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-              <div class="space-y-6 relative z-10">
-                <div class="flex items-center gap-4 mb-4">
-                  <div class="relative">
-                    <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
-                      class="w-16 h-16 rounded-2xl shadow-lg" alt="Bia - IA da Promp" />
-                    <span
-                      class="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
-                  </div>
-                  <div>
-                    <h3 class="text-xl font-bold">Conheça a Bia</h3>
-                    <p class="text-primary text-sm font-semibold">Sua Nova Especialista de Vendas</p>
-                  </div>
-                </div>
-
-                <div class="space-y-4">
-                  <div v-for="(feature, idx) in ['Atendimento 24/7', 'Escalabilidade Infinita', 'Integração com CRM']"
-                    :key="idx"
-                    class="flex items-center gap-3 bg-slate-50 dark:bg-slate-700/50 p-3 rounded-xl border border-slate-100 dark:border-slate-600 hover:border-primary/30 transition-colors">
-                    <span
-                      class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center text-primary text-sm">✓</span>
-                    <span class="font-medium">{{ feature }}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="relative">
-                <div
-                  class="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-inner">
-                  <!-- Simulated Chat Messages -->
-                  <div class="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
-                    <div class="flex flex-col gap-1 items-start max-w-[85%]">
-                      <div class="bg-white dark:bg-slate-800 p-3 rounded-2xl rounded-tl-none shadow-sm text-sm">
-                        Olá! Gostaria de saber os preços do plano Starter.
-                      </div>
-                      <span class="text-[10px] text-slate-400 ml-1">Cliente, 10:30</span>
-                    </div>
-                    <div class="flex flex-col gap-1 items-end ml-auto max-w-[85%]">
-                      <div class="bg-primary text-white p-3 rounded-2xl rounded-tr-none shadow-md text-sm">
-                        Claro! O plano Starter custa apenas R$ 49/mês e inclui IA humanizada e até 500 atendimentos.
-                        Quer que eu envie o link para teste grátis?
-                      </div>
-                      <span class="text-[10px] text-slate-400 mr-1">Bia IA, 10:31</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Statistics -->
-  <section class="py-24 bg-secondary text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10 pointer-events-none">
-      <div
-        class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent">
-      </div>
-    </div>
-
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="grid md:grid-cols-4 gap-12 text-center">
-        <div v-for="(stat, idx) in [
-          { val: '24/7', label: 'Disponibilidade' },
-          { val: '+45%', label: 'Taxa de Conversão' },
-          { val: '-70%', label: 'Custo Operacional' },
-          { val: '100%', label: 'Humanizada' }
-        ]" :key="idx" class="space-y-2">
-          <div class="text-4xl md:text-6xl font-black tracking-tighter">{{ stat.val }}</div>
-          <div class="text-white/60 font-medium uppercase tracking-widest text-xs md:text-sm">{{ stat.label }}</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Detailed Benefits Matrix -->
-  <section id="beneficios" class="py-24 bg-white dark:bg-slate-950">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-bold mb-4">Escolha a Inteligência que Vende</h2>
-        <p class="text-slate-600 dark:text-slate-400">Mais que um chatbot, um membro da sua equipe.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div v-for="(item, idx) in [
-          { title: 'Qualificação Ativa', desc: 'Identifica o perfil do cliente e filtra curiosos automaticamente.', icon: '🎯' },
-          { title: 'Memória de Longo Prazo', desc: 'Sua IA lembra de interações passadas para um atendimento personalizado.', icon: '🧠' },
-          { title: 'Múltiplos Agentes', desc: 'Crie um especialista para Vendas, outro para Suporte e outro para FAQ.', icon: '👥' },
-          { title: 'Transferência Inteligente', desc: 'Transfira para um humano apenas quando for realmente necessário.', icon: '🔄' },
-          { title: 'Fácil Integração', desc: 'Compatível com as principais plataformas do mercado sem complicação.', icon: '🔌' },
-          { title: 'Dashboards Completos', desc: 'Veja métricas de vendas, tempo de resposta e taxa de conversão.', icon: '📊' }
-        ]" :key="idx"
-          class="p-8 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all group">
-          <div class="text-4xl mb-6 group-hover:scale-110 transition-transform inline-block">{{ item.icon }}</div>
-          <h4 class="text-xl font-bold mb-4">{{ item.title }}</h4>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">{{ item.desc }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
 
   <!-- Bento Grid Section -->
@@ -415,500 +228,196 @@ useSeoMeta({
               width="600" height="400" loading="lazy" />
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
-  <!-- Comparison Section -->
-  <section class="py-20 bg-white dark:bg-slate-900 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <!-- Text Content -->
-        <div class="space-y-6">
-          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
-            A IA da sua empresa <br>
-            <span class="text-4xl md:text-6xl text-secondary drop-shadow-sm font-black">pronta em 5 minutos</span>
-            <br>
-            <span class="text-slate-500 font-normal">e treinada para vender</span>
-          </h2>
-          <p class="text-lg text-slate-600 dark:text-slate-400">
-            Chega de configurações complexas. Com a Promp, você sobe seus documentos, site ou manuais e nossa IA
-            aprende
-            tudo sobre seu negócio instantaneamente. Tenha um especialista digital que trabalha 24h por dia,
-            qualificando e fechando vendas sem você precisar mover um dedo.
-          </p>
-          <div class="flex flex-wrap gap-4 pt-2">
+            <!-- Card 1: IA Humanizada (Large - Left) -->
+            <!-- Card 1: IA Humanizada (Large - Left) -->
             <div
-              class="flex items-center gap-2 px-4 py-2 bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 rounded-full text-sm font-bold border border-green-100 dark:border-green-800">
-              <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              IA Humanizada
-            </div>
-            <div
-              class="flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-bold border border-blue-100 dark:border-blue-800">
-              ⚡ Setup em Segundos
-            </div>
-          </div>
-          <a href="#pricing"
-            class="inline-flex items-center justify-center px-10 py-4 text-lg font-black text-white bg-primary hover:bg-primary/90 rounded-2xl shadow-xl shadow-secondary/20 hover:-translate-y-1 transition-all group">
-            Começar Agora
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-        </div>
-
-        <!-- AI Power Showcase Visual -->
-        <div class="relative py-10">
-          <!-- Floating IA Icon (Moved outside to avoid overflow-hidden clipping) -->
-          <NuxtImg src="/images/3d-icon-ia-promp.svg"
-            class="absolute top-20 -right-10 w-24 h-24 z-50 drop-shadow-2xl animate-float-slow select-none pointer-events-none"
-            alt="Agente IA" width="96" height="96" loading="lazy" />
-
-          <!-- Background Decorative Elements -->
-          <div
-            class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl scale-125 -z-10 animate-pulse-soft">
-          </div>
-
-          <!-- Main AI Framework Container -->
-          <div
-            class="relative bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden p-6 min-h-[480px]">
-
-            <!-- Dashboard Header Simulation -->
-            <div class="flex items-center justify-between mb-8 border-b border-slate-100 dark:border-slate-700 pb-4">
-              <div class="flex gap-2">
-                <div class="w-3 h-3 rounded-full bg-red-400/50"></div>
-                <div class="w-3 h-3 rounded-full bg-yellow-400/50"></div>
-                <div class="w-3 h-3 rounded-full bg-green-400/50"></div>
-              </div>
-              <div
-                class="bg-primary/10 px-4 py-1.5 rounded-full text-[10px] font-bold text-secondary animate-pulse italic">
-                TREINANDO AGENTE INTELIGENTE...
-              </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
-              <!-- Training Progress Card (Screenshot 3 Inspiration) -->
-              <div class="space-y-4">
+              class="md:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex-1 z-10">
                 <div
-                  class="bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-4 border border-slate-100 dark:border-slate-800 animate-float shadow-sm relative overflow-hidden">
-                  <div class="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-bl-3xl"></div>
-                  <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Base de
-                    Conhecimento</h4>
-                  <div class="space-y-3">
-                    <!-- File 1 -->
-                    <div
-                      class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 group hover:border-secondary/30 transition-colors">
-                      <div
-                        class="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-lg flex items-center justify-center font-black text-[10px]">
-                        PDF</div>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-[11px] font-bold text-slate-700 dark:text-white truncate">Cidades Atendidas.pdf
-                        </p>
-                        <div class="mt-1.5 w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                          <div class="h-full bg-secondary rounded-full animate-progress"></div>
-                        </div>
-                      </div>
-                      <span class="text-[10px] font-bold text-secondary">100%</span>
-                    </div>
-                    <!-- File 2 -->
-                    <div
-                      class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 group hover:border-secondary/30 transition-colors">
-                      <div
-                        class="w-8 h-8 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 rounded-lg flex items-center justify-center font-black text-[10px]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
-                          stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                          <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                          <line x1="12" y1="19" x2="12" y2="23"></line>
-                          <line x1="8" y1="23" x2="16" y2="23"></line>
-                        </svg>
-                      </div>
-                      <div class="flex-1 min-w-0">
-                        <p class="text-[11px] font-bold text-slate-700 dark:text-white truncate">Voz Humanizada
-                          Ativada</p>
-                        <div class="mt-1.5 w-full bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
-                          <div class="h-full bg-secondary rounded-full animate-progress" style="animation-delay: 0.8s">
-                          </div>
-                        </div>
-                      </div>
-                      <span class="text-[10px] font-bold text-secondary">ON</span>
-                    </div>
-                  </div>
+                  class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                    <path d="M21.18 8.02c-.99-2.62-3.23-4.57-5.96-5.2"></path>
+                    <path d="M2.82 15.98C3.81 18.6 6.05 20.55 8.78 21.2"></path>
+                  </svg>
                 </div>
+                <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.human_ai.title') }}
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-6">
+                  {{ $t('bento_grid.human_ai.desc') }}
+                </p>
+                <a href="#"
+                  class="inline-block px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors">
+                  {{ $t('bento_grid.human_ai.cta') }}
+                </a>
+              </div>
 
-                <!-- Persona Preview Card (Screenshot 2 Inspiration) -->
+              <!-- Image -->
+              <div class="relative w-full md:w-1/2 h-auto rounded-[2.5rem] overflow-hidden shrink-0">
+                <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-contain"
+                  width="600" height="400" loading="lazy" />
+
+                <!-- Float Element -->
                 <div
-                  class="bg-secondary/5 dark:bg-primary/10 rounded-2xl p-5 border border-primary/10 animate-float-delayed relative">
-                  <!-- Follow-up Indicator -->
+                  class="absolute top-1/2 left-0 -translate-x-4 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center animate-bounce-slow">
                   <div
-                    class="absolute -top-3 -right-3 bg-green-500 text-white text-[8px] font-black px-2 py-1 rounded-full shadow-lg animate-pulse uppercase">
-                    Follow-up Inteligente [ON]
-                  </div>
-
-                  <div class="flex items-center gap-4 mb-4">
-                    <div class="relative">
-                      <NuxtImg src="https://ui-avatars.com/api/?name=Bia&background=E84624&color=fff"
-                        class="w-12 h-12 rounded-2xl shadow-lg border-2 border-white dark:border-slate-700"
-                        alt="Bia Agent" width="48" height="48" loading="lazy" />
-                      <div
-                        class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-white dark:border-slate-800 animate-pulse">
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="text-sm font-black text-slate-900 dark:text-white">Bia (Agente IA)</h4>
-                      <p class="text-[10px] text-secondary font-black uppercase tracking-widest">Tom: Entusiasta 🚀
-                      </p>
-                    </div>
-                  </div>
-                  <div class="space-y-1.5 opacity-80">
-                    <div class="text-[9px] font-bold text-slate-400 mb-1 uppercase tracking-tighter">Última ação:
-                      Recuperando conversa fria...</div>
-                    <div class="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                      <div class="h-full bg-primary/40 w-1/2 animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Live Interaction Mockup (Screenshot 4 Inspiration) -->
-              <div class="flex flex-col justify-end relative">
-
-                <div
-                  class="bg-slate-50 dark:bg-slate-900/80 rounded-[2rem] p-6 border border-slate-100 dark:border-slate-700 shadow-xl space-y-4 relative z-10 overflow-hidden">
-                  <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
-
-                  <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                    Conversa em Tempo Real
-                  </h4>
-
-                  <div class="space-y-4">
-                    <!-- User Bubble -->
-                    <div class="flex justify-end animate-slide-up" style="animation-delay: 1.2s">
-                      <div
-                        class="bg-primary text-white text-[11px] font-medium px-4 py-2.5 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] uppercase tracking-tight">
-                        quero contratar a SUA EMPRESA aqui em aparecida
-                      </div>
-                    </div>
-
-                    <!-- AI Bubble -->
-                    <div class="flex gap-2 animate-slide-up" style="animation-delay: 2.2s">
-                      <div
-                        class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center flex-none text-[8px] font-bold group-hover:scale-110 transition-transform">
-                        IA</div>
-                      <div
-                        class="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[11px] leading-relaxed p-4 rounded-2xl rounded-tl-none border border-slate-200 dark:border-slate-700 shadow-sm max-w-[85%] font-medium">
-                        Ótima escolha! A SUA EMPRESA oferece muitos benefícios. O valor do plano é a partir de <span
-                          class="text-secondary font-bold">R$ 20,90 por mês</span>. Posso enviar o link? 🏠✨
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Input Mockup -->
-                  <div class="pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center gap-2">
-                    <div
-                      class="flex-1 bg-white dark:bg-slate-800 h-8 rounded-full border border-slate-100 dark:border-slate-700 px-3 flex items-center">
-                      <div class="h-1 w-12 bg-slate-400 dark:bg-slate-500 rounded-full animate-pulse"></div>
-                    </div>
-                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Floating 24/7 Badge - High Z-index -->
-                <div
-                  class="absolute -bottom-10 -right-4 bg-slate-900 border-4 border-white dark:border-slate-900 text-white px-8 py-5 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] z-40 transform hover:scale-105 transition-all group cursor-default">
-                  <div class="text-4xl font-black italic tracking-tighter text-white transition-colors leading-none">
-                    24/7</div>
-                  <div class="text-[10px] font-black uppercase tracking-[0.2em] opacity-60 mt-2">Sempre Online</div>
+                    class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs">
+                    IA</div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Stats Overlay (Bottom Left) -->
-          <div
-            class="absolute -bottom-4 -left-8 bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-2xl z-40 border border-slate-100 dark:border-slate-700 animate-bounce-slow">
-            <div class="flex items-center gap-4">
+
+            <!-- Card 2: Segurança (Small - Top Right) -->
+            <div
+              class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow relative">
+
+              <!-- Floating Statistics Card - Clients -->
               <div
-                class="w-12 h-12 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center shadow-inner">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
+                class="absolute top-6 right-6 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-2 animate-bounce-slow delay-700 z-30 max-w-[150px] transform scale-90 origin-top-right">
+                <div class="flex -space-x-2 items-center overflow-hidden py-1">
+                  <img
+                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-contain bg-white"
+                    src="/images/clients/empresa-dmboat.png" alt="Client 1" />
+                  <img
+                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
+                    src="/images/clients/empresa-fripet.jpg" alt="Client 2" />
+                  <img
+                    class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
+                    src="/images/clients/empresa-jit.jpeg" alt="Client 3" />
+                  <div
+                    class="h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                    +500</div>
+                </div>
+                <div>
+                  <p class="text-[9px] text-slate-500 dark:text-slate-400 font-medium leading-tight">Empresas que
+                    confiam
+                  </p>
+                  <div class="flex items-center gap-1 mt-0.5">
+                    <span class="flex h-1.5 w-1.5 relative">
+                      <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                    </span>
+                    <p class="text-[9px] font-bold text-slate-900 dark:text-gray-200">Ativas agora</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
               </div>
-              <div>
-                <div class="text-2xl font-black text-slate-800 dark:text-white leading-none tracking-tighter">ZERO
-                </div>
-                <div class="text-[10px] text-slate-500 uppercase tracking-widest font-black opacity-60 mt-1">leads
-                  perdidos</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits Section -->
-  <section id="benefits" class="py-20 bg-white dark:bg-slate-900">
-    <div class="container mx-auto px-4">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Venda mais com menos esforço
-        </h2>
-        <p class="text-lg text-slate-600 dark:text-slate-400">Elimine tarefas manuais e foque no que importa. A Promp
-          cuida da qualificação e agendamento para você.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Benefit 1 -->
-        <div
-          class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl hover:-translate-y-1 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md">
-          <div class="w-12 h-12 bg-primary/10 text-secondary rounded-xl flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Atendimento 24/7</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Não perca vendas fora do horário comercial. A
-            IA responde instantaneamente a qualquer hora do dia ou da noite.</p>
-        </div>
-
-        <!-- Benefit 2 -->
-        <div
-          class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl hover:-translate-y-1 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md">
-          <div
-            class="w-12 h-12 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-xl flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="12" y1="1" x2="12" y2="23"></line>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Aumente sua Conversão</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Tempo de resposta é dinheiro. Reduza o tempo
-            de espera do lead para zero e feche mais negócios.</p>
-        </div>
-
-        <!-- Benefit 3 -->
-        <div
-          class="bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl hover:-translate-y-1 transition-transform border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md">
-          <div
-            class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 text-orange-600 rounded-xl flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Scale seu Time</h3>
-          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Permita que sua equipe foque apenas nos leads
-            qualificados e nas negociações complexas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Bento Grid Section -->
-  <section class="py-20 bg-slate-100 dark:bg-slate-900">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-
-        <!-- Card 1: IA Humanizada (Large - Left) -->
-        <!-- Card 1: IA Humanizada (Large - Left) -->
-        <div
-          class="md:col-span-7 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-8 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow">
-          <div class="flex-1 z-10">
-            <div
-              class="w-12 h-12 bg-white dark:bg-slate-700 rounded-2xl flex items-center justify-center mb-6 shadow-sm text-secondary">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
-                <path d="M21.18 8.02c-.99-2.62-3.23-4.57-5.96-5.2"></path>
-                <path d="M2.82 15.98C3.81 18.6 6.05 20.55 8.78 21.2"></path>
-              </svg>
-            </div>
-            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.human_ai.title') }}
-            </h3>
-            <p class="text-slate-600 dark:text-slate-400 mb-6">
-              {{ $t('bento_grid.human_ai.desc') }}
-            </p>
-            <a href="#"
-              class="inline-block px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors">
-              {{ $t('bento_grid.human_ai.cta') }}
-            </a>
-          </div>
-
-          <!-- Image -->
-          <div class="relative w-full md:w-1/2 h-auto rounded-[2.5rem] overflow-hidden shrink-0">
-            <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação" class="w-full h-full object-contain"
-              width="600" height="400" loading="lazy" />
-
-            <!-- Float Element -->
-            <div
-              class="absolute top-1/2 left-0 -translate-x-4 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center animate-bounce-slow">
-              <div
-                class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xs">
-                IA</div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Card 2: Segurança (Small - Top Right) -->
-        <div
-          class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow relative">
-
-          <!-- Floating Statistics Card - Clients -->
-          <div
-            class="absolute top-6 right-6 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-2 animate-bounce-slow delay-700 z-30 max-w-[150px] transform scale-90 origin-top-right">
-            <div class="flex -space-x-2 items-center overflow-hidden py-1">
-              <img
-                class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-contain bg-white"
-                src="/images/clients/empresa-dmboat.png" alt="Client 1" />
-              <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
-                src="/images/clients/empresa-fripet.jpg" alt="Client 2" />
-              <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
-                src="/images/clients/empresa-jit.jpeg" alt="Client 3" />
-              <div
-                class="h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-500">
-                +500</div>
-            </div>
-            <div>
-              <p class="text-[9px] text-slate-500 dark:text-slate-400 font-medium leading-tight">Empresas que confiam
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.security.title') }}
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                {{ $t('bento_grid.security.desc') }}
               </p>
-              <div class="flex items-center gap-1 mt-0.5">
-                <span class="flex h-1.5 w-1.5 relative">
-                  <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
-                </span>
-                <p class="text-[9px] font-bold text-slate-900 dark:text-gray-200">Ativas agora</p>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  {{ $t('bento_grid.security.item1') }}
+                </li>
+                <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  {{ $t('bento_grid.security.item2') }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 3: Atendimento (Small - Bottom Left) -->
+            <div
+              class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow">
+              <div
+                class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                  </path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.support.title') }}
+              </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                {{ $t('bento_grid.support.desc') }}
+              </p>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  WhatsApp
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  Instagram Direct
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  Telegram
+                </li>
+                <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
+                  <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  WebChat nativo
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 4: Integre (Large - Bottom Right) -->
+            <div
+              class="md:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden gap-8 shadow-sm hover:shadow-md transition-shadow">
+              <div class="relative z-10 max-w-sm text-left">
+                <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.integration.title')
+                  }}
+                </h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-8">
+                  {{ $t('bento_grid.integration.desc') }}
+                </p>
+                <a href="#"
+                  class="inline-block px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-700/20">
+                  {{ $t('bento_grid.integration.cta') }}
+                </a>
+              </div>
+
+              <!-- Integration Animation -->
+              <!-- Updated: Floating Integrations Component -->
+              <div class="relative w-full md:w-1/2 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0 min-h-[300px]">
+                <FloatingIntegrations />
               </div>
             </div>
           </div>
-
-          <div
-            class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.security.title') }}
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-            {{ $t('bento_grid.security.desc') }}
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              {{ $t('bento_grid.security.item1') }}
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              {{ $t('bento_grid.security.item2') }}
-            </li>
-          </ul>
         </div>
-
-        <!-- Card 3: Atendimento (Small - Bottom Left) -->
-        <div
-          class="md:col-span-5 bg-white dark:bg-slate-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 flex flex-col justify-center shadow-sm hover:shadow-md transition-shadow">
-          <div
-            class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path
-                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-              </path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.support.title') }}
-          </h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-            {{ $t('bento_grid.support.desc') }}
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              WhatsApp
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              Instagram Direct
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              Telegram
-            </li>
-            <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
-              <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-              WebChat nativo
-            </li>
-          </ul>
-        </div>
-
-        <!-- Card 4: Integre (Large - Bottom Right) -->
-        <div
-          class="md:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden gap-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="relative z-10 max-w-sm text-left">
-            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.integration.title') }}
-            </h3>
-            <p class="text-slate-600 dark:text-slate-400 mb-8">
-              {{ $t('bento_grid.integration.desc') }}
-            </p>
-            <a href="#"
-              class="inline-block px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-700/20">
-              {{ $t('bento_grid.integration.cta') }}
-            </a>
-          </div>
-
-          <!-- Integration Animation -->
-          <!-- Updated: Floating Integrations Component -->
-          <div class="relative w-full md:w-1/2 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0 min-h-[300px]">
-            <FloatingIntegrations />
-          </div>
-        </div>
-      </div>
-    </div>
 
   </section>
 
@@ -1887,7 +1396,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
