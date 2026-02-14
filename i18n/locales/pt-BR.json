@@ -1,11 +1,289 @@
 {
+    "header": {
+        "features": "Funcionalidades",
+        "benefits": "Benefícios",
+        "plans": "Planos",
+        "register": "Cadastrar",
+        "login": "Login"
+    },
     "hero": {
         "badge": "Plataforma de Automação #1",
         "title_start": "Transforme seu",
         "title_end": "em uma",
         "title_highlight": "Máquina de Vendas",
-        "subtitle": "Automatize atendimento 24/7, qualifique leads e feche mais vendas sem esforço manual. A revolução do atendimento para empresas que querem crescer.",
-        "cta": "Falar com Especialista"
+        "subtitle": "Automatize seu atendimento no WhatsApp, Instagram e Telegram com a Inteligência Artificial da Promp. Venda 24/7, qualifique leads e integre seu CRM.",
+        "cta": "Falar com Especialista",
+        "how_it_works": "Ver como funciona"
+    },
+    "benefits": {
+        "title": "Venda mais com menos esforço",
+        "subtitle": "Elimine tarefas manuais e foque no que importa. A Promp cuida da qualificação e agendamento para você.",
+        "items": [
+            {
+                "title": "Atendimento 24/7",
+                "desc": "Não perca vendas fora do horário comercial. A IA responde instantaneamente a qualquer hora do dia ou da noite."
+            },
+            {
+                "title": "Aumente sua Conversão",
+                "desc": "Tempo de resposta é dinheiro. Reduza o tempo de espera do lead para zero e feche mais negócios."
+            },
+            {
+                "title": "Scale seu Time",
+                "desc": "Permita que sua equipe foque apenas nos leads qualificados e nas negociações complexas."
+            }
+        ]
+    },
+    "features_center": {
+        "config_rapid": "Configuração Relâmpago",
+        "config_rapid_desc": "Vincule seu WhatsApp em segundos via QR Code e comece a usar.",
+        "multi_agent": "Múltiplos Atendentes",
+        "multi_agent_desc": "Centralize todo seu time em um único número com filas organizadas.",
+        "mass_send": "Disparos em Massa",
+        "mass_send_desc": "Alcance milhares de clientes com um clique e aumente suas vendas.",
+        "crm_visual": "CRM Visual",
+        "crm_visual_desc": "Organize seus leads em funis Kanban e nunca perca uma venda de vista.",
+        "human_audio": "Áudios Humanizados",
+        "human_audio_desc": "Envie áudios gravados na hora pela IA, gerando conexão real com o cliente.",
+        "reports": "Relatórios Detalhados",
+        "reports_desc": "Acompanhe métricas de conversão e atendimento em tempo real."
+    },
+    "bento_grid": {
+        "human_ai": {
+            "title": "IA Humanizada",
+            "desc": "A PROMP leva toda a inteligência de gestão para o seu celular. Com poucos toques, você acessa indicadores em tempo real, relatórios automatizados e o desempenho da sua operação, em qualquer lugar.",
+            "cta": "Conheça"
+        },
+        "security": {
+            "title": "Segurança de Dados e Confiabilidade Total",
+            "desc": "Suas informações são protegidas com padrões de segurança avançados e você tem total controle sobre permissões e acessos.",
+            "item1": "Dados criptografados e sempre seguros.",
+            "item2": "Controles de acesso flexíveis para cada equipe."
+        },
+        "support": {
+            "title": "Atendimento Inteligente em Todos os Canais",
+            "desc": "A PROMP conecta sua empresa aos principais canais de comunicação em um só lugar. Nossa IA responde clientes de forma rápida, consistente e personalizada.",
+            "channels": [
+                "WhatsApp",
+                "Instagram Direct",
+                "Telegram",
+                "WebChat nativo"
+            ]
+        },
+        "integration": {
+            "title": "Integre, Automatize e Simplifique",
+            "desc": "Deixe a IA da PROMP assumir o atendimento nos canais digitais e foque no que realmente importa: crescer o seu negócio.",
+            "cta": "Começar Agora"
+        },
+        "cta_all": {
+            "text": "E muito mais: Grupos, Notas, Log de Ligações, Protocolos, Aniversários...",
+            "button": "Quero todas essas funções agora"
+        },
+        "items": {
+            "attendance": {
+                "title": "Atendimentos",
+                "desc": "Lista completa e organizada"
+            },
+            "contacts": {
+                "title": "Contatos",
+                "desc": "Gestão inteligente de base"
+            },
+            "chat": {
+                "title": "Chat em Tempo Real",
+                "desc": "Conversas instantâneas"
+            },
+            "funnel": {
+                "title": "Funil de Vendas",
+                "desc": "Gestão de oportunidades"
+            },
+            "kanban": {
+                "title": "Kanban (CRM)",
+                "desc": "Visualização por colunas"
+            },
+            "tasks": {
+                "title": "Tarefas",
+                "desc": "Lista de To-Do integrada"
+            },
+            "quick_messages": {
+                "title": "Mensagens Rápidas",
+                "desc": "Templates e atalhos"
+            },
+            "gallery": {
+                "title": "Galeria",
+                "desc": "Arquivos e mídias"
+            },
+            "mass_send": {
+                "title": "Disparo em Massa",
+                "desc": "Envios massivos seguros"
+            },
+            "chatbot": {
+                "title": "Chatbot",
+                "desc": "Automação Inteligente 24/7"
+            },
+            "campaigns": {
+                "title": "Campanhas",
+                "desc": "Gestão de fluxos de envio"
+            },
+            "reports": {
+                "title": "Relatórios",
+                "desc": "Análise de dados geral"
+            },
+            "queues": {
+                "title": "Filas / Departamentos",
+                "desc": "Organização por setores"
+            },
+            "api": {
+                "title": "Integração API",
+                "desc": "Conecte com qualquer sistema"
+            },
+            "scheduling": {
+                "title": "Agendamentos",
+                "desc": "Programe mensagens futuras"
+            },
+            "ratings": {
+                "title": "Avaliações (CSAT)",
+                "desc": "Mensure a satisfação"
+            },
+            "hours": {
+                "title": "Horário de Atendimento",
+                "desc": "Gestão de plantão e folgas"
+            },
+            "tags": {
+                "title": "Etiquetas",
+                "desc": "Classificação por tags"
+            },
+            "wavoip": {
+                "title": "Wavoip",
+                "desc": "Ligações via WhatsApp"
+            },
+            "teams": {
+                "title": "Equipes",
+                "desc": "Divisão estrutural do time"
+            }
+        }
+    },
+    "how_it_works": {
+        "title": "Do Lead ao Fechamento em 4 Passos",
+        "subtitle": "Simples de configurar, poderoso para vender."
+    },
+    "pricing": {
+        "title": "Planos que cabem no seu bolso",
+        "subtitle": "Escolha a melhor opção para automatizar e escalar suas vendas.",
+        "plans": {
+            "liberal": {
+                "name": "Profissional Liberal",
+                "target": "Para quem está começando."
+            },
+            "starter": {
+                "name": "Starter",
+                "target": "Pequenas equipes."
+            },
+            "advance": {
+                "name": "Advance",
+                "target": "Empresas em expansão."
+            },
+            "prime": {
+                "name": "Prime",
+                "target": "Máxima potência e escala."
+            }
+        },
+        "period": "/mês",
+        "cta": "Assinar Agora",
+        "features": {
+            "users_1": "1 Usuário / 1 Conexão Whatsapp",
+            "users_5": "5 Usuários / 2 Conexões",
+            "users_15": "15 Usuários / 5 Conexões",
+            "users_unlimited": "Usuários ILIMITADOS",
+            "connections_unlimited": "Conexões ILIMITADAS",
+            "chatgpt_integrated": "ChatGPT Integrado",
+            "crm_kanban": "CRM e Funil de Vendas (Kanban)",
+            "multi_attendance": "Gestão de Multi-Atendimento",
+            "auto_messages": "Mensagens automáticas",
+            "schedule_messages": "Agendamento de mensagens",
+            "birthday_messages": "Mensagens de Aniversário",
+            "tags_unlimited": "Etiquetas Ilimitadas",
+            "team_management": "Gestão de Equipes",
+            "opening_hours": "Horário de Atendimento",
+            "ias_integrated": "IAs Integradas",
+            "sales_ia": "IA de Vendas Padrão",
+            "flows_ia": "Criação de Fluxos com IA",
+            "birthday_hours": "Mensagens de Aniversário e Horário de Atendimento",
+            "tags_teams": "Etiquetas Ilimitadas e Gestão de Equipes",
+            "human_sales_ia": "Vendas Humanizadas com IA",
+            "audio_ia": "Envio de Áudio com IA",
+            "mass_whatsapp": "Disparo em massa por Whatsapp",
+            "auto_groups": "Criação e gestão de Grupos automática",
+            "campaigns": "Criação de Campanhas",
+            "full_reports": "Relatórios Completos",
+            "meetings_ia": "Agendamento de reuniões com IA",
+            "calendar": "Integração com Google Calendar",
+            "web_calls_ia": "Ligações Web com IA",
+            "pabx": "Integração com Telefonia Digital Pabx",
+            "api_webhooks": "APIs e Webhooks",
+            "all_starter": "Tudo do Starter",
+            "marketplaces": "Integração Marketplaces",
+            "human_ia_pro": "IA Humanizada PRO",
+            "audio_ia_pro": "Envio de áudio com IA PRO",
+            "sms": "Disparos SMS",
+            "advanced_reports": "Relatórios Avançados",
+            "custom_advanced": "Customizações Avançadas",
+            "all_advance": "Tudo do Advance",
+            "notes_more": "Notas, Tarefas, Avaliações de atendimento, Protocolos e mais."
+        }
+    },
+    "mobile_app": {
+        "label": "Mobile App",
+        "title": "Gerencie sua operação na palma da mão",
+        "desc": "Leve o poder da Promp com você. Responda clientes, monitore atendimentos em tempo real e gerencie seus funis de venda de onde estiver com nosso aplicativo nativo para Android e iOS.",
+        "download_google": "Disponível no",
+        "download_apple": "Baixar na"
+    },
+    "faq": {
+        "title": "Perguntas Frequentes",
+        "subtitle": "Tire suas dúvidas sobre como a Promp transforma seu atendimento",
+        "items": [
+            {
+                "question": "O que é a PROMP e como funciona?",
+                "answer": "A PROMP é uma plataforma de atendimento e **vendas** com inteligência artificial que automatiza conversas em múltiplos canais (WhatsApp, Instagram, Telegram e WebChat), organiza todos os dados em um painel único e gera relatórios de desempenho em tempo real. Ela centraliza contatos, históricos e indicadores em um só lugar, permitindo que sua empresa acompanhe a operação ao vivo, ajuste estratégias rapidamente e escale o atendimento sem aumentar o time."
+            },
+            {
+                "question": "Quais canais de atendimento posso integrar?",
+                "answer": "Você pode conectar WhatsApp, Instagram, Telegram e o WebChat nativo da PROMP ao mesmo painel. Todos os canais funcionam de forma integrada, permitindo que a IA atenda clientes em qualquer ponto de contato com a mesma eficiência e consistência."
+            },
+            {
+                "question": "A IA da PROMP substitui meu time de atendimento?",
+                "answer": "Sim, a IA da PROMP pode substituir totalmente o atendimento humano, desde o primeiro contato até a resolução completa das demandas, quando esse for o modelo desejado pela empresa. Se preferir, você também pode adotar um modelo **híbrido**, em que a IA qualifica leads, automatiza processos e transfere para o time humano apenas os casos que exigem atendimento personalizado, em tempo real."
+            },
+            {
+                "question": "A PROMP garante segurança dos meus dados?",
+                "answer": "Sim. Utilizamos criptografia e protocolos avançados de proteção, além de adotarmos práticas em conformidade com a LGPD para garantir segurança e governança dos dados. Você tem controle de permissões por equipe e acesso a logs de auditoria, mantendo a operação transparente e segura."
+            },
+            {
+                "question": "Como funciona a cobrança?",
+                "answer": "A PROMP opera no modelo de assinatura mensal, com planos que variam de acordo com o número de usuários, conexões de canais, recursos de IA e integrações disponíveis. Você escolhe o plano ideal conforme o estágio e as necessidades da sua empresa, sem fidelidade, podendo cancelar quando quiser."
+            },
+            {
+                "question": "É possível personalizar os fluxos de atendimento?",
+                "answer": "Sim. Você pode criar fluxos de conversa sob medida para cada cenário do seu negócio, com regras inteligentes, respostas condicionais e automações que se adaptam às suas necessidades. A IA aprende com as interações, permitindo que você refine continuamente os fluxos para aumentar conversão, satisfação e produtividade."
+            },
+            {
+                "question": "A PROMP gera relatórios e indicadores de desempenho?",
+                "answer": "Sim. O sistema coleta métricas essenciais como tempo médio de resposta, número de atendimentos concluídos, taxas de conversão e satisfação, além do desempenho por canal e por equipe. Tudo é apresentado em dashboards simples e visuais, para que você tome decisões rápidas e baseadas em dados confiáveis."
+            },
+            {
+                "question": "Posso integrar a PROMP com outros sistemas da minha empresa?",
+                "answer": "Sim. Além dos canais de atendimento, a PROMP oferece API aberta e webhooks para integrar com CRM, ERP, plataformas de telefonia, e‑commerce e outras ferramentas de gestão. Dessa forma, você cria uma operação realmente conectada, reduz retrabalho e amplia ainda mais o poder da automação."
+            },
+            {
+                "question": "Quais tipos de empresas podem usar a PROMP?",
+                "answer": "A PROMP é flexível e atende desde pequenos negócios até grandes empresas que desejam escalar vendas e atendimento com IA. Ela já é usada em setores como e‑commerce, educação, saúde, finanças, serviços locais e outros segmentos que dependem de relacionamento contínuo com clientes."
+            }
+        ]
+    },
+    "final_cta": {
+        "title": "Está pronto para transformar seu atendimento?",
+        "subtitle": "Junte-se a mais de 500 empresas que já modernizaram suas vendas no WhatsApp.",
+        "button_trial": "Começar Teste Grátis",
+        "button_whatsapp": "Falar no WhatsApp"
     },
     "global_presence": {
         "title": "Presença Global da Promp",

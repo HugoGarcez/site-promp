@@ -1,14 +1,268 @@
 {
+    "header": {
+        "features": "Features",
+        "benefits": "Benefits",
+        "plans": "Plans",
+        "register": "Sign Up",
+        "login": "Login"
+    },
     "hero": {
-        "badge": "Automation Platform #1",
+        "badge": "Automated Platform #1",
         "title_start": "Transform your",
         "title_end": "into a",
         "title_highlight": "Sales Machine",
-        "subtitle": "Automate 24/7 support, qualify leads, and close more sales with zero manual effort. The customer service revolution for growing companies.",
-        "cta": "Talk to an Expert"
+        "subtitle": "Automate your customer service on WhatsApp, Instagram and Telegram with Promp AI. Sell 24/7, qualify leads and integrate your CRM.",
+        "cta": "Talk to an Expert",
+        "how_it_works": "See how it works"
+    },
+    "benefits": {
+        "title": "Sell more with less effort",
+        "subtitle": "Eliminate manual tasks and focus on what matters. Promp handles qualification and scheduling for you.",
+        "items": [
+            {
+                "title": "24/7 Support",
+                "desc": "Don't lose sales outside business hours. AI responds instantly any time of day or night."
+            },
+            {
+                "title": "Increase your Conversion",
+                "desc": "Response time is money. Reduce lead wait time to zero and close more deals."
+            },
+            {
+                "title": "Scale your Team",
+                "desc": "Allow your team to focus only on qualified leads and complex negotiations."
+            }
+        ]
+    },
+    "features_center": {
+        "config_rapid": "Rapid Configuration",
+        "config_rapid_desc": "Link your WhatsApp in seconds via QR Code and start using.",
+        "multi_agent": "Multiple Agents",
+        "multi_agent_desc": "Centralize your entire team in a single number with organized queues.",
+        "mass_send": "Mass Sending",
+        "mass_send_desc": "Reach thousands of customers with one click and increase your sales.",
+        "crm_visual": "Visual CRM",
+        "crm_visual_desc": "Organize your leads in Kanban funnels and never lose sight of a sale.",
+        "human_audio": "Humanized Audios",
+        "human_audio_desc": "Send audios recorded on the spot by AI, generating real connection with the customer.",
+        "reports": "Detailed Reports",
+        "reports_desc": "Track conversion and service metrics in real time."
+    },
+    "bento_grid": {
+        "human_ai": {
+            "title": "Humanized AI",
+            "desc": "PROMP brings all management intelligence to your mobile. With a few taps, access real-time indicators, automated reports and your operation's performance, anywhere.",
+            "cta": "Discover"
+        },
+        "security": {
+            "title": "Data Security and Total Reliability",
+            "desc": "Your information is protected with advanced security standards and you have total control over permissions and access.",
+            "item1": "Data encrypted and always secure.",
+            "item2": "Flexible access controls for each team."
+        },
+        "support": {
+            "title": "Smart Service on All Channels",
+            "desc": "PROMP connects your company to major communication channels in one place. Our AI responds to customers quickly, consistently and personally.",
+            "channels": [
+                "WhatsApp",
+                "Instagram Direct",
+                "Telegram",
+                "Native WebChat"
+            ]
+        },
+        "integration": {
+            "title": "Integrate, Automate and Simplify",
+            "desc": "Let PROMP AI take over service on digital channels and focus on what really matters: growing your business.",
+            "cta": "Start Now"
+        },
+        "cta_all": {
+            "text": "And much more: Groups, Notes, Call Log, Protocols, Birthdays...",
+            "button": "I want all these features now",
+            "items": {
+                "attendance": {
+                    "title": "Attendance",
+                    "desc": "Complete and organized list"
+                },
+                "contacts": {
+                    "title": "Contacts",
+                    "desc": "Smart base management"
+                },
+                "chat": {
+                    "title": "Real-time Chat",
+                    "desc": "Instant conversations"
+                },
+                "funnel": {
+                    "title": "Sales Funnel",
+                    "desc": "Opportunity management"
+                },
+                "kanban": {
+                    "title": "Kanban (CRM)",
+                    "desc": "Column visualization"
+                },
+                "tasks": {
+                    "title": "Tasks",
+                    "desc": "Integrated To-Do List"
+                },
+                "quick_messages": {
+                    "title": "Quick Messages",
+                    "desc": "Templates and shortcuts"
+                },
+                "gallery": {
+                    "title": "Gallery",
+                    "desc": "Files and media"
+                },
+                "mass_send": {
+                    "title": "Mass Sending",
+                    "desc": "Secure mass sending"
+                },
+                "chatbot": {
+                    "title": "Chatbot",
+                    "desc": "Intelligent Automation 24/7"
+                },
+                "campaigns": {
+                    "title": "Campaigns",
+                    "desc": "Sending flow management"
+                },
+                "reports": {
+                    "title": "Reports",
+                    "desc": "General data analysis"
+                },
+                "queues": {
+                    "title": "Queues / Departments",
+                    "desc": "Organization by sectors"
+                },
+                "api": {
+                    "title": "API Integration",
+                    "desc": "Connect with any system"
+                },
+                "scheduling": {
+                    "title": "Scheduling",
+                    "desc": "Schedule future messages"
+                },
+                "ratings": {
+                    "title": "Ratings (CSAT)",
+                    "desc": "Measure satisfaction"
+                },
+                "hours": {
+                    "title": "Business Hours",
+                    "desc": "Management of shifts and breaks"
+                },
+                "tags": {
+                    "title": "Tags",
+                    "desc": "Classification by tags"
+                },
+                "wavoip": {
+                    "title": "Wavoip",
+                    "desc": "Calls via WhatsApp"
+                },
+                "teams": {
+                    "title": "Teams",
+                    "desc": "Structural team division"
+                }
+            }
+        }
+    },
+    "how_it_works": {
+        "title": "From Lead to Closing in 4 Steps",
+        "subtitle": "Simple to setup, powerful to sell."
+    },
+    "pricing": {
+        "title": "Plans that fit your pocket",
+        "subtitle": "Choose the best option to automate and scale your sales.",
+        "plans": {
+            "liberal": {
+                "name": "Liberal Professional",
+                "target": "For those just starting."
+            },
+            "starter": {
+                "name": "Starter",
+                "target": "Small teams."
+            },
+            "advance": {
+                "name": "Advance",
+                "target": "Growing companies."
+            },
+            "prime": {
+                "name": "Prime",
+                "target": "Maximum power and scale."
+            }
+        },
+        "period": "/month",
+        "cta": "Subscribe Now",
+        "features": {
+            "users_1": "1 User / 1 WhatsApp Connection",
+            "users_5": "5 Users / 2 Connections",
+            "users_15": "15 Users / 5 Connections",
+            "users_unlimited": "UNLIMITED Users",
+            "connections_unlimited": "UNLIMITED Connections",
+            "chatgpt_integrated": "Integrated ChatGPT",
+            "crm_kanban": "CRM and Sales Funnel (Kanban)",
+            "multi_attendance": "Multi-Attendance Management",
+            "auto_messages": "Automatic Messages",
+            "schedule_messages": "Schedule Messages",
+            "birthday_messages": "Birthday Messages",
+            "tags_unlimited": "Unlimited Tags",
+            "team_management": "Team Management",
+            "opening_hours": "Business Hours",
+            "ias_integrated": "Integrated AIs",
+            "sales_ia": "Standard Sales AI",
+            "flows_ia": "Flow Creation with AI",
+            "birthday_hours": "Birthday Messages & Business Hours",
+            "tags_teams": "Unlimited Tags & Team Management",
+            "human_sales_ia": "Humanized Sales with AI",
+            "audio_ia": "Send Audio with AI",
+            "mass_whatsapp": "Mass Whatsapp Sending",
+            "auto_groups": "Automatic Group Creation & Management",
+            "campaigns": "Campaign Creation",
+            "full_reports": "Complete Reports",
+            "meetings_ia": "Meeting Scheduling with AI",
+            "calendar": "Google Calendar Integration",
+            "web_calls_ia": "Web Calls with AI",
+            "pabx": "Digital PABX Telephony Integration",
+            "api_webhooks": "APIs and Webhooks",
+            "all_starter": "Everything in Starter",
+            "marketplaces": "Marketplaces Integration",
+            "human_ia_pro": "Humanized AI PRO",
+            "audio_ia_pro": "Send Audio with AI PRO",
+            "sms": "SMS Sending",
+            "advanced_reports": "Advanced Reports",
+            "custom_advanced": "Advanced Customizations",
+            "all_advance": "Everything in Advance",
+            "notes_more": "Notes, Tasks, Service Reviews, Protocols and more."
+        }
+    },
+    "mobile_app": {
+        "label": "Mobile App",
+        "title": "Manage your operation in the palm of your hand",
+        "desc": "Take Promp's power with you. Respond to customers, monitor service in real time and manage your sales funnels from anywhere with our native Android and iOS app.",
+        "download_google": "Available on",
+        "download_apple": "Download on"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Clear your doubts about how Promp transforms your service",
+        "items": [
+            {
+                "question": "What is PROMP and how does it work?",
+                "answer": "PROMP is a service and **sales** platform with artificial intelligence that automates conversations on multiple channels (WhatsApp, Instagram, Telegram and WebChat), organizes all data in a single dashboard and generates performance reports in real time."
+            },
+            {
+                "question": "Which channels can I integrate?",
+                "answer": "You can connect WhatsApp, Instagram, Telegram and PROMP's native WebChat to the same dashboard."
+            },
+            {
+                "question": "Does PROMP AI replace my team?",
+                "answer": "Yes, PROMP AI can fully replace human service, or work in a **hybrid** model qualifying leads."
+            }
+        ]
+    },
+    "final_cta": {
+        "title": "Ready to transform your service?",
+        "subtitle": "Join over 500 companies that have already modernized their sales on WhatsApp.",
+        "button_trial": "Start Free Trial",
+        "button_whatsapp": "Talk on WhatsApp"
     },
     "global_presence": {
-        "title": "Promp Global Presence",
-        "subtitle": "Promp is active and present in the following countries and languages:"
+        "title": "Global Presence of Promp",
+        "subtitle": "Promp is present and active in the following countries and languages:"
     }
 }

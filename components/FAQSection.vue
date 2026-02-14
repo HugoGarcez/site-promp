@@ -1,46 +1,11 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
+const { tm, t } = useI18n();
 const openIndex = ref(null);
 
-const faqs = [
-    {
-        question: "O que é a PROMP e como funciona?",
-        answer: "A PROMP é uma plataforma de atendimento e **vendas** com inteligência artificial que automatiza conversas em múltiplos canais (WhatsApp, Instagram, Telegram e WebChat), organiza todos os dados em um painel único e gera relatórios de desempenho em tempo real. Ela centraliza contatos, históricos e indicadores em um só lugar, permitindo que sua empresa acompanhe a operação ao vivo, ajuste estratégias rapidamente e escale o atendimento sem aumentar o time."
-    },
-    {
-        question: "Quais canais de atendimento posso integrar?",
-        answer: "Você pode conectar WhatsApp, Instagram, Telegram e o WebChat nativo da PROMP ao mesmo painel. Todos os canais funcionam de forma integrada, permitindo que a IA atenda clientes em qualquer ponto de contato com a mesma eficiência e consistência."
-    },
-    {
-        question: "A IA da PROMP substitui meu time de atendimento?",
-        answer: "Sim, a IA da PROMP pode substituir totalmente o atendimento humano, desde o primeiro contato até a resolução completa das demandas, quando esse for o modelo desejado pela empresa. Se preferir, você também pode adotar um modelo **híbrido**, em que a IA qualifica leads, automatiza processos e transfere para o time humano apenas os casos que exigem atendimento personalizado, em tempo real."
-    },
-    {
-        question: "A PROMP garante segurança dos meus dados?",
-        answer: "Sim. Utilizamos criptografia e protocolos avançados de proteção, além de adotarmos práticas em conformidade com a LGPD para garantir segurança e governança dos dados. Você tem controle de permissões por equipe e acesso a logs de auditoria, mantendo a operação transparente e segura."
-    },
-    {
-        question: "Como funciona a cobrança?",
-        answer: "A PROMP opera no modelo de assinatura mensal, com planos que variam de acordo com o número de usuários, conexões de canais, recursos de IA e integrações disponíveis. Você escolhe o plano ideal conforme o estágio e as necessidades da sua empresa, sem fidelidade, podendo cancelar quando quiser."
-    },
-    {
-        question: "É possível personalizar os fluxos de atendimento?",
-        answer: "Sim. Você pode criar fluxos de conversa sob medida para cada cenário do seu negócio, com regras inteligentes, respostas condicionais e automações que se adaptam às suas necessidades. A IA aprende com as interações, permitindo que você refine continuamente os fluxos para aumentar conversão, satisfação e produtividade."
-    },
-    {
-        question: "A PROMP gera relatórios e indicadores de desempenho?",
-        answer: "Sim. O sistema coleta métricas essenciais como tempo médio de resposta, número de atendimentos concluídos, taxas de conversão e satisfação, além do desempenho por canal e por equipe. Tudo é apresentado em dashboards simples e visuais, para que você tome decisões rápidas e baseadas em dados confiáveis."
-    },
-    {
-        question: "Posso integrar a PROMP com outros sistemas da minha empresa?",
-        answer: "Sim. Além dos canais de atendimento, a PROMP oferece API aberta e webhooks para integrar com CRM, ERP, plataformas de telefonia, e‑commerce e outras ferramentas de gestão. Dessa forma, você cria uma operação realmente conectada, reduz retrabalho e amplia ainda mais o poder da automação."
-    },
-    {
-        question: "Quais tipos de empresas podem usar a PROMP?",
-        answer: "A PROMP é flexível e atende desde pequenos negócios até grandes empresas que desejam escalar vendas e atendimento com IA. Ela já é usada em setores como e‑commerce, educação, saúde, finanças, serviços locais e outros segmentos que dependem de relacionamento contínuo com clientes."
-    }
-];
+const faqs = computed(() => tm('faq.items'));
 
 const toggle = (index) => {
     openIndex.value = openIndex.value === index ? null : index;
@@ -52,10 +17,10 @@ const toggle = (index) => {
         <div class="container mx-auto px-4 max-w-4xl">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-                    Perguntas Frequentes
+                    {{ t('faq.title') }}
                 </h2>
                 <p class="text-lg text-slate-600 dark:text-slate-400">
-                    Tire suas dúvidas sobre como a Promp transforma seu atendimento
+                    {{ t('faq.subtitle') }}
                 </p>
             </div>
 

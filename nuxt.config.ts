@@ -24,7 +24,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxt/image', '@nuxtjs/i18n'],
+  modules: ['@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/color-mode'],
+  colorMode: {
+    classSuffix: ''
+  },
   i18n: {
     locales: [
       { code: 'pt-BR', iso: 'pt-BR', file: 'pt-BR.json', name: 'Português' },

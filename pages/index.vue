@@ -68,131 +68,172 @@ useSeoMeta({
 </style>
 
 <template>
-    <!-- Header -->
-    <header
-      class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-      <div class="container mx-auto px-4 h-20 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-2">
-          <NuxtImg src="/images/logo-black.png" alt="Promp" class="h-8 w-auto dark:hidden" />
-          <NuxtImg src="/images/logo-white.png" alt="Promp" class="h-8 w-auto hidden dark:block" />
-        </a>
+  <!-- Header -->
+  <header
+    class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <NuxtImg src="/images/logo-black.png" alt="Promp" class="h-8 w-auto dark:hidden" />
+        <NuxtImg src="/images/logo-white.png" alt="Promp" class="h-8 w-auto hidden dark:block" />
+      </a>
 
-        <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="#funcionalidades"
-            class="text-sm font-medium hover:text-primary transition-colors">Funcionalidades</a>
-          <a href="#beneficios" class="text-sm font-medium hover:text-primary transition-colors">Benefícios</a>
-          <a href="#planos" class="text-sm font-medium hover:text-primary transition-colors">Planos</a>
-          <LanguageSwitcher />
-          <a href="https://app.promp.com.br/login"
-            class="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-sm font-bold">
-            Login
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#funcionalidades" class="text-sm font-medium hover:text-primary transition-colors">{{
+          $t('header.features') }}</a>
+        <a href="#beneficios" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.benefits')
+          }}</a>
+        <a href="#planos" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.plans') }}</a>
+
+        <!-- Language Switcher -->
+        <LanguageSwitcher />
+
+        <!-- Dark Mode Toggle -->
+        <button @click="toggleTheme"
+          class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+          aria-label="Alternar Tema">
+          <svg v-if="colorMode.value === 'dark'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700 dark:text-slate-200" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-4">
+          <a href="https://app.promp.com.br/register"
+            class="text-sm font-bold text-slate-700 dark:text-white hover:text-primary transition-colors">
+            {{ $t('header.register') }}
           </a>
-        </nav>
+          <a href="https://app.promp.com.br/login"
+            class="px-5 py-2.5 rounded-xl bg-primary hover:bg-red-600 text-white transition-all text-sm font-bold shadow-lg shadow-primary/20">
+            {{ $t('header.login') }}
+          </a>
+        </div>
+      </nav>
 
-        <!-- Mobile Menu Button (Simplified) -->
-        <button class="md:hidden p-2">
+      <!-- Mobile Menu Button (Updated) -->
+      <div class="md:hidden flex items-center gap-4">
+        <button @click="toggleTheme"
+          class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+          <svg v-if="colorMode.value === 'dark'" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700 dark:text-slate-200" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+        <button class="p-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-      <div class="container mx-auto px-4">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-          <!-- Text Content -->
-          <div class="space-y-8 animate-fade-in-up lg:col-span-5">
-            <div
-              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6 border border-primary/20">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              {{ $t('hero.badge') }}
-            </div>
-
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
-              {{ $t('hero.title_start') }} <span class="text-primary">{{ currentPlatform.name }}</span> {{
-                $t('hero.title_end') }} <br class="hidden md:block" />
-              <span class="relative inline-block mt-2">
-                <span class="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
-                  {{ $t('hero.title_highlight') }}
-                </span>
-                <span class="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -rotate-1 rounded-full -z-0"></span>
-              </span>
-            </h1>
-
-            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-              {{ $t('hero.subtitle') }}
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
-                target="_blank"
-                :style="{ backgroundColor: currentPlatform.color, color: currentPlatform.btnTextColor, boxShadow: `0 10px 15px -3px ${currentPlatform.color}66` }"
-                class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all hover:-translate-y-1 hover:brightness-90"
-                aria-label="Falar com Especialista no WhatsApp">
-                {{ $t('hero.cta') }}
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="#features"
-                class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-700 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md">
-                Ver como funciona
-              </a>
-            </div>
-
-            <!-- Social Proof -->
-            <div class="pt-4 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
-              <div class="flex -space-x-2">
-                <NuxtImg
-                  class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-contain bg-white"
-                  src="/images/clients/empresa-dmboat.png" alt="Empresa 1" width="32" height="32" loading="lazy" />
-                <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
-                  src="/images/clients/empresa-fripet.jpg" alt="Empresa 2" width="32" height="32" loading="lazy" />
-                <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
-                  src="/images/clients/empresa-jit.jpeg" alt="Empresa 3" width="32" height="32" loading="lazy" />
-              </div>
-              <p>+500 empresas confiam na Promp</p>
-            </div>
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="space-y-8 animate-fade-in-up lg:col-span-5">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6 border border-primary/20">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            {{ $t('hero.badge') }}
           </div>
 
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
+            {{ $t('hero.title_start') }} <span class="text-primary">{{ currentPlatform.name }}</span> {{
+              $t('hero.title_end') }} <br class="hidden md:block" />
+            <span class="relative inline-block mt-2">
+              <span class="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
+                {{ $t('hero.title_highlight') }}
+              </span>
+              <span class="absolute bottom-2 left-0 w-full h-3 bg-primary/20 -rotate-1 rounded-full -z-0"></span>
+            </span>
+          </h1>
 
+          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+            {{ $t('hero.subtitle') }}
+          </p>
 
-          <!-- Feature Image / Mockup -->
-          <div class="relative animate-fade-in-right lg:col-span-7">
-            <div
-              class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 rounded-2xl blur-2xl opacity-20 animate-pulse">
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
+              target="_blank"
+              :style="{ backgroundColor: currentPlatform.color, color: currentPlatform.btnTextColor, boxShadow: `0 10px 15px -3px ${currentPlatform.color}66` }"
+              class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl transition-all hover:-translate-y-1 hover:brightness-90"
+              aria-label="Falar com Especialista no WhatsApp">
+              {{ $t('hero.cta') }}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#features"
+              class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-700 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md">
+              {{ $t('hero.how_it_works') }}
+            </a>
+          </div>
+
+          <!-- Social Proof -->
+          <div class="pt-4 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+            <div class="flex -space-x-2">
+              <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-contain bg-white"
+                src="/images/clients/empresa-dmboat.png" alt="Empresa 1" width="32" height="32" loading="lazy" />
+              <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
+                src="/images/clients/empresa-fripet.jpg" alt="Empresa 2" width="32" height="32" loading="lazy" />
+              <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
+                src="/images/clients/empresa-jit.jpeg" alt="Empresa 3" width="32" height="32" loading="lazy" />
             </div>
-            <PrompChatMockup class="rotate-1 hover:rotate-0 transition-transform duration-500" />
-
-            <!-- Floating Statistic Card -->
-            <div
-              class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 flex items-center gap-4 animate-bounce-slow">
-              <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                  <polyline points="17 6 23 6 23 12"></polyline>
-                </svg>
-              </div>
-              <div>
-                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Conversão</p>
-                <p class="text-lg font-bold text-slate-900 dark:text-white">+ 47%</p>
-              </div>
-            </div>
-
-            <!-- Floating Statistics Card - Clients Removed -->
+            <p>+500 empresas confiam na Promp</p>
           </div>
         </div>
+
+
+
+        <!-- Feature Image / Mockup -->
+        <div class="relative animate-fade-in-right lg:col-span-7">
+          <div
+            class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 rounded-2xl blur-2xl opacity-20 animate-pulse">
+          </div>
+          <PrompChatMockup class="rotate-1 hover:rotate-0 transition-transform duration-500" />
+
+          <!-- Floating Statistic Card -->
+          <div
+            class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 flex items-center gap-4 animate-bounce-slow">
+            <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Conversão</p>
+              <p class="text-lg font-bold text-slate-900 dark:text-white">+ 47%</p>
+            </div>
+          </div>
+
+          <!-- Floating Statistics Card - Clients Removed -->
+        </div>
       </div>
+    </div>
   </section>
 
   <!-- Authority Strip -->
@@ -521,138 +562,7 @@ useSeoMeta({
     </div>
   </section>
 
-  <!-- Features Center Showcase -->
-  <section class="py-24 bg-white dark:bg-slate-900 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-8 items-center">
-        <!-- Left Features -->
-        <div class="space-y-12">
-          <div class="text-right group">
-            <div class="flex items-center justify-end gap-3 mb-2">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Configuração Relâmpago</h3>
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">Vincule seu WhatsApp em segundos via QR Code e
-              comece a usar.</p>
-          </div>
 
-          <div class="text-right group">
-            <div class="flex items-center justify-end gap-3 mb-2">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Múltiplos Atendentes</h3>
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">Centralize todo seu time em um único número com
-              filas organizadas.</p>
-          </div>
-
-          <div class="text-right group">
-            <div class="flex items-center justify-end gap-3 mb-2">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Disparos em Massa</h3>
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                  </path>
-                </svg>
-              </div>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">Alcance milhares de clientes com um clique e aumente
-              suas vendas.</p>
-          </div>
-        </div>
-
-        <!-- Center Image -->
-        <div class="relative flex justify-center py-12 lg:py-0">
-          <!-- Decorative Rings -->
-          <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl scale-150">
-          </div>
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_60s_linear_infinite]">
-          </div>
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_40s_linear_infinite_reverse]">
-          </div>
-
-          <video src="/video/funcionalidades-promp.mp4" autoplay loop muted playsinline
-            class="relative z-10 w-full max-w-[500px] object-contain bg-transparent"></video>
-          <!-- <DeviceMockup3D /> -->
-        </div>
-
-        <!-- Right Features -->
-        <div class="space-y-12">
-          <div class="text-left group">
-            <div class="flex items-center justify-start gap-3 mb-2">
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">CRM Visual</h3>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">Organize seus leads em funis Kanban e nunca perca
-              uma venda de vista.</p>
-          </div>
-
-          <div class="text-left group">
-            <div class="flex items-center justify-start gap-3 mb-2">
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                  <line x1="12" y1="19" x2="12" y2="23"></line>
-                  <line x1="8" y1="23" x2="16" y2="23"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Áudios Humanizados</h3>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">Envie áudios gravados na hora pela IA, gerando
-              conexão real com o cliente.</p>
-          </div>
-
-          <div class="text-left group">
-            <div class="flex items-center justify-start gap-3 mb-2">
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Relatórios Detalhados</h3>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">Acompanhe métricas de conversão e atendimento em
-              tempo real.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Bento Grid Section -->
   <section class="py-20 bg-slate-100 dark:bg-slate-900">
@@ -673,14 +583,14 @@ useSeoMeta({
                 <path d="M2.82 15.98C3.81 18.6 6.05 20.55 8.78 21.2"></path>
               </svg>
             </div>
-            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">IA Humanizada</h3>
+            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.human_ai.title') }}
+            </h3>
             <p class="text-slate-600 dark:text-slate-400 mb-6">
-              A PROMP leva toda a inteligência de gestão para o seu celular. Com poucos toques, você acessa
-              indicadores em tempo real, relatórios automatizados e o desempenho da sua operação, em qualquer lugar.
+              {{ $t('bento_grid.human_ai.desc') }}
             </p>
             <a href="#"
               class="inline-block px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors">
-              Conheça
+              {{ $t('bento_grid.human_ai.cta') }}
             </a>
           </div>
 
@@ -740,11 +650,10 @@ useSeoMeta({
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Segurança de Dados e Confiabilidade Total
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.security.title') }}
           </h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-            Suas informações são protegidas com padrões de segurança avançados e você tem total controle sobre
-            permissões e acessos.
+            {{ $t('bento_grid.security.desc') }}
           </p>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
@@ -753,7 +662,7 @@ useSeoMeta({
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                   clip-rule="evenodd"></path>
               </svg>
-              Dados criptografados e sempre seguros.
+              {{ $t('bento_grid.security.item1') }}
             </li>
             <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
               <svg class="w-5 h-5 text-orange-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -761,7 +670,7 @@ useSeoMeta({
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                   clip-rule="evenodd"></path>
               </svg>
-              Controles de acesso flexíveis para cada equipe.
+              {{ $t('bento_grid.security.item2') }}
             </li>
           </ul>
         </div>
@@ -779,11 +688,10 @@ useSeoMeta({
               </path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Atendimento Inteligente em Todos os Canais
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.support.title') }}
           </h3>
           <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">
-            A PROMP conecta sua empresa aos principais canais de comunicação em um só lugar. Nossa IA responde
-            clientes de forma rápida, consistente e personalizada.
+            {{ $t('bento_grid.support.desc') }}
           </p>
           <ul class="space-y-3">
             <li class="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-300">
@@ -825,14 +733,14 @@ useSeoMeta({
         <div
           class="md:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between relative overflow-hidden gap-8 shadow-sm hover:shadow-md transition-shadow">
           <div class="relative z-10 max-w-sm text-left">
-            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Integre, Automatize e Simplifique</h3>
+            <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('bento_grid.integration.title') }}
+            </h3>
             <p class="text-slate-600 dark:text-slate-400 mb-8">
-              Deixe a IA da PROMP assumir o atendimento nos canais digitais e foque no que realmente importa: crescer
-              o seu negócio.
+              {{ $t('bento_grid.integration.desc') }}
             </p>
             <a href="#"
               class="inline-block px-8 py-4 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition-colors shadow-lg shadow-blue-700/20">
-              Começar Agora
+              {{ $t('bento_grid.integration.cta') }}
             </a>
           </div>
 
@@ -931,8 +839,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Atendimentos</h3>
-              <p class="text-[11px] text-slate-500">Lista completa e organizada</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.attendance.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.attendance.desc') }}</p>
             </div>
           </div>
         </div>
@@ -952,8 +861,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Contatos</h3>
-              <p class="text-[11px] text-slate-500">Gestão inteligente de base</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.contacts.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.contacts.desc') }}</p>
             </div>
           </div>
         </div>
@@ -972,8 +882,8 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Chat em Tempo Real</h3>
-              <p class="text-[11px] text-slate-500">Conversas instantâneas</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.chat.title') }}</h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.chat.desc') }}</p>
             </div>
           </div>
         </div>
@@ -990,8 +900,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Funil de Vendas</h3>
-              <p class="text-[11px] text-slate-500">Gestão de oportunidades</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.funnel.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.funnel.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1010,8 +921,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Kanban (CRM)</h3>
-              <p class="text-[11px] text-slate-500">Visualização por colunas</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.kanban.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.kanban.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1029,8 +941,8 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Tarefas</h3>
-              <p class="text-[11px] text-slate-500">Lista de To-Do integrada</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.tasks.title') }}</h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.tasks.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1047,8 +959,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Mensagens Rápidas</h3>
-              <p class="text-[11px] text-slate-500">Templates e atalhos</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{
+                $t('bento_grid.items.quick_messages.title') }}</h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.quick_messages.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1067,8 +980,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Galeria</h3>
-              <p class="text-[11px] text-slate-500">Arquivos e mídias</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.gallery.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.gallery.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1087,8 +1001,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Disparo em Massa</h3>
-              <p class="text-[11px] text-slate-500">Envios massivos seguros</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.mass_send.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.mass_send.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1105,8 +1020,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Chatbot</h3>
-              <p class="text-[11px] text-slate-500">Automação Inteligente 24/7</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.chatbot.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.chatbot.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1124,8 +1040,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Campanhas</h3>
-              <p class="text-[11px] text-slate-500">Gestão de fluxos de envio</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.campaigns.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.campaigns.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1144,8 +1061,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Relatórios</h3>
-              <p class="text-[11px] text-slate-500">Análise de dados geral</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.reports.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.reports.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1167,8 +1085,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Filas / Departamentos</h3>
-              <p class="text-[11px] text-slate-500">Organização por setores</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.queues.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.queues.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1186,8 +1105,8 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Integração API</h3>
-              <p class="text-[11px] text-slate-500">Conecte com qualquer sistema</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.api.title') }}</h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.api.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1207,8 +1126,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Agendamentos</h3>
-              <p class="text-[11px] text-slate-500">Programe mensagens futuras</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.scheduling.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.scheduling.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1227,8 +1147,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Avaliações (CSAT)</h3>
-              <p class="text-[11px] text-slate-500">Mensure a satisfação</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.ratings.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.ratings.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1246,8 +1167,8 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Horário de Atendimento</h3>
-              <p class="text-[11px] text-slate-500">Gestão de plantão e folgas</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.hours.title') }}</h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.hours.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1265,8 +1186,8 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Etiquetas</h3>
-              <p class="text-[11px] text-slate-500">Classificação por tags</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.tags.title') }}</h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.tags.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1285,8 +1206,9 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Wavoip</h3>
-              <p class="text-[11px] text-slate-500">Ligações via WhatsApp</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.wavoip.title') }}
+              </h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.wavoip.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1306,8 +1228,8 @@ useSeoMeta({
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm">Equipes</h3>
-              <p class="text-[11px] text-slate-500">Divisão estrutural do time</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.teams.title') }}</h3>
+              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.teams.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1315,11 +1237,10 @@ useSeoMeta({
 
       <!-- Call to Action below grid -->
       <div class="mt-16 text-center animate-fade-in-up">
-        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 font-medium">E muito mais: Grupos, Notas, Log de
-          Ligações, Protocolos, Aniversários...</p>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 font-medium">{{ $t('bento_grid.cta_all.text') }}</p>
         <a href="#pricing"
           class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-lg shadow-secondary/20">
-          Quero todas essas funções agora
+          {{ $t('bento_grid.cta_all.button') }}
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1336,21 +1257,20 @@ useSeoMeta({
   <section id="pricing" class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Planos que cabem no seu bolso
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('pricing.title') }}
         </h2>
-        <p class="text-lg text-slate-600 dark:text-slate-400">Escolha a melhor opção para automatizar e escalar suas
-          vendas.</p>
+        <p class="text-lg text-slate-600 dark:text-slate-400">{{ $t('pricing.subtitle') }}</p>
       </div>
 
       <div class="grid md:grid-cols-4 gap-6 items-start">
         <!-- Profissional Liberal -->
         <div
           class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full transform hover:-translate-y-1 duration-300">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Profissional Liberal</h3>
-          <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">Para quem está começando.</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ $t('pricing.plans.liberal.name') }}</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">{{ $t('pricing.plans.liberal.target') }}</p>
           <div class="flex items-baseline mb-6">
             <span class="text-3xl font-bold text-slate-900 dark:text-white">R$ 99,99</span>
-            <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">/mês</span>
+            <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">{{ $t('pricing.period') }}</span>
           </div>
 
           <!-- Icons -->
@@ -1363,311 +1283,442 @@ useSeoMeta({
           <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
             ChatGPT</div>
 
-        <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> 1 Usuário / 1 Conexão Whatsapp</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> ChatGPT Integrado</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> CRM e Funil de Vendas (Kanban)</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Gestão de Multi-Atendimento</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Mensagens automáticas</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Agendamento de mensagens</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Mensagens de Aniversário</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Etiquetas Ilimitadas</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Gestão de Equipes</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Horário de Atendimento</li>
-          <li class="flex items-center text-slate-400 italic text-[10px] mt-2">
-            Notas, Tarefas, Avaliações de atendimento, Protocolos e mais.
-          </li>
-        </ul>
-        <a href="https://www.asaas.com/c/wr3exhhwr141lmva" target="_blank"
-          class="block w-full py-2 px-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold rounded-lg text-center text-sm transition-colors">Assinar
-          Agora</a>
-      </div>
-
-      <!-- Starter -->
-      <div
-        class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full transform hover:-translate-y-1 duration-300">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Starter</h3>
-        <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">Pequenas equipes.</p>
-        <div class="flex items-baseline mb-6">
-          <span class="text-3xl font-bold text-slate-900 dark:text-white">R$ 597,99</span>
-          <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">/mês</span>
+          <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.users_1') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.chatgpt_integrated') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.crm_kanban') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.multi_attendance') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.auto_messages') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.schedule_messages') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.birthday_messages') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.tags_unlimited') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.team_management') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.opening_hours') }}</li>
+            <li class="flex items-center text-slate-400 italic text-[10px] mt-2">
+              {{ $t('pricing.features.notes_more') }}
+            </li>
+          </ul>
+          <a href="https://www.asaas.com/c/wr3exhhwr141lmva" target="_blank"
+            class="block w-full py-2 px-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold rounded-lg text-center text-sm transition-colors">{{
+              $t('pricing.cta') }}</a>
         </div>
 
-        <!-- Icons -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <div class="bg-green-100 text-green-600 p-1.5 rounded-lg" title="WhatsApp">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-          </div>
-          <div class="bg-blue-100 text-blue-600 p-1.5 rounded-lg" title="Telegram">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-            </svg>
-          </div>
-          <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
-            ChatGPT</div>
-          <div class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
-            Gemini</div>
-          <div class="bg-purple-100 text-purple-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
-            IAs Integradas</div>
-        </div>
-
-        <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> 5 Usuários / 2 Conexões</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> IAs Integradas</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> IA de Vendas Padrão</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Criação de Fluxos com IA</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> CRM e Funil de Vendas (Kanban)</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Gestão de Multi-Atendimento</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Mensagens automáticas</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Agendamento de mensagens</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Mensagens de Aniversário e Horário de Atendimento</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Etiquetas Ilimitadas e Gestão de Equipes</li>
-          <li class="flex items-center text-slate-400 italic text-[10px] mt-2">
-            Notas, Tarefas, Avaliações de atendimento, Protocolos e mais.
-          </li>
-        </ul>
-        <a href="https://www.asaas.com/c/wamnjxhjyr1ucru7" target="_blank"
-          class="block w-full py-2 px-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold rounded-lg text-center text-sm transition-colors">Assinar
-          Starter</a>
-      </div>
-
-      <!-- Advance (Highlighted) -->
-      <div
-        class="p-6 rounded-2xl bg-slate-900 text-white border-2 border-primary relative transform md:-translate-y-4 shadow-xl z-10 flex flex-col h-full">
+        <!-- Starter -->
         <div
-          class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">
-          RECOMENDADO</div>
-        <h3 class="text-lg font-bold mb-2">Advance</h3>
-        <p class="text-slate-400 text-xs mb-4">Empresas em expansão.</p>
-        <div class="flex items-baseline mb-6">
-          <span class="text-3xl font-bold">R$ 1.897,59</span>
-          <span class="text-slate-400 text-xs ml-1">/mês</span>
+          class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full transform hover:-translate-y-1 duration-300">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ $t('pricing.plans.starter.name') }}</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">{{ $t('pricing.plans.starter.target') }}</p>
+          <div class="flex items-baseline mb-6">
+            <span class="text-3xl font-bold text-slate-900 dark:text-white">R$ 597,99</span>
+            <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">{{ $t('pricing.period') }}</span>
+          </div>
+
+          <!-- Icons -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <div class="bg-green-100 text-green-600 p-1.5 rounded-lg" title="WhatsApp">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </div>
+            <div class="bg-blue-100 text-blue-600 p-1.5 rounded-lg" title="Telegram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+              </svg>
+            </div>
+            <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
+              ChatGPT</div>
+            <div class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
+              Gemini</div>
+            <div class="bg-purple-100 text-purple-700 px-3 py-1 rounded-md text-[10px] font-bold">
+              {{ $t('pricing.features.ias_integrated') }}</div>
+          </div>
+
+          <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.users_5') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.ias_integrated') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.sales_ia') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.flows_ia') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.crm_kanban') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.multi_attendance') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.auto_messages') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.schedule_messages') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.birthday_hours') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.tags_teams') }}</li>
+            <li class="flex items-center text-slate-400 italic text-[10px] mt-2">
+              {{ $t('pricing.features.notes_more') }}
+            </li>
+          </ul>
+          <a href="https://www.asaas.com/c/wamnjxhjyr1ucru7" target="_blank"
+            class="block w-full py-2 px-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold rounded-lg text-center text-sm transition-colors">Assinar
+            Starter</a>
         </div>
 
-        <!-- Icons -->
-        <div class="flex flex-wrap gap-2 mb-6 text-black">
-          <div class="bg-white p-1.5 rounded-lg text-green-600" title="WhatsApp"><svg class="w-4 h-4"
-              fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg></div>
-          <div class="bg-white p-1.5 rounded-lg text-pink-600" title="Instagram"><svg class="w-4 h-4"
-              fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg></div>
-          <div class="bg-white text-slate-800 px-2 py-1 rounded text-[10px] font-bold">WebChat</div>
-          <div class="bg-teal-500 text-white px-2 py-1 rounded text-[10px] font-bold">GPT-4</div>
-          <div class="bg-indigo-500 text-white px-2 py-1 rounded text-[10px] font-bold">Gemini</div>
-          <div class="bg-slate-700 text-white px-2 py-1 rounded text-[10px] font-bold">Grok</div>
-          <div class="bg-orange-500 text-white px-2 py-1 rounded text-[10px] font-bold">Qwen</div>
-          <div class="bg-purple-500 text-white px-2 py-1 rounded text-[10px] font-bold">IAs Integradas</div>
+        <!-- Advance (Highlighted) -->
+        <div
+          class="p-6 rounded-2xl bg-slate-900 text-white border-2 border-primary relative transform md:-translate-y-4 shadow-xl z-10 flex flex-col h-full">
+          <div
+            class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-lg">
+            RECOMENDADO</div>
+          <h3 class="text-lg font-bold mb-2">Advance</h3>
+          <p class="text-slate-400 text-xs mb-4">Empresas em expansão.</p>
+          <div class="flex items-baseline mb-6">
+            <span class="text-3xl font-bold">R$ 1.897,59</span>
+            <span class="text-slate-400 text-xs ml-1">/mês</span>
+          </div>
+
+          <!-- Icons -->
+          <div class="flex flex-wrap gap-2 mb-6 text-black">
+            <div class="bg-white p-1.5 rounded-lg text-green-600" title="WhatsApp"><svg class="w-4 h-4"
+                fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg></div>
+            <div class="bg-white p-1.5 rounded-lg text-pink-600" title="Instagram"><svg class="w-4 h-4"
+                fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg></div>
+            <div class="bg-white text-slate-800 px-2 py-1 rounded text-[10px] font-bold">WebChat</div>
+            <div class="bg-teal-500 text-white px-2 py-1 rounded text-[10px] font-bold">GPT-4</div>
+            <div class="bg-indigo-500 text-white px-2 py-1 rounded text-[10px] font-bold">Gemini</div>
+            <div class="bg-slate-700 text-white px-2 py-1 rounded text-[10px] font-bold">Grok</div>
+            <div class="bg-orange-500 text-white px-2 py-1 rounded text-[10px] font-bold">Qwen</div>
+            <div class="bg-purple-500 text-white px-2 py-1 rounded text-[10px] font-bold">{{
+              $t('pricing.features.ias_integrated') }}</div>
+          </div>
+
+          <ul class="space-y-3 mb-8 text-xs text-slate-300 flex-grow">
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.users_15') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.ias_integrated') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.human_sales_ia') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.audio_ia') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.mass_whatsapp') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.auto_groups') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.campaigns') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.full_reports') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.meetings_ia') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.calendar') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.web_calls_ia') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.pabx') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.api_webhooks') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.all_starter') }}</li>
+          </ul>
+          <a href="https://www.asaas.com/c/yivuvwqp9tki9ajl" target="_blank"
+            class="block w-full py-3 px-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg text-center text-sm transition-colors shadow-lg shadow-primary/30">Assinar
+            Advance</a>
         </div>
 
-        <ul class="space-y-3 mb-8 text-xs text-slate-300 flex-grow">
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> 15 Usuários / 5 Conexões</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> IAs Integradas</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Vendas Humanizadas com IA</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Envio de Áudio com IA</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Disparo em massa por Whatsapp</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Criação e gestão de Grupos automática</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Criação de Campanhas</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Relatórios Completos</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Agendamento de reuniões com IA</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Integração com Google Calendar</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Ligações Web com IA</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Integração com Telefonia Digital Pabx</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> APIs e Webhooks</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-secondary mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Tudo do Starter</li>
-        </ul>
-        <a href="https://www.asaas.com/c/yivuvwqp9tki9ajl" target="_blank"
-          class="block w-full py-3 px-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-lg text-center text-sm transition-colors shadow-lg shadow-primary/30">Assinar
-          Advance</a>
+        <!-- Prime -->
+        <div
+          class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-24 h-24 bg-orange-200 rounded-full blur-2xl opacity-50"></div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ $t('pricing.plans.prime.name') }}</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">{{ $t('pricing.plans.prime.target') }}</p>
+          <div class="flex items-baseline mb-6">
+            <span class="text-3xl font-bold text-slate-900 dark:text-white">R$ 2.497,59</span>
+            <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">/mês</span>
+          </div>
+
+          <!-- Icons -->
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-bold">WhatsApp</span>
+            <span class="bg-pink-100 text-pink-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Instagram</span>
+            <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Telegram</span>
+            <span class="bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded text-[9px] font-bold">WebChat</span>
+            <span class="bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Mercado
+              Livre</span>
+            <span class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Shopee</span>
+            <span class="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Shein</span>
+            <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Magalu</span>
+            <span class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Claude</span>
+            <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Deepseek</span>
+            <span class="border border-slate-200 text-slate-500 px-1.5 py-0.5 rounded text-[9px] font-bold">+
+              Ollama/HF</span>
+          </div>
+
+          <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.users_unlimited') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.connections_unlimited') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.marketplaces') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.human_ia_pro') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.audio_ia_pro') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.sms') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> Integração com Telefonia Digital PABX</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.advanced_reports') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.custom_advanced') }}</li>
+            <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg> {{ $t('pricing.features.all_advance') }}</li>
+          </ul>
+          <a href="https://www.asaas.com/c/cztu8mp5r7le2g3b" target="_blank"
+            class="block w-full py-2 px-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold rounded-lg text-center text-sm transition-colors">{{
+              $t('pricing.cta') }}</a>
+        </div>
       </div>
-
-      <!-- Prime -->
-      <div
-        class="p-6 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all shadow-sm hover:shadow-md bg-white dark:bg-slate-800 flex flex-col h-full relative overflow-hidden">
-        <div class="absolute -right-12 -top-12 w-24 h-24 bg-orange-200 rounded-full blur-2xl opacity-50"></div>
-        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Prime</h3>
-        <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">Máxima potência e escala.</p>
-        <div class="flex items-baseline mb-6">
-          <span class="text-3xl font-bold text-slate-900 dark:text-white">R$ 2.497,59</span>
-          <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">/mês</span>
-        </div>
-
-        <!-- Icons -->
-        <div class="flex flex-wrap gap-1.5 mb-6">
-          <span class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-bold">WhatsApp</span>
-          <span class="bg-pink-100 text-pink-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Instagram</span>
-          <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Telegram</span>
-          <span class="bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded text-[9px] font-bold">WebChat</span>
-          <span class="bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Mercado
-            Livre</span>
-          <span class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Shopee</span>
-          <span class="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Shein</span>
-          <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Magalu</span>
-          <span class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Claude</span>
-          <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Deepseek</span>
-          <span class="border border-slate-200 text-slate-500 px-1.5 py-0.5 rounded text-[9px] font-bold">+
-            Ollama/HF</span>
-        </div>
-
-        <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Usuários ILIMITADOS</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Conexões ILIMITADAS</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Integração Marketplaces</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> IA Humanizada PRO</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Envio de áudio com IA PRO</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Disparos SMS</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Integração com Telefonia Digital PABX</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Relatórios Avançados</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Customizações Avançadas</li>
-          <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
-              stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg> Tudo do Advance</li>
-        </ul>
-        <a href="https://www.asaas.com/c/cztu8mp5r7le2g3b" target="_blank"
-          class="block w-full py-2 px-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold rounded-lg text-center text-sm transition-colors">Assinar
-          Prime</a>
-      </div>
-    </div>
     </div>
   </section>
+
+
+  <!-- Features Center Showcase (Moved for Layout) -->
+  <section class="py-24 bg-white dark:bg-slate-900 overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-8 items-center">
+        <!-- Left Features -->
+        <div class="space-y-12">
+          <div class="text-right group">
+            <div class="flex items-center justify-end gap-3 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.config_rapid') }}</h3>
+              <div
+                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.config_rapid_desc') }}</p>
+          </div>
+
+          <div class="text-right group">
+            <div class="flex items-center justify-end gap-3 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.multi_agent') }}</h3>
+              <div
+                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.multi_agent_desc') }}</p>
+          </div>
+
+          <div class="text-right group">
+            <div class="flex items-center justify-end gap-3 mb-2">
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.mass_send') }}</h3>
+              <div
+                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.mass_send_desc') }}</p>
+          </div>
+        </div>
+
+        <!-- Center Image -->
+        <div class="relative flex justify-center py-12 lg:py-0">
+          <!-- Decorative Rings -->
+          <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl scale-150">
+          </div>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_60s_linear_infinite]">
+          </div>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_40s_linear_infinite_reverse]">
+          </div>
+
+          <video src="/video/funcionalidades-promp.mp4" autoplay loop muted playsinline
+            class="relative z-10 w-full max-w-[500px] object-contain bg-transparent"></video>
+          <!-- <DeviceMockup3D /> -->
+        </div>
+
+        <!-- Right Features -->
+        <div class="space-y-12">
+          <div class="text-left group">
+            <div class="flex items-center justify-start gap-3 mb-2">
+              <div
+                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.crm_visual') }}</h3>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.crm_visual_desc') }}</p>
+          </div>
+
+          <div class="text-left group">
+            <div class="flex items-center justify-start gap-3 mb-2">
+              <div
+                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="23"></line>
+                  <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.human_audio') }}</h3>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.human_audio_desc') }}</p>
+          </div>
+
+          <div class="text-left group">
+            <div class="flex items-center justify-start gap-3 mb-2">
+              <div
+                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.reports') }}</h3>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.reports_desc') }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <GlobalPresence />
 
   <!-- FAQ Section -->
   <FAQSection />
@@ -1678,13 +1729,13 @@ useSeoMeta({
       <div class="flex flex-col md:flex-row items-end gap-12">
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
-          <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Mobile App</span>
+          <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-            Gerencie sua operação na palma da mão
+            {{ $t('mobile_app.title') }}
           </h2>
           <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-            Leve o poder da Promp com você. Responda clientes, monitore atendimentos em tempo real e gerencie seus
-            funis de venda de onde estiver com nosso aplicativo nativo para Android e iOS.
+            {{ $t('mobile_app.desc') }}
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4">
@@ -1697,7 +1748,7 @@ useSeoMeta({
                   d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.17L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
               </svg>
               <div class="text-left">
-                <div class="text-[10px] uppercase tracking-wide opacity-80">Disponível no</div>
+                <div class="text-[10px] uppercase tracking-wide opacity-80">{{ $t('mobile_app.download_google') }}</div>
                 <div class="text-sm font-bold">Google Play</div>
               </div>
             </button>
@@ -1711,7 +1762,7 @@ useSeoMeta({
                   d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
               </svg>
               <div class="text-left">
-                <div class="text-[10px] uppercase tracking-wide opacity-80">Baixar na</div>
+                <div class="text-[10px] uppercase tracking-wide opacity-80">{{ $t('mobile_app.download_apple') }}</div>
                 <div class="text-sm font-bold">App Store</div>
               </div>
             </button>
@@ -1730,7 +1781,8 @@ useSeoMeta({
           <!-- Floating Lottie Notification -->
           <div class="absolute -left-12 top-1/4 z-20 hidden md:block w-72">
             <ClientOnly>
-              <div class="lottie-container" data-animation-path="/images/Notification-remix.json"></div>
+              <div class="lottie-container w-full min-h-[120px]" data-animation-path="/images/Notification-remix.json">
+              </div>
             </ClientOnly>
           </div>
         </div>
@@ -1747,21 +1799,20 @@ useSeoMeta({
     </div>
 
     <div class="container mx-auto px-4 text-center relative z-10">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Está pronto para transformar seu atendimento?</h2>
-      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">Junte-se a mais de 500 empresas que já modernizaram
-        suas vendas no WhatsApp.</p>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">{{ $t('final_cta.title') }}</h2>
+      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">{{ $t('final_cta.subtitle') }}</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <NuxtLink to="https://app.promp.com.br/#/signup"
           class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-secondary bg-white hover:bg-slate-50 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
-          Começar Teste Grátis
+          {{ $t('final_cta.button_trial') }}
         </NuxtLink>
         <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
           target="_blank"
           class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors">
-          Falar no WhatsApp
+          {{ $t('final_cta.button_whatsapp') }}
         </a>
       </div>
     </div>
   </section>
-  <GlobalPresence />
+
 </template>
