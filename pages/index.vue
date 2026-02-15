@@ -1242,13 +1242,21 @@ useSeoMeta({
 
           <!-- Icons -->
           <div class="flex flex-wrap gap-2 mb-6">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
+            <div class="bg-white p-1.5 rounded-lg text-green-600 flex items-center gap-1" title="WhatsApp">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span class="text-[10px] font-bold">WhatsApp</span>
+            </div>
+            <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              </svg>
+              ChatGPT
+            </div>
           </div>
-          <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
-            ChatGPT</div>
 
           <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
             <li class="flex items-center"><svg class="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="none"
@@ -1312,24 +1320,45 @@ useSeoMeta({
 
           <!-- Icons -->
           <div class="flex flex-wrap gap-2 mb-6">
-            <div class="bg-green-100 text-green-600 p-1.5 rounded-lg" title="WhatsApp">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <div class="bg-green-100 text-green-600 p-1.5 rounded-lg flex items-center gap-1" title="WhatsApp">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
+              <span class="text-[10px] font-bold">WhatsApp</span>
             </div>
-            <div class="bg-blue-100 text-blue-600 p-1.5 rounded-lg" title="Telegram">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <div class="bg-blue-100 text-blue-600 p-1.5 rounded-lg flex items-center gap-1" title="Telegram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
               </svg>
+              <span class="text-[10px] font-bold">Telegram</span>
             </div>
-            <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
-              ChatGPT</div>
-            <div class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center">
-              Gemini</div>
-            <div class="bg-purple-100 text-purple-700 px-3 py-1 rounded-md text-[10px] font-bold">
-              {{ $t('pricing.features.ias_integrated') }}</div>
+            <div class="bg-teal-100 text-teal-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              </svg>
+              ChatGPT
+            </div>
+            <div
+              class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+              </svg>
+              Gemini
+            </div>
+            <div
+              class="bg-purple-100 text-purple-700 px-3 py-1 rounded-md text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              </svg>
+              {{ $t('pricing.features.ias_integrated') }}
+            </div>
           </div>
 
           <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
@@ -1397,23 +1426,73 @@ useSeoMeta({
 
           <!-- Icons -->
           <div class="flex flex-wrap gap-2 mb-6 text-black">
-            <div class="bg-white p-1.5 rounded-lg text-green-600" title="WhatsApp"><svg class="w-4 h-4"
-                fill="currentColor" viewBox="0 0 24 24">
+            <!-- Channels -->
+            <div class="bg-white p-1.5 rounded-lg text-green-600 flex items-center gap-1" title="WhatsApp">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg></div>
-            <div class="bg-white p-1.5 rounded-lg text-pink-600" title="Instagram"><svg class="w-4 h-4"
-                fill="currentColor" viewBox="0 0 24 24">
+              </svg>
+              <span class="text-[10px] font-bold">WhatsApp</span>
+            </div>
+            <div class="bg-white p-1.5 rounded-lg text-pink-600 flex items-center gap-1" title="Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg></div>
-            <div class="bg-white text-slate-800 px-2 py-1 rounded text-[10px] font-bold">WebChat</div>
-            <div class="bg-teal-500 text-white px-2 py-1 rounded text-[10px] font-bold">GPT-4</div>
-            <div class="bg-indigo-500 text-white px-2 py-1 rounded text-[10px] font-bold">Gemini</div>
-            <div class="bg-slate-700 text-white px-2 py-1 rounded text-[10px] font-bold">Grok</div>
-            <div class="bg-orange-500 text-white px-2 py-1 rounded text-[10px] font-bold">Qwen</div>
-            <div class="bg-purple-500 text-white px-2 py-1 rounded text-[10px] font-bold">{{
-              $t('pricing.features.ias_integrated') }}</div>
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.163 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+              <span class="text-[10px] font-bold">Instagram</span>
+            </div>
+            <div class="bg-white text-slate-800 px-2 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              WebChat
+            </div>
+
+            <!-- AIs -->
+            <div class="bg-teal-500 text-white px-2 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              </svg>
+              GPT-4
+            </div>
+            <div class="bg-indigo-500 text-white px-2 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+              </svg>
+              Gemini
+            </div>
+            <div class="bg-slate-700 text-white px-2 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              Grok
+            </div>
+            <div class="bg-orange-500 text-white px-2 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              Qwen
+            </div>
+            <div class="bg-purple-500 text-white px-2 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              </svg>
+              {{ $t('pricing.features.ias_integrated') }}
+            </div>
           </div>
 
           <ul class="space-y-3 mb-8 text-xs text-slate-300 flex-grow">
@@ -1492,19 +1571,99 @@ useSeoMeta({
 
           <!-- Icons -->
           <div class="flex flex-wrap gap-1.5 mb-6">
-            <span class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-bold">WhatsApp</span>
-            <span class="bg-pink-100 text-pink-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Instagram</span>
-            <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Telegram</span>
-            <span class="bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded text-[9px] font-bold">WebChat</span>
-            <span class="bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Mercado
-              Livre</span>
-            <span class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Shopee</span>
-            <span class="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Shein</span>
-            <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Magalu</span>
-            <span class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Claude</span>
-            <span class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold">Deepseek</span>
-            <span class="border border-slate-200 text-slate-500 px-1.5 py-0.5 rounded text-[9px] font-bold">+
-              Ollama/HF</span>
+            <div class="bg-green-100 text-green-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
+                </path>
+              </svg>
+              WhatsApp
+            </div>
+            <div class="bg-pink-100 text-pink-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              Instagram
+            </div>
+            <div class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.509 1.793.997 3.592 1.48 5.388.16.69.506 1.287.842 1.563.345.24.575.193.699.141.26-.102.438-.353.71-.67l1.32-1.563 5.406-6.509c.2-.24.549-.787.085-1.127-.473-.398-1.29-.12-1.542.066l-4.524 5.433-1.033-3.66 8.525-4.832c2.049-1.16 4.316-2.439 5.867-3.328.71-.397 1.23-.746 1.264-1.218.026-.4-.252-.802-.57-1.025a2.228 2.228 0 0 0-1.22-.38z" />
+              </svg>
+              Telegram
+            </div>
+            <div
+              class="bg-indigo-100 text-indigo-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+              WebChat
+            </div>
+            <div
+              class="bg-yellow-100 text-yellow-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Mercado Livre
+            </div>
+            <div
+              class="bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Shopee
+            </div>
+            <div class="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+              Shein
+            </div>
+            <div class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Magalu
+            </div>
+            <div
+              class="bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              Claude
+            </div>
+            <div class="bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded text-[9px] font-bold flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+              </svg>
+              Deepseek
+            </div>
+            <div class="border border-slate-200 text-slate-500 px-1.5 py-0.5 rounded text-[9px] font-bold">
+              + Ollama/HF
+            </div>
           </div>
 
           <ul class="space-y-3 mb-8 text-xs text-slate-600 dark:text-slate-300 flex-grow">
@@ -1572,7 +1731,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
