@@ -149,7 +149,10 @@ useSeoMeta({
           <div
             class="absolute -inset-4 bg-gradient-to-r from-primary to-purple-500 rounded-2xl blur-2xl opacity-20 animate-pulse">
           </div>
-          <PrompChatMockup class="rotate-1 hover:rotate-0 transition-transform duration-500" />
+          <!-- Mobile Wrapper with Scale -->
+          <div class="origin-top transform scale-90 sm:scale-100 -mx-4 sm:mx-0">
+             <PrompChatMockup class="rotate-1 hover:rotate-0 transition-transform duration-500" />
+          </div>
 
           <!-- Floating Statistic Card -->
           <div
