@@ -90,14 +90,14 @@ useSeoMeta({
             {{ $t('hero.badge') }}
           </div>
 
-          <h1 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
+          <h1 class="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             <span class="block">{{ $t('hero.title_start') }}</span>
             <span class="block text-primary whitespace-normal md:whitespace-nowrap">
               <span :style="{ color: (colorMode.value === 'dark' && currentPlatform.name === 'Shein') ? '#FFFFFF' : currentPlatform.color }">{{ currentPlatform.name }}</span>
               <span class="ml-2 text-slate-900 dark:text-white">{{ $t('hero.title_end') }}</span>
             </span>
-            <span class="relative inline-block mt-2">
-              <span class="relative z-10 text-slate-800 dark:text-white whitespace-nowrap px-2 py-1">
+            <span class="relative inline-block mt-2 max-w-full">
+              <span class="relative z-10 text-slate-800 dark:text-white whitespace-normal break-words px-2 py-1">
                 {{ $t('hero.title_highlight') }}
               </span>
               <span class="absolute inset-0 bg-primary/5 dark:bg-primary/10 -rotate-1 rounded-lg -z-0"></span>
@@ -105,7 +105,7 @@ useSeoMeta({
             </span>
           </h1>
 
-          <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed break-words">
+          <p class="text-base md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed break-words">
             {{ $t('hero.subtitle') }}
           </p>
 
