@@ -13,7 +13,7 @@ const { t } = useI18n()
             </p>
 
             <div class="flex flex-wrap justify-center gap-4">
-                <div v-for="lang in ['🇧🇷 PT-BR', '🇺🇸 EN-US', '🇪🇸 ES-ES', '🇸🇦 AR-AR', '🇩🇪 DE-DE', '🇮🇹 IT-IT', '🇫🇷 FR-FR', '🇯🇵 JA-JP', '🇨🇳 ZH-CN']"
+                <div v-for="lang in ['🇧🇷 Brasil', '🇺🇸 Estados Unidos', '🇪🇸 Espanha', '🇸🇦 Arábia Saudita', '🇩🇪 Alemanha', '🇮🇹 Itália', '🇫🇷 França', '🇯🇵 Japão', '🇨🇳 China']"
                     :key="lang"
                     class="px-4 py-2 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 hover:scale-105 transition-transform cursor-default">
                     {{ lang }}
