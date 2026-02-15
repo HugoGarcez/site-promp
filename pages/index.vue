@@ -92,7 +92,7 @@ useSeoMeta({
 
           <h1 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
             <span class="block">{{ $t('hero.title_start') }}</span>
-            <span class="block text-primary whitespace-nowrap">
+            <span class="block text-primary whitespace-normal md:whitespace-nowrap">
               <span :style="{ color: currentPlatform.color }">{{ currentPlatform.name }}</span>
               <span class="ml-2 text-slate-900 dark:text-white">{{ $t('hero.title_end') }}</span>
             </span>
@@ -113,7 +113,7 @@ useSeoMeta({
             <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
               target="_blank"
               :style="{ backgroundColor: currentPlatform.color, color: currentPlatform.btnTextColor, boxShadow: `0 10px 15px -3px ${currentPlatform.color}66` }"
-              class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold rounded-xl transition-all hover:-translate-y-1 hover:brightness-90 flex-1 sm:flex-none whitespace-nowrap"
+              class="inline-flex items-center justify-center px-5 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold rounded-xl transition-all hover:-translate-y-1 hover:brightness-90 flex-1 sm:flex-none whitespace-normal md:whitespace-nowrap text-center"
               aria-label="Falar com Especialista no WhatsApp">
               {{ $t('hero.cta') }}
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 24 24" fill="none"
@@ -123,7 +123,7 @@ useSeoMeta({
               </svg>
             </a>
             <a href="#ia"
-              class="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold text-slate-700 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md flex-1 sm:flex-none whitespace-nowrap">
+              class="inline-flex items-center justify-center px-5 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold text-slate-700 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md flex-1 sm:flex-none whitespace-normal md:whitespace-nowrap text-center">
               {{ $t('hero.how_it_works') }}
             </a>
           </div>
@@ -153,7 +153,7 @@ useSeoMeta({
 
           <!-- Floating Statistic Card -->
           <div
-            class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 flex items-center gap-4 animate-bounce-slow">
+            class="absolute -bottom-6 left-4 md:-left-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 flex items-center gap-4 animate-bounce-slow">
             <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1731,7 +1731,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
