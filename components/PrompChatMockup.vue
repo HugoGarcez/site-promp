@@ -285,7 +285,7 @@
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-yellow-500 text-lg">⚡</span>
                   <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.access_dashboard_hint')
-                    }}
+                  }}
                   </p>
                 </div>
                 <div
@@ -652,7 +652,7 @@
                             <p class="text-[10px]">Qtd: {{ msg.cartData.qtd }} | Cor: {{ msg.cartData.color }}</p>
                             <p class="font-bold text-green-700 dark:text-green-300 text-sm mt-0.5">R$ {{
                               msg.cartData.subtotal
-                              }}</p>
+                            }}</p>
                           </div>
                         </div>
                       </div>
@@ -740,7 +740,7 @@
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                   <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t('mockups.chat.closing')
-                    }}</span>
+                  }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
                   <div class="h-full w-[70%] bg-green-500 rounded-full"></div>
@@ -981,64 +981,41 @@ const chats = ref([
     id: 2,
     name: 'Maria Costa',
     avatar: 'https://ui-avatars.com/api/?name=Maria+Costa&background=EBF4FF&color=7F9CF5',
-    tag: '#19401 • Suporte',
+    tag: '#19401 • Agendamento',
     lastTime: '10:15',
-    preview: 'Qual o valor do frete?',
+    preview: 'Confirmado! Obrigada.',
     email: 'maria.costa@email.com',
     phone: '+55 21 98888-8888',
-    statusLabel: 'Fechamento',
+    statusLabel: 'Agendado',
     statusColorClass: 'bg-green-500',
     messages: [
-      { sender: 'client', text: 'Boa tarde! Vocês tem essa camisa na cor azul?', time: '10:12' },
-      { sender: 'ai', text: 'Olá Maria! Temos sim. Olha só como ela é linda:', time: '10:12' },
-      { sender: 'ai', image: '/images/camisa-exemplo.jpeg', time: '10:12' },
-      { sender: 'client', text: 'Amei! Vou querer 2 unidades G.', time: '10:14' },
-      { sender: 'ai', text: 'Excelente escolha! Já separei aqui. Confira o resumo do seu pedido:', time: '10:15' },
-      {
-        sender: 'ai',
-        time: '10:15',
-        cartData: {
-          name: 'Camisa Polo Premium',
-          qtd: 2,
-          color: 'Azul Marinho',
-          subtotal: '299,80',
-          image: '/images/camisa-exemplo.jpeg'
-        }
-      },
-      { sender: 'client', text: 'Perfeito, pode fechar!', time: '10:16' },
-      { sender: 'ai', text: 'Pedido finalizado com sucesso! 🎉\nAcabamos de gerar o seu link de pagamento seguro via Asaas.', time: '10:16' }
+      { sender: 'client', text: 'Bom dia! Gostaria de marcar uma consulta para esta semana.', time: '10:12' },
+      { sender: 'ai', text: 'Bom dia Maria! 👋 Sou a assistente virtual da Clínica Saúde. Temos horários disponíveis com o Dr. Ricardo (Cardiologista) e Dra. Fernanda (Dermatologista). Qual especialista você procura?', time: '10:12' },
+      { sender: 'client', text: 'Dr. Ricardo, por favor.', time: '10:13' },
+      { sender: 'ai', text: 'Certo! Para o Dr. Ricardo, encontrei estes horários livres na agenda:\n\n🗓 Quinta (20/02): 14h00, 16h30\n🗓 Sexta (21/02): 09h00, 11h00\n\nQual fica melhor para você?', time: '10:13' },
+      { sender: 'client', text: 'Pode ser Quinta às 16h30.', time: '10:14' },
+      { sender: 'ai', text: 'Perfeito! Agendando... 🔄', time: '10:14' },
+      { sender: 'ai', text: 'Tudo certo! ✅\n\n👨‍⚕️ *Especialidade:* Cardiologia\n📅 *Data:* Quinta-feira, 20/02\n⏰ *Horário:* 16:30\n📍 *Unidade:* Centro\n\nJá enviei a confirmação para seu WhatsApp. Posso ajudar em algo mais?', time: '10:15' },
+      { sender: 'client', text: 'Não, só isso mesmo. Muito obrigada!', time: '10:15' }
     ]
   },
   {
     id: 1,
     name: 'João Maurício',
     avatar: 'https://ui-avatars.com/api/?name=João+Maurício&background=random',
-    tag: '#21223 • Comercial',
+    tag: '#21223 • Exames',
     lastTime: '09:45',
-    preview: 'Fechado! Pode enviar.',
+    preview: 'Resultado enviado.',
     email: 'joao.mauricio@exemplo.com',
     phone: '+55 11 99999-9999',
-    statusLabel: 'Em Negociação',
+    statusLabel: 'Concluído',
     statusColorClass: 'bg-secondary/50',
     messages: [
-      { sender: 'client', audio: '/audio/joao-camisa.m4a', time: '09:40' },
-      { sender: 'ai', audio: '/audio/fernanda-camisa.m4a', time: '09:41' },
-      { sender: 'ai', text: 'Separei essa opção que combina perfeitamente com o que você pediu: Camisa Linho Premium Bege. O que acha?', time: '09:41' },
-      { sender: 'ai', image: '/images/camisa-pai.jpeg', time: '09:41' },
-      { sender: 'client', text: 'Gostei muito dessa! O caimento parece ótimo.', time: '09:43' },
-      { sender: 'ai', text: 'É excelente! Temos no tamanho G que você costuma usar. Posso confirmar o pedido?', time: '09:44' },
-      { sender: 'client', text: 'Pode sim, vou querer.', time: '09:45' },
-      {
-        sender: 'ai',
-        time: '09:45',
-        cartData: {
-          name: 'Camisa Linho Premium',
-          qtd: 1,
-          color: 'Bege',
-          subtotal: '349,90',
-          image: '/images/camisa-pai.jpeg'
-        }
-      }
+      { sender: 'client', audio: '/audio/joao-exame.m4a', time: '09:40' },
+      { sender: 'ai', text: 'Oi João! Recebi seu áudio. Você quer saber sobre o resultado do exame de sangue, certo? Deixe-me verificar no sistema.', time: '09:41' },
+      { sender: 'ai', text: 'Encontrei aqui! Seu exame já está pronto e liberado. 📄', time: '09:41' },
+      { sender: 'ai', text: 'Estou te enviando o PDF agora mesmo.', time: '09:42' },
+      { sender: 'client', text: 'Ótimo, obrigado!', time: '09:43' }
     ]
   },
   {
