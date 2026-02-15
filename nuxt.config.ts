@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     },
   },
   modules: ['@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/color-mode'],
+  // @ts-ignore
   colorMode: {
     classSuffix: ''
   },
