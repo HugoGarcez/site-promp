@@ -285,7 +285,7 @@
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-yellow-500 text-lg">⚡</span>
                   <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.access_dashboard_hint')
-                    }}
+                  }}
                   </p>
                 </div>
                 <div
@@ -451,7 +451,7 @@
         <div v-else-if="currentTab === 'chat'" class="flex flex-1 min-w-0 h-full overflow-hidden">
           <!-- Chat List -->
           <div
-            class="hidden md:flex w-20 lg:w-60 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex-col flex-none transition-all duration-300">
+            class="hidden md:flex w-20 lg:w-52 bg-slate-50 dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 flex-col flex-none transition-all duration-300">
             <!-- Header (Hidden in compact mode) -->
             <div class="lg:block p-4 border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
               <div class="flex items-center gap-2 mb-4">
@@ -652,7 +652,7 @@
                             <p class="text-[10px]">Qtd: {{ msg.cartData.qtd }} | Cor: {{ msg.cartData.color }}</p>
                             <p class="font-bold text-green-700 dark:text-green-300 text-sm mt-0.5">R$ {{
                               msg.cartData.subtotal
-                              }}</p>
+                            }}</p>
                           </div>
                         </div>
                       </div>
@@ -740,7 +740,7 @@
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                   <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t('mockups.chat.closing')
-                    }}</span>
+                  }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
                   <div class="h-full w-[70%] bg-green-500 rounded-full"></div>
