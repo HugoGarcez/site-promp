@@ -199,12 +199,13 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="space-y-6">
           <div
-            class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-bold border border-secondary/20">
+            class="inline-block px-3 py-1 rounded-full bg-secondary/10 dark:bg-blue-500/20 text-secondary dark:text-blue-200 text-xs font-bold border border-secondary/20 dark:border-blue-500/30">
             A SOLUÇÃO DEFINITIVA
           </div>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
             A IA da sua empresa <br>
-            <span class="text-4xl md:text-6xl text-secondary drop-shadow-sm font-black">pronta em 5 minutos</span>
+            <span class="text-4xl md:text-6xl text-secondary dark:text-blue-300 drop-shadow-sm font-black">pronta em 5
+              minutos</span>
             <br>
             <span class="text-slate-500 font-normal">e treinada para vender</span>
           </h2>
@@ -259,7 +260,7 @@ useSeoMeta({
                 <div class="w-3 h-3 rounded-full bg-green-400/50"></div>
               </div>
               <div
-                class="bg-primary/10 px-4 py-1.5 rounded-full text-[10px] font-bold text-secondary animate-pulse italic">
+                class="bg-primary/10 dark:bg-primary/20 px-4 py-1.5 rounded-full text-[10px] font-bold text-secondary dark:text-white animate-pulse italic">
                 TREINANDO AGENTE INTELIGENTE...
               </div>
             </div>
@@ -670,7 +671,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -679,7 +680,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.attendance.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.attendance.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.attendance.desc') }}</p>
             </div>
           </div>
         </div>
@@ -689,7 +690,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -701,7 +702,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.contacts.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.contacts.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.contacts.desc') }}</p>
             </div>
           </div>
         </div>
@@ -711,7 +712,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -721,7 +722,7 @@ useSeoMeta({
             </div>
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.chat.title') }}</h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.chat.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.chat.desc') }}</p>
             </div>
           </div>
         </div>
@@ -731,7 +732,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"></path>
@@ -740,7 +741,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.funnel.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.funnel.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.funnel.desc') }}</p>
             </div>
           </div>
         </div>
@@ -750,7 +751,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -761,7 +762,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.kanban.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.kanban.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.kanban.desc') }}</p>
             </div>
           </div>
         </div>
@@ -771,7 +772,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="9 11 12 14 22 4"></polyline>
@@ -780,7 +781,7 @@ useSeoMeta({
             </div>
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.tasks.title') }}</h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.tasks.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.tasks.desc') }}</p>
             </div>
           </div>
         </div>
@@ -790,7 +791,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
@@ -799,7 +800,8 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{
                 $t('bento_grid.items.quick_messages.title') }}</h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.quick_messages.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.quick_messages.desc') }}
+              </p>
             </div>
           </div>
         </div>
@@ -809,7 +811,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -820,7 +822,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.gallery.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.gallery.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.gallery.desc') }}</p>
             </div>
           </div>
         </div>
@@ -830,7 +832,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
@@ -841,7 +843,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.mass_send.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.mass_send.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.mass_send.desc') }}</p>
             </div>
           </div>
         </div>
@@ -851,7 +853,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -860,7 +862,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.chatbot.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.chatbot.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.chatbot.desc') }}</p>
             </div>
           </div>
         </div>
@@ -870,7 +872,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
@@ -880,7 +882,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.campaigns.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.campaigns.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.campaigns.desc') }}</p>
             </div>
           </div>
         </div>
@@ -890,7 +892,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -901,7 +903,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.reports.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.reports.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.reports.desc') }}</p>
             </div>
           </div>
         </div>
@@ -911,7 +913,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="8" y1="6" x2="21" y2="6"></line>
@@ -925,7 +927,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.queues.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.queues.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.queues.desc') }}</p>
             </div>
           </div>
         </div>
@@ -935,7 +937,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 18 22 12 16 6"></polyline>
@@ -944,7 +946,7 @@ useSeoMeta({
             </div>
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.api.title') }}</h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.api.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.api.desc') }}</p>
             </div>
           </div>
         </div>
@@ -954,7 +956,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -966,7 +968,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.scheduling.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.scheduling.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.scheduling.desc') }}</p>
             </div>
           </div>
         </div>
@@ -976,7 +978,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon
@@ -987,7 +989,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.ratings.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.ratings.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.ratings.desc') }}</p>
             </div>
           </div>
         </div>
@@ -997,7 +999,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -1006,7 +1008,7 @@ useSeoMeta({
             </div>
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.hours.title') }}</h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.hours.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.hours.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1016,7 +1018,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
@@ -1025,7 +1027,7 @@ useSeoMeta({
             </div>
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.tags.title') }}</h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.tags.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.tags.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1035,7 +1037,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path
@@ -1046,7 +1048,7 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.wavoip.title') }}
               </h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.wavoip.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.wavoip.desc') }}</p>
             </div>
           </div>
         </div>
@@ -1056,7 +1058,7 @@ useSeoMeta({
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
             <div
-              class="w-10 h-10 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -1067,7 +1069,7 @@ useSeoMeta({
             </div>
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.teams.title') }}</h3>
-              <p class="text-[11px] text-slate-500">{{ $t('bento_grid.items.teams.desc') }}</p>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.teams.desc') }}</p>
             </div>
           </div>
         </div>
