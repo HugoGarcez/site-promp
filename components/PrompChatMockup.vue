@@ -1,12 +1,12 @@
 <template>
-  <div class="relative w-full group perspective-1000">
+  <div class="relative w-[92%] mx-auto md:w-full group perspective-1000">
     <!-- Floating Channel Icons -->
 
     <!-- WhatsApp (Top Left) -->
-    <div class="absolute -top-6 -left-2 md:-top-12 md:-left-12 z-30 animate-float-slow">
+    <div class="absolute -top-6 left-0 md:-top-12 md:-left-12 z-30 animate-float-slow">
       <div
-        class="w-12 h-12 md:w-16 md:h-16 bg-[#25D366] rounded-2xl flex items-center justify-center shadow-lg shadow-green-500/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
+        class="w-10 h-10 md:w-16 md:h-16 bg-[#25D366] rounded-2xl flex items-center justify-center shadow-lg shadow-green-500/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
           fill="currentColor">
           <path
             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.355-5.229c0-5.42 4.409-9.85 9.85-9.85 2.632 0 5.108 1.026 6.969 2.887 1.861 1.862 2.888 4.337 2.888 6.97.001 5.423-4.41 9.854-9.854 9.854" />
@@ -15,10 +15,10 @@
     </div>
 
     <!-- Instagram (Top Right -> Repositioned higher) -->
-    <div class="absolute -top-10 -right-2 md:-top-16 md:-right-10 z-30 animate-float-medium delay-700">
+    <div class="absolute -top-10 right-0 md:-top-16 md:-right-10 z-30 animate-float-medium delay-700">
       <div
-        class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-tr from-[#FFD600] via-[#FF0100] to-[#D800B9] rounded-2xl flex items-center justify-center shadow-lg shadow-pink-500/30 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24" fill="none"
+        class="w-10 h-10 md:w-16 md:h-16 bg-gradient-to-tr from-[#FFD600] via-[#FF0100] to-[#D800B9] rounded-2xl flex items-center justify-center shadow-lg shadow-pink-500/30 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -28,10 +28,10 @@
     </div>
 
     <!-- Telegram (Bottom Right) -->
-    <div class="absolute -bottom-4 -right-2 md:-bottom-8 md:-right-12 z-30 animate-float-fast delay-1000">
+    <div class="absolute -bottom-4 right-0 md:-bottom-8 md:-right-12 z-30 animate-float-fast delay-1000">
       <div
-        class="w-12 h-12 md:w-16 md:h-16 bg-[#2CA5E0] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-400/30 transform -rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
+        class="w-10 h-10 md:w-16 md:h-16 bg-[#2CA5E0] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-400/30 transform -rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
           fill="currentColor">
           <path
             d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.638z" />
@@ -40,10 +40,10 @@
     </div>
 
     <!-- Email (Bottom Left -> Moved up to avoid collision) -->
-    <div class="absolute bottom-20 -left-2 md:bottom-24 md:-left-12 z-20 animate-float-slow delay-500">
+    <div class="absolute bottom-20 left-0 md:bottom-24 md:-left-12 z-20 animate-float-slow delay-500">
       <div
-        class="w-12 h-12 md:w-16 md:h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center shadow-lg shadow-slate-500/20 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-slate-600 dark:text-slate-300"
+        class="w-10 h-10 md:w-16 md:h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center shadow-lg shadow-slate-500/20 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-slate-600 dark:text-slate-300"
           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
           stroke-linejoin="round">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -53,10 +53,10 @@
     </div>
 
     <!-- Webchat (Right Middle) -->
-    <div class="absolute top-[65%] -right-2 md:-right-10 z-30 animate-float-medium delay-200">
+    <div class="absolute top-[65%] right-0 md:-right-10 z-30 animate-float-medium delay-200">
       <div
-        class="w-12 h-12 md:w-16 md:h-16 bg-[#007BFF] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 transform rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
+        class="w-10 h-10 md:w-16 md:h-16 bg-[#007BFF] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 transform rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
           fill="currentColor">
           <path
             d="M2.004 22.003l2.003-6.002a10.003 10.003 0 1 1 7.996 4.002c-2.185 0-4.208-.7-5.856-1.89l-4.143 3.89zM12.003 4.004a8.003 8.003 0 0 0-6.398 12.802l.607.766L4.85 20.36l2.96-2.778.868.514a8.003 8.003 0 0 0 3.325.727 8.003 8.003 0 1 0 0-16.006z" />
@@ -68,10 +68,10 @@
     </div>
 
     <!-- Phone (Left Middle) -->
-    <div class="absolute top-[45%] -left-2 md:-left-10 z-30 animate-float-fast delay-300">
+    <div class="absolute top-[45%] left-0 md:-left-10 z-30 animate-float-fast delay-300">
       <div
-        class="w-10 h-10 md:w-14 md:h-14 bg-[#0E1F4A] rounded-2xl flex items-center justify-center shadow-lg shadow-secondary/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800 text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-8 md:h-8" fill="none" stroke="currentColor"
+        class="w-8 h-8 md:w-14 md:h-14 bg-[#0E1F4A] rounded-2xl flex items-center justify-center shadow-lg shadow-secondary/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800 text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-8 md:h-8" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path
             d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
@@ -285,7 +285,7 @@
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-yellow-500 text-lg">⚡</span>
                   <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.access_dashboard_hint')
-                    }}
+                  }}
                   </p>
                 </div>
                 <div
@@ -652,7 +652,7 @@
                             <p class="text-[10px]">Qtd: {{ msg.cartData.qtd }} | Cor: {{ msg.cartData.color }}</p>
                             <p class="font-bold text-green-700 dark:text-green-300 text-sm mt-0.5">R$ {{
                               msg.cartData.subtotal
-                              }}</p>
+                            }}</p>
                           </div>
                         </div>
                       </div>
@@ -740,7 +740,7 @@
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                   <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t(activeChat.statusLabel)
-                  }}</span>
+                    }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
                   <div class="h-full w-[70%] bg-green-500 rounded-full"></div>
