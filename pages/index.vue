@@ -1731,7 +1731,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
@@ -1741,7 +1741,7 @@ useSeoMeta({
 
           <div class="flex flex-col sm:flex-row gap-4">
             <!-- Google Play Button -->
-            <button
+            <a href="https://play.google.com/store/apps/details?id=com.converta.apppromp&hl=pt_BR" target="_blank"
               class="flex items-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
               aria-label="Baixar aplicativo na Google Play Store">
               <svg class="w-8 h-8 mr-3 text-white dark:text-slate-900" viewBox="0 0 24 24" fill="currentColor">
@@ -1752,10 +1752,10 @@ useSeoMeta({
                 <div class="text-[10px] uppercase tracking-wide opacity-80">{{ $t('mobile_app.download_google') }}</div>
                 <div class="text-sm font-bold">Google Play</div>
               </div>
-            </button>
+            </a>
 
             <!-- App Store Button -->
-            <button
+            <a href="https://apps.apple.com/br/app/promp-ia-vendas-e-marketing/id6752315649" target="_blank"
               class="flex items-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
               aria-label="Baixar aplicativo na App Store">
               <svg class="w-8 h-8 mr-3 text-white dark:text-slate-900" viewBox="0 0 24 24" fill="currentColor">
@@ -1766,7 +1766,7 @@ useSeoMeta({
                 <div class="text-[10px] uppercase tracking-wide opacity-80">{{ $t('mobile_app.download_apple') }}</div>
                 <div class="text-sm font-bold">App Store</div>
               </div>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -1775,9 +1775,8 @@ useSeoMeta({
           <!-- Background Blob -->
           <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full translate-y-4 scale-75"></div>
 
-          <NuxtImg src="/images/modelo-app.png" alt="App Mobile Promp"
-            class="relative z-10 w-auto max-w-full h-auto max-h-[500px] object-contain transition-transform duration-500 hover:scale-105 origin-center block"
-            width="400" height="714" quality="100" />
+          <img src="/images/modelo-app.png" alt="App Mobile Promp"
+            class="relative z-10 w-auto max-w-full h-auto max-h-[650px] object-contain transition-transform duration-500 hover:scale-105 origin-center block" />
 
           <!-- Floating Lottie Notification -->
           <div class="absolute -left-12 top-1/4 z-20 hidden md:block w-72">
