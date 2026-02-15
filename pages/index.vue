@@ -446,7 +446,7 @@ useSeoMeta({
 
           <!-- Image -->
           <div class="relative w-full md:w-1/2 shrink-0 flex justify-end">
-            <NuxtImg src="/images/ia-em-acao.jpg" alt="IA Humanizada em ação"
+            <NuxtImg src="/images/ia-whatsapp.png" alt="IA Humanizada no WhatsApp"
               class="max-w-full h-auto object-contain object-bottom block" width="600" height="600" quality="100" />
           </div>
         </div>
@@ -1570,7 +1570,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
