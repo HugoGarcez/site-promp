@@ -285,7 +285,7 @@
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-yellow-500 text-lg">⚡</span>
                   <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.access_dashboard_hint')
-                  }}
+                    }}
                   </p>
                 </div>
                 <div
@@ -388,7 +388,7 @@
                 <div class="flex items-center justify-between px-2">
                   <div class="flex items-center gap-2">
                     <h3 class="font-bold text-slate-700 dark:text-slate-300 text-sm uppercase tracking-wider">{{
-                      col.title }}</h3>
+                      $t(col.title) }}</h3>
                     <span
                       class="bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-[10px] px-2 py-0.5 rounded-full font-bold">
                       {{kanbanContacts.filter(c => c.stage === col.id).length}}
@@ -652,7 +652,7 @@
                             <p class="text-[10px]">Qtd: {{ msg.cartData.qtd }} | Cor: {{ msg.cartData.color }}</p>
                             <p class="font-bold text-green-700 dark:text-green-300 text-sm mt-0.5">R$ {{
                               msg.cartData.subtotal
-                            }}</p>
+                              }}</p>
                           </div>
                         </div>
                       </div>
@@ -739,7 +739,7 @@
                 class="bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800 rounded-xl p-3 mb-6">
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-                  <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t('mockups.chat.closing')
+                  <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t(activeChat.statusLabel)
                   }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
@@ -811,7 +811,7 @@
           <!-- Dashboard Content -->
           <div class="flex-1 overflow-y-auto p-4 md:p-6 space-y-6 no-scrollbar">
             <div class="flex items-center gap-1 text-[#0E1F4A] dark:text-secondary font-bold text-sm cursor-pointer">
-              Personalizar Painéis
+              {{ $t('mockups.chat.customize_panels') }}
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -824,7 +824,8 @@
               <div
                 class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 space-y-4">
                 <div class="flex items-center justify-between">
-                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">Atendimento por fila
+                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">{{
+                    $t('mockups.chat.queue_attendance') }}
                   </h3>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -839,7 +840,7 @@
                 </div>
                 <div class="flex justify-center items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-[#3B82F6]"></span>
-                  <span class="text-[9px] text-slate-500">Comercial</span>
+                  <span class="text-[9px] text-slate-500">{{ $t('mockups.chat.commercial') }}</span>
                 </div>
               </div>
 
@@ -847,8 +848,8 @@
               <div
                 class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 space-y-4">
                 <div class="flex items-center justify-between">
-                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">Atendimento por
-                    usuário
+                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">{{
+                    $t('mockups.chat.user_attendance') }}
                   </h3>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -887,8 +888,8 @@
               <div
                 class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 space-y-4">
                 <div class="flex items-center justify-between">
-                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">Atendimento por
-                    status
+                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">{{
+                    $t('mockups.chat.status_attendance') }}
                   </h3>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -910,9 +911,9 @@
                   </div>
                 </div>
                 <div class="flex justify-between text-[8px] text-slate-500">
-                  <span>Abertos</span>
-                  <span>Pendentes</span>
-                  <span>Fechados</span>
+                  <span>{{ $t('mockups.chat.open_plural') }}</span>
+                  <span>{{ $t('mockups.chat.pending') }}</span>
+                  <span>{{ $t('mockups.chat.closed_plural') }}</span>
                 </div>
               </div>
 
@@ -920,7 +921,8 @@
               <div
                 class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 space-y-4">
                 <div class="flex items-center justify-between">
-                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">Por canal (Conexão)
+                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">{{
+                    $t('mockups.chat.channel_attendance') }}
                   </h3>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -941,8 +943,8 @@
               <div
                 class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 space-y-4 lg:col-span-2">
                 <div class="flex items-center justify-between">
-                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">Atendimento por
-                    demanda
+                  <h3 class="text-[10px] font-bold text-slate-700 dark:text-slate-300 uppercase">{{
+                    $t('mockups.chat.demand_attendance') }}
                   </h3>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -986,7 +988,7 @@ const chats = ref([
     preview: 'Qual o valor do frete?',
     email: 'maria.costa@email.com',
     phone: '+55 21 98888-8888',
-    statusLabel: 'Fechamento',
+    statusLabel: 'mockups.chat.closing',
     statusColorClass: 'bg-green-500',
     messages: [
       { sender: 'client', text: 'Boa tarde! Vocês tem essa camisa na cor azul?', time: '10:12' },
@@ -1018,7 +1020,7 @@ const chats = ref([
     preview: 'Fechado! Pode enviar.',
     email: 'joao.mauricio@exemplo.com',
     phone: '+55 11 99999-9999',
-    statusLabel: 'Em Negociação',
+    statusLabel: 'mockups.chat.negotiation',
     statusColorClass: 'bg-secondary/50',
     messages: [
       { sender: 'client', audio: '/audio/joao-camisa.m4a', time: '09:40' },
@@ -1050,7 +1052,7 @@ const chats = ref([
     preview: 'Obrigado pela agilidade!',
     email: 'pedro.santos@log.com',
     phone: '+55 41 97777-7777',
-    statusLabel: 'Entregue',
+    statusLabel: 'mockups.chat.delivered',
     statusColorClass: 'bg-orange-500',
     messages: [
       { sender: 'client', text: 'Bom dia, meu pedido já saiu para entrega?', time: '07:55' },
@@ -1061,10 +1063,10 @@ const chats = ref([
 ]);
 
 const kanbanColumns = ref([
-  { id: 'lead', title: 'Leads', color: 'bg-slate-100' },
-  { id: 'interesse', title: 'Interesse', color: 'bg-secondary/5' },
-  { id: 'negociacao', title: 'Em Negociação', color: 'bg-indigo-50' },
-  { id: 'fechado', title: 'Fechado', color: 'bg-green-50' }
+  { id: 'lead', title: 'mockups.chat.leads', color: 'bg-slate-100' },
+  { id: 'interesse', title: 'mockups.chat.interest', color: 'bg-secondary/5' },
+  { id: 'negociacao', title: 'mockups.chat.negotiation', color: 'bg-indigo-50' },
+  { id: 'fechado', title: 'mockups.chat.closed', color: 'bg-green-50' }
 ]);
 
 const kanbanContacts = ref([

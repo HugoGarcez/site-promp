@@ -10,9 +10,8 @@
                 <div class="max-w-xl">
                     <h2
                         class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
-                        Transforme sua<br>empresa com IA</h2>
-                    <p class="text-slate-400 text-lg">Milhares de empresas já impulsionaram suas vendas com a força da
-                        inteligência artificial.</p>
+                        {{ $t('footer.title') }}</h2>
+                    <p class="text-slate-400 text-lg">{{ $t('footer.subtitle') }}</p>
                 </div>
 
                 <div class="flex gap-4 items-center">
@@ -42,22 +41,23 @@
                         <NuxtImg src="/images/logo-fundo-escuro.svg" alt="Promp" class="h-8 md:h-10 w-auto" />
                     </div>
 
-                    <p class="text-slate-400 text-sm mb-6">Inteligência artificial para empresas</p>
+                    <p class="text-slate-400 text-sm mb-6">{{ $t('footer.company_desc') }}</p>
 
                     <!-- Status -->
                     <div class="flex gap-4 mb-6">
                         <a href="https://status.promp.com.br" target="_blank"
                             class="flex flex-col gap-1 items-start group">
                             <span
-                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">Agente
-                                IA</span>
+                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">{{
+                                $t('footer.status_ai') }}</span>
                             <img src="https://status.promp.com.br/api/badge/4/status?style=for-the-badge"
                                 alt="Status IA" class="h-5 object-contain" />
                         </a>
                         <a href="https://status.promp.com.br" target="_blank"
                             class="flex flex-col gap-1 items-start group">
                             <span
-                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">Sistema</span>
+                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">{{
+                                $t('footer.status_system') }}</span>
                             <img src="https://status.promp.com.br/api/badge/2/status?style=for-the-badge"
                                 alt="Status App" class="h-5 object-contain" />
                         </a>
@@ -101,53 +101,59 @@
 
                 <!-- Links Columns -->
                 <div class="lg:col-span-1">
-                    <h4 class="font-bold text-white mb-6">Links rápidos</h4>
+                    <h4 class="font-bold text-white mb-6">{{ $t('footer.quick_links') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Início</a></li>
-                        <li><a href="#features" class="hover:text-white transition-colors">Funcionalidades</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition-colors">Planos e Preços</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Fale conosco</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.home') }}</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">{{ $t('footer.features')
+                                }}</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">{{ $t('footer.pricing') }}</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.contact') }}</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-1">
-                    <h4 class="font-bold text-white mb-6">Soluções</h4>
+                    <h4 class="font-bold text-white mb-6">{{ $t('footer.solutions') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Atendimento Inteligente</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Vendas Automatizadas</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.solution_1') }}</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.solution_2') }}</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-1">
-                    <h4 class="font-bold text-white mb-6">Recursos</h4>
+                    <h4 class="font-bold text-white mb-6">{{ $t('footer.resources') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Relatórios em Tempo Real</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Painel de Controle Unificado</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.resource_1') }}</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.resource_2') }}</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-1">
-                    <h4 class="font-bold text-white mb-6">Legal</h4>
+                    <h4 class="font-bold text-white mb-6">{{ $t('footer.legal') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
                         <li>
-                            <NuxtLink to="/politica-de-privacidade" class="hover:text-white transition-colors">Política
-                                de Privacidade</NuxtLink>
+                            <NuxtLink to="/politica-de-privacidade" class="hover:text-white transition-colors">{{
+                                $t('footer.privacy') }}</NuxtLink>
                         </li>
                         <li>
-                            <NuxtLink to="/politica-de-privacidade" class="hover:text-white transition-colors">Termos de
-                                Uso</NuxtLink>
+                            <NuxtLink to="/politica-de-privacidade" class="hover:text-white transition-colors">{{
+                                $t('footer.terms') }}</NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/politica-de-cookies-da-promp" class="hover:text-white transition-colors">
-                                Política de Cookies</NuxtLink>
+                                {{ $t('footer.cookies') }}</NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/lgpd-lei-geral-de-protecao-de-dados"
-                                class="hover:text-white transition-colors">Conformidade LGPD</NuxtLink>
+                                class="hover:text-white transition-colors">{{ $t('footer.lgpd') }}</NuxtLink>
                         </li>
                         <li>
                             <NuxtLink to="/acessibilidade-na-promp" class="hover:text-white transition-colors">
-                                Acessibilidade</NuxtLink>
+                                {{ $t('footer.accessibility') }}</NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -156,7 +162,7 @@
             <!-- Bottom Section: Copyright -->
             <div class="border-t border-slate-800 pt-8 text-center">
                 <p class="text-slate-500 text-xs">
-                    &copy; 2025 feito com muito ☕ por PROMP IA BUSINESS LTDA 60.671.760/0001-52
+                    &copy; 2025 {{ $t('footer.copyright') }} 60.671.760/0001-52
                 </p>
             </div>
 
