@@ -13,7 +13,10 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'preconnect', href: 'https://ui-avatars.com' },
-        { rel: 'dns-prefetch', href: 'https://ui-avatars.com' }
+        { rel: 'dns-prefetch', href: 'https://ui-avatars.com' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap' }
       ]
     }
   },

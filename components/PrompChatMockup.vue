@@ -81,8 +81,8 @@
     </div>
 
 
-    <div
-      class="relative z-10 flex flex-col h-[500px] md:h-[600px] w-full bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700 font-sans text-left transition-all duration-500">
+    <div style="font-family: 'Comfortaa', cursive;"
+      class="relative z-10 flex flex-col h-[500px] md:h-[600px] w-full bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-700 text-left transition-all duration-500">
 
       <!-- Top Header -->
       <div
@@ -94,9 +94,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <div class="flex items-center gap-1">
+          <div class="flex items-center gap-1 font-sans">
             <span class="text-xl font-black text-slate-800 dark:text-white tracking-tighter">promp<span
-                class="text-[#0E1F4A] italic">IA</span></span>
+                class="bg-[#E84624] text-white px-1 rounded text-sm ml-0.5 italic">IA</span></span>
           </div>
         </div>
 
@@ -285,7 +285,7 @@
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-yellow-500 text-lg">⚡</span>
                   <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.access_dashboard_hint')
-                  }}
+                    }}
                   </p>
                 </div>
                 <div
@@ -652,7 +652,7 @@
                             <p class="text-[10px]">Qtd: {{ msg.cartData.qtd }} | Cor: {{ msg.cartData.color }}</p>
                             <p class="font-bold text-green-700 dark:text-green-300 text-sm mt-0.5">R$ {{
                               msg.cartData.subtotal
-                            }}</p>
+                              }}</p>
                           </div>
                         </div>
                       </div>
@@ -740,7 +740,7 @@
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                   <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t(activeChat.statusLabel)
-                    }}</span>
+                  }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
                   <div class="h-full w-[70%] bg-green-500 rounded-full"></div>
