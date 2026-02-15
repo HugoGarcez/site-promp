@@ -982,7 +982,7 @@ const chats = ref([
   {
     id: 2,
     name: 'Maria Costa',
-    avatar: 'https://ui-avatars.com/api/?name=Maria+Costa&background=EBF4FF&color=7F9CF5',
+    avatar: '/images/maria-costa.jpeg',
     tag: '#19401 • Suporte',
     lastTime: '10:15',
     preview: 'Qual o valor do frete?',
@@ -1014,7 +1014,7 @@ const chats = ref([
   {
     id: 1,
     name: 'João Maurício',
-    avatar: 'https://ui-avatars.com/api/?name=João+Maurício&background=random',
+    avatar: '/images/joao-mauricio.jpeg',
     tag: '#21223 • Comercial',
     lastTime: '09:45',
     preview: 'Fechado! Pode enviar.',
@@ -1046,7 +1046,7 @@ const chats = ref([
   {
     id: 3,
     name: 'Pedro Santos',
-    avatar: 'https://ui-avatars.com/api/?name=Pedro+Santos&background=FEF3C7&color=D97706',
+    avatar: '/images/pedro-santos.jpeg',
     tag: '#8080 • Logística',
     lastTime: '08:00',
     preview: 'Obrigado pela agilidade!',
