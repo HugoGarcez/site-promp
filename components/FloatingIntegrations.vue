@@ -4,8 +4,8 @@
         <!-- Central Hub -->
         <div
             class="relative z-10 w-24 h-24 bg-white dark:bg-slate-800 rounded-full shadow-2xl flex items-center justify-center border-4 border-slate-50 dark:border-slate-700 animate-float">
-            <NuxtImg src="/images/logo-black.png" alt="Promp" class="w-14 dark:hidden" quality="100" />
-            <NuxtImg src="/images/logo-white.png" alt="Promp" class="w-14 hidden dark:block" quality="100" />
+            <NuxtImg src="/images/logo-fundo-claro.svg" alt="Promp" class="w-14 dark:hidden" />
+            <NuxtImg src="/images/logo-fundo-escuro.svg" alt="Promp" class="w-14 hidden dark:block" />
         </div>
 
         <!-- Orbiting Icons -->

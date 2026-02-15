@@ -4,8 +4,8 @@
     <div class="container mx-auto px-4 h-20 flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink to="/" class="flex items-center gap-2 group">
-        <NuxtImg src="/images/logo-black.png" alt="Promp" class="h-8 w-auto dark:hidden" quality="100" />
-        <NuxtImg src="/images/logo-white.png" alt="Promp" class="h-8 w-auto hidden dark:block" quality="100" />
+        <NuxtImg src="/images/logo-fundo-claro.svg" alt="Promp" class="h-8 w-auto dark:hidden" />
+        <NuxtImg src="/images/logo-fundo-escuro.svg" alt="Promp" class="h-8 w-auto hidden dark:block" />
       </NuxtLink>
 
       <!-- Desktop Navigation -->
@@ -13,7 +13,7 @@
         <a href="#funcionalidades" class="text-sm font-medium hover:text-primary transition-colors">{{
           $t('header.features') }}</a>
         <a href="#beneficios" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.benefits')
-        }}</a>
+          }}</a>
         <a href="#planos" class="text-sm font-medium hover:text-primary transition-colors">{{ $t('header.plans') }}</a>
 
         <!-- Language Switcher -->
