@@ -3,7 +3,7 @@
     <!-- Floating Channel Icons -->
 
     <!-- WhatsApp (Top Left) -->
-    <div class="absolute -top-6 -left-4 md:-top-12 md:-left-12 z-30 animate-float-slow">
+    <div class="absolute -top-6 -left-2 md:-top-12 md:-left-12 z-30 animate-float-slow">
       <div
         class="w-12 h-12 md:w-16 md:h-16 bg-[#25D366] rounded-2xl flex items-center justify-center shadow-lg shadow-green-500/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
@@ -15,7 +15,7 @@
     </div>
 
     <!-- Instagram (Top Right -> Repositioned higher) -->
-    <div class="absolute -top-10 -right-6 md:-top-16 md:-right-10 z-30 animate-float-medium delay-700">
+    <div class="absolute -top-10 -right-2 md:-top-16 md:-right-10 z-30 animate-float-medium delay-700">
       <div
         class="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-tr from-[#FFD600] via-[#FF0100] to-[#D800B9] rounded-2xl flex items-center justify-center shadow-lg shadow-pink-500/30 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24" fill="none"
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Telegram (Bottom Right) -->
-    <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-12 z-30 animate-float-fast delay-1000">
+    <div class="absolute -bottom-4 -right-2 md:-bottom-8 md:-right-12 z-30 animate-float-fast delay-1000">
       <div
         class="w-12 h-12 md:w-16 md:h-16 bg-[#2CA5E0] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-400/30 transform -rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Email (Bottom Left -> Moved up to avoid collision) -->
-    <div class="absolute bottom-20 -left-6 md:bottom-24 md:-left-12 z-20 animate-float-slow delay-500">
+    <div class="absolute bottom-20 -left-2 md:bottom-24 md:-left-12 z-20 animate-float-slow delay-500">
       <div
         class="w-12 h-12 md:w-16 md:h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center shadow-lg shadow-slate-500/20 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-slate-600 dark:text-slate-300"
@@ -53,7 +53,7 @@
     </div>
 
     <!-- Webchat (Right Middle) -->
-    <div class="absolute top-[65%] -right-4 md:-right-10 z-30 animate-float-medium delay-200">
+    <div class="absolute top-[65%] -right-2 md:-right-10 z-30 animate-float-medium delay-200">
       <div
         class="w-12 h-12 md:w-16 md:h-16 bg-[#007BFF] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 transform rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
@@ -68,7 +68,7 @@
     </div>
 
     <!-- Phone (Left Middle) -->
-    <div class="absolute top-[45%] -left-4 md:-left-10 z-30 animate-float-fast delay-300">
+    <div class="absolute top-[45%] -left-2 md:-left-10 z-30 animate-float-fast delay-300">
       <div
         class="w-10 h-10 md:w-14 md:h-14 bg-[#0E1F4A] rounded-2xl flex items-center justify-center shadow-lg shadow-secondary/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800 text-white">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-8 md:h-8" fill="none" stroke="currentColor"
@@ -285,7 +285,7 @@
                   class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-700">
                   <span class="text-yellow-500 text-lg">⚡</span>
                   <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">{{ $t('mockups.chat.access_dashboard_hint')
-                  }}
+                    }}
                   </p>
                 </div>
                 <div
@@ -652,7 +652,7 @@
                             <p class="text-[10px]">Qtd: {{ msg.cartData.qtd }} | Cor: {{ msg.cartData.color }}</p>
                             <p class="font-bold text-green-700 dark:text-green-300 text-sm mt-0.5">R$ {{
                               msg.cartData.subtotal
-                            }}</p>
+                              }}</p>
                           </div>
                         </div>
                       </div>
@@ -740,7 +740,7 @@
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                   <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t('mockups.chat.closing')
-                  }}</span>
+                    }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
                   <div class="h-full w-[70%] bg-green-500 rounded-full"></div>
