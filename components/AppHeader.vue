@@ -46,11 +46,11 @@
         </div>
 
         <div class="flex items-center gap-4">
-          <a href="https://app.promp.com.br/register"
+          <a href="https://app.promp.com.br/#/signup"
             class="font-bold text-slate-700 dark:text-white hover:text-primary transition-colors">
             {{ $t('header.register') }}
           </a>
-          <a href="https://app.promp.com.br/login"
+          <a href="https://app.promp.com.br/#/login"
             class="px-5 py-2.5 rounded-xl bg-primary hover:bg-red-600 text-white transition-all font-bold shadow-lg shadow-primary/20">
             {{ $t('header.login') }}
           </a>

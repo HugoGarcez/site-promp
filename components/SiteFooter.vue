@@ -85,7 +85,7 @@
                                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                             </svg>
                         </a>
-                        <a href="#"
+                        <a href="https://app.promp.com.br/#/login" target="_blank"
                             class="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-slate-800 hover:border-slate-600 transition-colors">
                             <!-- Monitor Icon (WebApp/Login) -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
