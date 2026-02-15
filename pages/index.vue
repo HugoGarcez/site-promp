@@ -123,7 +123,7 @@ useSeoMeta({
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
-            <a href="#features"
+            <a href="#ia"
               class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-700 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md">
               {{ $t('hero.how_it_works') }}
             </a>
@@ -193,7 +193,7 @@ useSeoMeta({
 
 
   <!-- Comparison Section -->
-  <section class="py-20 bg-white dark:bg-slate-900 overflow-hidden">
+  <section id="ia" class="py-20 bg-white dark:bg-slate-900 overflow-hidden">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <!-- Text Content -->
@@ -225,7 +225,7 @@ useSeoMeta({
               ⚡ Setup em Segundos
             </div>
           </div>
-          <a href="#pricing"
+          <a href="#precos"
             class="inline-flex items-center justify-center px-10 py-4 text-lg font-black text-white bg-primary hover:bg-primary/90 rounded-2xl shadow-xl shadow-secondary/20 hover:-translate-y-1 transition-all group">
             Começar Agora
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
@@ -415,7 +415,7 @@ useSeoMeta({
   </section>
 
   <!-- Bento Grid Section -->
-  <section id="beneficios" class="py-20 bg-slate-100 dark:bg-slate-900">
+  <section id="informacoes" class="py-20 bg-slate-100 dark:bg-slate-900">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
@@ -1076,7 +1076,7 @@ useSeoMeta({
       <!-- Call to Action below grid -->
       <div class="mt-16 text-center animate-fade-in-up">
         <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 font-medium">{{ $t('bento_grid.cta_all.text') }}</p>
-        <a href="#pricing"
+        <a href="#precos"
           class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-lg shadow-secondary/20">
           {{ $t('bento_grid.cta_all.button') }}
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1092,7 +1092,7 @@ useSeoMeta({
 
 
   <!-- Pricing Section -->
-  <section id="planos" class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+  <section id="precos" class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('pricing.title') }}
@@ -1568,7 +1568,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
+          }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>

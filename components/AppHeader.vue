@@ -12,12 +12,16 @@
 
       <!-- Center: Menu -->
       <nav class="hidden md:flex items-center gap-8 justify-center">
-        <a href="#beneficios" class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">{{
-          $t('header.benefits') }}</a>
+        <a href="#ia" class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">{{
+          $t('header.ai') }}</a>
+        <a href="#informacoes" class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">{{
+          $t('header.info') }}</a>
         <a href="#funcionalidades" class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">{{
           $t('header.features') }}</a>
-        <a href="#planos" class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">{{
-          $t('header.plans') }}</a>
+        <a href="#precos" class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">{{
+          $t('header.pricing') }}</a>
+        <a href="#faq" class="text-sm font-medium hover:text-primary transition-colors whitespace-nowrap">{{
+          $t('header.faq') }}</a>
       </nav>
 
       <!-- Right Side: Switchers & Actions -->

@@ -1,8 +1,10 @@
 {
     "header": {
+        "ai": "Artificial Intelligence",
+        "info": "Information",
         "features": "Features",
-        "benefits": "Benefits",
-        "plans": "Plans",
+        "pricing": "Pricing",
+        "faq": "Faq",
         "register": "Sign Up",
         "login": "Login"
     },
