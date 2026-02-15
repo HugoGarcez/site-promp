@@ -415,7 +415,7 @@ useSeoMeta({
   </section>
 
   <!-- Bento Grid Section -->
-  <section class="py-20 bg-slate-100 dark:bg-slate-900">
+  <section id="beneficios" class="py-20 bg-slate-100 dark:bg-slate-900">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
 
@@ -650,7 +650,7 @@ useSeoMeta({
   </section>
 
   <!-- Detailed Features Section (Inspired by reidozap) -->
-  <section id="features" class="py-24 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden">
+  <section id="funcionalidades" class="py-24 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden">
     <!-- Background detail -->
     <div
       class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent">
@@ -1092,7 +1092,7 @@ useSeoMeta({
 
 
   <!-- Pricing Section -->
-  <section id="pricing" class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+  <section id="planos" class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
     <div class="container mx-auto px-4">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ $t('pricing.title') }}
@@ -1568,7 +1568,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
