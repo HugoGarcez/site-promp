@@ -364,7 +364,7 @@ useSeoMeta({
                     <div class="flex justify-end animate-slide-up" style="animation-delay: 1.2s">
                       <div
                         class="bg-primary text-white text-[11px] font-medium px-4 py-2.5 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] uppercase tracking-tight">
-                        quero contratar a SUA EMPRESA aqui em aparecida
+                        quero marcar um cardiologista
                       </div>
                     </div>
 
@@ -374,16 +374,15 @@ useSeoMeta({
                         IA</div>
                       <div
                         class="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[11px] leading-relaxed p-4 rounded-2xl rounded-tl-none border border-slate-200 dark:border-slate-700 shadow-sm max-w-[85%] font-medium">
-                        Ótima escolha! Atendemos toda a região de Aparecida com instalação imediata. O valor do plano é
-                        a partir de <span class="text-secondary font-bold">R$ 20,90 por mês</span>. Posso enviar o link
-                        de contratação direto para seu WhatsApp? 🏠✨
+                        Olá! Temos horários disponíveis com o Dr. Ricardo para esta semana. Quinta às 14h ou Sexta às
+                        09h. Qual prefere? 🩺
                       </div>
                     </div>
 
                     <div class="flex justify-end animate-slide-up" style="animation-delay: 4.2s">
                       <div
                         class="bg-primary text-white text-[11px] font-medium px-4 py-2.5 rounded-2xl rounded-tr-none shadow-lg max-w-[80%] uppercase tracking-tight">
-                        Sim! Por favor.
+                        Quinta as 14h por favor
                       </div>
                     </div>
 
@@ -393,8 +392,8 @@ useSeoMeta({
                         IA</div>
                       <div
                         class="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-[11px] leading-relaxed p-4 rounded-2xl rounded-tl-none border border-slate-200 dark:border-slate-700 shadow-sm max-w-[85%] font-medium">
-                        Perfeito! 🎉 Link enviado. Vou deixar o suporte avisado para priorizar seu atendimento assim que
-                        concluir. Algo mais que posso ajudar?
+                        Agendado! ✅ Quinta-feira, 14h com Dr. Ricardo. Já enviei a confirmação para seu WhatsApp. Algo
+                        mais?
                       </div>
                     </div>
                   </div>
@@ -1570,7 +1569,7 @@ useSeoMeta({
         <!-- Text Content -->
         <div class="w-full md:w-1/2 z-10 self-center pb-10">
           <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-          }}</span>
+            }}</span>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {{ $t('mobile_app.title') }}
           </h2>
