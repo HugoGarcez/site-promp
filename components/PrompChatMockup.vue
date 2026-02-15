@@ -704,10 +704,8 @@
             class="hidden lg:flex w-60 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-700 flex-col flex-none">
 
             <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex flex-col items-center">
-              <div
-                class="w-20 h-20 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center mb-4 border-4 border-white dark:border-slate-800 shadow-sm">
-                <span class="text-2xl font-black text-[#007BFF]">MC</span>
-              </div>
+              <img :src="activeChat.avatar"
+                class="w-20 h-20 rounded-full mb-4 border-4 border-white dark:border-slate-800 shadow-sm object-cover">
               <h3 class="font-black text-xl text-slate-900 dark:text-white mb-1">{{ activeChat.name }}</h3>
               <p class="text-[11px] font-medium text-slate-400 mb-0.5">{{ activeChat.email }}</p>
               <p class="text-[11px] font-medium text-slate-400">{{ activeChat.phone }}</p>
@@ -739,11 +737,10 @@
                 class="bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800 rounded-xl p-3 mb-6">
                 <div class="flex items-center gap-2 mb-2">
                   <div class="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-                  <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ $t(activeChat.statusLabel)
-                    }}</span>
+                  <span class="text-xs font-bold text-[#007BFF] dark:text-blue-400">{{ activeChat.funnelStage }}</span>
                 </div>
                 <div class="w-full bg-blue-100 dark:bg-blue-800 h-1.5 rounded-full overflow-hidden">
-                  <div class="h-full w-[70%] bg-green-500 rounded-full"></div>
+                  <div class="h-full bg-green-500 rounded-full" :style="{ width: activeChat.funnelProgress }"></div>
                 </div>
               </div>
 
@@ -752,11 +749,12 @@
               <div
                 class="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl p-4 shadow-sm">
                 <div class="flex justify-between items-center mb-1">
-                  <span class="text-xs font-black text-slate-800 dark:text-white">#2F02</span>
+                  <span class="text-xs font-black text-slate-800 dark:text-white">{{ activeChat.protocolId }}</span>
                   <span class="text-[10px] text-green-500 font-black uppercase tracking-tighter">{{
-                    $t('mockups.chat.open_status') }}</span>
+                    activeChat.protocolStatus }}</span>
                 </div>
-                <p class="text-[10px] text-slate-400 mb-4">{{ $t('mockups.chat.started_on') }} 12/02/2026</p>
+                <p class="text-[10px] text-slate-400 mb-4">{{ $t('mockups.chat.started_on') }} {{
+                  activeChat.protocolDate }}</p>
                 <div class="flex gap-2">
                   <button
                     class="flex-1 py-1.5 text-[10px] font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-all">{{
@@ -990,6 +988,11 @@ const chats = ref([
     phone: '+55 21 98888-8888',
     statusLabel: 'mockups.chat.closing',
     statusColorClass: 'bg-green-500',
+    funnelStage: 'Fechamento',
+    funnelProgress: '90%',
+    protocolId: '#2F02',
+    protocolStatus: 'ABERTO',
+    protocolDate: '12/02/2026',
     messages: [
       { sender: 'client', text: 'Boa tarde! Vocês tem essa camisa na cor azul?', time: '10:12' },
       { sender: 'ai', text: 'Olá Maria! Temos sim. Olha só como ela é linda:', time: '10:12' },
@@ -1022,6 +1025,11 @@ const chats = ref([
     phone: '+55 11 99999-9999',
     statusLabel: 'mockups.chat.negotiation',
     statusColorClass: 'bg-secondary/50',
+    funnelStage: 'Negociação',
+    funnelProgress: '60%',
+    protocolId: '#B881',
+    protocolStatus: 'EM ANDAMENTO',
+    protocolDate: '14/08/2025',
     messages: [
       { sender: 'client', audio: '/audio/joao-camisa.m4a', time: '09:40' },
       { sender: 'ai', audio: '/audio/fernanda-camisa.m4a', time: '09:41' },
@@ -1054,6 +1062,11 @@ const chats = ref([
     phone: '+55 41 97777-7777',
     statusLabel: 'mockups.chat.delivered',
     statusColorClass: 'bg-orange-500',
+    funnelStage: 'Pós-Venda',
+    funnelProgress: '100%',
+    protocolId: '#L103',
+    protocolStatus: 'CONCLUÍDO',
+    protocolDate: '15/08/2025',
     messages: [
       { sender: 'client', text: 'Bom dia, meu pedido já saiu para entrega?', time: '07:55' },
       { sender: 'ai', text: 'Bom dia Pedro! Sim, saiu hoje às 06:30. A previsão é chegar até o meio-dia.', time: '07:56' },
