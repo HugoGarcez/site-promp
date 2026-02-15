@@ -663,6 +663,135 @@ useSeoMeta({
           vendas da sua empresa em um só lugar.</p>
       </div>
 
+      <!-- Features Center Showcase (Moved) -->
+      <div class="mb-24">
+        <div class="grid lg:grid-cols-3 gap-8 items-center">
+          <!-- Left Features -->
+          <div class="space-y-12">
+            <div class="text-right group">
+              <div class="flex items-center justify-end gap-3 mb-2">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.config_rapid') }}
+                </h3>
+                <div
+                  class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.config_rapid_desc') }}</p>
+            </div>
+
+            <div class="text-right group">
+              <div class="flex items-center justify-end gap-3 mb-2">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.multi_agent') }}
+                </h3>
+                <div
+                  class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+              </div>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.multi_agent_desc') }}</p>
+            </div>
+
+            <div class="text-right group">
+              <div class="flex items-center justify-end gap-3 mb-2">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.mass_send') }}</h3>
+                <div
+                  class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.mass_send_desc') }}</p>
+            </div>
+          </div>
+
+          <!-- Center Image -->
+          <div class="relative flex justify-center py-12 lg:py-0">
+            <!-- Decorative Rings -->
+            <div
+              class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl scale-150">
+            </div>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_60s_linear_infinite]">
+            </div>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_40s_linear_infinite_reverse]">
+            </div>
+
+            <video src="/video/funcionalidades-promp.mp4" autoplay loop muted playsinline
+              class="relative z-10 w-full max-w-[500px] object-contain bg-transparent"></video>
+            <!-- <DeviceMockup3D /> -->
+          </div>
+
+          <!-- Right Features -->
+          <div class="space-y-12">
+            <div class="text-left group">
+              <div class="flex items-center justify-start gap-3 mb-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.crm_visual') }}</h3>
+              </div>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.crm_visual_desc') }}</p>
+            </div>
+
+            <div class="text-left group">
+              <div class="flex items-center justify-start gap-3 mb-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="23"></line>
+                    <line x1="8" y1="23" x2="16" y2="23"></line>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.human_audio') }}
+                </h3>
+              </div>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.human_audio_desc') }}</p>
+            </div>
+
+            <div class="text-left group">
+              <div class="flex items-center justify-start gap-3 mb-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.reports') }}</h3>
+              </div>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.reports_desc') }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
         <!-- Item 1: Atendimentos -->
         <div
@@ -1429,132 +1558,7 @@ useSeoMeta({
   </section>
 
 
-  <!-- Features Center Showcase (Moved for Layout) -->
-  <section class="py-24 bg-white dark:bg-slate-900 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-8 items-center">
-        <!-- Left Features -->
-        <div class="space-y-12">
-          <div class="text-right group">
-            <div class="flex items-center justify-end gap-3 mb-2">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.config_rapid') }}</h3>
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.config_rapid_desc') }}</p>
-          </div>
 
-          <div class="text-right group">
-            <div class="flex items-center justify-end gap-3 mb-2">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.multi_agent') }}</h3>
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.multi_agent_desc') }}</p>
-          </div>
-
-          <div class="text-right group">
-            <div class="flex items-center justify-end gap-3 mb-2">
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.mass_send') }}</h3>
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                  </path>
-                </svg>
-              </div>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.mass_send_desc') }}</p>
-          </div>
-        </div>
-
-        <!-- Center Image -->
-        <div class="relative flex justify-center py-12 lg:py-0">
-          <!-- Decorative Rings -->
-          <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl scale-150">
-          </div>
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_60s_linear_infinite]">
-          </div>
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] border border-slate-200 dark:border-slate-800/50 rounded-full animate-[spin_40s_linear_infinite_reverse]">
-          </div>
-
-          <video src="/video/funcionalidades-promp.mp4" autoplay loop muted playsinline
-            class="relative z-10 w-full max-w-[500px] object-contain bg-transparent"></video>
-          <!-- <DeviceMockup3D /> -->
-        </div>
-
-        <!-- Right Features -->
-        <div class="space-y-12">
-          <div class="text-left group">
-            <div class="flex items-center justify-start gap-3 mb-2">
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.crm_visual') }}</h3>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.crm_visual_desc') }}</p>
-          </div>
-
-          <div class="text-left group">
-            <div class="flex items-center justify-start gap-3 mb-2">
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                  <line x1="12" y1="19" x2="12" y2="23"></line>
-                  <line x1="8" y1="23" x2="16" y2="23"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.human_audio') }}</h3>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.human_audio_desc') }}</p>
-          </div>
-
-          <div class="text-left group">
-            <div class="flex items-center justify-start gap-3 mb-2">
-              <div
-                class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ $t('features_center.reports') }}</h3>
-            </div>
-            <p class="text-slate-600 dark:text-slate-400 text-sm">{{ $t('features_center.reports_desc') }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <GlobalPresence />
 
