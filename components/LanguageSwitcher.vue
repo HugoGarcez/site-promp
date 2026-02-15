@@ -7,7 +7,13 @@ const getFlag = (code) => {
     const map = {
         'pt-BR': '🇧🇷',
         'en-US': '🇺🇸',
-        'es-ES': '🇪🇸'
+        'es-ES': '🇪🇸',
+        'ar-AR': '🇸🇦',
+        'de-DE': '🇩🇪',
+        'it-IT': '🇮🇹',
+        'fr-FR': '🇫🇷',
+        'ja-JP': '🇯🇵',
+        'zh-CN': '🇨🇳'
     }
     return map[code] || '🌐'
 }
