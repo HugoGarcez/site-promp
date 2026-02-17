@@ -1,9 +1,9 @@
 <template>
-  <div class="relative w-[92%] mx-auto md:w-full group perspective-1000">
+  <div class="relative w-[92%] mx-auto md:w-full max-w-full group perspective-1000">
     <!-- Floating Channel Icons -->
 
     <!-- WhatsApp (Top Left) -->
-    <div class="absolute -top-6 left-0 md:-top-12 md:-left-12 z-30 animate-float-slow">
+    <div class="hidden md:block absolute -top-6 left-0 md:-top-12 md:-left-12 z-30 animate-float-slow">
       <div
         class="w-10 h-10 md:w-16 md:h-16 bg-[#25D366] rounded-2xl flex items-center justify-center shadow-lg shadow-green-500/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
@@ -15,7 +15,7 @@
     </div>
 
     <!-- Instagram (Top Right -> Repositioned higher) -->
-    <div class="absolute -top-10 right-0 md:-top-16 md:-right-10 z-30 animate-float-medium delay-700">
+    <div class="hidden md:block absolute -top-10 right-0 md:-top-16 md:-right-10 z-30 animate-float-medium delay-700">
       <div
         class="w-10 h-10 md:w-16 md:h-16 bg-gradient-to-tr from-[#FFD600] via-[#FF0100] to-[#D800B9] rounded-2xl flex items-center justify-center shadow-lg shadow-pink-500/30 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24" fill="none"
@@ -28,7 +28,7 @@
     </div>
 
     <!-- Telegram (Bottom Right) -->
-    <div class="absolute -bottom-4 right-0 md:-bottom-8 md:-right-12 z-30 animate-float-fast delay-1000">
+    <div class="hidden md:block absolute -bottom-4 right-0 md:-bottom-8 md:-right-12 z-30 animate-float-fast delay-1000">
       <div
         class="w-10 h-10 md:w-16 md:h-16 bg-[#2CA5E0] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-400/30 transform -rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Email (Bottom Left -> Moved up to avoid collision) -->
-    <div class="absolute bottom-20 left-0 md:bottom-24 md:-left-12 z-20 animate-float-slow delay-500">
+    <div class="hidden md:block absolute bottom-20 left-0 md:bottom-24 md:-left-12 z-20 animate-float-slow delay-500">
       <div
         class="w-10 h-10 md:w-16 md:h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center shadow-lg shadow-slate-500/20 transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-slate-600 dark:text-slate-300"
@@ -53,7 +53,7 @@
     </div>
 
     <!-- Webchat (Right Middle) -->
-    <div class="absolute top-[65%] right-0 md:-right-10 z-30 animate-float-medium delay-200">
+    <div class="hidden md:block absolute top-[65%] right-0 md:-right-10 z-30 animate-float-medium delay-200">
       <div
         class="w-10 h-10 md:w-16 md:h-16 bg-[#007BFF] rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 transform rotate-6 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 md:w-9 md:h-9 text-white" viewBox="0 0 24 24"
@@ -68,7 +68,7 @@
     </div>
 
     <!-- Phone (Left Middle) -->
-    <div class="absolute top-[45%] left-0 md:-left-10 z-30 animate-float-fast delay-300">
+    <div class="hidden md:block absolute top-[45%] left-0 md:-left-10 z-30 animate-float-fast delay-300">
       <div
         class="w-8 h-8 md:w-14 md:h-14 bg-[#0E1F4A] rounded-2xl flex items-center justify-center shadow-lg shadow-secondary/30 transform -rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white dark:border-slate-800 text-white">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-8 md:h-8" fill="none" stroke="currentColor"
@@ -382,9 +382,9 @@
 
           <!-- Kanban Board -->
           <div class="flex-1 overflow-x-auto p-6 no-scrollbar">
-            <div class="flex gap-6 h-full min-w-max">
+            <div class="flex gap-6 h-full">
               <!-- Columns -->
-              <div v-for="col in kanbanColumns" :key="col.id" class="w-72 flex flex-col gap-4">
+              <div v-for="col in kanbanColumns" :key="col.id" class="w-72 flex flex-col gap-4 shrink-0">
                 <div class="flex items-center justify-between px-2">
                   <div class="flex items-center gap-2">
                     <h3 class="font-bold text-slate-700 dark:text-slate-300 text-sm uppercase tracking-wider">{{

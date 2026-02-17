@@ -125,9 +125,11 @@
                 <div class="lg:col-span-1">
                     <h4 class="font-bold text-white mb-6">{{ $t('footer.resources') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.resource_1') }}</a>
+                        <li><a href="https://promp.gitbook.io/promp" target="_blank" class="hover:text-white transition-colors">{{ $t('footer.manual') }}</a>
                         </li>
-                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.resource_2') }}</a>
+                        <li><a href="https://promp.gitbook.io/promp/api-reference" target="_blank" class="hover:text-white transition-colors">{{ $t('footer.api') }}</a>
+                        </li>
+                        <li><a href="https://promp.gitbook.io/promp/update" target="_blank" class="hover:text-white transition-colors">{{ $t('footer.updates') }}</a>
                         </li>
                     </ul>
                 </div>
