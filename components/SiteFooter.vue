@@ -25,6 +25,16 @@
                         <img src="/images/promp-whatsapp-partner.png" alt="WhatsApp Provider 2025"
                             class="h-32 w-auto object-contain" />
                     </div>
+                    <!-- Meta Provider 2026 Badge -->
+                    <div class="hover:scale-105 transition-transform duration-300">
+                        <img src="/images/meta-provider-2026.png" alt="Meta Provider 2026"
+                            class="h-32 w-auto object-contain" />
+                    </div>
+                    <!-- WhatsApp Provider 2026 Badge -->
+                    <div class="hover:scale-105 transition-transform duration-300">
+                        <img src="/images/whatsapp-provider-2026.png" alt="WhatsApp Provider 2026"
+                            class="h-32 w-auto object-contain" />
+                    </div>
                 </div>
             </div>
 
@@ -49,7 +59,7 @@
                             class="flex flex-col gap-1 items-start group">
                             <span
                                 class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">{{
-                                $t('footer.status_ai') }}</span>
+                                    $t('footer.status_ai') }}</span>
                             <img src="https://status.promp.com.br/api/badge/4/status?style=for-the-badge"
                                 alt="Status IA" class="h-5 object-contain" />
                         </a>
@@ -57,7 +67,7 @@
                             class="flex flex-col gap-1 items-start group">
                             <span
                                 class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">{{
-                                $t('footer.status_system') }}</span>
+                                    $t('footer.status_system') }}</span>
                             <img src="https://status.promp.com.br/api/badge/2/status?style=for-the-badge"
                                 alt="Status App" class="h-5 object-contain" />
                         </a>
@@ -105,7 +115,7 @@
                     <ul class="space-y-4 text-sm text-slate-400">
                         <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.home') }}</a></li>
                         <li><a href="#features" class="hover:text-white transition-colors">{{ $t('footer.features')
-                                }}</a></li>
+                        }}</a></li>
                         <li><a href="#pricing" class="hover:text-white transition-colors">{{ $t('footer.pricing') }}</a>
                         </li>
                         <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.contact') }}</a></li>
@@ -125,11 +135,14 @@
                 <div class="lg:col-span-1">
                     <h4 class="font-bold text-white mb-6">{{ $t('footer.resources') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="https://promp.gitbook.io/promp" target="_blank" class="hover:text-white transition-colors">Manual de uso</a>
+                        <li><a href="https://promp.gitbook.io/promp" target="_blank"
+                                class="hover:text-white transition-colors">Manual de uso</a>
                         </li>
-                        <li><a href="https://promp.gitbook.io/promp/api-reference" target="_blank" class="hover:text-white transition-colors">API</a>
+                        <li><a href="https://promp.gitbook.io/promp/api-reference" target="_blank"
+                                class="hover:text-white transition-colors">API</a>
                         </li>
-                        <li><a href="https://promp.gitbook.io/promp/update" target="_blank" class="hover:text-white transition-colors">Atualizações</a>
+                        <li><a href="https://promp.gitbook.io/promp/update" target="_blank"
+                                class="hover:text-white transition-colors">Atualizações</a>
                         </li>
                     </ul>
                 </div>
