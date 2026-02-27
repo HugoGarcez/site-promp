@@ -29,7 +29,18 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxt/image', '@nuxtjs/i18n', '@nuxtjs/color-mode'],
+  modules: [
+    '@nuxt/image',
+    '@nuxtjs/i18n',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/sitemap',
+    'nuxt-schema-org'
+  ],
+  site: {
+    url: 'https://promp.com.br',
+    name: 'Promp',
+    defaultLocale: 'pt-BR'
+  },
   // @ts-ignore
   colorMode: {
     classSuffix: ''
@@ -62,6 +73,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'node-server',
-    serveStatic: true
+    serveStatic: true,
+    compressPublicAssets: true
   },
 })
