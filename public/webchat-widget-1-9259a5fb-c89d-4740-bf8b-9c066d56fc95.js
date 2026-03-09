@@ -6,6 +6,7 @@
     <div id="channel-chat-widget">
         <button id="channel-chat-button">
             <img src="https://app.promp.com.br/webchat-logo.png" alt="WebChat Logo">
+            <p> Atendimento</p>
         </button>
     </div>
 
@@ -36,10 +37,10 @@
         }
 
         #channel-chat-button {
-            width: 60px;
+            width: 140px;
             height: 60px;
-            border-radius: 50%;
-            background: #2196F3;
+            border-radius: 20px;
+            background: #040D2B;
             border: none;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             cursor: pointer;
@@ -82,7 +83,7 @@
         }
 
         #channel-chat-header {
-            background: #2196F3;
+            background: #040D2B;
             color: white;
             padding: 12px 16px;
             border-radius: 16px 16px 0 0;
@@ -127,7 +128,7 @@
             height: 32px;
             border-radius: 50%;
             transition: background-color 0.2s;
-            color: #2196F3;
+            color: #040d2b;
         }
 
         #channel-chat-attach:hover {
@@ -152,7 +153,7 @@
             height: 32px;
             border-radius: 50%;
             transition: background-color 0.2s;
-            color: #2196F3;
+            color: #040d2b;
             background: none;
             border: none;
             cursor: pointer;
@@ -255,6 +256,10 @@
                 right: 20px;
                 bottom: 20px;
             }
+        }
+        button#channel-chat-buttonp {
+            color: #fff;
+            margin-left: 5px;
         }
     </style>
     `;
