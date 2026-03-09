@@ -2,14 +2,14 @@
 const route = useRoute()
 const siteUrl = 'https://promp.com.br'
 
-useHead(() => ({
+useHead({
   link: [
     {
       rel: 'canonical',
       href: `${siteUrl}${route.path === '/' ? '' : route.path}`
     }
-  ]
-}))
+  ],
+})
 
 useSchemaOrg([
   defineWebSite({

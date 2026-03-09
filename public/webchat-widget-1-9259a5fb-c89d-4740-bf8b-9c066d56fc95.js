@@ -1,4 +1,3 @@
-
 // Widget de Chat CHANNEL
 (function () {
     // Cria o elemento do widget
@@ -12,7 +11,7 @@
 
     <div id="channel-chat-container">
         <div id="channel-chat-header">
-            <h3>Online</h3>
+            <h3>🟢 Online</h3>
             <span id="channel-chat-session" style="font-size:11px;color:#e3f2fd;margin-left:8px;"></span>
             <div style="display: flex; gap: 8px;">
                 <button id="channel-chat-clear" title="Nova sessão" style="background: none; border: none; color: white; cursor: pointer; font-size: 18px;"><i class="mdi mdi-reload" style="font-size:16px;"></i></button>
