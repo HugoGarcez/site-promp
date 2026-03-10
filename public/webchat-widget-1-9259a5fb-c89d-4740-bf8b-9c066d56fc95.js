@@ -247,17 +247,18 @@
         @media (max-width: 480px) {
             #channel-chat-container {
                 width: 100%;
-                height: 100vh;
+                height: 80vh;
                 bottom: 0;
                 right: 0;
                 border-radius: 0;
+                margin-bottom: 80px;
             }
             #channel-chat-widget {
                 right: 20px;
                 bottom: 20px;
             }
         }
-        button#channel-chat-buttonp {
+        button#channel-chat-button p {
             color: #fff;
             margin-left: 5px;
         }
