@@ -262,6 +262,9 @@
             color: #fff;
             margin-left: 5px;
         }
+        input#channel-chat-input {
+            color: #000;
+        }
     </style>
     `;
 
