@@ -1239,7 +1239,7 @@ useSeoMeta({
           <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ $t('pricing.plans.liberal.name') }}</h3>
           <p class="text-slate-500 dark:text-slate-400 text-xs mb-4">{{ $t('pricing.plans.liberal.target') }}</p>
           <div class="flex items-baseline mb-6">
-            <span class="text-3xl font-bold text-slate-900 dark:text-white">R$ 99,99</span>
+            <span class="text-3xl font-bold text-slate-900 dark:text-white">R$ 179,90</span>
             <span class="text-slate-500 dark:text-slate-400 text-xs ml-1">{{ $t('pricing.period') }}</span>
           </div>
 
@@ -1306,7 +1306,7 @@ useSeoMeta({
               {{ $t('pricing.features.notes_more') }}
             </li>
           </ul>
-          <a href="https://www.asaas.com/c/wr3exhhwr141lmva" target="_blank"
+          <a href="https://www.asaas.com/c/8onxqqfunm81rc68" target="_blank"
             class="block w-full py-2 px-4 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 text-slate-900 dark:text-white font-bold rounded-lg text-center text-sm transition-colors">{{
               $t('pricing.cta') }}</a>
         </div>
