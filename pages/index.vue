@@ -978,7 +978,7 @@ useSeoMeta({
           </div>
         </div>
 
-        <!-- Item 10: Chatbot -->
+        <!-- Item 10: ChatFlow -->
         <div
           class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
           <div class="flex items-center gap-4">
