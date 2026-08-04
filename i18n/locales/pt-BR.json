@@ -193,7 +193,10 @@
         "features": {
             "users_4": "4 usuários",
             "connections_1": "1 conexões",
-            "galeria": "Galeria",
+            "galeria_liberal": "1gb de Galeria",
+            "galeria_starter": "5gb de galeria",
+            "galeria_advance": "10gb galeria",
+            "galeria_prime": "20gb de galeria",
             "mensagens_rapidas": "Mensagens Rápidas",
             "agendamentos": "Agendamentos",
             "aniversarios": "Aniversários",
