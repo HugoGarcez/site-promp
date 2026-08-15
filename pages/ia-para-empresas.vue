@@ -105,21 +105,21 @@ const testimonials = [
   {
     name: 'João Maurício',
     role: 'CEO, DM Boat',
-    image: '/images/joao-mauricio.jpeg',
+    image: 'https://i.pravatar.cc/300?img=12',
     text: 'A Promp transformou nosso atendimento. Antes perdíamos 70% dos leads por demora na resposta. Hoje a IA responde em segundos e nossas vendas aumentaram 52% em 3 meses.',
     stars: 5,
   },
   {
     name: 'Maria Costa',
     role: 'Diretora Comercial',
-    image: '/images/maria-costa.jpeg',
+    image: 'https://i.pravatar.cc/300?img=47',
     text: 'Eu era cética com IA, mas a Promp me provou errada. A IA sabe responder sobre todos os nossos produtos e preços. É como ter um vendedor que nunca dorme e nunca erra.',
     stars: 5,
   },
   {
     name: 'Pedro Santos',
     role: 'Gestor de Tráfego',
-    image: '/images/pedro-santos.jpeg',
+    image: 'https://i.pravatar.cc/300?img=68',
     text: 'Gastamos R$15 mil por mês em tráfego pago e metade dos leads eram desperdiçados. Com a Promp, cada lead é atendido instantaneamente. O ROI do tráfego subiu 3x.',
     stars: 5,
   },
@@ -206,7 +206,7 @@ useSeoMeta({
           <div class="flex items-center gap-2">
             <div class="flex -space-x-2">
               <img class="w-8 h-8 rounded-full border-2 border-slate-800 object-contain bg-white" src="/images/clients/empresa-dmboat.png" alt="Cliente" />
-              <img class="w-8 h-8 rounded-full border-2 border-slate-800 object-cover bg-white" src="/images/clients/empresa-fripet.jpg" alt="Cliente" />
+              <img class="w-8 h-8 rounded-full border-2 border-slate-800 object-cover bg-white" src="/images/clients/empresa-grossi.png" alt="Grossi Group" />
               <img class="w-8 h-8 rounded-full border-2 border-slate-800 object-cover bg-white" src="/images/clients/empresa-jit.jpeg" alt="Cliente" />
             </div>
             <span>+500 empresas confiam na Promp</span>

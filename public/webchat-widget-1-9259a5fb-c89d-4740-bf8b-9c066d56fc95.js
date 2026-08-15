@@ -265,6 +265,45 @@
         input#channel-chat-input {
             color: #000;
         }
+
+        .channel-menu-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        .channel-menu-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #040D2B;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+        .channel-menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .channel-menu-pill {
+            border: 1px solid #040D2B;
+            background: #ffffff;
+            color: #040D2B;
+            padding: 7px 12px;
+            border-radius: 18px;
+            font-size: 13px;
+            font-family: inherit;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            max-width: 100%;
+            word-break: break-word;
+            text-align: left;
+        }
+        .channel-menu-pill:hover {
+            background: #040D2B;
+            color: #ffffff;
+        }
     </style>
     `;
 
@@ -295,6 +334,9 @@
     chatButton.addEventListener('click', async () => {
         chatContainer.classList.add('show');
         if (!chatLoaded) {
+            if (messagesDiv.children.length === 0) {
+                renderHistory([]);
+            }
             await loadMessageHistory();
             connectWebSocket();
             chatLoaded = true;
@@ -354,7 +396,45 @@
 
     // Função para formatar texto estilo WhatsApp
     function formatWhatsapp(text) {
-        return text.replace(/\*(.*?)\*/g, '<b>$1</b>');
+        let formatted = String(text || '');
+        formatted = formatted.replace(/\*(.*?)\*/g, '<b>$1</b>');
+        formatted = formatted.replace(/NEW LINE/gi, '<br>');
+        formatted = formatted.replace(/\\n/g, '<br>');
+        formatted = formatted.replace(/\n/g, '<br>');
+        return formatted;
+    }
+
+    function escapeHtml(text) {
+        return String(text || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function parseMenuMessage(text) {
+        if (!text) return null;
+        let raw = String(text).trim();
+        raw = raw.replace(/^<(?:p|div|span)[^>]*>/i, '');
+        const normalized = raw
+            .replace(/<br\s*\/?>/gi, '\n')
+            .replace(/NEW LINE/gi, '\n')
+            .replace(/\\n/g, '\n');
+        const lines = normalized.split('\n').map(l => l.trim()).filter(Boolean);
+        if (!lines.length || !/^#MENU/i.test(lines[0])) return null;
+        const title = lines[0].replace(/^#MENU\s*/i, '').trim() || 'Escolha uma opção:';
+        const items = lines.slice(1).map(l => l.replace(/^(\d+[\.\-\)]\s*|[•\-\*]\s*)/, '').trim()).filter(Boolean);
+        if (!items.length) return null;
+        return { title, items };
+    }
+
+    function buildMenuHtml(menu) {
+        const buttonsHtml = menu.items.map(item => {
+            const safe = escapeHtml(item);
+            return `<button type="button" class="channel-menu-pill" data-menu-send="${safe}">${safe}</button>`;
+        }).join('');
+        return `<div class="channel-menu-wrapper"><div class="channel-menu-title">${escapeHtml(menu.title)}</div><div class="channel-menu-container">${buttonsHtml}</div></div>`;
     }
 
     // Função para construir URL completa da mídia
@@ -385,7 +465,20 @@
             text = '';
         }
 
-        if (mediaType && mediaUrl) {
+        if (mediaType === 'location') {
+            const mapsUrl = (text && /^https?:\/\//i.test(text)) ? text : '';
+            contentHtml = `<a href="${mapsUrl || '#'}" target="_blank" rel="noopener" class="channel-media-document">
+                <i>📍</i> <strong>Localização</strong>${mapsUrl ? '<br><small>Abrir no mapa</small>' : ''}
+            </a>`;
+        } else if (mediaType === 'vcard') {
+            const fnMatch = String(text || '').match(/FN:([^\n]+)/);
+            const telMatch = String(text || '').match(/TEL[^:]*:([^\n]+)/);
+            const fn = fnMatch ? fnMatch[1].trim() : 'Contato';
+            const tel = telMatch ? telMatch[1].trim() : '';
+            contentHtml = `<div class="channel-media-document">
+                <i>👤</i> <strong>${fn}</strong>${tel ? '<br><small>' + tel + '</small>' : ''}
+            </div>`;
+        } else if (mediaType && mediaUrl) {
             const fullMediaUrl = buildMediaUrl(mediaUrl);
             switch (mediaType.toLowerCase()) {
                 case 'image':
@@ -415,11 +508,24 @@
                     contentHtml = `<span>${formatWhatsapp(text)}</span>`;
             }
         } else {
-            contentHtml = `<span>${formatWhatsapp(text)}</span>`;
+            const menuData = parseMenuMessage(text);
+            if (menuData) {
+                contentHtml = buildMenuHtml(menuData);
+            } else {
+                contentHtml = `<span style="white-space:normal;">${formatWhatsapp(text)}</span>`;
+            }
         }
 
         messageDiv.innerHTML = `${contentHtml}<br><span style="font-size:10px;color:#888;">${time} ${ackHtml}</span>`;
         messagesDiv.appendChild(messageDiv);
+
+        messageDiv.querySelectorAll('[data-menu-send]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                messageInput.value = btn.getAttribute('data-menu-send');
+                sendButton.click();
+            });
+        });
+
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
 
@@ -444,9 +550,25 @@
         return '';
     }
 
+    const DEFAULT_WELCOME_MESSAGE = `#MENU Olá! 👋 Seja bem-vindo à Promp. Como podemos te ajudar hoje?
+1. Conhecer Recursos e Planos
+2. Falar com Especialista
+3. Suporte Técnico
+4. Ver Demonstração`;
+
     // Função para renderizar o histórico completo
     function renderHistory(messages) {
         messagesDiv.innerHTML = '';
+        if (!messages || messages.length === 0) {
+            appendMessage(
+                DEFAULT_WELCOME_MESSAGE,
+                'channel-received',
+                formatTime(new Date().toISOString()),
+                null,
+                'welcome-auto'
+            );
+            return;
+        }
         messages.forEach(msg => {
             appendMessage(
                 msg.body,
@@ -474,9 +596,11 @@
             if (Array.isArray(data)) {
                 renderHistory(data);
             } else {
+                renderHistory([]);
                 process.env.LOGGER_WARN === 'true' && console.warn('[WebChat] Resposta da API não é um array:', data);
             }
         } catch (error) {
+            renderHistory([]);
             process.env.LOGGER_ERROR === 'true' && console.error('[WebChat] Erro ao carregar histórico:', error);
         }
     }

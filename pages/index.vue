@@ -93,6 +93,7 @@ useSeoMeta({
 </style>
 
 <template>
+  <div class="landing-page-root w-full">
   <!-- Header -->
   <!-- Hero Section -->
   <section id="hero" class="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
@@ -153,7 +154,7 @@ useSeoMeta({
               <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-contain bg-white"
                 src="/images/clients/empresa-dmboat.png" alt="Empresa 1" width="32" height="32" loading="lazy" />
               <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
-                src="/images/clients/empresa-fripet.jpg" alt="Empresa 2" width="32" height="32" loading="lazy" />
+                src="/images/clients/empresa-grossi.png" alt="Grossi Group" width="32" height="32" loading="lazy" />
               <NuxtImg class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-900 object-cover bg-white"
                 src="/images/clients/empresa-jit.jpeg" alt="Empresa 3" width="32" height="32" loading="lazy" />
             </div>
@@ -201,12 +202,12 @@ useSeoMeta({
       </p>
       <div class="flex flex-row flex-wrap justify-center items-center gap-8 md:gap-16 transition-all duration-300">
         <NuxtImg src="/images/clients/empresa-dmboat.png" alt="DM Boat" class="h-10 md:h-14 w-auto object-contain" />
-        <NuxtImg src="/images/clients/empresa-fripet.jpg" alt="Fripet"
-          class="h-10 md:h-14 w-auto object-contain rounded-lg" />
+        <NuxtImg src="/images/clients/empresa-grossi.png" alt="Grossi Group"
+          class="h-10 md:h-14 w-auto object-contain" />
         <NuxtImg src="/images/clients/empresa-jit.jpeg" alt="JIT"
           class="h-10 md:h-14 w-auto object-contain rounded-lg" />
-        <NuxtImg src="/images/clients/empresa-planminas.png" alt="Planminas"
-          class="h-10 md:h-14 w-auto object-contain" />
+        <NuxtImg src="/images/clients/empresa-fripet.jpg" alt="Fripet"
+          class="h-10 md:h-14 w-auto object-contain rounded-lg" />
         <NuxtImg src="/images/clients/empresa-unifahe.png" alt="Unifahe" class="h-10 md:h-14 w-auto object-contain" />
       </div>
     </div>
@@ -483,7 +484,7 @@ useSeoMeta({
                 class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-contain bg-white"
                 src="/images/clients/empresa-dmboat.png" alt="Client 1" />
               <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
-                src="/images/clients/empresa-fripet.jpg" alt="Client 2" />
+                src="/images/clients/empresa-grossi.png" alt="Grossi Group" />
               <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover bg-white"
                 src="/images/clients/empresa-jit.jpeg" alt="Client 3" />
               <div
@@ -2131,20 +2132,24 @@ useSeoMeta({
 
 
 
+  <!-- Testimonials Section -->
+  <TestimonialsSection />
+
   <GlobalPresence />
 
   <!-- FAQ Section -->
   <FAQSection />
 
   <!-- Mobile App Section -->
-  <section class="pt-20 pb-0 bg-slate-50 dark:bg-slate-800 overflow-hidden relative">
+  <section class="pt-20 md:pt-28 pb-0 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 relative z-10 overflow-hidden" style="background-color: #f8fafc;">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-end gap-12">
+      <div class="flex flex-col lg:flex-row items-end gap-12 lg:gap-16">
         <!-- Text Content -->
-        <div class="w-full md:w-1/2 z-10 self-center pb-10">
-          <span class="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">{{ $t('mobile_app.label')
-            }}</span>
-          <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+        <div class="w-full lg:w-1/2 z-10 pb-12 lg:pb-24 self-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 dark:bg-blue-500/20 text-secondary dark:text-blue-300 text-xs font-bold border border-secondary/20 mb-4">
+            {{ $t('mobile_app.label') }}
+          </div>
+          <h2 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
             {{ $t('mobile_app.title') }}
           </h2>
           <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
@@ -2154,7 +2159,7 @@ useSeoMeta({
           <div class="flex flex-col sm:flex-row gap-4">
             <!-- Google Play Button -->
             <a href="https://play.google.com/store/apps/details?id=com.converta.apppromp&hl=pt_BR" target="_blank"
-              class="flex items-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              class="flex items-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3.5 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               aria-label="Baixar aplicativo na Google Play Store">
               <svg class="w-8 h-8 mr-3 text-white dark:text-slate-900" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -2168,7 +2173,7 @@ useSeoMeta({
 
             <!-- App Store Button -->
             <a href="https://apps.apple.com/br/app/promp-ia-vendas-e-marketing/id6752315649" target="_blank"
-              class="flex items-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              class="flex items-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-3.5 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
               aria-label="Baixar aplicativo na App Store">
               <svg class="w-8 h-8 mr-3 text-white dark:text-slate-900" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -2183,15 +2188,15 @@ useSeoMeta({
         </div>
 
         <!-- Mockup Image -->
-        <div class="w-full md:w-1/2 flex justify-center items-center relative mt-10 md:mt-0">
+        <div class="w-full lg:w-1/2 flex justify-center items-end relative self-end">
           <!-- Background Blob -->
-          <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full translate-y-4 scale-75"></div>
+          <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full translate-y-4 scale-75 pointer-events-none"></div>
 
           <img src="/images/modelo-app.png" alt="App Mobile Promp"
-            class="relative z-10 w-auto max-w-full h-auto max-h-[650px] object-contain transition-transform duration-500 hover:scale-105 origin-center block" />
+            class="relative z-10 w-auto max-w-full h-auto max-h-[600px] object-contain object-bottom block -mb-px" />
 
           <!-- Floating Lottie Notification -->
-          <div class="absolute -left-12 top-1/4 z-20 hidden md:block w-72">
+          <div class="absolute -left-8 top-1/4 z-20 hidden md:block w-72">
             <ClientOnly>
               <div class="lottie-container w-full min-h-[120px]" data-animation-path="/images/Notification-remix.json">
               </div>
@@ -2203,28 +2208,26 @@ useSeoMeta({
   </section>
 
   <!-- Final CTA -->
-  <section class="py-24 bg-primary relative overflow-hidden">
+  <section class="py-24 bg-primary text-white relative z-10 overflow-hidden" style="background-color: #E84624;">
     <!-- Decor elements -->
-    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2">
-    </div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-5 rounded-full translate-y-1/2 -translate-x-1/2">
-    </div>
+    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
 
     <div class="container mx-auto px-4 text-center relative z-10">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">{{ $t('final_cta.title') }}</h2>
-      <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">{{ $t('final_cta.subtitle') }}</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <h2 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">{{ $t('final_cta.title') }}</h2>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">{{ $t('final_cta.subtitle') }}</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <NuxtLink to="https://app.promp.com.br/#/signup"
-          class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-secondary bg-white hover:bg-slate-50 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-slate-900 bg-white hover:bg-slate-50 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
           {{ $t('final_cta.button_trial') }}
         </NuxtLink>
         <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
           target="_blank"
-          class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors">
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white border-2 border-white/40 hover:bg-white/10 rounded-xl transition-colors">
           {{ $t('final_cta.button_whatsapp') }}
         </a>
       </div>
     </div>
   </section>
-
+  </div>
 </template>

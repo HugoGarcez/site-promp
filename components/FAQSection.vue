@@ -13,13 +13,13 @@ const toggle = (index) => {
 </script>
 
 <template>
-    <section class="py-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800" id="faq">
+    <section class="py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 relative z-10" id="faq">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <div class="w-full text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 block w-full">
                     {{ t('faq.title') }}
                 </h2>
-                <p class="text-lg text-slate-600 dark:text-slate-400">
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto block w-full">
                     {{ t('faq.subtitle') }}
                 </p>
             </div>

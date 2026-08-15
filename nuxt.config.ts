@@ -19,13 +19,15 @@ export default defineNuxtConfig({
       link: [
         { rel: 'preconnect', href: 'https://ui-avatars.com' },
         { rel: 'dns-prefetch', href: 'https://ui-avatars.com' },
+        { rel: 'preconnect', href: 'https://i.pravatar.cc' },
+        { rel: 'dns-prefetch', href: 'https://i.pravatar.cc' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap' }
       ],
       script: [
         {
-          src: '/webchat-widget-1-9259a5fb-c89d-4740-bf8b-9c066d56fc95.js',
+          src: '/webchat-widget-1-9259a5fb-c89d-4740-bf8b-9c066d56fc95.js?v=3',
           defer: true
         }
       ]

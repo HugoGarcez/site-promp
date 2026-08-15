@@ -980,7 +980,7 @@ const chats = ref([
   {
     id: 2,
     name: 'Maria Costa',
-    avatar: '/images/maria-costa.jpeg',
+    avatar: 'https://i.pravatar.cc/300?img=47',
     tag: '#19401 • Suporte',
     lastTime: '10:15',
     preview: 'Qual o valor do frete?',
@@ -1017,7 +1017,7 @@ const chats = ref([
   {
     id: 1,
     name: 'João Maurício',
-    avatar: '/images/joao-mauricio.jpeg',
+    avatar: 'https://i.pravatar.cc/300?img=12',
     tag: '#21223 • Comercial',
     lastTime: '09:45',
     preview: 'Fechado! Pode enviar.',
@@ -1054,7 +1054,7 @@ const chats = ref([
   {
     id: 3,
     name: 'Pedro Santos',
-    avatar: '/images/pedro-santos.jpeg',
+    avatar: 'https://i.pravatar.cc/300?img=68',
     tag: '#8080 • Logística',
     lastTime: '08:00',
     preview: 'Obrigado pela agilidade!',

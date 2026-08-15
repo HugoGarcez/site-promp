@@ -53,26 +53,6 @@
 
                     <p class="text-slate-400 text-sm mb-6">{{ $t('footer.company_desc') }}</p>
 
-                    <!-- Status -->
-                    <div class="flex gap-4 mb-6">
-                        <a href="https://status.promp.com.br" target="_blank"
-                            class="flex flex-col gap-1 items-start group">
-                            <span
-                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">{{
-                                    $t('footer.status_ai') }}</span>
-                            <img src="https://status.promp.com.br/api/badge/4/status?style=for-the-badge"
-                                alt="Status IA" class="h-5 object-contain" />
-                        </a>
-                        <a href="https://status.promp.com.br" target="_blank"
-                            class="flex flex-col gap-1 items-start group">
-                            <span
-                                class="text-[10px] uppercase font-bold text-slate-500 group-hover:text-slate-300 transition-colors">{{
-                                    $t('footer.status_system') }}</span>
-                            <img src="https://status.promp.com.br/api/badge/2/status?style=for-the-badge"
-                                alt="Status App" class="h-5 object-contain" />
-                        </a>
-                    </div>
-
                     <!-- Socials -->
                     <div class="flex gap-4">
                         <a href="#"
@@ -124,10 +104,39 @@
 
                 <div class="lg:col-span-1">
                     <h4 class="font-bold text-white mb-6">{{ $t('footer.solutions') }}</h4>
-                    <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.solution_1') }}</a>
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-400">
+                        <li>
+                            <NuxtLink to="/solucoes/atendimento-marketplaces" class="hover:text-white transition-colors">Atendimento Marketplaces</NuxtLink>
                         </li>
-                        <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.solution_2') }}</a>
+                        <li>
+                            <NuxtLink to="/solucoes/demora-no-atendimento" class="hover:text-white transition-colors">Resposta Rápida (&lt;3s)</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/concorrencia-com-ia" class="hover:text-white transition-colors">Modernização com IA</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/leads-que-nao-convertem" class="hover:text-white transition-colors">Conversão de Anúncios</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/follow-up-de-leads" class="hover:text-white transition-colors">Follow-up Automático</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/atendimento-fora-do-horario" class="hover:text-white transition-colors">Atendimento 24/7</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/perguntas-repetitivas" class="hover:text-white transition-colors">FAQ &amp; Base de IA</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/canais-descentralizados" class="hover:text-white transition-colors">Centralização Multicanal</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/falta-de-controle" class="hover:text-white transition-colors">Gestão e Métricas</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/escalar-vendas-whatsapp" class="hover:text-white transition-colors">Escalar Vendas WhatsApp</NuxtLink>
+                        </li>
+                        <li>
+                            <NuxtLink to="/solucoes/integracoes-e-automacoes" class="hover:text-white transition-colors">Integrações e API</NuxtLink>
                         </li>
                     </ul>
                 </div>
