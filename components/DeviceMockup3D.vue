@@ -9,7 +9,9 @@
             <div class="screen-notch"></div>
             <!-- Live Component for Desktop -->
             <div class="w-[1280px] h-[800px] origin-top-left bg-white dark:bg-slate-900" style="transform: scale(0.39)">
-              <PrompChatMockup :embedded="true" />
+              <ClientOnly>
+                <PrompChatMockup :embedded="true" />
+              </ClientOnly>
             </div>
           </div>
         </div>
@@ -27,7 +29,9 @@
             <div class="phone-dynamic-island"></div>
             <!-- Live Component for Mobile -->
             <div class="w-[375px] h-[812px] origin-top-left bg-white dark:bg-slate-900" style="transform: scale(0.34)">
-              <PrompChatMockup :embedded="true" />
+              <ClientOnly>
+                <PrompChatMockup :embedded="true" />
+              </ClientOnly>
             </div>
           </div>
           <!-- Buttons and Details -->

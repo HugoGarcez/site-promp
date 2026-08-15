@@ -1,0 +1,42 @@
+# Promp — Plataforma de Automação de Vendas e Atendimento com Inteligência Artificial
+
+> Promp é a plataforma líder em automação de vendas e atendimento inteligente para WhatsApp, Instagram, Telegram e canais de mensageria no Brasil e América Latina. Ela transforma canais de mensagem em máquinas de vendas 24/7 com agentes de IA humanizados integrados ao CRM.
+
+## Visão Geral do Produto
+- **Nome da Empresa/Produto**: Promp (promp.com.br)
+- **Categoria**: Software de Atendimento com IA, Automação de WhatsApp, Chatbot de Vendas com IA, CRM Omnichannel
+- **Canais Suportados**: WhatsApp (API Oficial Meta), Instagram Direct, Telegram, Webchat, E-mail, Mercado Livre, Shopee, Magalu.
+- **Público-Alvo**: Empresas de E-commerce, Clínicas e Consultórios, Imobiliárias, Concessionárias, Prestadores de Serviços, Negócios B2B e B2C.
+
+## Principais Funcionalidades
+1. **Agentes de IA Humanizados**:
+   - Respostas instantâneas e personalizadas 24 horas por dia, 7 dias por semana.
+   - Treinamento com a base de conhecimento da própria empresa (PDFs, catálogos, manuais, planilhas e histórico).
+   - Envio e compreensão de áudios com transcrição e voz natural sintetizada.
+   - Transbordo inteligente para atendentes humanos quando necessário.
+
+2. **CRM & Funil de Vendas Automatizado (Kanban)**:
+   - Movimentação automática de oportunidades entre etapas do funil com base nas conversas.
+   - Geração de Pix Copia e Cola instantâneo com confirmação de pagamento automatizada.
+   - Qualificação automática de leads (SDR de IA).
+   - Follow-up e recuperação de vendas perdidas e carrinhos abandonados.
+
+3. **Aplicativo Mobile Nativo (iOS e Android)**:
+   - Aplicativo nativo para gestão da operação em tempo real na palma da mão.
+   - Notificações instantâneas de fechamentos e novos leads.
+
+4. **Integrações Oficiais**:
+   - Meta Tech Provider homologado e WhatsApp Business API oficial.
+   - Integração com RD Station, HubSpot, ActiveCampaign, Webhooks e APIs abertas.
+
+## Casos de Uso Comuns
+- **Vendas Rápidas**: Envio de catálogos, cálculo de frete, disponibilidade de estoque e fechamento via Pix.
+- **Agendamento de Consultas e Reuniões**: Sincronização com Google Agenda e sistemas internos para marcar horários sem atendente humano.
+- **Suporte Nível 1 & 2**: Resolução de 80%+ das dúvidas sobre faturas, 2ª via, rastreio de pedidos e garantias.
+- **Reativação de Clientes**: Disparo de campanhas segmentadas com cupons e ofertas no momento exato de recompra.
+
+## Links e Recursos
+- Website Oficial: https://promp.com.br
+- Cadastro e Demonstração: https://app.promp.com.br/signup
+- Contato Comercial / WhatsApp: https://wa.me/5522992371763
+- Documentação e API: https://doc.promp.ia

@@ -66,7 +66,7 @@ onMounted(() => {
 
 // WhatsApp CTA link
 const whatsappLink = 'https://wa.me/5522992371763?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20IA%20da%20Promp%20para%20minha%20empresa'
-const signupLink = 'https://app.promp.com.br/#/signup'
+const signupLink = 'https://app.promp.com.br/signup'
 
 // FAQ items
 const faqItems = [
@@ -134,8 +134,17 @@ useSeoMeta({
   ogTitle: 'Promp IA — Atendimento Inteligente que Vende 24h',
   description: 'Pare de perder clientes por demora no atendimento. A IA da Promp responde, qualifica e vende pelo WhatsApp, Instagram e mais — 24 horas por dia, sem parar.',
   ogDescription: 'Pare de perder clientes por demora no atendimento. A IA da Promp responde, qualifica e vende pelo WhatsApp, Instagram e mais — 24 horas por dia.',
-  ogImage: '/images/ia-em-acao.jpg',
+  ogImage: 'https://promp.com.br/images/ia-whatsapp.png',
+  ogUrl: 'https://promp.com.br/ia-para-empresas',
+  ogType: 'website',
+  ogSiteName: 'Promp',
+  ogLocale: 'pt_BR',
   twitterCard: 'summary_large_image',
+  twitterTitle: 'Promp IA — Atendimento Inteligente que Vende 24h',
+  twitterDescription: 'Pare de perder clientes por demora no atendimento. A IA da Promp responde, qualifica e vende pelo WhatsApp, Instagram e mais — 24 horas por dia, sem parar.',
+  twitterImage: 'https://promp.com.br/images/ia-whatsapp.png',
+  keywords: 'IA para empresas, chatbot de vendas, automação WhatsApp empresas, atendimento 24h IA, SDR inteligência artificial',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 })
 </script>
 
