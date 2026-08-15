@@ -23,6 +23,25 @@ const currentIndex = ref(0);
 const currentPlatform = computed(() => platforms[currentIndex.value]);
 let intervalId = null;
 
+const painFeedback = ref('');
+const painFeedbackSent = ref(false);
+
+const submitPainFeedback = () => {
+  if (!painFeedback.value.trim()) return;
+  
+  const text = encodeURIComponent(`Olá! Tenho a seguinte dor no meu negócio: ${painFeedback.value.trim()}`);
+  painFeedbackSent.value = true;
+  
+  if (process.client) {
+    window.open(`https://wa.me/5522992371763?text=${text}`, '_blank');
+  }
+  
+  setTimeout(() => {
+    painFeedback.value = '';
+    painFeedbackSent.value = false;
+  }, 5000);
+};
+
 onMounted(() => {
   if (process.client) {
     // Animation for Lottie
@@ -590,6 +609,202 @@ useSeoMeta({
           <div class="relative w-full md:w-1/2 h-64 md:h-auto rounded-2xl overflow-hidden shrink-0 min-h-[300px]">
             <FloatingIntegrations />
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================  -->
+  <!-- PAIN POINTS NAVIGATOR — "Qual a maior dor?" -->
+  <!-- ==========================================  -->
+  <section id="dores" class="py-20 md:py-28 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <!-- Decorative background -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest rounded-full mb-6">
+          Descubra sua solução
+        </span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
+          Qual a maior <span class="text-primary">dor</span> do seu negócio hoje?
+        </h2>
+        <p class="text-lg text-slate-500 dark:text-slate-400">
+          Clique na que mais te representa e descubra como resolver agora.
+        </p>
+      </div>
+
+      <!-- Pain Cards Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        <!-- Card 1: Marketplaces -->
+        <NuxtLink to="/solucoes/atendimento-marketplaces"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">🏪</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Dificuldade em responder todos os marketplaces
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Shopee, ML, Nuvemshop e mais — tudo espalhado</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 2: Demora -->
+        <NuxtLink to="/solucoes/demora-no-atendimento"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">🔴</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Perco vendas porque demoro para responder
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Leads esfriando enquanto você está ocupado</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 3: Concorrência IA -->
+        <NuxtLink to="/solucoes/concorrencia-com-ia"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">🤖</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Concorrentes já usam IA e estou ficando para trás
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Modernize antes que seja tarde</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 4: Leads não convertem -->
+        <NuxtLink to="/solucoes/leads-que-nao-convertem"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">💰</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Invisto em anúncios mas leads não convertem
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Tráfego pago sem retorno</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 5: Follow-up -->
+        <NuxtLink to="/solucoes/follow-up-de-leads"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">📞</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Não consigo fazer follow-up dos leads
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Leads entram e ninguém acompanha</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 6: Fora do horário -->
+        <NuxtLink to="/solucoes/atendimento-fora-do-horario"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">🌙</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Não consigo atender fora do horário comercial
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Vendas perdidas à noite e fins de semana</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 7: Perguntas repetitivas -->
+        <NuxtLink to="/solucoes/perguntas-repetitivas"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">🔁</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Equipe gasta o dia respondendo as mesmas perguntas
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">80% do tempo em FAQ, não em vendas</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 8: Canais descentralizados -->
+        <NuxtLink to="/solucoes/canais-descentralizados"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">📱</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Conversas espalhadas em vários canais
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">WhatsApp, Instagram, Telegram — caos total</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 9: Falta de controle -->
+        <NuxtLink to="/solucoes/falta-de-controle"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">📊</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Não sei o que minha equipe fala com clientes
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Sem visibilidade de métricas e qualidade</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 10: Escalar WhatsApp -->
+        <NuxtLink to="/solucoes/escalar-vendas-whatsapp"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">📈</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Quero escalar vendas pelo WhatsApp
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">Limitado por atendimento manual</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 11: Integrações -->
+        <NuxtLink to="/solucoes/integracoes-e-automacoes"
+          class="group relative bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <span class="text-3xl mb-4 block group-hover:scale-110 transition-transform">🔗</span>
+          <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+            Preciso integrar com outras ferramentas
+          </h3>
+          <p class="text-xs text-slate-400 dark:text-slate-500">CRM, e-commerce, ERP — tudo manual</p>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 absolute top-6 right-6 group-hover:text-primary group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </NuxtLink>
+
+        <!-- Card 12: Outra — Qual? (Feedback) -->
+        <div class="relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/80 dark:to-slate-800/50 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-3xl mb-4 block">💬</span>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white mb-2">
+              Outra dor? Conte para nós!
+            </h3>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mb-4">Qual é o maior desafio do seu negócio?</p>
+          </div>
+          <form @submit.prevent="submitPainFeedback" class="space-y-2">
+            <input
+              v-model="painFeedback"
+              type="text"
+              placeholder="Descreva sua dor aqui..."
+              class="w-full px-3 py-2 text-xs bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all text-slate-900 dark:text-white placeholder-slate-400"
+            />
+            <button
+              type="submit"
+              :disabled="!painFeedback.trim()"
+              class="w-full px-3 py-2 text-xs font-bold text-white bg-primary hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed rounded-lg transition-all"
+            >
+              {{ painFeedbackSent ? '✓ Enviado! Obrigado!' : 'Enviar' }}
+            </button>
+          </form>
         </div>
       </div>
     </div>
