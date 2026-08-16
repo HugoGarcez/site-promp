@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-[92%] mx-auto md:w-full max-w-full group perspective-1000">
+  <div class="relative w-full max-w-full group perspective-1000 overflow-hidden sm:overflow-visible">
     <!-- Floating Channel Icons -->
 
     <!-- WhatsApp (Top Left) -->
@@ -82,18 +82,18 @@
 
     <!-- Main System Window -->
     <div
-      class="relative z-10 flex flex-col h-[520px] md:h-[620px] w-full bg-[#f8fafc] dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 text-left font-sans"
+      class="relative z-10 flex flex-col h-[500px] sm:h-[540px] md:h-[620px] w-full max-w-full bg-[#f8fafc] dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 text-left font-sans"
       :class="{ 'h-full !rounded-none !border-0 !shadow-none': embedded }">
 
       <!-- Top Header / Navigation Bar -->
       <div
-        class="h-14 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 flex items-center justify-between px-3 md:px-5 shrink-0 z-30 select-none">
+        class="h-11 sm:h-14 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 flex items-center justify-between px-2.5 sm:px-5 shrink-0 z-30 select-none">
         
         <!-- Left: Logo & Sidebar Toggle (Mobile / Desktop) -->
-        <div class="flex items-center gap-3">
-          <div class="flex items-center gap-1.5 cursor-pointer">
-            <span class="text-xl font-bold text-slate-800 dark:text-white tracking-tight" style="font-family: 'Comfortaa', cursive, sans-serif;">promp<span
-                class="bg-[#ff5722] text-white px-1.5 py-0.5 rounded-lg text-[10px] font-black ml-1 uppercase tracking-wider font-sans">IA</span></span>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="flex items-center gap-1 cursor-pointer">
+            <span class="text-base sm:text-xl font-bold text-slate-800 dark:text-white tracking-tight" style="font-family: 'Comfortaa', cursive, sans-serif;">promp<span
+                class="bg-[#ff5722] text-white px-1 sm:px-1.5 py-0.5 rounded-md sm:rounded-lg text-[8px] sm:text-[10px] font-black ml-0.5 sm:ml-1 uppercase tracking-wider font-sans">IA</span></span>
           </div>
 
           <button @click="sidebarCollapsed = !sidebarCollapsed"
@@ -106,8 +106,8 @@
         </div>
 
         <!-- Center: Search Input Bar -->
-        <div class="flex-1 max-w-xs md:max-w-md mx-2 md:mx-6">
-          <div class="relative flex items-center">
+        <div class="hidden md:flex flex-1 max-w-xs md:max-w-md mx-2 md:mx-6">
+          <div class="relative flex items-center w-full">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
@@ -120,21 +120,21 @@
         </div>
 
         <!-- Right: Actions & User Profile -->
-        <div class="flex items-center gap-2 md:gap-3">
+        <div class="flex items-center gap-1.5 sm:gap-3">
           <!-- Connection Status & Language -->
-          <div class="hidden lg:flex items-center gap-2 pr-2 border-r border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300">
+          <div class="flex items-center gap-1.5 sm:gap-2 pr-1.5 sm:pr-2 border-r border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-600 dark:text-slate-300">
             <div class="flex items-center gap-1">
-              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span class="text-amber-500 text-sm">⚡</span>
+              <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="text-amber-500 text-xs sm:text-sm">⚡</span>
             </div>
-            <div class="flex items-center gap-1 px-1.5 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">
-              <span class="text-xs">文A</span>
-              <span class="text-[11px] font-bold">PT</span>
+            <div class="flex items-center gap-0.5 px-1 py-0.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">
+              <span class="text-[10px] sm:text-xs">文A</span>
+              <span class="text-[9px] sm:text-[11px] font-bold">PT</span>
             </div>
           </div>
 
           <!-- Quick Action Icons -->
-          <div class="flex items-center gap-1 text-slate-500 dark:text-slate-400">
+          <div class="hidden sm:flex items-center gap-1 text-slate-500 dark:text-slate-400">
             <div class="relative p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -142,26 +142,13 @@
               </svg>
               <span class="absolute top-0.5 right-0.5 w-3.5 h-3.5 bg-red-500 text-white text-[8px] font-bold rounded-full flex items-center justify-center">1</span>
             </div>
-            
-            <div class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer hidden sm:block">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
-            </div>
-
-            <div class="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer hidden sm:block">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414" />
-              </svg>
-            </div>
           </div>
 
           <!-- User Profile Avatar -->
-          <div class="flex items-center gap-2 pl-1">
-            <div class="relative w-8 h-8 rounded-full bg-[#0052cc] text-white flex items-center justify-center font-bold text-xs shadow-sm">
+          <div class="flex items-center gap-2 pl-0.5 sm:pl-1">
+            <div class="relative w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0052cc] text-white flex items-center justify-center font-bold text-[10px] sm:text-xs shadow-sm">
               GA
-              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+              <span class="absolute bottom-0 right-0 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
             </div>
           </div>
         </div>
@@ -173,10 +160,10 @@
         <!-- Sidebar Navigation (Full System Sidebar) -->
         <div
           class="bg-white dark:bg-slate-900 border-r border-slate-200/80 dark:border-slate-800 flex flex-col justify-between shrink-0 z-20 transition-all duration-300 overflow-y-auto no-scrollbar"
-          :class="sidebarCollapsed ? 'w-12 sm:w-14' : 'w-12 sm:w-44 lg:w-48'">
+          :class="sidebarCollapsed ? 'w-10 sm:w-14' : 'w-10 sm:w-44 lg:w-48'">
 
           <!-- Menu Groups -->
-          <div class="p-1.5 sm:p-2 space-y-2.5">
+          <div class="p-1 sm:p-2 space-y-1.5 sm:space-y-2.5">
             
             <!-- Group: PRINCIPAL -->
             <div>
@@ -187,9 +174,10 @@
               <div class="space-y-0.5 mt-0.5">
                 <!-- Home -->
                 <button @click="currentTab = 'home'"
-                  class="w-full flex items-center gap-2 px-2 py-1.5 rounded-xl text-[11px] font-medium transition-all group"
-                  :class="currentTab === 'home' ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  class="w-full flex items-center justify-center sm:justify-start gap-2 p-1.5 sm:px-2 sm:py-1.5 rounded-xl text-[11px] font-medium transition-all group"
+                  :class="currentTab === 'home' ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'"
+                  title="Home">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-3.5 sm:h-3.5 shrink-0 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                   <span v-if="!sidebarCollapsed" class="hidden sm:inline truncate">Home</span>
@@ -197,9 +185,10 @@
 
                 <!-- Dashboard (Active) -->
                 <button @click="currentTab = 'reports'"
-                  class="w-full flex items-center gap-2 px-2 py-1.5 rounded-xl text-[11px] font-medium transition-all group"
-                  :class="currentTab === 'reports' ? 'bg-[#dcfce7] text-[#0f5132] dark:bg-emerald-900/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  class="w-full flex items-center justify-center sm:justify-start gap-2 p-1.5 sm:px-2 sm:py-1.5 rounded-xl text-[11px] font-medium transition-all group"
+                  :class="currentTab === 'reports' ? 'bg-[#dcfce7] text-[#0f5132] dark:bg-emerald-900/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'"
+                  title="Dashboard">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-3.5 sm:h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                   </svg>
                   <span v-if="!sidebarCollapsed" class="hidden sm:inline truncate">Dashboard</span>
@@ -220,9 +209,10 @@
               </div>
               <div class="space-y-0.5 mt-0.5">
                 <button @click="currentTab = 'chat'"
-                  class="w-full flex items-center gap-2 px-2 py-1.5 rounded-xl text-[11px] font-medium transition-all group"
-                  :class="currentTab === 'chat' ? 'bg-[#dcfce7] text-[#0f5132] dark:bg-emerald-900/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  class="w-full flex items-center justify-center sm:justify-start gap-2 p-1.5 sm:px-2 sm:py-1.5 rounded-xl text-[11px] font-medium transition-all group"
+                  :class="currentTab === 'chat' ? 'bg-[#dcfce7] text-[#0f5132] dark:bg-emerald-900/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'"
+                  title="Conversas">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-3.5 sm:h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                   </svg>
                   <span v-if="!sidebarCollapsed" class="hidden sm:inline truncate">Conversas</span>
@@ -243,9 +233,10 @@
               </div>
               <div class="space-y-0.5 mt-0.5">
                 <button @click="currentTab = 'contacts'"
-                  class="w-full flex items-center gap-2 px-2 py-1.5 rounded-xl text-[11px] font-medium transition-all group"
-                  :class="currentTab === 'contacts' ? 'bg-[#dcfce7] text-[#0f5132] dark:bg-emerald-900/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  class="w-full flex items-center justify-center sm:justify-start gap-2 p-1.5 sm:px-2 sm:py-1.5 rounded-xl text-[11px] font-medium transition-all group"
+                  :class="currentTab === 'contacts' ? 'bg-[#dcfce7] text-[#0f5132] dark:bg-emerald-900/40 dark:text-emerald-300 font-bold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60'"
+                  title="CRM & Funil">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 sm:w-3.5 sm:h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                   </svg>
                   <span v-if="!sidebarCollapsed" class="hidden sm:inline truncate">CRM & Funil</span>
@@ -1526,23 +1517,23 @@
         <!-- TAB: CHAT / ATENDIMENTOS -->
         <div v-else-if="currentTab === 'chat'" class="flex flex-1 min-w-0 h-full overflow-hidden bg-slate-100 dark:bg-slate-900">
           
-          <!-- Coluna 1: Lista de Atendimentos (Esquerda - Compacta e Harmoniosa) -->
+          <!-- Coluna 1: Lista de Atendimentos (Esquerda - Proporção Calibrada para Mobile e Desktop) -->
           <div
-            class="w-56 sm:w-64 lg:w-68 bg-white dark:bg-slate-800 border-r border-slate-200/80 dark:border-slate-700/80 flex flex-col shrink-0 min-w-0 z-10 transition-all duration-300">
+            class="w-32 xs:w-36 sm:w-56 md:w-64 lg:w-68 bg-white dark:bg-slate-800 border-r border-slate-200/80 dark:border-slate-700/80 flex flex-col shrink-0 min-w-0 z-10 transition-all duration-300">
             
             <!-- Header dos Atendimentos -->
-            <div class="p-2.5 sm:p-3 border-b border-slate-100 dark:border-slate-700/60 space-y-2">
-              <div class="flex items-center justify-between">
-                <h2 class="text-xs sm:text-sm font-bold text-slate-800 dark:text-white">Atendimentos</h2>
-                <div class="flex items-center gap-1">
-                  <button class="flex items-center gap-1 px-1.5 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 text-[10px] font-semibold text-slate-700 dark:text-slate-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="p-1.5 sm:p-3 border-b border-slate-100 dark:border-slate-700/60 space-y-1 sm:space-y-2">
+              <div class="flex items-center justify-between gap-1">
+                <h2 class="text-[11px] sm:text-sm font-bold text-slate-800 dark:text-white truncate">Atendimentos</h2>
+                <div class="flex items-center gap-1 shrink-0">
+                  <button class="flex items-center gap-0.5 px-1 sm:px-1.5 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 text-[9px] sm:text-[10px] font-semibold text-slate-700 dark:text-slate-200" title="Filtros">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                     </svg>
-                    <span>Filtros</span>
-                    <span class="w-3 h-3 rounded-full bg-[#0052cc] text-white text-[8px] flex items-center justify-center font-bold">1</span>
+                    <span class="hidden sm:inline">Filtros</span>
+                    <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#0052cc] text-white text-[7px] sm:text-[8px] flex items-center justify-center font-bold">1</span>
                   </button>
-                  <button class="px-1.5 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 text-[10px] font-semibold text-slate-700 dark:text-slate-200">
+                  <button class="hidden sm:block px-1.5 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 text-[10px] font-semibold text-slate-700 dark:text-slate-200">
                     •••
                   </button>
                 </div>
@@ -1550,29 +1541,28 @@
 
               <!-- Barra de Busca e Atalhos -->
               <div class="flex items-center gap-1">
-                <div class="relative flex-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 absolute left-2 top-1/2 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="relative flex-1 min-w-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 h-2.5 sm:w-3 sm:h-3 absolute left-1.5 sm:left-2 top-1/2 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
-                  <input type="text" placeholder="Buscar conversa..." class="w-full pl-6 pr-2 py-1 text-[11px] bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-[10px]">
+                  <input type="text" placeholder="Buscar..." class="w-full pl-5 sm:pl-6 pr-1 py-0.5 sm:py-1 text-[9px] sm:text-[11px] bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-[9px]">
                 </div>
-                <div class="flex items-center gap-0.5 px-1.5 py-1 rounded-md border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 text-[9px] font-bold shrink-0">
+                <div class="flex items-center gap-0.5 px-1 py-0.5 sm:px-1.5 sm:py-1 rounded-md border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 text-[8px] sm:text-[9px] font-bold shrink-0">
                   <span>📶</span>
                   <span>5</span>
                 </div>
               </div>
 
               <!-- Abas de Status: Abertos (47) | Pendentes (38) | Fechados -->
-              <div class="flex items-center justify-between text-[10px] pt-0.5">
-                <button class="flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 font-bold text-slate-800 dark:text-white">
+              <div class="flex items-center gap-1 text-[9px] sm:text-[10px] pt-0.5 overflow-x-auto no-scrollbar">
+                <button class="flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 font-bold text-slate-800 dark:text-white shrink-0">
                   <span>💬 Abertos</span>
-                  <span class="px-1 py-0.1 rounded-full bg-[#0052cc] text-white text-[8px] font-bold">47</span>
+                  <span class="px-1 rounded-full bg-[#0052cc] text-white text-[7px] sm:text-[8px] font-bold">47</span>
                 </button>
-                <button class="flex items-center gap-1 px-1.5 py-0.5 rounded-md text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-50">
-                  <span>🕒 Pendentes</span>
-                  <span class="px-1 py-0.1 rounded-full bg-[#0052cc] text-white text-[8px] font-bold">38</span>
+                <button class="flex items-center gap-0.5 px-1.5 py-0.5 rounded-md text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-50 shrink-0">
+                  <span>🕒 38</span>
                 </button>
-                <button class="px-1.5 py-0.5 rounded-md text-slate-400 font-medium hover:bg-slate-50">
+                <button class="hidden sm:block px-1.5 py-0.5 rounded-md text-slate-400 font-medium hover:bg-slate-50 shrink-0">
                   <span>Fechados</span>
                 </button>
               </div>
@@ -1581,51 +1571,51 @@
             <!-- Lista de Conversas com WhatsApp / Instagram / Mercado Livre -->
             <div class="flex-1 overflow-y-auto no-scrollbar divide-y divide-slate-100 dark:divide-slate-700/60">
               <div v-for="chat in chats" :key="chat.id" @click="activeChatId = chat.id"
-                class="p-2 sm:p-2.5 cursor-pointer transition-colors relative"
-                :class="activeChatId === chat.id ? 'bg-blue-50/80 dark:bg-slate-700/60 border-l-3 border-l-[#0052cc]' : 'hover:bg-slate-50/80 dark:hover:bg-slate-800/50'">
+                class="p-1.5 sm:p-2.5 cursor-pointer transition-colors relative"
+                :class="activeChatId === chat.id ? 'bg-blue-50/80 dark:bg-slate-700/60 border-l-2 sm:border-l-3 border-l-[#0052cc]' : 'hover:bg-slate-50/80 dark:hover:bg-slate-800/50'">
                 
-                <div class="flex items-start gap-2">
+                <div class="flex items-start gap-1.5 sm:gap-2">
                   <!-- Avatar com Badge do Canal (WhatsApp / Instagram / Mercado Livre) -->
                   <div class="relative shrink-0">
-                    <img :src="chat.avatar" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-slate-200 dark:border-slate-700">
+                    <img :src="chat.avatar" class="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 rounded-full object-cover border border-slate-200 dark:border-slate-700">
                     
                     <!-- Ponto Online -->
-                    <span class="absolute top-0 left-0 w-2 h-2 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                    <span class="absolute top-0 left-0 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-500 border border-white dark:border-slate-800 rounded-full"></span>
 
                     <!-- Badge do Canal: WhatsApp -->
-                    <span v-if="chat.channel === 'whatsapp'" class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xs border border-white dark:border-slate-800" title="WhatsApp">
-                      <svg class="w-2 h-2 fill-current" viewBox="0 0 24 24">
+                    <span v-if="chat.channel === 'whatsapp'" class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xs border border-white dark:border-slate-800" title="WhatsApp">
+                      <svg class="w-1.5 h-1.5 sm:w-2 sm:h-2 fill-current" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                       </svg>
                     </span>
 
                     <!-- Badge do Canal: Instagram -->
-                    <span v-else-if="chat.channel === 'instagram'" class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white rounded-full flex items-center justify-center shadow-xs border border-white dark:border-slate-800" title="Instagram">
-                      <svg class="w-2 h-2 fill-current" viewBox="0 0 24 24">
+                    <span v-else-if="chat.channel === 'instagram'" class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white rounded-full flex items-center justify-center shadow-xs border border-white dark:border-slate-800" title="Instagram">
+                      <svg class="w-1.5 h-1.5 sm:w-2 sm:h-2 fill-current" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                       </svg>
                     </span>
 
                     <!-- Badge do Canal: Mercado Livre -->
-                    <span v-else-if="chat.channel === 'mercadolivre'" class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-[#ffe600] text-[#2d3277] rounded-full flex items-center justify-center shadow-xs border border-white dark:border-slate-800 font-black text-[7px]" title="Mercado Livre">
+                    <span v-else-if="chat.channel === 'mercadolivre'" class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 bg-[#ffe600] text-[#2d3277] rounded-full flex items-center justify-center shadow-xs border border-white dark:border-slate-800 font-black text-[6px] sm:text-[7px]" title="Mercado Livre">
                       🤝
                     </span>
                   </div>
 
                   <!-- Conteúdo do Card da Conversa -->
                   <div class="flex-1 min-w-0">
-                    <div class="flex items-center justify-between gap-1">
-                      <h4 class="text-[11px] sm:text-xs font-bold text-slate-800 dark:text-white truncate">{{ chat.name }}</h4>
-                      <span class="text-[9px] text-slate-400 shrink-0 font-medium">{{ chat.lastTime }}</span>
+                    <div class="flex items-center justify-between gap-0.5">
+                      <h4 class="text-[10px] sm:text-xs font-bold text-slate-800 dark:text-white truncate">{{ chat.name }}</h4>
+                      <span class="text-[7px] sm:text-[9px] text-slate-400 shrink-0 font-medium">{{ chat.lastTime }}</span>
                     </div>
 
-                    <p class="text-[10px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
+                    <p class="text-[8px] sm:text-[10px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
                       {{ chat.preview }}
                     </p>
 
                     <!-- Setor da Empresa & Badge de IA -->
-                    <div class="flex items-center gap-1 mt-1 flex-wrap">
-                      <span class="px-1.5 py-0.2 rounded text-[8px] font-bold"
+                    <div class="flex items-center gap-0.5 sm:gap-1 mt-0.5 sm:mt-1 flex-wrap">
+                      <span class="px-1 py-0.2 rounded text-[7px] sm:text-[8px] font-bold truncate max-w-[80px] sm:max-w-none"
                         :class="{
                           'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300': chat.queue === 'Vendas',
                           'bg-blue-100 text-blue-800 dark:bg-blue-950/60 dark:text-blue-300': chat.queue === 'Suporte Técnico',
@@ -1636,9 +1626,9 @@
                         }">
                         {{ chat.queue }}
                       </span>
-                      <span v-if="chat.isAiActive" class="px-1.5 py-0.2 rounded text-[8px] font-bold bg-purple-50 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300 flex items-center gap-0.5">
+                      <span v-if="chat.isAiActive" class="px-1 py-0.2 rounded text-[7px] sm:text-[8px] font-bold bg-purple-50 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300 flex items-center gap-0.5">
                         <span>✨</span>
-                        <span>IA</span>
+                        <span class="hidden xs:inline">IA</span>
                       </span>
                     </div>
                   </div>
@@ -1653,35 +1643,35 @@
           <div class="flex-1 min-w-0 flex flex-col bg-[#efeae2] dark:bg-[#0b141a] relative transition-all duration-300">
             
             <!-- Header do Chat -->
-            <div class="h-14 bg-white dark:bg-slate-800 border-b border-slate-200/80 dark:border-slate-700/80 flex items-center justify-between px-3 sm:px-4 z-10 shrink-0">
+            <div class="h-11 sm:h-14 bg-white dark:bg-slate-800 border-b border-slate-200/80 dark:border-slate-700/80 flex items-center justify-between px-2 sm:px-4 z-10 shrink-0">
               
               <!-- Info do Contato Atual -->
-              <div class="flex items-center gap-2.5 min-w-0">
+              <div class="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
                 <div class="relative shrink-0">
-                  <img :src="activeChat.avatar" class="w-8 h-8 rounded-full object-cover border border-slate-200 dark:border-slate-700">
+                  <img :src="activeChat.avatar" class="w-6 h-6 sm:w-8 sm:h-8 rounded-full object-cover border border-slate-200 dark:border-slate-700">
                   <!-- Canal no header -->
-                  <span v-if="activeChat.channel === 'whatsapp'" class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#25D366] text-white rounded-full flex items-center justify-center text-[6px] border border-white">
+                  <span v-if="activeChat.channel === 'whatsapp'" class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#25D366] text-white rounded-full flex items-center justify-center text-[5px] sm:text-[6px] border border-white">
                     ✓
                   </span>
-                  <span v-else-if="activeChat.channel === 'instagram'" class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white rounded-full flex items-center justify-center text-[6px] border border-white">
+                  <span v-else-if="activeChat.channel === 'instagram'" class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white rounded-full flex items-center justify-center text-[5px] sm:text-[6px] border border-white">
                     📷
                   </span>
-                  <span v-else-if="activeChat.channel === 'mercadolivre'" class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#ffe600] text-[#2d3277] rounded-full flex items-center justify-center text-[6px] border border-white">
+                  <span v-else-if="activeChat.channel === 'mercadolivre'" class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#ffe600] text-[#2d3277] rounded-full flex items-center justify-center text-[5px] sm:text-[6px] border border-white">
                     🤝
                   </span>
                 </div>
 
                 <div class="min-w-0">
-                  <div class="flex items-center gap-1.5">
-                    <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">
+                  <div class="flex items-center gap-1 sm:gap-1.5">
+                    <h3 class="text-[11px] sm:text-sm font-bold text-slate-900 dark:text-white truncate">
                       {{ activeChat.name }}
                     </h3>
-                    <span v-if="activeChat.isAiActive" class="hidden sm:inline-flex px-1.5 py-0.2 rounded-full bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-[8px] sm:text-[9px] font-bold items-center gap-0.5 shrink-0">
+                    <span v-if="activeChat.isAiActive" class="hidden xs:inline-flex px-1.5 py-0.2 rounded-full bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-[8px] sm:text-[9px] font-bold items-center gap-0.5 shrink-0">
                       <span>✨</span>
-                      <span>IA Ativa</span>
+                      <span>IA</span>
                     </span>
                   </div>
-                  <div class="flex items-center gap-1 text-[10px] text-slate-500 dark:text-slate-400 truncate">
+                  <div class="flex items-center gap-1 text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 truncate">
                     <span class="font-medium text-slate-700 dark:text-slate-300">{{ activeChat.queue }}</span>
                     <span>•</span>
                     <span class="truncate">{{ activeChat.phone }}</span>
@@ -1690,29 +1680,29 @@
               </div>
 
               <!-- Barra de Ferramentas / Ações do Topo -->
-              <div class="flex items-center gap-1 sm:gap-1.5 text-slate-600 dark:text-slate-300 shrink-0">
-                <button class="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-xs text-emerald-600" title="Resolver Atendimento">✓</button>
-                <button class="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-xs" title="Transferir para Operador">⇄</button>
-                <button class="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-xs" title="Buscar">🔍</button>
+              <div class="flex items-center gap-1 text-slate-600 dark:text-slate-300 shrink-0">
+                <button class="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-[10px] sm:text-xs text-emerald-600" title="Resolver Atendimento">✓</button>
+                <button class="hidden sm:block p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-xs" title="Transferir para Operador">⇄</button>
+                <button class="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-700 text-[10px] sm:text-xs" title="Buscar">🔍</button>
                 
                 <!-- Toggle do Painel de Detalhes -->
                 <button @click="showContactDetails = !showContactDetails"
-                  class="flex items-center gap-1 px-2 py-1 rounded-lg text-xs transition-all border border-slate-200 dark:border-slate-700 shadow-2xs"
+                  class="flex items-center gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg text-[10px] sm:text-xs transition-all border border-slate-200 dark:border-slate-700 shadow-2xs"
                   :class="showContactDetails ? 'bg-[#0052cc] text-white border-[#0052cc] font-bold' : 'bg-white dark:bg-slate-700 hover:bg-slate-50 text-slate-700 dark:text-slate-200'"
                   title="Detalhes do Contato">
                   <span>ⓘ</span>
-                  <span class="text-[10px]">Detalhes</span>
+                  <span class="hidden sm:inline text-[10px]">Detalhes</span>
                 </button>
               </div>
 
             </div>
 
             <!-- Área de Mensagens do Chat -->
-            <div class="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 z-10 no-scrollbar">
+            <div class="flex-1 overflow-y-auto p-2 sm:p-4 space-y-2 sm:space-y-3 z-10 no-scrollbar">
               
               <!-- Pílula de Data -->
               <div class="flex justify-center">
-                <span class="px-2.5 py-0.5 bg-white/80 dark:bg-slate-800/80 rounded-md text-[10px] font-medium text-slate-500 shadow-2xs">
+                <span class="px-2 py-0.5 bg-white/80 dark:bg-slate-800/80 rounded-md text-[9px] sm:text-[10px] font-medium text-slate-500 shadow-2xs">
                   Hoje
                 </span>
               </div>
@@ -1721,33 +1711,33 @@
               <div v-for="(msg, index) in activeChat.messages" :key="index" class="flex flex-col gap-1">
                 
                 <!-- Mensagem do Cliente (Lado Esquerdo - Fundo Branco) -->
-                <div v-if="msg.sender === 'client'" class="flex items-end gap-2 max-w-[85%] sm:max-w-[70%]">
-                  <img :src="activeChat.avatar" class="w-6 h-6 rounded-full shrink-0 shadow-2xs object-cover">
-                  <div class="bg-white dark:bg-slate-800 rounded-2xl rounded-bl-xs p-3 shadow-2xs border border-slate-200/60 dark:border-slate-700/60">
-                    <p class="text-[10px] font-bold text-slate-700 dark:text-slate-300 mb-0.5">{{ activeChat.name }}</p>
-                    <p class="text-xs text-slate-800 dark:text-slate-200 whitespace-pre-line leading-relaxed font-normal">{{ msg.text }}</p>
-                    <div class="flex items-center justify-end gap-1 mt-1 text-[9px] text-slate-400">
+                <div v-if="msg.sender === 'client'" class="flex items-end gap-1.5 sm:gap-2 max-w-[92%] sm:max-w-[70%]">
+                  <img :src="activeChat.avatar" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full shrink-0 shadow-2xs object-cover">
+                  <div class="bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl rounded-bl-xs p-2 sm:p-3 shadow-2xs border border-slate-200/60 dark:border-slate-700/60">
+                    <p class="text-[9px] sm:text-[10px] font-bold text-slate-700 dark:text-slate-300 mb-0.5">{{ activeChat.name }}</p>
+                    <p class="text-[11px] sm:text-xs text-slate-800 dark:text-slate-200 whitespace-pre-line leading-relaxed font-normal">{{ msg.text }}</p>
+                    <div class="flex items-center justify-end gap-1 mt-0.5 text-[8px] sm:text-[9px] text-slate-400">
                       <span>{{ msg.time }}</span>
                     </div>
                   </div>
                 </div>
 
                 <!-- Mensagem da IA / Promp (Lado Direito - Fundo Azul Promp #0052cc) -->
-                <div v-else class="flex items-end justify-end gap-2 max-w-[85%] sm:max-w-[70%] ml-auto">
-                  <div class="bg-[#0052cc] text-white rounded-2xl rounded-br-xs p-3 shadow-2xs">
-                    <div class="flex items-center gap-1 text-[9px] font-bold text-blue-200 mb-0.5">
+                <div v-else class="flex items-end justify-end gap-1.5 sm:gap-2 max-w-[94%] sm:max-w-[75%] ml-auto">
+                  <div class="bg-[#0052cc] text-white rounded-xl sm:rounded-2xl rounded-br-xs p-2 sm:p-3 shadow-2xs">
+                    <div class="flex items-center gap-1 text-[8px] sm:text-[9px] font-bold text-blue-200 mb-0.5">
                       <span>✨ Promp IA</span>
-                      <span class="px-1 py-0.1 bg-white/20 rounded text-[8px]">Resposta Instantânea</span>
+                      <span class="px-1 py-0.1 bg-white/20 rounded text-[7px] sm:text-[8px]">Resposta Instantânea</span>
                     </div>
-                    <p class="text-xs text-white whitespace-pre-line leading-relaxed font-normal">{{ msg.text }}</p>
-                    <div class="flex items-center justify-end gap-1 mt-1 text-[9px] text-blue-100">
+                    <p class="text-[11px] sm:text-xs text-white whitespace-pre-line leading-relaxed font-normal">{{ msg.text }}</p>
+                    <div class="flex items-center justify-end gap-1 mt-0.5 text-[8px] sm:text-[9px] text-blue-100">
                       <span>{{ msg.time }}</span>
                       <span>•</span>
                       <span>Setor: {{ activeChat.queue }}</span>
                       <span>✓✓</span>
                     </div>
                   </div>
-                  <div class="w-6 h-6 rounded-full bg-[#0052cc] text-white text-[9px] font-bold flex items-center justify-center shrink-0 border border-white shadow-2xs">
+                  <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#0052cc] text-white text-[8px] sm:text-[9px] font-bold flex items-center justify-center shrink-0 border border-white shadow-2xs">
                     ✨
                   </div>
                 </div>
