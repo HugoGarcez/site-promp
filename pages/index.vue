@@ -102,16 +102,16 @@ useSeoMeta({
 </style>
 
 <template>
-  <div class="landing-page-root w-full">
+  <div class="landing-page-root w-full max-w-full overflow-x-hidden">
   <!-- Header -->
   <!-- Hero Section -->
-  <section id="hero" class="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
+  <section id="hero" class="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden w-full max-w-full">
+    <div class="container mx-auto px-4 w-full max-w-full">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full max-w-full">
         <!-- Text Content -->
-        <div class="space-y-8 animate-fade-in-up lg:col-span-5 w-full max-w-full">
+        <div class="space-y-6 sm:space-y-8 animate-fade-in-up lg:col-span-5 w-full max-w-full">
           <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6 border border-primary/20">
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-4 sm:mb-6 border border-primary/20">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -119,14 +119,14 @@ useSeoMeta({
             {{ $t('hero.badge') }}
           </div>
 
-          <h1 class="text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tight mb-4 sm:mb-6 leading-[1.1] break-words">
             <span class="block">{{ $t('hero.title_start') }}</span>
             <span class="block text-primary whitespace-normal md:whitespace-nowrap">
               <span :style="{ color: (colorMode.value === 'dark' && currentPlatform.name === 'Shein') ? '#FFFFFF' : currentPlatform.color }">{{ currentPlatform.name }}</span>
               <span class="ml-2 text-slate-900 dark:text-white">{{ $t('hero.title_end') }}</span>
             </span>
-            <span class="relative inline-block mt-2 max-w-full">
-              <span class="relative z-10 text-slate-800 dark:text-white whitespace-normal break-words px-2 py-1">
+            <span class="relative inline-block mt-1 sm:mt-2 max-w-full">
+              <span class="relative z-10 text-slate-800 dark:text-white whitespace-normal break-words px-1 sm:px-2 py-0.5 sm:py-1">
                 {{ $t('hero.title_highlight') }}
               </span>
               <span class="absolute inset-0 bg-primary/5 dark:bg-primary/10 -rotate-1 rounded-lg -z-0"></span>
@@ -134,15 +134,15 @@ useSeoMeta({
             </span>
           </h1>
 
-          <p class="text-base md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl leading-relaxed break-words">
+          <p class="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-400 mb-6 sm:mb-8 max-w-2xl leading-relaxed break-words">
             {{ $t('hero.subtitle') }}
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch w-full sm:w-auto min-w-0">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch w-full sm:w-auto min-w-0">
             <a href="https://wa.me/5522992371763?text=Ol%C3%A1,%20quero%20mais%20informa%C3%A7%C3%B5es%20da%20IA%20para%20minha%20empresa"
               target="_blank"
               :style="{ backgroundColor: currentPlatform.color, color: currentPlatform.btnTextColor, boxShadow: `0 10px 15px -3px ${currentPlatform.color}66` }"
-              class="inline-flex items-center justify-center px-4 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold rounded-xl transition-all hover:-translate-y-1 hover:brightness-90 w-full sm:w-auto whitespace-normal sm:whitespace-nowrap text-center"
+              class="inline-flex items-center justify-center px-6 py-4 md:px-8 md:py-4 text-sm md:text-base font-bold rounded-xl transition-all hover:-translate-y-1 hover:brightness-90 w-full sm:w-auto text-center"
               aria-label="Falar com Especialista no WhatsApp">
               {{ $t('hero.cta') }}
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 24 24" fill="none"
@@ -152,7 +152,7 @@ useSeoMeta({
               </svg>
             </a>
             <a href="#ia"
-              class="inline-flex items-center justify-center px-5 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold text-slate-700 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md w-full sm:w-auto whitespace-normal md:whitespace-nowrap text-center">
+              class="inline-flex items-center justify-center px-6 py-4 md:px-8 md:py-4 text-sm md:text-base font-bold text-slate-700 dark:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm hover:shadow-md w-full sm:w-auto text-center">
               {{ $t('hero.how_it_works') }}
             </a>
           </div>
@@ -174,12 +174,12 @@ useSeoMeta({
 
 
         <!-- Feature Image / Mockup -->
-        <div class="relative animate-fade-in-right lg:col-span-7 w-full max-w-full">
+        <div class="relative animate-fade-in-right lg:col-span-7 w-full max-w-full overflow-visible">
           <div
             class="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary to-purple-500 rounded-2xl blur-xl sm:blur-2xl opacity-20 animate-pulse pointer-events-none">
           </div>
-          <!-- Mobile Wrapper with Responsive Width & Scale -->
-          <div class="w-full max-w-full min-h-[480px] sm:min-h-[520px] md:min-h-[620px]">
+          <!-- Mockup Wrapper with Responsive Height -->
+          <div class="w-full max-w-full min-h-[480px] sm:min-h-[520px] md:min-h-[620px] overflow-visible">
             <ClientOnly>
               <PrompChatMockup class="sm:rotate-1 sm:hover:rotate-0 transition-transform duration-500" />
               <template #fallback>
@@ -203,8 +203,6 @@ useSeoMeta({
               <p class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">+ 47%</p>
             </div>
           </div>
-
-          <!-- Floating Statistics Card - Clients Removed -->
         </div>
       </div>
     </div>

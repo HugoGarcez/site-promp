@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full max-w-full group perspective-1000 overflow-hidden sm:overflow-visible">
+  <div class="relative w-full max-w-full group perspective-1000 overflow-visible">
     <!-- Floating Channel Icons -->
 
     <!-- WhatsApp (Top Left) -->
@@ -155,7 +155,7 @@
       </div>
 
       <!-- Main Layout Body (Sidebar + Content) -->
-      <div class="flex flex-1 overflow-hidden">
+      <div class="flex flex-1 min-w-0 w-full max-w-full overflow-hidden">
         
         <!-- Sidebar Navigation (Full System Sidebar) -->
         <div
@@ -304,50 +304,50 @@
         </div>
 
         <!-- TAB: DASHBOARD (Principal foco da reestruturação) -->
-        <div v-if="currentTab === 'reports'" class="flex-1 flex flex-col bg-[#f8fafc] dark:bg-slate-900 overflow-y-auto no-scrollbar min-w-0">
+        <div v-if="currentTab === 'reports'" class="flex-1 min-w-0 w-full max-w-full flex flex-col bg-[#f8fafc] dark:bg-slate-900 overflow-y-auto overflow-x-hidden no-scrollbar">
           
           <!-- Dashboard Control Header -->
-          <div class="bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 p-3 sm:p-4 md:p-5 pb-3">
+          <div class="bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 p-2.5 sm:p-4 md:p-5 pb-2.5 w-full max-w-full min-w-0 shrink-0">
             
             <!-- Row 1: Greeting & Controls -->
-            <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-3">
+            <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-2.5 sm:gap-3 w-full min-w-0">
               
               <!-- Left: Greeting & Subtitle -->
               <div class="min-w-0">
                 <div class="flex items-center gap-1.5 flex-wrap">
-                  <h1 class="text-sm sm:text-base lg:text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+                  <h1 class="text-xs sm:text-base lg:text-lg font-bold text-slate-900 dark:text-white tracking-tight truncate">
                     Olá, Gabriel Albuquerque!
                   </h1>
-                  <span class="w-3.5 h-3.5 rounded-full border border-slate-300 text-slate-400 flex items-center justify-center text-[9px] cursor-pointer" title="Ajuda">?</span>
+                  <span class="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full border border-slate-300 text-slate-400 flex items-center justify-center text-[8px] sm:text-[9px] cursor-pointer" title="Ajuda">?</span>
                 </div>
-                <p class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Painel de Controle</p>
+                <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Painel de Controle</p>
               </div>
 
               <!-- Right: Quick Filters & Actions -->
-              <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar py-0.5 w-full xl:w-auto">
                 <!-- Quick Date Pills -->
-                <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg text-[10px] sm:text-[11px] font-medium">
-                  <button class="px-2 py-0.5 rounded text-slate-600 dark:text-slate-400 hover:text-slate-900">Hoje</button>
-                  <button class="px-2 py-0.5 rounded text-slate-600 dark:text-slate-400 hover:text-slate-900">7 dias</button>
-                  <button class="px-2 py-0.5 rounded bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-2xs font-bold">30 dias</button>
-                  <button class="px-2 py-0.5 rounded text-slate-600 dark:text-slate-400 hover:text-slate-900">90 dias</button>
+                <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg text-[9px] sm:text-[11px] font-medium shrink-0">
+                  <button class="px-1.5 sm:px-2 py-0.5 rounded text-slate-600 dark:text-slate-400 hover:text-slate-900">Hoje</button>
+                  <button class="px-1.5 sm:px-2 py-0.5 rounded text-slate-600 dark:text-slate-400 hover:text-slate-900">7d</button>
+                  <button class="px-1.5 sm:px-2 py-0.5 rounded bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-2xs font-bold">30d</button>
+                  <button class="hidden sm:inline px-2 py-0.5 rounded text-slate-600 dark:text-slate-400 hover:text-slate-900">90 dias</button>
                 </div>
 
                 <!-- Toggle Switch & Actions -->
-                <div class="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 px-2 py-0.5 rounded-lg border border-slate-200/80 dark:border-slate-700 text-[10px] text-slate-600 dark:text-slate-300">
-                  <span class="w-5 h-3 bg-slate-300 dark:bg-slate-600 rounded-full flex items-center p-0.5 cursor-pointer">
-                    <span class="w-2 h-2 bg-white rounded-full shadow-sm"></span>
+                <div class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/60 px-1.5 sm:px-2 py-0.5 rounded-lg border border-slate-200/80 dark:border-slate-700 text-[9px] sm:text-[10px] text-slate-600 dark:text-slate-300 shrink-0">
+                  <span class="w-4 h-2.5 sm:w-5 sm:h-3 bg-slate-300 dark:bg-slate-600 rounded-full flex items-center p-0.5 cursor-pointer">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full shadow-sm"></span>
                   </span>
                   <span class="font-medium">Conversas</span>
                 </div>
 
-                <button class="p-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-500 hover:text-slate-800 transition-colors" title="Atualizar">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button class="p-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-500 hover:text-slate-800 transition-colors shrink-0" title="Atualizar">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
                 </button>
 
-                <button class="flex items-center gap-1 px-2 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[10px] sm:text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 transition-colors shrink-0">
+                <button class="flex items-center gap-1 px-1.5 sm:px-2 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[9px] sm:text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 transition-colors shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                   </svg>
@@ -358,38 +358,29 @@
             </div>
 
             <!-- Row 2: Exact Date Pickers & Generate Button -->
-            <div class="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800/60 flex flex-wrap items-center justify-end gap-1.5 sm:gap-2 text-[10px] sm:text-[11px]">
-              <div class="flex items-center gap-1 text-slate-500">
-                <span class="text-[10px]">De</span>
-                <div class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2 py-0.5 rounded-md text-slate-700 dark:text-slate-200">
+            <div class="mt-2 pt-1.5 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between sm:justify-end gap-1.5 text-[9px] sm:text-[11px] overflow-x-auto no-scrollbar">
+              <div class="flex items-center gap-1 text-slate-500 shrink-0">
+                <span class="text-[9px]">De</span>
+                <div class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-1.5 py-0.5 rounded-md text-slate-700 dark:text-slate-200">
                   <span>12/08/2026</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
                 </div>
               </div>
 
-              <div class="flex items-center gap-1 text-slate-500">
-                <span class="text-[10px]">Até</span>
-                <div class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-2 py-0.5 rounded-md text-slate-700 dark:text-slate-200">
+              <div class="flex items-center gap-1 text-slate-500 shrink-0">
+                <span class="text-[9px]">Até</span>
+                <div class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-1.5 py-0.5 rounded-md text-slate-700 dark:text-slate-200">
                   <span>13/08/2026</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
                 </div>
               </div>
 
-              <button class="flex items-center gap-1 px-2.5 py-0.5 bg-[#0052cc] hover:bg-[#0747a6] text-white font-semibold rounded-md shadow-2xs transition-colors shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+              <button class="flex items-center gap-1 px-2 py-0.5 bg-[#0052cc] hover:bg-[#0747a6] text-white font-semibold rounded-md shadow-2xs transition-colors shrink-0">
                 <span>Gerar</span>
               </button>
             </div>
           </div>
 
           <!-- Dashboard Main Container -->
-          <div class="p-3 sm:p-4 md:p-5 space-y-4 sm:space-y-5 min-w-0">
+          <div class="p-2.5 sm:p-4 md:p-5 space-y-3 sm:space-y-5 min-w-0 w-full max-w-full">
 
             <!-- Banner: Insights de IA -->
             <div class="bg-white dark:bg-slate-800/90 rounded-xl p-3 sm:p-4 border border-slate-200/90 dark:border-slate-700/80 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
@@ -722,37 +713,37 @@
             </div>
 
             <!-- Evolução por Período (Line / Area Chart - Print 2) -->
-            <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700/80 shadow-2xs">
-              <h3 class="text-xs font-bold text-slate-800 dark:text-white mb-4">Evolução por Período</h3>
+            <div class="bg-white dark:bg-slate-800 rounded-2xl p-3.5 sm:p-5 border border-slate-200/80 dark:border-slate-700/80 shadow-2xs w-full max-w-full overflow-hidden">
+              <h3 class="text-xs font-bold text-slate-800 dark:text-white mb-3 sm:mb-4">Evolução por Período</h3>
               
-              <div class="relative h-44 w-full">
+              <div class="relative h-40 sm:h-44 w-full max-w-full overflow-hidden">
                 <!-- Y-Axis Lines & Labels -->
-                <div class="absolute inset-0 flex flex-col justify-between text-[10px] text-slate-400 pointer-events-none">
+                <div class="absolute inset-0 flex flex-col justify-between text-[9px] sm:text-[10px] text-slate-400 pointer-events-none">
                   <div class="flex items-center w-full">
-                    <span class="w-6 text-right pr-2">28</span>
+                    <span class="w-5 sm:w-6 text-right pr-1.5 sm:pr-2">28</span>
                     <div class="flex-1 border-b border-dashed border-slate-200 dark:border-slate-700/60"></div>
                   </div>
                   <div class="flex items-center w-full">
-                    <span class="w-6 text-right pr-2">21</span>
+                    <span class="w-5 sm:w-6 text-right pr-1.5 sm:pr-2">21</span>
                     <div class="flex-1 border-b border-dashed border-slate-200 dark:border-slate-700/60"></div>
                   </div>
                   <div class="flex items-center w-full">
-                    <span class="w-6 text-right pr-2">14</span>
+                    <span class="w-5 sm:w-6 text-right pr-1.5 sm:pr-2">14</span>
                     <div class="flex-1 border-b border-dashed border-slate-200 dark:border-slate-700/60"></div>
                   </div>
                   <div class="flex items-center w-full">
-                    <span class="w-6 text-right pr-2">7</span>
+                    <span class="w-5 sm:w-6 text-right pr-1.5 sm:pr-2">7</span>
                     <div class="flex-1 border-b border-dashed border-slate-200 dark:border-slate-700/60"></div>
                   </div>
                   <div class="flex items-center w-full">
-                    <span class="w-6 text-right pr-2">0</span>
+                    <span class="w-5 sm:w-6 text-right pr-1.5 sm:pr-2">0</span>
                     <div class="flex-1 border-b border-slate-300 dark:border-slate-700"></div>
                   </div>
                 </div>
 
                 <!-- SVG Area & Line Curve -->
-                <div class="absolute inset-0 pl-6 pb-2">
-                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full overflow-visible">
+                <div class="absolute inset-0 pl-5 sm:pl-6 pb-2 overflow-hidden">
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
                     <defs>
                       <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25" />
@@ -771,15 +762,15 @@
                   </svg>
 
                   <!-- Tooltip over data point -->
-                  <div class="absolute top-1 right-2 bg-white dark:bg-slate-700 px-3 py-1.5 rounded-xl shadow-md border border-slate-100 dark:border-slate-600 text-center">
-                    <p class="text-[9px] text-slate-500 dark:text-slate-300">13/08/2026</p>
-                    <p class="text-xs font-bold text-slate-800 dark:text-white">25</p>
+                  <div class="absolute top-1 right-2 bg-white dark:bg-slate-700 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-md border border-slate-100 dark:border-slate-600 text-center">
+                    <p class="text-[8px] sm:text-[9px] text-slate-500 dark:text-slate-300">13/08/2026</p>
+                    <p class="text-[11px] sm:text-xs font-bold text-slate-800 dark:text-white">25</p>
                   </div>
                 </div>
               </div>
 
               <!-- X-Axis Labels -->
-              <div class="flex justify-between pl-6 text-[10px] text-slate-400 mt-2">
+              <div class="flex justify-between pl-5 sm:pl-6 text-[9px] sm:text-[10px] text-slate-400 mt-2">
                 <span>12/08/2026</span>
                 <span>13/08/2026</span>
               </div>
@@ -890,25 +881,25 @@
             </div>
 
             <!-- Tabela: Desempenho por Usuário (Print 4) -->
-            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs overflow-hidden">
-              <div class="p-5 border-b border-slate-100 dark:border-slate-800">
-                <h3 class="text-sm font-bold text-slate-800 dark:text-white">Desempenho por Usuário</h3>
+            <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs overflow-hidden w-full max-w-full">
+              <div class="p-3.5 sm:p-5 border-b border-slate-100 dark:border-slate-800">
+                <h3 class="text-xs sm:text-sm font-bold text-slate-800 dark:text-white">Desempenho por Usuário</h3>
               </div>
 
-              <div class="overflow-x-auto no-scrollbar">
-                <table class="w-full text-left text-xs text-slate-600 dark:text-slate-300">
-                  <thead class="bg-slate-50/80 dark:bg-slate-900/50 text-[11px] font-semibold text-slate-500 dark:text-slate-400 border-b border-slate-200/80 dark:border-slate-800">
+              <div class="overflow-x-auto no-scrollbar w-full max-w-full">
+                <table class="min-w-[680px] w-full text-left text-xs text-slate-600 dark:text-slate-300">
+                  <thead class="bg-slate-50/80 dark:bg-slate-900/50 text-[10px] sm:text-[11px] font-semibold text-slate-500 dark:text-slate-400 border-b border-slate-200/80 dark:border-slate-800">
                     <tr>
-                      <th class="py-3 px-4">Usuário</th>
-                      <th class="py-3 px-3 text-center">Pendentes ↕</th>
-                      <th class="py-3 px-3 text-center">Atendendo ↕</th>
-                      <th class="py-3 px-3 text-center">Resolvidos ↕</th>
-                      <th class="py-3 px-3 text-center">Total ↕</th>
-                      <th class="py-3 px-3 text-center">Avaliação ↕</th>
-                      <th class="py-3 px-3 text-center">TME ↕</th>
-                      <th class="py-3 px-3 text-center">TMA ↕</th>
-                      <th class="py-3 px-3 text-center">TPR ↕</th>
-                      <th class="py-3 px-3 text-center">TTE ↕</th>
+                      <th class="py-2.5 px-3 sm:px-4">Usuário</th>
+                      <th class="py-2.5 px-2.5 text-center">Pendentes ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">Atendendo ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">Resolvidos ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">Total ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">Avaliação ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">TME ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">TMA ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">TPR ↕</th>
+                      <th class="py-2.5 px-2.5 text-center">TTE ↕</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
@@ -971,7 +962,6 @@
                       <td class="py-3 px-3 text-center text-slate-600 dark:text-slate-400 text-[11px]">
                         {{ user.tte }}
                       </td>
-
                     </tr>
                   </tbody>
                 </table>
@@ -982,30 +972,30 @@
 
         </div>
 
-        <!-- TAB: HOME -->
-        <div v-else-if="currentTab === 'home'" class="flex-1 flex flex-col bg-[#f8fafc] dark:bg-slate-900 overflow-y-auto no-scrollbar min-w-0 p-3.5 sm:p-5 space-y-4 sm:space-y-5">
+        <!-- TAB: HOME / VISÃO GERAL -->
+        <div v-else-if="currentTab === 'home'" class="flex-1 flex flex-col bg-[#f8fafc] dark:bg-slate-900 overflow-y-auto no-scrollbar p-3 sm:p-5 md:p-6 space-y-3 sm:space-y-5 min-w-0 w-full max-w-full">
           
-          <!-- Card de Boas-Vindas Superior -->
-          <div class="bg-[#f0f5ff] dark:bg-slate-800/90 rounded-2xl p-4 sm:p-6 border border-blue-100/90 dark:border-slate-700/80 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div class="flex items-start sm:items-center gap-3.5 min-w-0">
-              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#0052cc] text-white flex items-center justify-center font-bold text-sm sm:text-base shrink-0 shadow-xs">
+          <!-- Banner de Boas-Vindas Principal -->
+          <div class="bg-[#f0f5ff] dark:bg-slate-800/90 rounded-2xl p-3.5 sm:p-6 border border-blue-100/90 dark:border-slate-700/80 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 min-w-0">
+            <div class="flex items-start sm:items-center gap-3 sm:gap-3.5 min-w-0">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0052cc] text-white flex items-center justify-center font-bold text-xs sm:text-base shrink-0 shadow-xs">
                 GA
               </div>
               <div class="min-w-0">
-                <h1 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight truncate">
+                <h1 class="text-sm sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight truncate">
                   Olá, Gabriel Albuquerque!
                 </h1>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  Bem-vindo ao painel de controle Promp IA - Atendimento, Vendas e Marketing
+                <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate">
+                  Bem-vindo ao painel de controle Promp IA
                 </p>
-                <div class="flex items-center gap-2 mt-2">
-                  <div class="flex items-center gap-1 text-xs font-semibold text-slate-700 dark:text-slate-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="flex items-center gap-2 mt-1.5 sm:mt-2">
+                  <div class="flex items-center gap-1 text-[11px] sm:text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                     <span>Multitex</span>
                   </div>
-                  <span class="px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-[#0052cc] dark:text-blue-300 text-[10px] font-bold">
+                  <span class="px-1.5 sm:px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-[#0052cc] dark:text-blue-300 text-[9px] sm:text-[10px] font-bold">
                     Admin
                   </span>
                 </div>
@@ -1013,51 +1003,51 @@
             </div>
 
             <!-- Ícone Decorativo Quadrado 4 módulos -->
-            <div class="hidden sm:flex w-14 h-14 rounded-2xl bg-blue-100/70 dark:bg-blue-900/30 text-[#0052cc] dark:text-blue-300 items-center justify-center shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="hidden sm:flex w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-100/70 dark:bg-blue-900/30 text-[#0052cc] dark:text-blue-300 items-center justify-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
               </svg>
             </div>
           </div>
 
           <!-- Linha de 3 Cards Principais de Navegação -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 min-w-0">
             
             <!-- Card 1: Atendimento -->
             <div @click="currentTab = 'chat'"
-              class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs hover:shadow-md hover:border-emerald-200 dark:hover:border-emerald-800 transition-all cursor-pointer flex flex-col items-center text-center group">
-              <div class="w-12 h-12 rounded-2xl bg-[#dcfce7] dark:bg-emerald-950/50 text-[#16a34a] dark:text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              class="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs hover:shadow-md hover:border-emerald-200 dark:hover:border-emerald-800 transition-all cursor-pointer flex flex-col items-center text-center group">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#dcfce7] dark:bg-emerald-950/50 text-[#16a34a] dark:text-emerald-400 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base mb-1">Atendimento</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500">Gerencie seus atendimentos e conversas</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-xs sm:text-base mb-0.5">Atendimento</h3>
+              <p class="text-[10px] sm:text-xs text-slate-400 dark:text-slate-500">Gerencie seus atendimentos e conversas</p>
             </div>
 
             <!-- Card 2: Dashboard -->
             <div @click="currentTab = 'reports'"
-              class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs hover:shadow-md hover:border-blue-200 dark:hover:border-blue-800 transition-all cursor-pointer flex flex-col items-center text-center group">
-              <div class="w-12 h-12 rounded-2xl bg-[#dbeafe] dark:bg-blue-950/50 text-[#2563eb] dark:text-blue-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              class="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs hover:shadow-md hover:border-blue-200 dark:hover:border-blue-800 transition-all cursor-pointer flex flex-col items-center text-center group">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#dbeafe] dark:bg-blue-950/50 text-[#2563eb] dark:text-blue-400 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base mb-1">Dashboard</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500">Visualize métricas e estatísticas em tempo real</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-xs sm:text-base mb-0.5">Dashboard</h3>
+              <p class="text-[10px] sm:text-xs text-slate-400 dark:text-slate-500">Visualize métricas e estatísticas em tempo real</p>
             </div>
 
             <!-- Card 3: Configurações -->
             <div
-              class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 transition-all cursor-pointer flex flex-col items-center text-center group">
-              <div class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              class="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 transition-all cursor-pointer flex flex-col items-center text-center group">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800 dark:text-white text-sm sm:text-base mb-1">Configurações</h3>
-              <p class="text-xs text-slate-400 dark:text-slate-500">Configure o sistema e preferências</p>
+              <h3 class="font-bold text-slate-800 dark:text-white text-xs sm:text-base mb-0.5">Configurações</h3>
+              <p class="text-[10px] sm:text-xs text-slate-400 dark:text-slate-500">Configure o sistema e preferências</p>
             </div>
 
           </div>
@@ -1286,53 +1276,53 @@
         </div>
 
         <!-- TAB: CONTACTS / CRM & FUNIL DE VENDAS -->
-        <div v-else-if="currentTab === 'contacts'" class="flex-1 flex flex-col bg-[#f8fafc] dark:bg-slate-900 overflow-y-auto no-scrollbar relative">
+        <div v-else-if="currentTab === 'contacts'" class="flex-1 min-w-0 w-full max-w-full flex flex-col bg-[#f8fafc] dark:bg-slate-900 overflow-y-auto overflow-x-hidden no-scrollbar relative">
           
           <!-- Top Header: Título & Subtítulo -->
-          <div class="p-4 sm:p-6 pb-0 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 shrink-0">
+          <div class="p-2.5 sm:p-5 pb-0 bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 shrink-0 w-full max-w-full min-w-0">
             
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-              <div>
-                <h1 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">Funil de Vendas</h1>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Gerencie seu pipeline de vendas</p>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-3 min-w-0">
+              <div class="min-w-0">
+                <h1 class="text-base sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight truncate">Funil de Vendas</h1>
+                <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-0.5 truncate">Gerencie seu pipeline de vendas</p>
               </div>
 
               <!-- Banner Compacto de Movimentação por IA -->
-              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/80 dark:border-purple-800 text-purple-700 dark:text-purple-300 text-xs font-semibold shadow-2xs">
+              <div class="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:py-1.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200/80 dark:border-purple-800 text-purple-700 dark:text-purple-300 text-[10px] sm:text-xs font-semibold shadow-2xs self-start sm:self-auto">
                 <span class="animate-pulse">✨</span>
-                <span>Movimentação automática de etapas por IA ativa</span>
+                <span>Movimentação automática por IA</span>
               </div>
             </div>
 
             <!-- Abas Superiores Solicitadas: Vendas | Kanban | Funis | Agenda | Automação | Follow up -->
-            <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar border-b border-slate-100 dark:border-slate-800 text-xs font-bold text-slate-500">
+            <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar border-b border-slate-100 dark:border-slate-800 text-[11px] sm:text-xs font-bold text-slate-500 w-full max-w-full">
               <button @click="crmSubTab = 'vendas'"
-                class="px-3.5 py-2.5 transition-all whitespace-nowrap"
+                class="px-2.5 sm:px-3.5 py-2 sm:py-2.5 transition-all whitespace-nowrap shrink-0"
                 :class="crmSubTab === 'vendas' ? 'border-b-2 border-[#0052cc] text-[#0052cc] dark:text-blue-400 font-bold' : 'hover:text-slate-800 dark:hover:text-slate-200'">
                 Vendas
               </button>
               <button @click="crmSubTab = 'kanban'"
-                class="px-3.5 py-2.5 transition-all whitespace-nowrap"
+                class="px-2.5 sm:px-3.5 py-2 sm:py-2.5 transition-all whitespace-nowrap shrink-0"
                 :class="crmSubTab === 'kanban' ? 'border-b-2 border-[#0052cc] text-[#0052cc] dark:text-blue-400 font-bold' : 'hover:text-slate-800 dark:hover:text-slate-200'">
                 Kanban
               </button>
               <button @click="crmSubTab = 'funis'"
-                class="px-3.5 py-2.5 transition-all whitespace-nowrap"
+                class="px-2.5 sm:px-3.5 py-2 sm:py-2.5 transition-all whitespace-nowrap shrink-0"
                 :class="crmSubTab === 'funis' ? 'border-b-2 border-[#0052cc] text-[#0052cc] dark:text-blue-400 font-bold' : 'hover:text-slate-800 dark:hover:text-slate-200'">
                 Funis
               </button>
               <button @click="crmSubTab = 'agenda'"
-                class="px-3.5 py-2.5 transition-all whitespace-nowrap"
+                class="px-2.5 sm:px-3.5 py-2 sm:py-2.5 transition-all whitespace-nowrap shrink-0"
                 :class="crmSubTab === 'agenda' ? 'border-b-2 border-[#0052cc] text-[#0052cc] dark:text-blue-400 font-bold' : 'hover:text-slate-800 dark:hover:text-slate-200'">
                 Agenda
               </button>
               <button @click="crmSubTab = 'automacao'"
-                class="px-3.5 py-2.5 transition-all whitespace-nowrap"
+                class="px-2.5 sm:px-3.5 py-2 sm:py-2.5 transition-all whitespace-nowrap shrink-0"
                 :class="crmSubTab === 'automacao' ? 'border-b-2 border-[#0052cc] text-[#0052cc] dark:text-blue-400 font-bold' : 'hover:text-slate-800 dark:hover:text-slate-200'">
                 Automação
               </button>
               <button @click="crmSubTab = 'followup'"
-                class="px-3.5 py-2.5 transition-all whitespace-nowrap"
+                class="px-2.5 sm:px-3.5 py-2 sm:py-2.5 transition-all whitespace-nowrap shrink-0"
                 :class="crmSubTab === 'followup' ? 'border-b-2 border-[#0052cc] text-[#0052cc] dark:text-blue-400 font-bold' : 'hover:text-slate-800 dark:hover:text-slate-200'">
                 Follow up
               </button>
@@ -1341,81 +1331,75 @@
           </div>
 
           <!-- Corpo Principal do CRM -->
-          <div class="p-4 sm:p-6 space-y-4">
+          <div class="p-2.5 sm:p-5 space-y-3 sm:space-y-4 min-w-0 w-full max-w-full">
 
             <!-- Barra de Contadores e Botões de Ação do Kanban (Linha Única Enxuta) -->
-            <div class="flex items-center justify-between gap-3 bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-2xs overflow-x-auto no-scrollbar">
+            <div class="flex items-center justify-between gap-2.5 bg-white dark:bg-slate-800 p-2 sm:p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-700 shadow-2xs overflow-x-auto no-scrollbar w-full max-w-full">
               
               <!-- Pílulas de Estatísticas em Linha Única -->
-              <div class="flex items-center gap-1.5 text-[11px] font-semibold shrink-0 whitespace-nowrap">
+              <div class="flex items-center gap-1.5 text-[10px] sm:text-[11px] font-semibold shrink-0 whitespace-nowrap">
                 <span class="text-slate-400 text-xs">ⓘ</span>
-                <span class="px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                <span class="px-1.5 sm:px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
                   Oportunidades: <strong class="text-slate-900 dark:text-white">6</strong>
                 </span>
-                <span class="px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                <span class="px-1.5 sm:px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
                   Abertas: <strong class="text-slate-900 dark:text-white">6</strong>
                 </span>
-                <span class="px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                <span class="px-1.5 sm:px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
                   Em andamento: <strong class="text-slate-900 dark:text-white">6</strong>
                 </span>
-                <span class="px-2.5 py-0.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-[#0052cc] dark:text-blue-300 font-bold">
-                  Valor total: R$ 3.298,90
+                <span class="px-2 py-0.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-[#0052cc] dark:text-blue-300 font-bold">
+                  Total: R$ 3.298,90
                 </span>
               </div>
 
               <!-- Botões de Ação em Linha Única -->
-              <div class="flex items-center gap-1.5 shrink-0 whitespace-nowrap">
-                <button class="px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1">
+              <div class="flex items-center gap-1 sm:gap-1.5 shrink-0 whitespace-nowrap">
+                <button class="px-1.5 sm:px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-[10px] sm:text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1">
                   <span>Exportar</span>
                   <span class="text-[8px]">▾</span>
                 </button>
-                <button class="px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1">
-                  <span>📥</span>
-                  <span>Exportar CSV</span>
+                <button class="px-1.5 sm:px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-[10px] sm:text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1">
+                  <span>📥 CSV</span>
                 </button>
-                <button class="px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1">
+                <button class="px-1.5 sm:px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-700 text-[10px] sm:text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1">
                   <span>↻</span>
-                  <span>Atualizar</span>
                 </button>
-                <button class="px-2.5 py-1 rounded-lg bg-[#0052cc] text-white text-[11px] font-bold shadow-xs hover:bg-blue-700 transition-colors flex items-center gap-1">
+                <button class="px-2 sm:px-2.5 py-1 rounded-lg bg-[#0052cc] text-white text-[10px] sm:text-[11px] font-bold shadow-xs hover:bg-blue-700 transition-colors flex items-center gap-1">
                   <span>+</span>
-                  <span>Nova Oportunidade</span>
+                  <span class="hidden xs:inline">Nova Oportunidade</span>
                 </button>
-                <div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg p-0.5">
-                  <button class="w-5 h-5 flex items-center justify-center text-[10px] text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 rounded">‹</button>
-                  <button class="w-5 h-5 flex items-center justify-center text-[10px] text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 rounded">›</button>
-                </div>
               </div>
 
             </div>
 
             <!-- Barra de Busca e Filtros -->
-            <div class="flex items-center justify-between gap-3">
-              <div class="relative flex-1 max-w-md">
+            <div class="flex items-center justify-between gap-2.5 w-full min-w-0">
+              <div class="relative flex-1 max-w-md min-w-0">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                <input type="text" placeholder="Buscar por nome, contato..." class="w-full pl-9 pr-3 py-1.5 text-xs bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-400 shadow-2xs">
+                <input type="text" placeholder="Buscar oportunidade..." class="w-full pl-8 sm:pl-9 pr-3 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-400 shadow-2xs">
               </div>
 
-              <button class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1.5 shadow-2xs">
+              <button class="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 text-[11px] sm:text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1 sm:gap-1.5 shadow-2xs shrink-0">
                 <span>Filtros</span>
-                <span class="w-4 h-4 rounded-full bg-blue-100 dark:bg-blue-900/60 text-[#0052cc] dark:text-blue-300 text-[10px] flex items-center justify-center font-bold">1</span>
-                <span class="text-[9px]">▾</span>
+                <span class="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-blue-100 dark:bg-blue-900/60 text-[#0052cc] dark:text-blue-300 text-[9px] sm:text-[10px] flex items-center justify-center font-bold">1</span>
+                <span class="text-[8px] sm:text-[9px]">▾</span>
               </button>
             </div>
 
-            <!-- Quadro Kanban (Colunas & Cards) -->
-            <div class="overflow-x-auto pb-4 no-scrollbar">
-              <div class="flex gap-4 min-w-[1100px]">
+            <!-- Quadro Kanban (Colunas & Cards com Scroll Suave) -->
+            <div class="overflow-x-auto pb-4 no-scrollbar w-full max-w-full">
+              <div class="flex gap-3 sm:gap-4 min-w-max pb-2">
                 
                 <!-- Loop pelas Colunas do Funil -->
-                <div v-for="col in kanbanColumns" :key="col.id" class="w-72 flex flex-col gap-3 shrink-0">
+                <div v-for="col in kanbanColumns" :key="col.id" class="w-60 sm:w-72 flex flex-col gap-2.5 sm:gap-3 shrink-0">
                   
                   <!-- Header da Coluna -->
-                  <div class="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs flex items-center justify-between">
+                  <div class="bg-white dark:bg-slate-800 p-2 sm:p-2.5 rounded-xl border border-slate-200/80 dark:border-slate-700/80 shadow-2xs flex items-center justify-between">
                     <div class="flex items-center gap-1.5 min-w-0">
-                      <span class="w-2 h-2 rounded-full"
+                      <span class="w-2 h-2 rounded-full shrink-0"
                         :class="{
                           'bg-amber-400': col.id === 'prospeccao',
                           'bg-blue-500': col.id === 'qualificacao',
@@ -1427,8 +1411,8 @@
                       <h3 class="font-bold text-slate-800 dark:text-white text-xs truncate">{{ col.title }}</h3>
                     </div>
                     <div class="flex items-center gap-1.5 shrink-0 text-xs">
-                      <span class="font-bold text-emerald-600 dark:text-emerald-400 text-[11px]">{{ col.totalValue }}</span>
-                      <span class="w-4 h-4 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[10px] flex items-center justify-center font-bold">
+                      <span class="font-bold text-emerald-600 dark:text-emerald-400 text-[10px] sm:text-[11px]">{{ col.totalValue }}</span>
+                      <span class="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[9px] sm:text-[10px] flex items-center justify-center font-bold">
                         {{ col.count }}
                       </span>
                     </div>
@@ -1519,12 +1503,12 @@
           
           <!-- Coluna 1: Lista de Atendimentos (Esquerda - Proporção Calibrada para Mobile e Desktop) -->
           <div
-            class="w-32 xs:w-36 sm:w-56 md:w-64 lg:w-68 bg-white dark:bg-slate-800 border-r border-slate-200/80 dark:border-slate-700/80 flex flex-col shrink-0 min-w-0 z-10 transition-all duration-300">
+            class="w-28 xs:w-32 sm:w-56 md:w-64 lg:w-68 max-w-[38%] sm:max-w-none bg-white dark:bg-slate-800 border-r border-slate-200/80 dark:border-slate-700/80 flex flex-col shrink-0 min-w-0 z-10 transition-all duration-300">
             
             <!-- Header dos Atendimentos -->
             <div class="p-1.5 sm:p-3 border-b border-slate-100 dark:border-slate-700/60 space-y-1 sm:space-y-2">
               <div class="flex items-center justify-between gap-1">
-                <h2 class="text-[11px] sm:text-sm font-bold text-slate-800 dark:text-white truncate">Atendimentos</h2>
+                <h2 class="text-[10px] sm:text-sm font-bold text-slate-800 dark:text-white truncate">Atendimentos</h2>
                 <div class="flex items-center gap-1 shrink-0">
                   <button class="flex items-center gap-0.5 px-1 sm:px-1.5 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-700 text-[9px] sm:text-[10px] font-semibold text-slate-700 dark:text-slate-200" title="Filtros">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1747,24 +1731,25 @@
             </div>
 
             <!-- Barra Inferior de Input de Mensagem -->
-            <div class="p-2 sm:p-2.5 bg-white dark:bg-slate-800 border-t border-slate-200/80 dark:border-slate-700/80 shrink-0 z-10 space-y-1.5">
+            <div class="p-1.5 sm:p-2.5 bg-white dark:bg-slate-800 border-t border-slate-200/80 dark:border-slate-700/80 shrink-0 z-10 space-y-1 sm:space-y-1.5 min-w-0">
               
               <!-- Linha de Ações / Ícones / Toggle Assinado -->
-              <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 text-xs px-1">
-                <div class="flex items-center gap-2.5">
-                  <button class="hover:text-slate-800" title="Emoji">😊</button>
-                  <button class="hover:text-slate-800" title="Anexar arquivo">📎</button>
-                  <button class="hover:text-slate-800" title="Respostas rápidas">💬</button>
+              <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 text-xs px-0.5 sm:px-1 gap-1 min-w-0">
+                <div class="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
+                  <button class="hover:text-slate-800 text-xs" title="Emoji">😊</button>
+                  <button class="hover:text-slate-800 text-xs" title="Anexar arquivo">📎</button>
+                  <button class="hidden sm:block hover:text-slate-800 text-xs" title="Respostas rápidas">💬</button>
                   
                   <!-- Dropdown IA / Ações -->
                   <div class="relative">
-                    <button @click="showAiActions = !showAiActions" class="hover:text-purple-600 flex items-center gap-1 font-semibold text-purple-600 text-[11px]">
-                      <span>✨ Ações IA</span>
-                      <span class="text-[8px]">▾</span>
+                    <button @click="showAiActions = !showAiActions" class="hover:text-purple-600 flex items-center gap-0.5 sm:gap-1 font-semibold text-purple-600 text-[10px] sm:text-[11px]">
+                      <span>✨</span>
+                      <span class="text-[9px] sm:text-[11px]">Ações IA</span>
+                      <span class="text-[7px] sm:text-[8px]">▾</span>
                     </button>
                     
                     <!-- Menu Flutuante de IA -->
-                    <div v-if="showAiActions" class="absolute bottom-6 left-0 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-1.5 z-50 text-[11px] text-slate-700 dark:text-slate-200 space-y-1">
+                    <div v-if="showAiActions" class="absolute bottom-6 left-0 w-44 sm:w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-1.5 z-50 text-[11px] text-slate-700 dark:text-slate-200 space-y-1">
                       <div class="px-2 py-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg cursor-pointer flex items-center gap-1.5">
                         <span>✨</span>
                         <span>Reescrever com IA</span>
@@ -1782,21 +1767,21 @@
                 </div>
 
                 <!-- Toggle Assinado -->
-                <div class="flex items-center gap-1.5 text-[10px]">
-                  <span class="w-5 h-3 bg-[#0052cc] rounded-full flex items-center p-0.5 cursor-pointer justify-end">
-                    <span class="w-2 h-2 bg-white rounded-full shadow-sm"></span>
+                <div class="flex items-center gap-1 text-[9px] sm:text-[10px] shrink-0">
+                  <span class="w-4 h-2.5 sm:w-5 sm:h-3 bg-[#0052cc] rounded-full flex items-center p-0.5 cursor-pointer justify-end">
+                    <span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full shadow-sm"></span>
                   </span>
-                  <span class="font-medium text-slate-700 dark:text-slate-300">Assinado</span>
+                  <span class="hidden xs:inline font-medium text-slate-700 dark:text-slate-300">Assinado</span>
                 </div>
               </div>
 
               <!-- Input de Texto e Botão de Áudio -->
-              <div class="flex items-center gap-1.5">
-                <div class="flex-1 relative">
-                  <input type="text" placeholder="Digite uma mensagem... (/ para atalhos da IA)"
-                    class="w-full px-3 py-1.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-400">
+              <div class="flex items-center gap-1 min-w-0">
+                <div class="flex-1 min-w-0 relative">
+                  <input type="text" placeholder="Digite uma mensagem..."
+                    class="w-full px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg sm:rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:border-blue-500 placeholder:text-slate-400">
                 </div>
-                <button class="p-1.5 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-blue-50 hover:text-[#0052cc] text-slate-600 dark:text-slate-300 transition-colors shrink-0 text-xs" title="Gravar Áudio">
+                <button class="p-1 sm:p-1.5 rounded-lg sm:rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-blue-50 hover:text-[#0052cc] text-slate-600 dark:text-slate-300 transition-colors shrink-0 text-[10px] sm:text-xs" title="Gravar Áudio">
                   🎙️
                 </button>
               </div>
