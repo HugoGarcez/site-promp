@@ -51,7 +51,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
-    '@nuxtjs/sitemap',
     'nuxt-schema-org'
   ],
   site: {
@@ -59,17 +58,6 @@ export default defineNuxtConfig({
     name: 'Promp',
     defaultLocale: 'pt-BR',
     description: 'Plataforma de Inteligência Artificial para Automação de Vendas e Atendimento Omnichannel'
-  },
-  sitemap: {
-    enabled: true,
-    autoLastmod: true,
-    credits: false,
-    xsl: false,
-    defaults: {
-      changefreq: 'weekly',
-      priority: 0.8,
-      lastmod: new Date().toISOString()
-    }
   },
   // @ts-ignore
   colorMode: {
