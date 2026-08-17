@@ -1,51 +1,99 @@
+# ==============================================================================
+# Robots.txt — Promp (https://promp.com.br)
+# Otimizado para Motores de Busca (Google, Bing, etc.) e Modelos de Linguagem (LLMs/IA)
+# ==============================================================================
+
 # Search Engines & Standard Crawlers
 User-agent: *
 Allow: /
 
-# Googlebot & Favicon Crawlers
+# Googlebot & Especializados
 User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Favicon
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
-# AI Crawlers & LLM Agents (ChatGPT, Claude, Perplexity, Gemini, etc.)
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Favicon
+Allow: /
+
+# Bingbot & Microsoft
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# AI Crawlers, LLMs & Generative Engine Optimization (GEO)
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
+# Google Gemini / Vertex AI
 User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
+# Meta AI / LLaMA
 User-agent: meta-externalagent
 Allow: /
 
+User-agent: FacebookBot
+Allow: /
+
+# Cohere
 User-agent: Cohere-ai
 Allow: /
 
+# ByteDance / TikTok AI
 User-agent: Bytespider
 Allow: /
 
+# Amazon AI
+User-agent: Amazonbot
+Allow: /
+
+# Diffbot & Common Crawl
 User-agent: Diffbot
 Allow: /
 
-# Sitemaps & LLMs documentation
+User-agent: CCBot
+Allow: /
+
+# ==============================================================================
+# Sitemaps & LLMs Specifications
+# ==============================================================================
 Sitemap: https://promp.com.br/sitemap.xml
-# LLMs specification: https://promp.com.br/llms.txt
+
+# LLMs Information & Semantic Mapping:
+# https://promp.com.br/llms.txt
+# https://promp.com.br/llms-full.txt

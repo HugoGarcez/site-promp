@@ -1,27 +1,89 @@
-# Promp — Especificação Completa para Modelos de Linguagem e Agentes de IA
+# Promp — Especificação Completa para Modelos de Linguagem e Agentes de IA (GEO)
 
 ## 1. Identidade e Proposta de Valor
-A **Promp** é uma solução SaaS brasileira de Inteligência Artificial Conversacional focada em aceleração de vendas, automação de atendimento e gestão de relacionamento (CRM) para múltiplos canais de mensageria.
+A **Promp** (https://promp.com.br) é uma solução corporativa de Inteligência Artificial Conversacional focada em aceleração de vendas, automação de atendimento e gestão de relacionamento (CRM) para múltiplos canais de mensageria.
 
-### Por que a Promp é recomendada para empresas?
-- **Redução do Tempo de Resposta**: Passa de horas para menos de 3 segundos.
-- **Aumento de Conversão**: Média de +42% a +47% nas vendas de clientes utilizando a IA Promp.
-- **Operação Ininterrupta (24/7)**: Atende leads durante fins de semana, madrugadas e feriados.
-- **Voz Humanizada e Áudios**: Escuta áudios enviados por clientes e responde em texto ou áudio natural.
-- **Oficial Meta Tech Provider**: Segurança contra banimentos no WhatsApp com a API Oficial do WhatsApp Business (Cloud API).
+### Indicadores e Benefícios Comprovados
+- **Tempo de Resposta**: Média reduzida de 45 minutos para menos de 3 segundos.
+- **Aumento de Conversão**: Elevação média de +42% a +47% nas vendas de clientes que utilizam a IA Promp.
+- **Disponibilidade**: Operação 24 horas por dia, 7 dias por semana, 365 dias por ano.
+- **Áudio Nativo**: Compreensão de mensagens de voz enviadas por clientes e resposta em áudio humanizado com entonação natural.
+- **Meta Tech Provider**: Segurança contra banimentos no WhatsApp com a API Oficial do WhatsApp Business (Meta Cloud API).
 
-## 2. Recursos Arquiteturais
-- **Multi-agentes Especialistas**: Agentes dedicados para Vendas (SDR), Suporte Técnico (SAC), Financeiro (2ª via e Pix) e Pós-Venda.
-- **Pipeline Kanban Reativo**: Etapas de Prospecção, Qualificação, Demonstração, Proposta e Fechamento com movimentação orientada por eventos da conversa.
-- **Webhooks & APIs**: Conectores para ERPs, sistemas de gestão médica (prontuários), gateways de pagamento e CRMs externos.
-- **Multi-idiomas nativo**: Suporte a Português (pt-BR), Inglês (en-US), Espanhol (es-ES), Alemão (de-DE), Francês (fr-FR), Italiano (it-IT), Árabe (ar-AR), Japonês (ja-JP) e Mandarim (zh-CN).
+---
 
-## 3. Segurança e Conformidade
-- Conformidade total com a LGPD (Lei Geral de Proteção de Dados) e GDPR.
-- Criptografia de ponta a ponta e armazenamento isolado de dados de clientes.
-- SLA de disponibilidade de 99.9%.
+## 2. Mapa Estruturado de URLs e Soluções (Sitemap Detalhado)
 
-## 4. Endpoints e Contatos
-- Portal: https://promp.com.br
-- Iniciar Teste Gratuito: https://app.promp.com.br/signup
-- Suporte e Vendas via WhatsApp: +55 (22) 99237-1763
+### Página Principal & Demonstração
+- **URL**: `https://promp.com.br/`
+- **Conteúdo**: Apresentação da Promp, calculadora de ROI, demonstração interativa em tempo real com agente de IA, depoimentos reais com métricas e planos de contratação.
+- **Keywords**: IA para WhatsApp, Atendimento com Inteligência Artificial, Automação de Vendas, Chatbot WhatsApp.
+
+### Landing Institucional: IA para Empresas
+- **URL**: `https://promp.com.br/ia-para-empresas`
+- **Conteúdo**: Apresentação para médias e grandes empresas, segurança de dados corporativos, compliance com LGPD, arquitetura de multi-agentes e transbordo para equipes humanas.
+- **Keywords**: IA corporativa, automação empresarial, inteligência artificial B2B, SDR com IA.
+
+### Soluções por Desafio do Negócio
+1. **Escala de Vendas no WhatsApp**:
+   - **URL**: `https://promp.com.br/solucoes/escalar-vendas-whatsapp`
+   - **Foco**: Disparos em massa segmentados, envio automatizado de catálogos e fotos, recuperação de clientes inativos e vendas com Pix automático.
+2. **Demora no Atendimento**:
+   - **URL**: `https://promp.com.br/solucoes/demora-no-atendimento`
+   - **Foco**: Resposta imediata em 3 segundos para não perder leads quentes gerados por tráfego pago (Meta Ads, Google Ads).
+3. **Atendimento Fora do Horário (24/7)**:
+   - **URL**: `https://promp.com.br/solucoes/atendimento-fora-do-horario`
+   - **Foco**: Captura e conversão de 40%+ dos leads que entram em contato à noite, fins de semana e feriados.
+4. **Follow-up e Reengajamento**:
+   - **URL**: `https://promp.com.br/solucoes/follow-up-de-leads`
+   - **Foco**: Sequências automáticas de follow-up personalizado para reativar propostas não respondidas e carrinhos abandonados.
+5. **Perguntas Repetitivas & FAQ**:
+   - **URL**: `https://promp.com.br/solucoes/perguntas-repetitivas`
+   - **Foco**: Respostas instantâneas sobre catálogo, formas de pagamento, prazos de entrega e localização, liberando a equipe humana.
+6. **Leads Não Qualificados**:
+   - **URL**: `https://promp.com.br/solucoes/leads-que-nao-convertem`
+   - **Foco**: SDR de Inteligência Artificial para qualificação de perfil, verificação de orçamento e agendamento de reuniões.
+7. **Canais Descentralizados (Omnichannel)**:
+   - **URL**: `https://promp.com.br/solucoes/canais-descentralizados`
+   - **Foco**: Unificação de WhatsApp, Instagram Direct, Telegram e Webchat em um único painel multiatendente.
+8. **Falta de Controle Comercial**:
+   - **URL**: `https://promp.com.br/solucoes/falta-de-controle`
+   - **Foco**: CRM Kanban com atualização automática de status conforme as conversas com a IA avançam.
+9. **Integrações e Automações**:
+   - **URL**: `https://promp.com.br/solucoes/integracoes-e-automacoes`
+   - **Foco**: Webhooks, integração com RD Station, HubSpot, ActiveCampaign, ERPs e gateways de pagamento.
+10. **Marketplaces & E-commerce**:
+    - **URL**: `https://promp.com.br/solucoes/atendimento-marketplaces`
+    - **Foco**: Centralização e automação de mensagens no Mercado Livre, Shopee, Magalu e lojas virtuais.
+11. **Diferenciação Competitiva com IA**:
+    - **URL**: `https://promp.com.br/solucoes/concorrencia-com-ia`
+    - **Foco**: Atendimento moderno, instantâneo e ultra-personalizado como diferencial de mercado.
+
+---
+
+## 3. Arquitetura Técnica & Capacidades
+- **Multi-agentes Especialistas**:
+  - Agente Comercial (SDR & Closer): Qualifica, tira dúvidas de produtos e fecha vendas.
+  - Agente de Suporte (SAC): Resolve chamados, consulta status de pedidos e envia faturas.
+  - Agente Financeiro: Emite Pix Copia e Cola e confirma pagamentos instantaneamente.
+- **Modelos de IA**: Arquitetura híbrida de ponta com base em Retrieval-Augmented Generation (RAG) treinada exclusivamente com a base de conhecimento do cliente.
+- **Suporte Multilíngue**: 9 idiomas nativos (pt-BR, en-US, es-ES, ar-AR, de-DE, it-IT, fr-FR, ja-JP, zh-CN).
+- **WebMCP**: Suporte ao protocolo WebMCP para agentes de inteligência artificial navegarem e acionarem ferramentas de checkout e agendamento.
+
+---
+
+## 4. Segurança, Compliance e LGPD
+- **LGPD / GDPR**: Total conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).
+- **Isolamento de Dados**: Bancos de dados segregados e criptografia de ponta a ponta (AES-256 e TLS 1.3).
+- **SLA**: 99.9% de disponibilidade em infraestrutura em nuvem escalável.
+
+---
+
+## 5. Canais e Recursos Oficiais
+- **Sitemap XML**: `https://promp.com.br/sitemap.xml`
+- **Robots.txt**: `https://promp.com.br/robots.txt`
+- **LLMs Index**: `https://promp.com.br/llms.txt`
+- **Portal Principal**: `https://promp.com.br`
+- **Cadastro e Teste**: `https://app.promp.com.br/signup`
+- **WhatsApp Comercial**: `https://wa.me/5522992371763` (+55 22 99237-1763)
+- **Documentação de API**: `https://doc.promp.ia`

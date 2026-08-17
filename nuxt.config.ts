@@ -57,7 +57,19 @@ export default defineNuxtConfig({
   site: {
     url: 'https://promp.com.br',
     name: 'Promp',
-    defaultLocale: 'pt-BR'
+    defaultLocale: 'pt-BR',
+    description: 'Plataforma de Inteligência Artificial para Automação de Vendas e Atendimento Omnichannel'
+  },
+  sitemap: {
+    enabled: true,
+    autoLastmod: true,
+    credits: false,
+    xsl: false,
+    defaults: {
+      changefreq: 'weekly',
+      priority: 0.8,
+      lastmod: new Date().toISOString()
+    }
   },
   // @ts-ignore
   colorMode: {

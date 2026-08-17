@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- 1. Home / Página Principal -->
+  <url>
+    <loc>https://promp.com.br/</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/" />
+    <image:image>
+      <image:loc>https://promp.com.br/promp-logo.png</image:loc>
+      <image:title>Promp — Plataforma de IA para Vendas e Atendimento</image:title>
+      <image:caption>Promp: Automação Inteligente de WhatsApp, CRM e Multi-agentes</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 2. Landing Corporativa: IA para Empresas -->
+  <url>
+    <loc>https://promp.com.br/ia-para-empresas</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/ia-para-empresas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/ia-para-empresas" />
+    <image:image>
+      <image:loc>https://promp.com.br/images/ia-whatsapp.png</image:loc>
+      <image:title>IA para Empresas — Promp Atendimento Inteligente</image:title>
+    </image:image>
+  </url>
+
+  <!-- 3. Solução: Escalar Vendas no WhatsApp -->
+  <url>
+    <loc>https://promp.com.br/solucoes/escalar-vendas-whatsapp</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/escalar-vendas-whatsapp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/escalar-vendas-whatsapp" />
+  </url>
+
+  <!-- 4. Solução: Demora no Atendimento -->
+  <url>
+    <loc>https://promp.com.br/solucoes/demora-no-atendimento</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/demora-no-atendimento" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/demora-no-atendimento" />
+  </url>
+
+  <!-- 5. Solução: Atendimento Fora do Horário (24/7) -->
+  <url>
+    <loc>https://promp.com.br/solucoes/atendimento-fora-do-horario</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/atendimento-fora-do-horario" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/atendimento-fora-do-horario" />
+  </url>
+
+  <!-- 6. Solução: Follow-up de Leads e Recuperação -->
+  <url>
+    <loc>https://promp.com.br/solucoes/follow-up-de-leads</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/follow-up-de-leads" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/follow-up-de-leads" />
+  </url>
+
+  <!-- 7. Solução: Perguntas Repetitivas e FAQ com IA -->
+  <url>
+    <loc>https://promp.com.br/solucoes/perguntas-repetitivas</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/perguntas-repetitivas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/perguntas-repetitivas" />
+  </url>
+
+  <!-- 8. Solução: Leads que Não Convertem / SDR de IA -->
+  <url>
+    <loc>https://promp.com.br/solucoes/leads-que-nao-convertem</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/leads-que-nao-convertem" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/leads-que-nao-convertem" />
+  </url>
+
+  <!-- 9. Solução: Canais Descentralizados / Omnichannel -->
+  <url>
+    <loc>https://promp.com.br/solucoes/canais-descentralizados</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/canais-descentralizados" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/canais-descentralizados" />
+  </url>
+
+  <!-- 10. Solução: Falta de Controle / CRM Kanban e Métricas -->
+  <url>
+    <loc>https://promp.com.br/solucoes/falta-de-controle</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/falta-de-controle" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/falta-de-controle" />
+  </url>
+
+  <!-- 11. Solução: Integrações e Automações com ERPs e CRMs -->
+  <url>
+    <loc>https://promp.com.br/solucoes/integracoes-e-automacoes</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/integracoes-e-automacoes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/integracoes-e-automacoes" />
+  </url>
+
+  <!-- 12. Solução: Atendimento em Marketplaces -->
+  <url>
+    <loc>https://promp.com.br/solucoes/atendimento-marketplaces</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/atendimento-marketplaces" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/atendimento-marketplaces" />
+  </url>
+
+  <!-- 13. Solução: Concorrência com IA e Diferenciação -->
+  <url>
+    <loc>https://promp.com.br/solucoes/concorrencia-com-ia</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/solucoes/concorrencia-com-ia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/solucoes/concorrencia-com-ia" />
+  </url>
+
+  <!-- 14. Institucional: Política de Privacidade -->
+  <url>
+    <loc>https://promp.com.br/politica-de-privacidade</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/politica-de-privacidade" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/politica-de-privacidade" />
+  </url>
+
+  <!-- 15. Institucional: Política de Cookies -->
+  <url>
+    <loc>https://promp.com.br/politica-de-cookies-da-promp</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/politica-de-cookies-da-promp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/politica-de-cookies-da-promp" />
+  </url>
+
+  <!-- 16. Institucional: LGPD -->
+  <url>
+    <loc>https://promp.com.br/lgpd-lei-geral-de-protecao-de-dados</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/lgpd-lei-geral-de-protecao-de-dados" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/lgpd-lei-geral-de-protecao-de-dados" />
+  </url>
+
+  <!-- 17. Institucional: Acessibilidade -->
+  <url>
+    <loc>https://promp.com.br/acessibilidade-na-promp</loc>
+    <lastmod>2026-08-17T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://promp.com.br/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://promp.com.br/en-US/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="es-ES" href="https://promp.com.br/es-ES/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="ar-AR" href="https://promp.com.br/ar-AR/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://promp.com.br/de-DE/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="it-IT" href="https://promp.com.br/it-IT/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://promp.com.br/fr-FR/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://promp.com.br/ja-JP/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://promp.com.br/zh-CN/acessibilidade-na-promp" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://promp.com.br/acessibilidade-na-promp" />
+  </url>
+
+</urlset>

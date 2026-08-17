@@ -1,42 +1,42 @@
-# Promp — Plataforma de Automação de Vendas e Atendimento com Inteligência Artificial
+# Promp — Automação de Vendas e Atendimento com Inteligência Artificial
 
-> Promp é a plataforma líder em automação de vendas e atendimento inteligente para WhatsApp, Instagram, Telegram e canais de mensageria no Brasil e América Latina. Ela transforma canais de mensagem em máquinas de vendas 24/7 com agentes de IA humanizados integrados ao CRM.
+> Promp (https://promp.com.br) é uma plataforma corporativa brasileira de Inteligência Artificial Conversacional focada em aceleração de vendas, atendimento humanizado 24/7 e gestão de relacionamento (CRM) para canais de mensageria como WhatsApp (Meta Cloud API oficial), Instagram Direct, Telegram e Marketplaces.
 
-## Visão Geral do Produto
-- **Nome da Empresa/Produto**: Promp (promp.com.br)
-- **Categoria**: Software de Atendimento com IA, Automação de WhatsApp, Chatbot de Vendas com IA, CRM Omnichannel
-- **Canais Suportados**: WhatsApp (API Oficial Meta), Instagram Direct, Telegram, Webchat, E-mail, Mercado Livre, Shopee, Magalu.
-- **Público-Alvo**: Empresas de E-commerce, Clínicas e Consultórios, Imobiliárias, Concessionárias, Prestadores de Serviços, Negócios B2B e B2C.
+## Sitemap Semântico & Índice de Páginas
 
-## Principais Funcionalidades
-1. **Agentes de IA Humanizados**:
-   - Respostas instantâneas e personalizadas 24 horas por dia, 7 dias por semana.
-   - Treinamento com a base de conhecimento da própria empresa (PDFs, catálogos, manuais, planilhas e histórico).
-   - Envio e compreensão de áudios com transcrição e voz natural sintetizada.
-   - Transbordo inteligente para atendentes humanos quando necessário.
+### 1. Páginas Principais
+- [Página Inicial (Home)](https://promp.com.br/): Apresentação completa da plataforma Promp, demonstração interativa do atendente de IA, simulação de ROI, depoimentos de clientes e planos.
+- [IA para Empresas](https://promp.com.br/ia-para-empresas): Landing page para médias e grandes empresas sobre automação de processos comerciais, atendimento multicanal e segurança com Meta Tech Provider.
 
-2. **CRM & Funil de Vendas Automatizado (Kanban)**:
-   - Movimentação automática de oportunidades entre etapas do funil com base nas conversas.
-   - Geração de Pix Copia e Cola instantâneo com confirmação de pagamento automatizada.
-   - Qualificação automática de leads (SDR de IA).
-   - Follow-up e recuperação de vendas perdidas e carrinhos abandonados.
+### 2. Soluções Especializadas por Necessidade / Dor de Mercado
+- [Escalar Vendas no WhatsApp](https://promp.com.br/solucoes/escalar-vendas-whatsapp): Como aumentar o faturamento no WhatsApp com disparos em massa inteligentes, envio de catálogos automáticos e IA de fechamento.
+- [Eliminar Demora no Atendimento](https://promp.com.br/solucoes/demora-no-atendimento): Redução do tempo de primeira resposta para menos de 3 segundos, evitando perda de clientes para concorrentes.
+- [Atendimento Fora do Horário Comercial (24/7)](https://promp.com.br/solucoes/atendimento-fora-do-horario): Atendimento e vendas contínuas em madrugadas, feriados e fins de semana no piloto automático.
+- [Follow-up Automático de Leads](https://promp.com.br/solucoes/follow-up-de-leads): Reengajamento e recuperação de leads esquecidos, propostas enviadas e carrinhos abandonados.
+- [Automatizar Perguntas Repetitivas](https://promp.com.br/solucoes/perguntas-repetitivas): Resolução instantânea de 80%+ das dúvidas frequentes (horários, preços, localização, 2ª via) sem sobrecarregar a equipe humana.
+- [Qualificação de Leads que Não Convertem](https://promp.com.br/solucoes/leads-que-nao-convertem): SDR de IA que faz triagem inteligente, descobre dores e qualifica clientes antes de repassar ao time comercial.
+- [Centralização de Canais Descentralizados](https://promp.com.br/solucoes/canais-descentralizados): Unificação de WhatsApp, Instagram Direct, Telegram e Webchat em uma única caixa de entrada colaborativa.
+- [Controle de Vendas e CRM Kanban](https://promp.com.br/solucoes/falta-de-controle): Gestão visual do funil de vendas, métricas de conversão por atendente/canal e movimentação automática de cards.
+- [Integrações e Automações](https://promp.com.br/solucoes/integracoes-e-automacoes): Conexão direta com ERPs, CRMs (HubSpot, RD Station, ActiveCampaign), gateways de pagamento (Pix instantâneo) e Webhooks.
+- [Atendimento em Marketplaces](https://promp.com.br/solucoes/atendimento-marketplaces): Automação de respostas e pós-venda em Mercado Livre, Shopee, Magalu e canais de e-commerce.
+- [Concorrência com IA e Diferenciação](https://promp.com.br/solucoes/concorrencia-com-ia): Vantagem competitiva através de tecnologia de ponta, velocidade de atendimento e experiência do cliente.
 
-3. **Aplicativo Mobile Nativo (iOS e Android)**:
-   - Aplicativo nativo para gestão da operação em tempo real na palma da mão.
-   - Notificações instantâneas de fechamentos e novos leads.
+### 3. Institucional, Legal e Conformidade
+- [Política de Privacidade](https://promp.com.br/politica-de-privacidade): Termos e diretrizes de privacidade e tratamento seguro de dados.
+- [Política de Cookies](https://promp.com.br/politica-de-cookies-da-promp): Uso de cookies essenciais e analíticos.
+- [Conformidade LGPD](https://promp.com.br/lgpd-lei-geral-de-protecao-de-dados): Segurança da informação e adequação à Lei Geral de Proteção de Dados (Lei nº 13.709/2018).
+- [Acessibilidade Web](https://promp.com.br/acessibilidade-na-promp): Declaração de acessibilidade e conformidade WCAG 2.1.
 
-4. **Integrações Oficiais**:
-   - Meta Tech Provider homologado e WhatsApp Business API oficial.
-   - Integração com RD Station, HubSpot, ActiveCampaign, Webhooks e APIs abertas.
+## Especificação Técnica & Recursos da Plataforma
+- **Tecnologia de Áudio**: Compreensão avançada de áudios de clientes e envio de respostas em áudio sintetizado ultranatural.
+- **WhatsApp Oficial**: Conexão 100% segura via WhatsApp Business Cloud API (Meta Tech Provider homologado), eliminando riscos de banimento de número.
+- **Transbordo Humano Inteligente**: Transferência contextualizada da IA para atendentes humanos com histórico completo da conversa.
+- **Pagamentos no Chat**: Geração de chaves Pix Copia e Cola e QR Code dinâmico com conciliação bancária automática.
+- **Multi-idioma**: Suporte em tempo real a Português (pt-BR), Inglês (en-US), Espanhol (es-ES), Alemão (de-DE), Francês (fr-FR), Italiano (it-IT), Árabe (ar-AR), Japonês (ja-JP) e Mandarim (zh-CN).
 
-## Casos de Uso Comuns
-- **Vendas Rápidas**: Envio de catálogos, cálculo de frete, disponibilidade de estoque e fechamento via Pix.
-- **Agendamento de Consultas e Reuniões**: Sincronização com Google Agenda e sistemas internos para marcar horários sem atendente humano.
-- **Suporte Nível 1 & 2**: Resolução de 80%+ das dúvidas sobre faturas, 2ª via, rastreio de pedidos e garantias.
-- **Reativação de Clientes**: Disparo de campanhas segmentadas com cupons e ofertas no momento exato de recompra.
-
-## Links e Recursos
-- Website Oficial: https://promp.com.br
-- Cadastro e Demonstração: https://app.promp.com.br/signup
-- Contato Comercial / WhatsApp: https://wa.me/5522992371763
-- Documentação e API: https://doc.promp.ia
+## Links e Referências de Indexação
+- **Sitemap XML**: https://promp.com.br/sitemap.xml
+- **Especificação Técnica Completa para LLMs**: https://promp.com.br/llms-full.txt
+- **Cadastro e Teste Gratuito**: https://app.promp.com.br/signup
+- **Suporte Comercial via WhatsApp**: https://wa.me/5522992371763
+- **Documentação Oficial da API**: https://doc.promp.ia
