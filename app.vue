@@ -31,6 +31,7 @@ useHead({
             'description': 'Plataforma líder em Inteligência Artificial para WhatsApp, automação de vendas e atendimento omnichannel no Brasil.',
             'sameAs': [
               'https://www.instagram.com/promp.ia',
+              'https://www.facebook.com/p/Promp-IA-para-Empresas-61576733933332/',
               'https://play.google.com/store/apps/details?id=com.converta.apppromp',
               'https://apps.apple.com/br/app/promp-ia-vendas-e-marketing/id6752315649'
             ]
