@@ -1449,7 +1449,8 @@ useSeoMeta({
     </div>
   </section>
 
-
+  <!-- Ecossistema de Integrações e Canais Conectados ao Núcleo Promp -->
+  <PrompEcosystemSection />
 
   <!-- Pricing Section -->
   <section id="precos" class="py-20 bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
