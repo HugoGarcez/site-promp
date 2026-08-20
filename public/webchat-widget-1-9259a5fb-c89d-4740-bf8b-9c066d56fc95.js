@@ -299,10 +299,16 @@
             max-width: 100%;
             word-break: break-word;
             text-align: left;
+            box-shadow: 0 1px 2px rgba(4,13,43,0.05);
         }
         .channel-menu-pill:hover {
             background: #040D2B;
             color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(4,13,43,0.15);
+        }
+        .channel-menu-pill:active {
+            transform: translateY(0);
         }
     </style>
     `;
@@ -328,6 +334,7 @@
     let token = null;
     let ws = null;
     let chatLoaded = false;
+    let userHasSentOrReceivedRealMessage = false;
     const tenantId = '1';
 
     // Funções de controle do widget
@@ -340,6 +347,8 @@
             await loadMessageHistory();
             connectWebSocket();
             chatLoaded = true;
+        } else {
+            updateWelcomeMessageIfIdle();
         }
     });
 
@@ -550,18 +559,166 @@
         return '';
     }
 
-    const DEFAULT_WELCOME_MESSAGE = `#MENU Olá! 👋 Seja bem-vindo à Promp. Como podemos te ajudar hoje?
-1. Conhecer Recursos e Planos
-2. Falar com Especialista
-3. Suporte Técnico
-4. Ver Demonstração`;
+    const LANDING_MENUS = {
+        'atendimento-fora-do-horario': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Quer vender 24 horas por dia e não perder clientes à noite ou fins de semana? Como podemos te ajudar?',
+            items: [
+                '🌙 Atendimento 24h e Fins de Semana',
+                '📅 Agendamento de Reuniões com IA',
+                '💳 Vender e Receber Pix no Automático',
+                '💬 Falar com Especialista 24/7'
+            ]
+        },
+        'atendimento-marketplaces': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Quer centralizar Mercado Livre, Shopee e WhatsApp com respostas de IA em menos de 3 segundos?',
+            items: [
+                '🛒 Integrar Mercado Livre e Shopee',
+                '⚡ Responder Dúvidas de Anúncios com IA',
+                '📦 Sincronizar Catálogo e Estoque',
+                '💬 Falar com Especialista em Marketplaces'
+            ]
+        },
+        'canais-descentralizados': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Quer unificar WhatsApp, Instagram e até 9 canais em uma única tela para toda sua equipe?',
+            items: [
+                '📱 Unificar WhatsApp, Direct e Telegram',
+                '👥 Múltiplos Atendentes em 1 Número',
+                '🔀 Filas, Departamentos e Triagem',
+                '💬 Falar com Consultor Multicanal'
+            ]
+        },
+        'concorrencia-com-ia': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Seus concorrentes já vendem com IA. Quer modernizar seu atendimento em menos de 10 minutos?',
+            items: [
+                '🚀 Modernizar Atendimento com IA',
+                '⚡ Atender mais Rápido que Concorrentes',
+                '🛠️ Ver Como Funciona o Setup em 10 Min',
+                '💬 Falar com Especialista em IA'
+            ]
+        },
+        'demora-no-atendimento': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. 73% compram de quem responde primeiro. Quer atender seus leads em menos de 3 segundos no WhatsApp?',
+            items: [
+                '⚡ Atendimento Imediato em < 3 Segundos',
+                '🎯 Acabar com Fila de Espera no WhatsApp',
+                '📈 Aumentar Minha Taxa de Conversão',
+                '💬 Falar com Especialista em Vendas'
+            ]
+        },
+        'escalar-vendas-whatsapp': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Quer multiplicar suas vendas no WhatsApp com disparos em massa, catálogo e IA de fechamento?',
+            items: [
+                '🚀 Disparos em Massa Segmentados',
+                '🛍️ Catálogo Visual Integrado com IA',
+                '💰 IA para Fechamento de Vendas',
+                '💬 Falar com Especialista em Escala'
+            ]
+        },
+        'falta-de-controle': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Quer supervisão total, métricas de tempo de resposta e relatórios da sua equipe no WhatsApp?',
+            items: [
+                '📊 Relatórios e Métricas de Atendimento',
+                '👥 Supervisão e Auditoria em Tempo Real',
+                '⭐ Pesquisa de Satisfação NPS Automática',
+                '💬 Falar com Especialista em Gestão'
+            ]
+        },
+        'follow-up-de-leads': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. 80% das vendas exigem acompanhamento. Quer resgatar orçamentos parados com cadência automática?',
+            items: [
+                '🔄 Resgatar Orçamentos e Leads Frios',
+                '📅 Cadência Automática de Follow-up',
+                '🎯 Mensagens Humanizadas no WhatsApp',
+                '💬 Falar com Especialista em Recuperação'
+            ]
+        },
+        'integracoes-e-automacoes': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Quer conectar seu WhatsApp com seu CRM, Loja Virtual, Google Calendar, Webhooks ou API?',
+            items: [
+                '🔗 Conectar CRM e Lojas Virtuais',
+                '🤖 Automações com Webhooks e Typebot',
+                '💻 Conhecer a API Oficial da Promp',
+                '💬 Falar com Especialista em Integrações'
+            ]
+        },
+        'leads-que-nao-convertem': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Pare de queimar dinheiro em anúncios! Quer qualificar e converter leads do tráfego pago no WhatsApp?',
+            items: [
+                '🎯 Qualificar Leads de Anúncios no WhatsApp',
+                '💰 Multiplicar ROI do Meta e Google Ads',
+                '⚡ Triagem Inteligente Pós-Clique',
+                '💬 Falar com Especialista em Conversão'
+            ]
+        },
+        'perguntas-repetitivas': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Sua equipe perde tempo com as mesmas dúvidas? Treine uma IA com seus documentos e catálogos!',
+            items: [
+                '📚 Treinar IA com Documentos e Catálogos',
+                '🤖 Eliminar 80% das Dúvidas Frequentes',
+                '⚡ Respostas Instantâneas em < 2s',
+                '💬 Falar com Especialista em Base de IA'
+            ]
+        },
+        'ia-para-empresas': {
+            title: 'Olá! 👋 Seja bem-vindo à Promp. Conheça a solução definitiva de Inteligência Artificial para vendas e atendimento corporativo!',
+            items: [
+                '🏢 IA Corporativa Personalizada',
+                '🎬 Ver Demonstração Completa',
+                '📊 Planos e Soluções para Empresas',
+                '💬 Falar com Consultor Empresarial'
+            ]
+        }
+    };
+
+    const DEFAULT_MENU = {
+        title: 'Olá! 👋 Seja bem-vindo à Promp. Como podemos te ajudar hoje?',
+        items: [
+            'Conhecer Recursos e Planos',
+            'Falar com Especialista',
+            'Suporte Técnico',
+            'Ver Demonstração'
+        ]
+    };
+
+    function getActiveLandingPageMenu() {
+        const path = (typeof window !== 'undefined' && window.location ? (window.location.pathname || '') : '').toLowerCase();
+        for (const [slug, menu] of Object.entries(LANDING_MENUS)) {
+            if (path.includes(slug)) {
+                return menu;
+            }
+        }
+        return DEFAULT_MENU;
+    }
+
+    function getWelcomeMessage() {
+        const menu = getActiveLandingPageMenu();
+        const itemsText = menu.items.map((item, idx) => `${idx + 1}. ${item}`).join('\n');
+        return `#MENU ${menu.title}\n${itemsText}`;
+    }
+
+    function updateWelcomeMessageIfIdle() {
+        if (!userHasSentOrReceivedRealMessage) {
+            const welcomeEl = document.getElementById('msg-welcome-auto');
+            if (welcomeEl || messagesDiv.children.length <= 1) {
+                messagesDiv.innerHTML = '';
+                appendMessage(
+                    getWelcomeMessage(),
+                    'channel-received',
+                    formatTime(new Date().toISOString()),
+                    null,
+                    'welcome-auto'
+                );
+            }
+        }
+    }
 
     // Função para renderizar o histórico completo
     function renderHistory(messages) {
         messagesDiv.innerHTML = '';
         if (!messages || messages.length === 0) {
+            userHasSentOrReceivedRealMessage = false;
             appendMessage(
-                DEFAULT_WELCOME_MESSAGE,
+                getWelcomeMessage(),
                 'channel-received',
                 formatTime(new Date().toISOString()),
                 null,
@@ -569,6 +726,7 @@
             );
             return;
         }
+        userHasSentOrReceivedRealMessage = true;
         messages.forEach(msg => {
             appendMessage(
                 msg.body,
@@ -593,13 +751,18 @@
                 }
             });
             const data = await response.json();
-            if (Array.isArray(data)) {
+            if (Array.isArray(data) && data.length > 0) {
+                userHasSentOrReceivedRealMessage = true;
                 renderHistory(data);
             } else {
+                userHasSentOrReceivedRealMessage = false;
                 renderHistory([]);
-                process.env.LOGGER_WARN === 'true' && console.warn('[WebChat] Resposta da API não é um array:', data);
+                if (!Array.isArray(data)) {
+                    process.env.LOGGER_WARN === 'true' && console.warn('[WebChat] Resposta da API não é um array:', data);
+                }
             }
         } catch (error) {
+            userHasSentOrReceivedRealMessage = false;
             renderHistory([]);
             process.env.LOGGER_ERROR === 'true' && console.error('[WebChat] Erro ao carregar histórico:', error);
         }
@@ -884,6 +1047,7 @@
     // Função para limpar a sessão
     async function clearSession() {
         if (confirm('Tem certeza que deseja limpar a sessão e começar uma nova conversa?')) {
+            userHasSentOrReceivedRealMessage = false;
             messagesDiv.innerHTML = '';
             sessionStorage.removeItem('channelWebchatId');
             if (ws) {
@@ -899,4 +1063,37 @@
     }
 
     chatClear.addEventListener('click', clearSession);
+
+    // Escuta mudanças de rotas SPA no Nuxt / Vue Router
+    if (typeof window !== 'undefined') {
+        const originalPushState = history.pushState;
+        if (originalPushState) {
+            history.pushState = function () {
+                const result = originalPushState.apply(this, arguments);
+                try {
+                    window.dispatchEvent(new Event('promp-route-change'));
+                } catch (e) {}
+                return result;
+            };
+        }
+
+        const originalReplaceState = history.replaceState;
+        if (originalReplaceState) {
+            history.replaceState = function () {
+                const result = originalReplaceState.apply(this, arguments);
+                try {
+                    window.dispatchEvent(new Event('promp-route-change'));
+                } catch (e) {}
+                return result;
+            };
+        }
+
+        window.addEventListener('popstate', () => {
+            updateWelcomeMessageIfIdle();
+        });
+
+        window.addEventListener('promp-route-change', () => {
+            updateWelcomeMessageIfIdle();
+        });
+    }
 })();
