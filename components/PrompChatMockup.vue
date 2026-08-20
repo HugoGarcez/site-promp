@@ -1610,9 +1610,9 @@
                         }">
                         {{ chat.queue }}
                       </span>
-                      <span v-if="chat.isAiActive" class="px-1 py-0.2 rounded text-[7px] sm:text-[8px] font-bold bg-purple-50 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300 flex items-center gap-0.5">
-                        <span>✨</span>
-                        <span class="hidden xs:inline">IA</span>
+                      <span v-if="chat.isAiActive" class="px-1.5 py-0.5 rounded-md text-[7px] sm:text-[8px] font-extrabold bg-purple-100 text-purple-700 dark:bg-purple-950/70 dark:text-purple-300 border border-purple-200/80 dark:border-purple-800/60 inline-flex items-center gap-1 shadow-2xs" title="Atendimento feito por IA">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse shrink-0"></span>
+                        <span>IA</span>
                       </span>
                     </div>
                   </div>
@@ -1650,9 +1650,9 @@
                     <h3 class="text-[11px] sm:text-sm font-bold text-slate-900 dark:text-white truncate">
                       {{ activeChat.name }}
                     </h3>
-                    <span v-if="activeChat.isAiActive" class="hidden xs:inline-flex px-1.5 py-0.2 rounded-full bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-[8px] sm:text-[9px] font-bold items-center gap-0.5 shrink-0">
-                      <span>✨</span>
-                      <span>IA</span>
+                    <span v-if="activeChat.isAiActive" class="inline-flex px-1.5 py-0.5 rounded-md bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/80 dark:border-purple-800/60 text-[8px] sm:text-[9px] font-bold items-center gap-1 shrink-0" title="Atendimento realizado por IA">
+                      <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse shrink-0"></span>
+                      <span>Atendimento IA</span>
                     </span>
                   </div>
                   <div class="flex items-center gap-1 text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 truncate">
@@ -1710,7 +1710,7 @@
                 <div v-else class="flex items-end justify-end gap-1.5 sm:gap-2 max-w-[94%] sm:max-w-[75%] ml-auto">
                   <div class="bg-[#0052cc] text-white rounded-xl sm:rounded-2xl rounded-br-xs p-2 sm:p-3 shadow-2xs">
                     <div class="flex items-center gap-1 text-[8px] sm:text-[9px] font-bold text-blue-200 mb-0.5">
-                      <span>✨ Promp IA</span>
+                      <span>Promp IA</span>
                       <span class="px-1 py-0.1 bg-white/20 rounded text-[7px] sm:text-[8px]">Resposta Instantânea</span>
                     </div>
                     <p class="text-[11px] sm:text-xs text-white whitespace-pre-line leading-relaxed font-normal">{{ msg.text }}</p>
@@ -1721,8 +1721,8 @@
                       <span>✓✓</span>
                     </div>
                   </div>
-                  <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#0052cc] text-white text-[8px] sm:text-[9px] font-bold flex items-center justify-center shrink-0 border border-white shadow-2xs">
-                    ✨
+                  <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#0052cc] text-white text-[8px] sm:text-[9px] font-extrabold flex items-center justify-center shrink-0 border border-white shadow-2xs">
+                    IA
                   </div>
                 </div>
 
@@ -1809,7 +1809,10 @@
                   <h4 class="text-xs font-bold text-slate-900 dark:text-white">{{ activeChat.name }}</h4>
                   <div class="flex items-center gap-1 mt-1">
                     <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-[9px] font-bold">Privado</span>
-                    <span v-if="activeChat.isAiActive" class="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950/50 text-purple-600 dark:text-purple-300 text-[9px] font-bold">✨ IA Ativa</span>
+                    <span v-if="activeChat.isAiActive" class="px-2 py-0.5 rounded-full bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200/80 dark:border-purple-800/60 text-[9px] font-bold flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse shrink-0"></span>
+                      <span>Atendimento IA</span>
+                    </span>
                   </div>
                 </div>
 
