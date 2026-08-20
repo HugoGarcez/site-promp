@@ -39,6 +39,10 @@ export default defineNuxtConfig({
         {
           src: '/webchat-widget-1-9259a5fb-c89d-4740-bf8b-9c066d56fc95.js?v=3',
           defer: true
+        },
+        {
+          src: 'https://t.contentsquare.net/uxa/cb3a10f0609df.js',
+          async: true
         }
       ]
     }
