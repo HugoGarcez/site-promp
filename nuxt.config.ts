@@ -37,7 +37,7 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: '/webchat-widget-1-9259a5fb-c89d-4740-bf8b-9c066d56fc95.js?v=4',
+          src: '/webchat-widget-v4-9259a5fb-c89d-4740-bf8b-9c066d56fc95.js',
           defer: true
         }
       ]
