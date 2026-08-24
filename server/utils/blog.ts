@@ -33,11 +33,33 @@ export interface Article extends ArticleFrontmatter {
   toc: TocItem[]
 }
 
-const BLOG_DIR = path.resolve(process.cwd(), "content/blog")
+function getBlogDir(): string {
+  if (process.env.BLOG_CONTENT_DIR && fs.existsSync(process.env.BLOG_CONTENT_DIR)) {
+    return process.env.BLOG_CONTENT_DIR
+  }
+
+  const candidatePaths = [
+    path.resolve(process.cwd(), "content/blog"),
+    path.resolve(process.env.PWD || "", "content/blog"),
+    "/var/www/site-promp/content/blog",
+    path.resolve(__dirname, "../../content/blog"),
+    path.resolve(__dirname, "../../../content/blog"),
+    path.resolve(__dirname, "../../../../content/blog")
+  ]
+
+  for (const candidate of candidatePaths) {
+    if (fs.existsSync(candidate)) {
+      return candidate
+    }
+  }
+
+  return path.resolve(process.cwd(), "content/blog")
+}
 
 function ensureBlogDir() {
-  if (!fs.existsSync(BLOG_DIR)) {
-    fs.mkdirSync(BLOG_DIR, { recursive: true })
+  const dir = getBlogDir()
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true })
   }
 }
 
@@ -96,13 +118,14 @@ function customMarkedRenderer(): typeof marked {
 }
 
 export function getAllArticles(includeContent = false): Article[] {
+  const blogDir = getBlogDir()
   ensureBlogDir()
-  const files = fs.readdirSync(BLOG_DIR).filter(file => file.endsWith(".md"))
+  const files = fs.readdirSync(blogDir).filter(file => file.endsWith(".md"))
 
   const articles: Article[] = []
 
   for (const file of files) {
-    const fullPath = path.join(BLOG_DIR, file)
+    const fullPath = path.join(blogDir, file)
     const rawContent = fs.readFileSync(fullPath, "utf-8")
     const parsed = matter<ArticleFrontmatter>(rawContent)
     const attributes = parsed.attributes
