@@ -8,10 +8,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "start": "NITRO_HOST=0.0.0.0 NITRO_PORT=3000 node .output/server/index.mjs"
+    "start": "NITRO_HOST=0.0.0.0 NITRO_PORT=3000 node .output/server/index.mjs",
+    "blog:daily": "node scripts/daily-blog-pipeline.mjs",
+    "blog:covers": "node scripts/generate-blog-covers.cjs"
   },
   "devDependencies": {
     "@nuxtjs/sitemap": "^7.6.0",
+    "@tailwindcss/typography": "^0.5.20",
     "autoprefixer": "^10.4.19",
     "nuxt": "^4.3.1",
     "nuxt-schema-org": "^5.0.10",
@@ -24,7 +27,9 @@
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/i18n": "^9.5.6",
+    "front-matter": "^4.0.2",
     "lottie-web": "^5.13.0",
+    "marked": "^18.0.11",
     "puppeteer": "^24.43.1",
     "sharp": "^0.34.5"
   },

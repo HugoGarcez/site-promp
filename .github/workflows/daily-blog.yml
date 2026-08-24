@@ -1,0 +1,49 @@
+name: Daily Blog Generator & WhatsApp Notification
+
+on:
+  schedule:
+    # Roda todos os dias às 12:00 UTC (09:00 BRT)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Permite disparar manualmente pelo painel do GitHub
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar Dependências
+        run: npm ci
+
+      - name: Executar Pipeline Diário do Claude-Blog & WhatsApp
+        env:
+          WHATSAPP_API_URL: ${{ secrets.WHATSAPP_API_URL }}
+          WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
+          WHATSAPP_NOTIFY_NUMBER: ${{ secrets.WHATSAPP_NOTIFY_NUMBER }}
+          PROMP_WEBHOOK_URL: ${{ secrets.PROMP_WEBHOOK_URL }}
+        run: npm run blog:daily
+
+      - name: Commitar e Publicar Novo Artigo
+        run: |
+          git config --global user.name "Promp Blog AI Bot"
+          git config --global user.email "bot@promp.com.br"
+          git add content/blog/ public/images/blog/
+          if git diff --staged --quiet; then
+            echo "Nenhum novo artigo gerado hoje."
+          else
+            git commit -m "chore(blog): publicar novo artigo automatizado [skip ci]"
+            git push origin main
+            echo "Novo artigo publicado com sucesso no repositório!"
+          fi

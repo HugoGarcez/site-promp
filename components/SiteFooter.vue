@@ -97,6 +97,7 @@
                     <h4 class="font-bold text-white mb-6">{{ $t('footer.quick_links') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
                         <li><a href="#" class="hover:text-white transition-colors">{{ $t('footer.home') }}</a></li>
+                        <li><NuxtLink to="/blog" class="hover:text-white transition-colors text-primary font-semibold">Blog Promp</NuxtLink></li>
                         <li><a href="#features" class="hover:text-white transition-colors">{{ $t('footer.features')
                         }}</a></li>
                         <li><a href="#pricing" class="hover:text-white transition-colors">{{ $t('footer.pricing') }}</a>
