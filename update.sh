@@ -23,6 +23,7 @@ npm run build
 
 # Restart PM2 process
 echo "🔄 Restarting application..."
-pm2 restart site-promp --update-env
+pm2 restart site-promp --update-env || pm2 start .output/server/index.mjs --name site-promp --cwd /var/www/site-promp
+pm2 save
 
 echo "✅ Update completed successfully!"
