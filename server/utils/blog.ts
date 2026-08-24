@@ -1,5 +1,6 @@
 import fs from "node:fs"
 import path from "node:path"
+import { fileURLToPath } from "node:url"
 import matter from "front-matter"
 import { marked } from "marked"
 
@@ -38,13 +39,20 @@ function getBlogDir(): string {
     return process.env.BLOG_CONTENT_DIR
   }
 
+  let currentDir = ""
+  try {
+    currentDir = path.dirname(fileURLToPath(import.meta.url))
+  } catch {
+    currentDir = process.cwd()
+  }
+
   const candidatePaths = [
     path.resolve(process.cwd(), "content/blog"),
     path.resolve(process.env.PWD || "", "content/blog"),
     "/var/www/site-promp/content/blog",
-    path.resolve(__dirname, "../../content/blog"),
-    path.resolve(__dirname, "../../../content/blog"),
-    path.resolve(__dirname, "../../../../content/blog")
+    path.resolve(currentDir, "../../content/blog"),
+    path.resolve(currentDir, "../../../content/blog"),
+    path.resolve(currentDir, "../../../../content/blog")
   ]
 
   for (const candidate of candidatePaths) {
