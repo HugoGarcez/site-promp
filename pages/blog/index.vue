@@ -84,16 +84,14 @@
               <div class="flex items-center justify-between pt-4">
                 <div class="flex items-center gap-3">
                   <img
-                    v-if="featuredArticle.authorAvatar"
-                    :src="featuredArticle.authorAvatar"
-                    :alt="featuredArticle.author"
+                    :src="featuredArticle.authorAvatar || '/images/authors/leticia-vasconcelos.jpg'"
+                    :alt="featuredArticle.author || 'Letícia Vasconcelos'"
                     class="w-10 h-10 rounded-full object-cover border border-white/20 shadow-md"
+                    width="40"
+                    height="40"
                   />
-                  <div v-else class="w-10 h-10 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center text-white font-bold text-sm">
-                    {{ featuredArticle.author ? featuredArticle.author.charAt(0) : 'P' }}
-                  </div>
                   <div>
-                    <div class="text-xs font-bold text-white">{{ featuredArticle.author }}</div>
+                    <div class="text-xs font-bold text-white">{{ featuredArticle.author || 'Letícia Vasconcelos' }}</div>
                     <div class="text-[11px] text-slate-400">{{ formatDate(featuredArticle.date) }}</div>
                   </div>
                 </div>
@@ -164,15 +162,13 @@
             <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <img
-                  v-if="article.authorAvatar"
-                  :src="article.authorAvatar"
-                  :alt="article.author"
+                  :src="article.authorAvatar || '/images/authors/leticia-vasconcelos.jpg'"
+                  :alt="article.author || 'Letícia Vasconcelos'"
                   class="w-7 h-7 rounded-full object-cover border border-slate-200 dark:border-slate-700"
+                  width="28"
+                  height="28"
                 />
-                <div v-else class="w-7 h-7 rounded-full bg-primary/10 text-primary font-bold text-xs flex items-center justify-center">
-                  {{ article.author ? article.author.charAt(0) : 'P' }}
-                </div>
-                <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">{{ article.author }}</span>
+                <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">{{ article.author || 'Letícia Vasconcelos' }}</span>
               </div>
               <NuxtLink
                 :to="'/blog/' + article.slug"

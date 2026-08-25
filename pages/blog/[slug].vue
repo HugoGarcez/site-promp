@@ -55,16 +55,14 @@
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-4 border-y border-slate-200 dark:border-slate-800">
             <div class="flex items-center gap-3">
               <img
-                v-if="article.authorAvatar"
-                :src="article.authorAvatar"
-                :alt="article.author"
-                class="w-11 h-11 rounded-full object-cover border-2 border-primary/20 shadow-md"
+                :src="article.authorAvatar || '/images/authors/leticia-vasconcelos.jpg'"
+                :alt="article.author || 'Letícia Vasconcelos'"
+                class="w-11 h-11 rounded-full object-cover border-2 border-primary/30 shadow-md"
+                width="44"
+                height="44"
               />
-              <div v-else class="w-11 h-11 rounded-full bg-gradient-to-tr from-primary to-orange-500 text-white font-bold text-base flex items-center justify-center shadow-md">
-                {{ article.author ? article.author.charAt(0) : 'P' }}
-              </div>
               <div>
-                <div class="text-sm font-bold text-slate-900 dark:text-white">{{ article.author }}</div>
+                <div class="text-sm font-bold text-slate-900 dark:text-white">{{ article.author || 'Letícia Vasconcelos' }}</div>
                 <div class="text-xs text-slate-500 dark:text-slate-400">{{ article.authorRole || 'Especialista em IA & Estratégia Conversacional | Promp' }}</div>
               </div>
             </div>
@@ -219,16 +217,14 @@
             <!-- Author Bio Card -->
             <div class="mt-12 p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex flex-col sm:flex-row items-center gap-5">
               <img
-                v-if="article.authorAvatar"
-                :src="article.authorAvatar"
-                :alt="article.author"
+                :src="article.authorAvatar || '/images/authors/leticia-vasconcelos.jpg'"
+                :alt="article.author || 'Letícia Vasconcelos'"
                 class="w-16 h-16 rounded-full object-cover border-2 border-primary shadow-lg flex-shrink-0"
+                width="64"
+                height="64"
               />
-              <div v-else class="w-16 h-16 rounded-full bg-gradient-to-tr from-primary to-orange-500 text-white font-extrabold text-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                {{ article.author ? article.author.charAt(0) : 'P' }}
-              </div>
               <div class="text-center sm:text-left">
-                <div class="text-base font-bold text-slate-900 dark:text-white">{{ article.author }}</div>
+                <div class="text-base font-bold text-slate-900 dark:text-white">{{ article.author || 'Letícia Vasconcelos' }}</div>
                 <div class="text-xs text-primary font-semibold mb-2">{{ article.authorRole || 'Especialista em IA & Estratégia Conversacional | Promp' }}</div>
                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   Especialista em Inteligência Artificial conversacional, fluxos de qualificação comercial e estratégias de conversão no WhatsApp. Ajuda empresas e times de vendas a escalarem seus resultados com atendimento humanizado 24/7.
