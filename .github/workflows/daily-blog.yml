@@ -29,10 +29,12 @@ jobs:
 
       - name: Executar Pipeline Diário do Claude-Blog & WhatsApp
         env:
+          UAZAPI_URL: ${{ secrets.UAZAPI_URL || secrets.WHATSAPP_API_URL }}
+          UAZAPI_TOKEN: ${{ secrets.UAZAPI_TOKEN || secrets.WHATSAPP_API_KEY }}
+          UAZAPI_NUMBER: ${{ secrets.UAZAPI_NUMBER || secrets.WHATSAPP_NOTIFY_NUMBER }}
           WHATSAPP_API_URL: ${{ secrets.WHATSAPP_API_URL }}
           WHATSAPP_API_KEY: ${{ secrets.WHATSAPP_API_KEY }}
           WHATSAPP_NOTIFY_NUMBER: ${{ secrets.WHATSAPP_NOTIFY_NUMBER }}
-          PROMP_WEBHOOK_URL: ${{ secrets.PROMP_WEBHOOK_URL }}
         run: npm run blog:daily
 
       - name: Commitar e Publicar Novo Artigo

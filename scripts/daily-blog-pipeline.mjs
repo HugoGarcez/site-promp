@@ -2,6 +2,31 @@ import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
+// Carrega variáveis do arquivo .env se existir localmente
+function loadLocalEnv() {
+  const envPath = path.resolve(process.cwd(), '.env');
+  if (fs.existsSync(envPath)) {
+    try {
+      const content = fs.readFileSync(envPath, 'utf-8');
+      for (const line of content.split('\n')) {
+        const trimmed = line.trim();
+        if (!trimmed || trimmed.startsWith('#')) continue;
+        const eqIdx = trimmed.indexOf('=');
+        if (eqIdx > 0) {
+          const k = trimmed.substring(0, eqIdx).trim();
+          const v = trimmed.substring(eqIdx + 1).trim().replace(/^["']|["']$/g, '');
+          if (!process.env[k]) {
+            process.env[k] = v;
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Não foi possível ler o arquivo .env:', e.message);
+    }
+  }
+}
+loadLocalEnv();
+
 const BLOG_DIR = path.resolve(process.cwd(), 'content/blog');
 const COVERS_DIR = path.resolve(process.cwd(), 'public/images/blog');
 
@@ -245,51 +270,87 @@ async function generateCoverImage({ slug, title, badge, color1, color2 }) {
 }
 
 async function sendWhatsAppNotification(article) {
-  const whatsappApiUrl = process.env.WHATSAPP_API_URL || process.env.PROMP_WEBHOOK_URL;
-  const whatsappApiKey = process.env.WHATSAPP_API_KEY;
-  const whatsappRecipient = process.env.WHATSAPP_NOTIFY_NUMBER || '5511999999999';
+  let uazapiUrl = process.env.UAZAPI_URL || process.env.WHATSAPP_API_URL || process.env.PROMP_WEBHOOK_URL;
+  const uazapiToken = process.env.UAZAPI_TOKEN || process.env.UAZAPI_KEY || process.env.WHATSAPP_API_KEY || process.env.WHATSAPP_API_TOKEN;
+  const rawRecipient = process.env.UAZAPI_NUMBER || process.env.WHATSAPP_NOTIFY_NUMBER || process.env.WHATSAPP_RECIPIENT || '5511999999999';
+  const recipient = String(rawRecipient).replace(/\D/g, '');
 
   const messageText = `🚀 *Novo Artigo Publicado no Blog da Promp!*
 
 📰 *${article.title}*
 📂 *Categoria:* ${article.category}
 ⏱️ *Leitura:* ${article.readingTime}
+✍️ *Autora:* Letícia Vasconcelos
 
 💡 *Resumo:*
 ${article.description}
 
-🔗 *Leia na íntegra:*
+🔗 *Acesse o artigo completo:*
 https://promp.com.br/blog/${article.slug}
 
 ---
-_Equipe Promp • Inteligência Artificial & Atendimento Omnichannel_`;
+_Promp • Inteligência Artificial & Atendimento Omnichannel_`;
 
-  console.log('\n--- [NOTIFICAÇÃO WHATSAPP PREPARADA] ---');
+  console.log('\n--- [PREPARANDO NOTIFICAÇÃO UAZAPI / WHATSAPP] ---');
+  console.log(`📱 Destinatário: ${recipient}`);
   console.log(messageText);
-  console.log('-------------------------------------------\n');
+  console.log('--------------------------------------------------\n');
 
-  if (whatsappApiUrl) {
+  if (uazapiUrl) {
+    // Se a URL for apenas o domínio base ou não tiver endpoint, normaliza para /send/text
+    if (!uazapiUrl.includes('/send/') && !uazapiUrl.includes('/message/') && !uazapiUrl.includes('/sendText') && !uazapiUrl.includes('/webhook')) {
+      uazapiUrl = uazapiUrl.replace(/\/+$/, '') + '/send/text';
+    }
+
     try {
-      console.log(`Enviando notificação para ${whatsappApiUrl}...`);
-      const response = await fetch(whatsappApiUrl, {
+      console.log(`📡 Disparando via UAzapi para ${uazapiUrl}...`);
+      const headers = {
+        'Content-Type': 'application/json'
+      };
+
+      if (uazapiToken) {
+        headers['token'] = uazapiToken;
+        headers['apikey'] = uazapiToken;
+        headers['Authorization'] = `Bearer ${uazapiToken}`;
+      }
+
+      const payload = {
+        number: recipient,
+        text: messageText,
+        message: messageText,
+        linkPreview: true,
+        options: {
+          delay: 1200,
+          presence: 'composing',
+          linkPreview: true
+        }
+      };
+
+      const response = await fetch(uazapiUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(whatsappApiKey ? { Authorization: `Bearer ${whatsappApiKey}` } : {})
-        },
-        body: JSON.stringify({
-          number: whatsappRecipient,
-          text: messageText,
-          articleUrl: `https://promp.com.br/blog/${article.slug}`,
-          title: article.title
-        })
+        headers,
+        body: JSON.stringify(payload)
       });
-      console.log(`Status do envio WhatsApp: ${response.status}`);
+
+      const responseText = await response.text();
+      console.log(`📡 Status UAzapi HTTP: ${response.status} ${response.statusText}`);
+      try {
+        const json = JSON.parse(responseText);
+        console.log('📦 Retorno UAzapi:', JSON.stringify(json, null, 2));
+      } catch {
+        console.log('📦 Retorno UAzapi:', responseText);
+      }
+
+      if (response.ok) {
+        console.log('✅ Notificação WhatsApp (UAzapi) enviada com sucesso!');
+      } else {
+        console.warn(`⚠️ UAzapi retornou status ${response.status}. Verifique token, URL ou formato do número.`);
+      }
     } catch (err) {
-      console.warn('Aviso: Falha ao contactar webhook externo de WhatsApp:', err.message);
+      console.error('❌ Falha na conexão com a API da UAzapi:', err.message);
     }
   } else {
-    console.log('ℹ️ WHATSAPP_API_URL não configurada no ambiente. Simulação de envio concluída com sucesso.');
+    console.log('ℹ️ UAZAPI_URL / WHATSAPP_API_URL não configurada no ambiente (.env). Mensagem simulada no console com sucesso.');
   }
 }
 
