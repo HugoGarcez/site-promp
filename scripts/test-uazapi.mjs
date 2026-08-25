@@ -27,14 +27,14 @@ async function testUazapi() {
 
   let uazapiUrl = process.env.UAZAPI_URL || process.env.WHATSAPP_API_URL;
   const uazapiToken = process.env.UAZAPI_TOKEN || process.env.UAZAPI_KEY || process.env.WHATSAPP_API_KEY;
-  const rawRecipient = process.env.UAZAPI_NUMBER || process.env.WHATSAPP_NOTIFY_NUMBER || process.env.WHATSAPP_RECIPIENT;
+  const rawRecipient = process.env.UAZAPI_NUMBER || process.env.WHATSAPP_NOTIFY_NUMBER || process.env.WHATSAPP_RECIPIENT || '';
 
   if (!uazapiUrl) {
     console.error('❌ ERRO: UAZAPI_URL (ou WHATSAPP_API_URL) não foi informada no .env');
     console.log('👉 Exemplo no seu .env:');
-    console.log('   UAZAPI_URL="https://sua-instancia.uazapi.com/send/text"');
+    console.log('   UAZAPI_URL="https://api.uazapi.com/send/text"');
     console.log('   UAZAPI_TOKEN="seu-token-uazapi"');
-    console.log('   UAZAPI_NUMBER="5511999999999"\n');
+    console.log('   UAZAPI_NUMBER="5522992371763,5521990408505"\n');
     process.exit(1);
   }
 
@@ -42,13 +42,15 @@ async function testUazapi() {
     console.warn('⚠️ AVISO: UAZAPI_TOKEN não foi configurado no .env.');
   }
 
-  if (!rawRecipient) {
-    console.error('❌ ERRO: UAZAPI_NUMBER (ou WHATSAPP_NOTIFY_NUMBER) não foi informado no .env');
-    console.log('👉 Exemplo: UAZAPI_NUMBER="5511999999999"\n');
+  const recipients = rawRecipient
+    .split(/[,;]+/)
+    .map(r => r.trim().replace(/\D/g, ''))
+    .filter(Boolean);
+
+  if (recipients.length === 0) {
+    console.error('❌ ERRO: Nenhum número de WhatsApp válido informado em UAZAPI_NUMBER');
     process.exit(1);
   }
-
-  const recipient = String(rawRecipient).replace(/\D/g, '');
 
   if (!uazapiUrl.includes('/send/') && !uazapiUrl.includes('/message/') && !uazapiUrl.includes('/sendText') && !uazapiUrl.includes('/webhook')) {
     uazapiUrl = uazapiUrl.replace(/\/+$/, '') + '/send/text';
@@ -65,58 +67,61 @@ Sua automação diária de publicação de artigos no blog da Promp está pronta
 _Promp • Inteligência Artificial & Atendimento Omnichannel_`;
 
   console.log(`📡 URL de Envio: ${uazapiUrl}`);
-  console.log(`📱 Número Destino: ${recipient}`);
+  console.log(`📱 Números Destino (${recipients.length}): ${recipients.join(', ')}`);
   console.log(`🔑 Token: ${uazapiToken ? uazapiToken.substring(0, 4) + '...' + uazapiToken.slice(-4) : '(vazio)'}`);
   console.log('\n📄 Mensagem:');
   console.log(testMessage);
   console.log('\n----------------------------------------\n');
 
-  try {
-    const headers = {
-      'Content-Type': 'application/json'
-    };
+  const headers = {
+    'Content-Type': 'application/json'
+  };
 
-    if (uazapiToken) {
-      headers['token'] = uazapiToken;
-      headers['apikey'] = uazapiToken;
-      headers['Authorization'] = `Bearer ${uazapiToken}`;
-    }
+  if (uazapiToken) {
+    headers['token'] = uazapiToken;
+    headers['apikey'] = uazapiToken;
+    headers['Authorization'] = `Bearer ${uazapiToken}`;
+  }
 
-    const payload = {
-      number: recipient,
-      text: testMessage,
-      message: testMessage,
-      linkPreview: true,
-      options: {
-        delay: 1000,
-        presence: 'composing',
-        linkPreview: true
-      }
-    };
-
-    const response = await fetch(uazapiUrl, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(payload)
-    });
-
-    const responseText = await response.text();
-    console.log(`📡 Resposta HTTP: ${response.status} ${response.statusText}`);
-
+  for (const recipient of recipients) {
     try {
-      const json = JSON.parse(responseText);
-      console.log('📦 Dados retornados pela UAzapi:', JSON.stringify(json, null, 2));
-    } catch {
-      console.log('📦 Resposta bruta:', responseText);
-    }
+      console.log(`📡 Disparando para ${recipient}...`);
+      const payload = {
+        number: recipient,
+        text: testMessage,
+        message: testMessage,
+        linkPreview: true,
+        options: {
+          delay: 1000,
+          presence: 'composing',
+          linkPreview: true
+        }
+      };
 
-    if (response.ok) {
-      console.log('\n🎉 SUCESSO! A mensagem de teste foi entregue para a fila da UAzapi.');
-    } else {
-      console.error(`\n❌ Falha: A UAzapi retornou status de erro ${response.status}.`);
+      const response = await fetch(uazapiUrl, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(payload)
+      });
+
+      const responseText = await response.text();
+      console.log(`📡 [${recipient}] Status HTTP: ${response.status} ${response.statusText}`);
+
+      try {
+        const json = JSON.parse(responseText);
+        console.log(`📦 [${recipient}] Dados retornados:`, JSON.stringify(json, null, 2));
+      } catch {
+        console.log(`📦 [${recipient}] Resposta bruta:`, responseText);
+      }
+
+      if (response.ok) {
+        console.log(`🎉 [${recipient}] SUCESSO! Mensagem entregue.`);
+      } else {
+        console.error(`❌ [${recipient}] Falha: Status ${response.status}.`);
+      }
+    } catch (err) {
+      console.error(`❌ [${recipient}] Erro de conexão:`, err.message);
     }
-  } catch (err) {
-    console.error('\n❌ Erro de rede ou DNS ao conectar na UAzapi:', err.message);
   }
 }
 

@@ -272,8 +272,16 @@ async function generateCoverImage({ slug, title, badge, color1, color2 }) {
 async function sendWhatsAppNotification(article) {
   let uazapiUrl = process.env.UAZAPI_URL || process.env.WHATSAPP_API_URL || process.env.PROMP_WEBHOOK_URL;
   const uazapiToken = process.env.UAZAPI_TOKEN || process.env.UAZAPI_KEY || process.env.WHATSAPP_API_KEY || process.env.WHATSAPP_API_TOKEN;
-  const rawRecipient = process.env.UAZAPI_NUMBER || process.env.WHATSAPP_NOTIFY_NUMBER || process.env.WHATSAPP_RECIPIENT || '5511999999999';
-  const recipient = String(rawRecipient).replace(/\D/g, '');
+  const rawRecipient = process.env.UAZAPI_NUMBER || process.env.WHATSAPP_NOTIFY_NUMBER || process.env.WHATSAPP_RECIPIENT || '';
+  
+  const recipients = rawRecipient
+    .split(/[,;]+/)
+    .map(r => r.trim().replace(/\D/g, ''))
+    .filter(Boolean);
+
+  if (recipients.length === 0) {
+    recipients.push('5522992371763', '5521990408505');
+  }
 
   const messageText = `🚀 *Novo Artigo Publicado no Blog da Promp!*
 
@@ -292,7 +300,7 @@ https://promp.com.br/blog/${article.slug}
 _Promp • Inteligência Artificial & Atendimento Omnichannel_`;
 
   console.log('\n--- [PREPARANDO NOTIFICAÇÃO UAZAPI / WHATSAPP] ---');
-  console.log(`📱 Destinatário: ${recipient}`);
+  console.log(`📱 Destinatários (${recipients.length}): ${recipients.join(', ')}`);
   console.log(messageText);
   console.log('--------------------------------------------------\n');
 
@@ -302,55 +310,58 @@ _Promp • Inteligência Artificial & Atendimento Omnichannel_`;
       uazapiUrl = uazapiUrl.replace(/\/+$/, '') + '/send/text';
     }
 
-    try {
-      console.log(`📡 Disparando via UAzapi para ${uazapiUrl}...`);
-      const headers = {
-        'Content-Type': 'application/json'
-      };
+    const headers = {
+      'Content-Type': 'application/json'
+    };
 
-      if (uazapiToken) {
-        headers['token'] = uazapiToken;
-        headers['apikey'] = uazapiToken;
-        headers['Authorization'] = `Bearer ${uazapiToken}`;
-      }
+    if (uazapiToken) {
+      headers['token'] = uazapiToken;
+      headers['apikey'] = uazapiToken;
+      headers['Authorization'] = `Bearer ${uazapiToken}`;
+    }
 
-      const payload = {
-        number: recipient,
-        text: messageText,
-        message: messageText,
-        linkPreview: true,
-        options: {
-          delay: 1200,
-          presence: 'composing',
-          linkPreview: true
-        }
-      };
-
-      const response = await fetch(uazapiUrl, {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(payload)
-      });
-
-      const responseText = await response.text();
-      console.log(`📡 Status UAzapi HTTP: ${response.status} ${response.statusText}`);
+    for (const recipient of recipients) {
       try {
-        const json = JSON.parse(responseText);
-        console.log('📦 Retorno UAzapi:', JSON.stringify(json, null, 2));
-      } catch {
-        console.log('📦 Retorno UAzapi:', responseText);
-      }
+        console.log(`📡 Disparando via UAzapi para ${recipient} em ${uazapiUrl}...`);
 
-      if (response.ok) {
-        console.log('✅ Notificação WhatsApp (UAzapi) enviada com sucesso!');
-      } else {
-        console.warn(`⚠️ UAzapi retornou status ${response.status}. Verifique token, URL ou formato do número.`);
+        const payload = {
+          number: recipient,
+          text: messageText,
+          message: messageText,
+          linkPreview: true,
+          options: {
+            delay: 1200,
+            presence: 'composing',
+            linkPreview: true
+          }
+        };
+
+        const response = await fetch(uazapiUrl, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify(payload)
+        });
+
+        const responseText = await response.text();
+        console.log(`📡 [${recipient}] Status HTTP: ${response.status} ${response.statusText}`);
+        try {
+          const json = JSON.parse(responseText);
+          console.log(`📦 [${recipient}] Retorno UAzapi:`, JSON.stringify(json, null, 2));
+        } catch {
+          console.log(`📦 [${recipient}] Retorno UAzapi:`, responseText);
+        }
+
+        if (response.ok) {
+          console.log(`✅ [${recipient}] Notificação WhatsApp enviada com sucesso!`);
+        } else {
+          console.warn(`⚠️ [${recipient}] UAzapi retornou status ${response.status}.`);
+        }
+      } catch (err) {
+        console.error(`❌ [${recipient}] Falha na conexão com a API da UAzapi:`, err.message);
       }
-    } catch (err) {
-      console.error('❌ Falha na conexão com a API da UAzapi:', err.message);
     }
   } else {
-    console.log('ℹ️ UAZAPI_URL / WHATSAPP_API_URL não configurada no ambiente (.env). Mensagem simulada no console com sucesso.');
+    console.log('ℹ️ UAZAPI_URL não configurada no ambiente (.env). Mensagem simulada no console.');
   }
 }
 
