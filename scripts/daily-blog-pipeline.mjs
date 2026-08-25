@@ -280,7 +280,7 @@ async function sendWhatsAppNotification(article) {
     .filter(Boolean);
 
   if (recipients.length === 0) {
-    recipients.push('5522992371763', '5521990408505');
+    recipients.push('5521990408505');
   }
 
   const messageText = `🚀 *Novo Artigo Publicado no Blog da Promp!*

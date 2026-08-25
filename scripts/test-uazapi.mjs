@@ -34,7 +34,7 @@ async function testUazapi() {
     console.log('👉 Exemplo no seu .env:');
     console.log('   UAZAPI_URL="https://api.uazapi.com/send/text"');
     console.log('   UAZAPI_TOKEN="seu-token-uazapi"');
-    console.log('   UAZAPI_NUMBER="5522992371763,5521990408505"\n');
+    console.log('   UAZAPI_NUMBER="5521990408505"\n');
     process.exit(1);
   }
 
