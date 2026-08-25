@@ -298,10 +298,6 @@
         <a href="#faq" class="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary transition-colors whitespace-nowrap">
           {{ $t('header.faq') }}
         </a>
-        <NuxtLink to="/blog" class="text-sm font-semibold text-primary hover:text-orange-600 transition-colors whitespace-nowrap flex items-center gap-1">
-          <span>Blog</span>
-          <span class="px-1.5 py-0.5 rounded text-[10px] bg-primary/10 text-primary font-bold">Novo</span>
-        </NuxtLink>
       </nav>
 
       <!-- Right Side: Switchers & Actions -->
@@ -434,9 +430,6 @@
           <a href="#faq" @click="isMobileMenuOpen = false" class="block py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-primary">
             {{ $t('header.faq') }}
           </a>
-          <NuxtLink to="/blog" @click="isMobileMenuOpen = false" class="block py-2.5 text-sm font-bold text-primary hover:text-orange-600">
-            📰 Blog da Promp
-          </NuxtLink>
 
           <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2.5">
             <a href="https://app.promp.com.br/signup"
