@@ -3,9 +3,9 @@ title: "Atendimento 24/7 no WhatsApp: Como Converter Leads Fora do Horário Come
 slug: "atendimento-24-7-whatsapp-converter-leads-noturnos"
 description: "Mais de 40% dos leads de anúncios chegam à noite ou nos fins de semana. Veja como a IA da Promp garante atendimento instantâneo e agendamentos no piloto automático."
 date: "2026-08-23"
-author: "Equipe Promp"
-authorRole: "Especialistas em IA & Automação"
-authorAvatar: "/images/authors/promp-team.png"
+author: "Letícia Vasconcelos"
+authorRole: "Especialista em IA & Estratégia Conversacional | Promp"
+authorAvatar: "/images/authors/leticia-vasconcelos.jpg"
 category: "IA & Atendimento"
 tags: ["Atendimento 24/7", "Qualificação de Leads", "WhatsApp Business", "Conversão Noturna"]
 coverImage: "/images/blog/atendimento-24-7-whatsapp.webp"

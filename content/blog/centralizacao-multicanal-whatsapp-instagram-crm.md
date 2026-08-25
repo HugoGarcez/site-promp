@@ -3,9 +3,9 @@ title: "Centralização Multicanal: Como Integrar WhatsApp, Instagram e CRM em u
 slug: "centralizacao-multicanal-whatsapp-instagram-crm"
 description: "Elimine o caos de vários aparelhos celulares e canais desconectados. Saiba como centralizar WhatsApp, Instagram Direct e CRM em uma única central com IA."
 date: "2026-08-22"
-author: "Equipe Promp"
-authorRole: "Especialistas em IA & Automação"
-authorAvatar: "/images/authors/promp-team.png"
+author: "Letícia Vasconcelos"
+authorRole: "Especialista em IA & Estratégia Conversacional | Promp"
+authorAvatar: "/images/authors/leticia-vasconcelos.jpg"
 category: "Integrações"
 tags: ["CRM", "Multicanal", "Instagram Direct", "Webhooks", "Gestão de Atendimento"]
 coverImage: "/images/blog/centralizacao-multicanal-crm.webp"
