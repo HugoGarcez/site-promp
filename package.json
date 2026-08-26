@@ -12,7 +12,8 @@
     "blog": "node scripts/daily-blog-pipeline.mjs",
     "blog:daily": "node scripts/daily-blog-pipeline.mjs",
     "blog:covers": "node scripts/generate-blog-covers.cjs",
-    "test:uazapi": "node scripts/test-uazapi.mjs"
+    "test:uazapi": "node scripts/test-uazapi.mjs",
+    "deploy-vps": "bash scripts/deploy-vps.sh"
   },
   "devDependencies": {
     "@nuxtjs/sitemap": "^7.6.0",
