@@ -53,7 +53,7 @@ const testimonials = [
   {
     name: 'Marcelo Duarte',
     role: 'Sócio-Diretor',
-    company: 'Grossi Group Consultoria',
+    company: 'Duarte Consultoria & Gestão',
     avatar: 'https://i.pravatar.cc/300?img=59',
     highlight: 'Economia de 30h/semana',
     text: 'A robustez da plataforma e a facilidade de treinar a IA com nossos próprios manuais e planilhas superou todas as expectativas. Uma solução moderna de nível enterprise.',

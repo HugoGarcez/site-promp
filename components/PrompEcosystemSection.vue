@@ -950,7 +950,7 @@ const visibleIntegrations = computed(() => {
         <div class="mt-14 text-center">
           <div class="inline-flex flex-col sm:flex-row items-center gap-4 p-4 sm:p-2 sm:pr-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-lg">
             <span class="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 px-3">
-              Não encontrou seu sistema? Conectamos via <strong>API REST, Webhooks e Zapier/Make</strong>.
+              Não encontrou seu sistema? Conectamos via <strong>API REST e Webhooks</strong>.
             </span>
             <a
               href="https://wa.me/5522992371763?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20as%20integra%C3%A7%C3%B5es%20da%20Promp"
