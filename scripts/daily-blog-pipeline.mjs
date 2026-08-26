@@ -204,21 +204,29 @@ Dê mais produtividade à sua equipe e proporcione uma experiência impecável p
   }
 ];
 
-function escapeXml(unsafe) {
-  return String(unsafe).replace(/[<>&'"]/g, function (c) {
-    switch (c) {
-      case '<': return '&lt;';
-      case '>': return '&gt;';
-      case '&': return '&amp;';
-      case '\'': return '&apos;';
-      case '"': return '&quot;';
+function wrapText(text, maxCharsPerLine = 34) {
+  const words = String(text).split(' ');
+  const lines = [];
+  let currentLine = '';
+
+  for (const word of words) {
+    if ((currentLine + ' ' + word).trim().length <= maxCharsPerLine) {
+      currentLine = (currentLine + ' ' + word).trim();
+    } else {
+      if (currentLine) lines.push(currentLine);
+      currentLine = word;
     }
-  });
+  }
+  if (currentLine) lines.push(currentLine);
+  return lines;
 }
 
 async function generateCoverImage({ slug, title, badge, color1, color2 }) {
-  const safeTitle = escapeXml(title);
   const safeBadge = escapeXml(badge);
+  const titleLines = wrapText(title, 34);
+  const tspans = titleLines
+    .map((line, i) => `<tspan x="100" dy="${i === 0 ? 0 : 52}">${escapeXml(line)}</tspan>`)
+    .join('');
 
   const svg = `
   <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
@@ -247,8 +255,8 @@ async function generateCoverImage({ slug, title, badge, color1, color2 }) {
       <text x="125" y="22" fill="#FFB703" font-family="Arial, sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1.5">${safeBadge}</text>
     </g>
 
-    <text x="100" y="280" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="900" font-size="44" width="1000">
-      ${safeTitle}
+    <text x="100" y="260" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="900" font-size="42">
+      ${tspans}
     </text>
     
     <g transform="translate(100, 520)">
@@ -265,6 +273,18 @@ async function generateCoverImage({ slug, title, badge, color1, color2 }) {
   await sharp(Buffer.from(svg.trim()))
     .webp({ quality: 90 })
     .toFile(outputPath);
+
+  // Copia para .output/public se existir
+  const outputPublicDir = path.resolve(process.cwd(), '.output/public/images/blog');
+  if (fs.existsSync(outputPublicDir)) {
+    fs.copyFileSync(outputPath, path.join(outputPublicDir, coverFileName));
+  }
+  const serverPublicDir = '/var/www/site-promp/.output/public/images/blog';
+  if (fs.existsSync(serverPublicDir)) {
+    try {
+      fs.copyFileSync(outputPath, path.join(serverPublicDir, coverFileName));
+    } catch {}
+  }
 
   return `/images/blog/${coverFileName}`;
 }
