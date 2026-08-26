@@ -151,8 +151,14 @@ export function getAllArticles(includeContent = false): Article[] {
       html = md.parse(parsed.body) as string
     }
 
+    let coverImage = attributes.coverImage || ""
+    if (coverImage && !coverImage.includes("?")) {
+      coverImage = `${coverImage}?v=3`
+    }
+
     articles.push({
       ...attributes,
+      coverImage,
       tags: attributes.tags || [],
       readingTime,
       content: includeContent ? parsed.body : "",
