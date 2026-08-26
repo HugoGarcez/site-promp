@@ -109,7 +109,7 @@
             <div class="lg:col-span-5">
               <NuxtLink :to="'/blog/' + featuredArticle.slug" class="block overflow-hidden rounded-2xl">
                 <img
-                  :src="featuredArticle.coverImage"
+                  :src="featuredArticle.coverImage ? (featuredArticle.coverImage.includes('?') ? featuredArticle.coverImage : `${featuredArticle.coverImage}?v=3`) : ''"
                   :alt="featuredArticle.title"
                   class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500 rounded-2xl"
                   loading="lazy"
@@ -130,7 +130,7 @@
           <!-- Cover Image -->
           <NuxtLink :to="'/blog/' + article.slug" class="block relative aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900">
             <img
-              :src="article.coverImage"
+              :src="article.coverImage ? (article.coverImage.includes('?') ? article.coverImage : `${article.coverImage}?v=3`) : ''"
               :alt="article.title"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"

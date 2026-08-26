@@ -108,7 +108,7 @@
         <!-- Cover Image -->
         <div class="mb-12 rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950">
           <img
-            :src="article.coverImage"
+            :src="article.coverImage ? (article.coverImage.includes('?') ? article.coverImage : `${article.coverImage}?v=3`) : ''"
             :alt="article.coverAlt || article.title"
             class="w-full h-auto max-h-[500px] object-cover"
           />
