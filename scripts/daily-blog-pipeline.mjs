@@ -598,6 +598,18 @@ Desbloqueie o faturamento escondido na sua base de contatos. [Comece a reativar 
   }
 ];
 
+function escapeXml(unsafe) {
+  return String(unsafe || '').replace(/[<>&'"]/g, function (c) {
+    switch (c) {
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '&': return '&amp;';
+      case '\'': return '&apos;';
+      case '"': return '&quot;';
+    }
+  });
+}
+
 function wrapText(text, maxChars = 28) {
   const words = String(text || '').split(' ');
   const lines = [];
