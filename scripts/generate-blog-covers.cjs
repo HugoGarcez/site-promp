@@ -23,28 +23,30 @@ function escapeXml(unsafe) {
   });
 }
 
-function wrapText(text, maxCharsPerLine = 34) {
+function wrapText(text, maxChars = 28) {
   const words = String(text || '').split(' ');
   const lines = [];
-  let currentLine = '';
+  let current = '';
 
-  for (const word of words) {
-    if ((currentLine + ' ' + word).trim().length <= maxCharsPerLine) {
-      currentLine = (currentLine + ' ' + word).trim();
+  for (const w of words) {
+    if ((current + ' ' + w).trim().length <= maxChars) {
+      current = (current + ' ' + w).trim();
     } else {
-      if (currentLine) lines.push(currentLine);
-      currentLine = word;
+      if (current) lines.push(current);
+      current = w;
     }
   }
-  if (currentLine) lines.push(currentLine);
+  if (current) lines.push(current);
   return lines;
 }
 
 async function generateCover({ slug, title, badge, color1, color2 }) {
   const safeBadge = escapeXml(badge || 'PROMP BLOG');
-  const titleLines = wrapText(title, 34);
+  const titleLines = wrapText(title, 28);
+  const startY = titleLines.length === 1 ? 300 : (titleLines.length === 2 ? 270 : 230);
+  const lineHeight = 60;
   const tspans = titleLines
-    .map((line, i) => `<tspan x="100" dy="${i === 0 ? 0 : 54}">${escapeXml(line)}</tspan>`)
+    .map((line, i) => `<tspan x="100" y="${startY + (i * lineHeight)}">${escapeXml(line)}</tspan>`)
     .join('');
 
   const svg = `
@@ -70,25 +72,25 @@ async function generateCover({ slug, title, badge, color1, color2 }) {
     <!-- Brand Header -->
     <g transform="translate(100, 80)">
       <rect width="160" height="40" rx="8" fill="#E84624" />
-      <text x="80" y="26" fill="#ffffff" font-family="Arial, sans-serif" font-weight="900" font-size="20" text-anchor="middle" letter-spacing="2">PROMP.IA</text>
+      <text x="80" y="26" fill="#ffffff" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="900" font-size="20" text-anchor="middle" letter-spacing="2">PROMP.IA</text>
     </g>
 
     <!-- Badge -->
-    <g transform="translate(100, 150)">
-      <rect width="250" height="34" rx="17" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" />
-      <text x="125" y="22" fill="#FFB703" font-family="Arial, sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1.5">${safeBadge}</text>
+    <g transform="translate(100, 145)">
+      <rect width="260" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" />
+      <text x="130" y="23" fill="#FFB703" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1.5">${safeBadge}</text>
     </g>
 
-    <!-- Title -->
-    <text x="100" y="260" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="900" font-size="42">
+    <!-- Title (Multi-line) -->
+    <text fill="#FFFFFF" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="900" font-size="46">
       ${tspans}
     </text>
     
     <!-- Footer Bar inside Image -->
-    <g transform="translate(100, 520)">
+    <g transform="translate(100, 530)">
       <rect width="1000" height="2" fill="rgba(255,255,255,0.15)" />
-      <text x="0" y="30" fill="#94A3B8" font-family="Arial, sans-serif" font-size="16" font-weight="bold">promp.com.br/blog</text>
-      <text x="1000" y="30" fill="#22C55E" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="end">Automação Inteligente de Vendas</text>
+      <text x="0" y="35" fill="#94A3B8" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="bold">promp.com.br/blog</text>
+      <text x="1000" y="35" fill="#22C55E" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" text-anchor="end">Automação Inteligente de Vendas</text>
     </g>
   </svg>
   `;
@@ -113,24 +115,60 @@ async function generateCover({ slug, title, badge, color1, color2 }) {
 }
 
 async function run() {
-  console.log('🎨 Regenerando capas de todos os artigos do blog...');
+  console.log('🎨 Regenerando capas de todos os artigos do blog com quebra de linha perfeita...');
   const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
 
-  const badgeMap = {
-    'como-escalar-vendas-whatsapp-ia-humanizada': { badge: 'VENDAS & CONVERSÃO', c1: '#E84624', c2: '#0E1F4A' },
-    'atendimento-24-7-whatsapp-converter-leads-noturnos': { badge: 'IA & ATENDIMENTO 24/7', c1: '#0E1F4A', c2: '#1E293B' },
-    'centralizacao-multicanal-whatsapp-instagram-crm': { badge: 'INTEGRAÇÃO MULTICANAL', c1: '#1E293B', c2: '#0E1F4A' },
-    'recuperar-carrinhos-abandonados-whatsapp-ia': { badge: 'E-COMMERCE & CONVERSÃO', c1: '#E84624', c2: '#0E1F4A' },
-    'follow-up-de-vendas-whatsapp-reengajar-leads': { badge: 'FOLLOW-UP & VENDAS', c1: '#0E1F4A', c2: '#1E293B' },
-    'ia-para-clinicas-consultorios-agendamento-whatsapp': { badge: 'SAÚDE & CONSULTÓRIOS', c1: '#0E1F4A', c2: '#059669' }
+  const metaMap = {
+    'como-escalar-vendas-whatsapp-ia-humanizada': {
+      aliases: ['escalar-vendas-whatsapp-ia'],
+      badge: 'VENDAS & CONVERSÃO',
+      c1: '#E84624',
+      c2: '#0E1F4A'
+    },
+    'atendimento-24-7-whatsapp-converter-leads-noturnos': {
+      aliases: ['atendimento-24-7-whatsapp'],
+      badge: 'IA & ATENDIMENTO 24/7',
+      c1: '#0E1F4A',
+      c2: '#1E293B'
+    },
+    'centralizacao-multicanal-whatsapp-instagram-crm': {
+      aliases: ['centralizacao-multicanal-crm'],
+      badge: 'INTEGRAÇÃO MULTICANAL',
+      c1: '#1E293B',
+      c2: '#0E1F4A'
+    },
+    'recuperar-carrinhos-abandonados-whatsapp-ia': {
+      aliases: [],
+      badge: 'E-COMMERCE & CONVERSÃO',
+      c1: '#E84624',
+      c2: '#0E1F4A'
+    },
+    'follow-up-de-vendas-whatsapp-reengajar-leads': {
+      aliases: [],
+      badge: 'FOLLOW-UP & VENDAS',
+      c1: '#0E1F4A',
+      c2: '#1E293B'
+    },
+    'ia-para-clinicas-consultorios-agendamento-whatsapp': {
+      aliases: [],
+      badge: 'SAÚDE & CONSULTÓRIOS',
+      c1: '#0E1F4A',
+      c2: '#059669'
+    }
   };
 
   for (const file of files) {
     const raw = fs.readFileSync(path.join(blogDir, file), 'utf-8');
     const { attributes } = matter(raw);
     const slug = attributes.slug || file.replace('.md', '');
-    const meta = badgeMap[slug] || { badge: attributes.category ? attributes.category.toUpperCase() : 'PROMP BLOG', c1: '#E84624', c2: '#0E1F4A' };
+    const meta = metaMap[slug] || {
+      aliases: [],
+      badge: attributes.category ? attributes.category.toUpperCase() : 'PROMP BLOG',
+      c1: '#E84624',
+      c2: '#0E1F4A'
+    };
 
+    // Gera com o slug padrão
     await generateCover({
       slug,
       title: attributes.title,
@@ -138,6 +176,17 @@ async function run() {
       color1: meta.c1,
       color2: meta.c2
     });
+
+    // Se tiver aliases antigos, gera também para não quebrar links
+    for (const alias of meta.aliases) {
+      await generateCover({
+        slug: alias,
+        title: attributes.title,
+        badge: meta.badge,
+        color1: meta.c1,
+        color2: meta.c2
+      });
+    }
   }
   console.log('🎉 Todas as capas foram geradas com sucesso!');
 }

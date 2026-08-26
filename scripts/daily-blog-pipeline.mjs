@@ -204,29 +204,30 @@ Dê mais produtividade à sua equipe e proporcione uma experiência impecável p
   }
 ];
 
-function wrapText(text, maxCharsPerLine = 34) {
-  const words = String(text).split(' ');
+function wrapText(text, maxChars = 28) {
+  const words = String(text || '').split(' ');
   const lines = [];
-  let currentLine = '';
-
-  for (const word of words) {
-    if ((currentLine + ' ' + word).trim().length <= maxCharsPerLine) {
-      currentLine = (currentLine + ' ' + word).trim();
+  let current = '';
+  for (const w of words) {
+    if ((current + ' ' + w).trim().length <= maxChars) {
+      current = (current + ' ' + w).trim();
     } else {
-      if (currentLine) lines.push(currentLine);
-      currentLine = word;
+      if (current) lines.push(current);
+      current = w;
     }
   }
-  if (currentLine) lines.push(currentLine);
+  if (current) lines.push(current);
   return lines;
 }
 
 async function generateCoverImage({ slug, title, badge, color1, color2 }) {
   const safeBadge = escapeXml(badge);
-  const titleLines = wrapText(title, 34);
-  const tspans = titleLines
-    .map((line, i) => `<tspan x="100" dy="${i === 0 ? 0 : 52}">${escapeXml(line)}</tspan>`)
-    .join('');
+  const titleLines = wrapText(title, 28);
+  const startY = titleLines.length === 1 ? 300 : (titleLines.length === 2 ? 270 : 230);
+  const lineHeight = 60;
+  const tspans = titleLines.map((line, i) => 
+    `<tspan x="100" y="${startY + (i * lineHeight)}">${escapeXml(line)}</tspan>`
+  ).join('');
 
   const svg = `
   <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
@@ -247,22 +248,22 @@ async function generateCoverImage({ slug, title, badge, color1, color2 }) {
 
     <g transform="translate(100, 80)">
       <rect width="160" height="40" rx="8" fill="#E84624" />
-      <text x="80" y="26" fill="#ffffff" font-family="Arial, sans-serif" font-weight="900" font-size="20" text-anchor="middle" letter-spacing="2">PROMP.IA</text>
+      <text x="80" y="26" fill="#ffffff" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="900" font-size="20" text-anchor="middle" letter-spacing="2">PROMP.IA</text>
     </g>
 
-    <g transform="translate(100, 150)">
-      <rect width="250" height="34" rx="17" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" />
-      <text x="125" y="22" fill="#FFB703" font-family="Arial, sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1.5">${safeBadge}</text>
+    <g transform="translate(100, 145)">
+      <rect width="260" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" />
+      <text x="130" y="23" fill="#FFB703" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1.5">${safeBadge}</text>
     </g>
 
-    <text x="100" y="260" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="900" font-size="42">
+    <text fill="#FFFFFF" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="900" font-size="46">
       ${tspans}
     </text>
     
-    <g transform="translate(100, 520)">
+    <g transform="translate(100, 530)">
       <rect width="1000" height="2" fill="rgba(255,255,255,0.15)" />
-      <text x="0" y="30" fill="#94A3B8" font-family="Arial, sans-serif" font-size="16" font-weight="bold">promp.com.br/blog</text>
-      <text x="1000" y="30" fill="#22C55E" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="end">Automação Inteligente de Vendas</text>
+      <text x="0" y="35" fill="#94A3B8" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="bold">promp.com.br/blog</text>
+      <text x="1000" y="35" fill="#22C55E" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" text-anchor="end">Automação Inteligente de Vendas</text>
     </g>
   </svg>
   `;
