@@ -187,13 +187,6 @@ Com a [IA da Promp](/solucoes/atendimento-fora-do-horario), clínicas conseguem 
 
 ---
 
-    contentBuilder: () => `
-Em consultórios médicos, odontológicos, clínicas de estética e psicologia, a **taxa de faltas (no-show)** pode ultrapassar 30% da agenda, causando prejuízos financeiros graves e horários ociosos.
-
-Com a [IA da Promp](/solucoes/atendimento-fora-do-horario), clínicas conseguem transformar o WhatsApp em uma recepção digital inteligente que funciona 24 horas por dia.
-
----
-
 ## Como a IA Transforma a Recepção da sua Clínica
 
 1. **Agendamento Noturno e aos Fins de Semana**: Pacientes frequentemente lembram de marcar consultas à noite. A IA consulta a agenda e confirma o horário em segundos.
