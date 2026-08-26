@@ -792,6 +792,97 @@ _Promp • Inteligência Artificial & Atendimento Omnichannel_`;
   }
 }
 
+function generateLongFormContent(topic) {
+  return `
+> **Em Resumo (Visão Executiva):**  
+> ${topic.description} A tecnologia da [Promp](${topic.solutionLink || '/solucoes/escalar-vendas-whatsapp'}) utiliza modelos de inteligência artificial generativa de alta velocidade, integrados nativamente ao WhatsApp Oficial, para responder leads em menos de 3 segundos, qualificar oportunidades comerciais e multiplicar o faturamento das empresas com total segurança e humanização.
+
+---
+
+## O Desafio no Cenário Comercial Atual
+
+No mercado brasileiro, o WhatsApp transformou-se no canal definitivo para atração, atendimento e fechamento de vendas. Segundo levantamentos recentes do setor, mais de **96% da população com acesso à internet utiliza o WhatsApp diariamente**, tornando-o muito mais relevante do que canais tradicionais como e-mail e formulários estáticos.
+
+Contudo, a maioria das empresas enfrenta um gargalo crítico ao tentar escalar suas vendas:
+
+\`\`\`
+Aumento de Tráfego → Sobrecarga da Equipe de Vendas → Demora no Atendimento (>15 min) → Perda de 70% das Vendas
+\`\`\`
+
+Quando um potencial cliente demonstra interesse e não recebe retorno imediato:
+1. **Perda do Momento de Compra**: O pico de interesse do comprador ocorre nos primeiros 3 minutos após o clique.
+2. **Migração para Concorrentes**: O comprador busca outras opções no Google e fecha com quem responde primeiro.
+3. **Desgaste da Equipe**: Vendedores gastam energia com tarefas burocráticas em vez de focar no fechamento de negócios de alto valor.
+
+Para superar esse obstáculo, operações de alta performance adotam a [solução de ${topic.solutionName || 'Inteligência Artificial'} da Promp](${topic.solutionLink || '/solucoes/escalar-vendas-whatsapp'}).
+
+---
+
+## Os 4 Pilares da Solução Promp
+
+A Promp estrutura a jornada do cliente em quatro fases estratégicas:
+
+### 1. Resposta Imediata em Menos de 3 Segundos
+A IA atende o contato instantaneamente, 24 horas por dia, 7 dias por semana, garantindo que nenhum lead esfrie ou seja esquecido.
+
+### 2. Áudios Humanizados com Inteligência Artificial
+Diferente de robôs convencionais, a Promp sintetiza mensagens de voz realistas na hora, com pausas, respiração e sotaque brasileiro, transmitindo autoridade e acolhimento.
+
+### 3. Qualificação Ativa e Diagnóstico de Dores
+A IA conduz um diálogo consultivo, coletando dados essenciais como orçamento, urgência e perfil de compra sem soar como um questionário engessado.
+
+### 4. Sincronização em Tempo Real com CRM e Transbordo
+Todas as informações são enviadas automaticamente para o seu CRM (RD Station, HubSpot, Pipedrive, Ploomes), e o lead pronto é encaminhado para o vendedor responsável.
+
+Para entender mais sobre gestão de funil, confira nosso guia de [Gestão e Métricas](/solucoes/falta-de-controle).
+
+---
+
+## Comparativo: Modelo Convencional vs. Automação Inteligente Promp
+
+| Dimensão de Análise | Abordagem Tradicional / Chatbot Rígido | Inteligência Artificial Promp |
+|---|---|---|
+| **Tempo Médio de Resposta** | 15 a 45 minutos de espera | **Menos de 3 segundos** |
+| **Disponibilidade** | Horário comercial apenas | **24 horas por dia, 7 dias por semana** |
+| **Formato das Mensagens** | Menus com números (1, 2, 3) | **Texto fluido e Áudios Humanizados** |
+| **Integração com CRM** | Trabalho manual e perda de histórico | **Sincronização bidirecional em tempo real** |
+| **Taxa de Conversão** | Média de 3% a 6% | **Aumento de até 4x no fechamento** |
+
+---
+
+## Simulação de Atendimento no WhatsApp
+
+Veja como a IA atua de forma natural e consultiva:
+
+\`\`\`
+[Cliente]: "Olá, vi a solução de vocês e queria entender como funciona para o meu segmento."
+
+[IA Promp - Texto]:
+"Olá, tudo bem? Seja muito bem-vindo! Que ótimo ter você por aqui. 😊"
+
+[IA Promp - Áudio Humanizado (0:22s)]:
+"Oi! Aqui é a consultora virtual da Promp. Nós ajudamos empresas a automatizarem todo o atendimento no WhatsApp com respostas imediatas e áudios personalizados. Me conta: qual é o seu principal desafio de vendas hoje?"
+\`\`\`
+
+---
+
+## Passo a Passo para Implementar na sua Empresa
+
+1. **Conexão Oficial via QR Code**: Conecte seu número de WhatsApp em menos de 2 minutos no painel da Promp.
+2. **Treinamento com seus Materiais**: Faça upload de catálogos, PDFs e manuais de vendas da sua empresa.
+3. **Configuração de Voz e Estilo**: Defina o tom de voz e os critérios de transbordo para atendentes humanos.
+4. **Integração de CRM e Métricas**: Conecte com seu sistema de vendas através de [Integrações e Automações](/solucoes/integracoes-e-automacoes).
+
+---
+
+## Conclusão: Escale suas Vendas com Alta Performance
+
+Automatizar seu atendimento com inteligência artificial humanizada é o caminho mais rápido para reduzir custos, encantar clientes e bater recordes de faturamento.
+
+👉 [Crie sua conta na Promp gratuitamente](https://app.promp.com.br/signup) e transforme seu canal comercial.
+`;
+}
+
 export async function runDailyBlogPipeline() {
   console.log('🚀 Iniciando Pipeline Diário de Conteúdo Promp (Claude-Blog Engine)...');
 
@@ -810,7 +901,7 @@ export async function runDailyBlogPipeline() {
     return;
   }
 
-  console.log(`📝 Gerando artigo: "${nextTopic.title}"...`);
+  console.log(`📝 Gerando artigo longo e otimizado para SEO/LLMs: "${nextTopic.title}"...`);
 
   // 1. Gerar imagem de capa
   const coverPath = await generateCoverImage(nextTopic);
@@ -819,7 +910,7 @@ export async function runDailyBlogPipeline() {
   // 2. Data de publicação (hoje)
   const today = new Date().toISOString().split('T')[0];
 
-  // 3. Montar arquivo Markdown
+  // 3. Montar arquivo Markdown com profundidade máxima
   const frontmatter = `---
 title: "${nextTopic.title.replace(/"/g, '\\"')}"
 slug: "${nextTopic.slug}"
@@ -832,7 +923,7 @@ category: "${nextTopic.category}"
 tags: ${JSON.stringify(nextTopic.tags)}
 coverImage: "${coverPath}"
 coverAlt: "${nextTopic.title.replace(/"/g, '\\"')}"
-readingTime: "${nextTopic.readingTime}"
+readingTime: "${nextTopic.readingTime || '8 min'}"
 featured: false
 seoKeywords: ${JSON.stringify(nextTopic.tags.map(t => t.toLowerCase()))}
 faq:
@@ -840,7 +931,11 @@ ${nextTopic.faq.map(f => `  - question: "${f.question.replace(/"/g, '\\"')}"\n  
 ---
 `;
 
-  const fullContent = frontmatter + nextTopic.contentBuilder();
+  const bodyContent = typeof nextTopic.contentBuilder === 'function'
+    ? nextTopic.contentBuilder()
+    : generateLongFormContent(nextTopic);
+
+  const fullContent = frontmatter + bodyContent;
   const filePath = path.join(BLOG_DIR, `${nextTopic.slug}.md`);
 
   fs.writeFileSync(filePath, fullContent.trim() + '\n', 'utf-8');
