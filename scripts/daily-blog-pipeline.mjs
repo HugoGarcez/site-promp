@@ -187,6 +187,13 @@ Com a [IA da Promp](/solucoes/atendimento-fora-do-horario), clínicas conseguem 
 
 ---
 
+    contentBuilder: () => `
+Em consultórios médicos, odontológicos, clínicas de estética e psicologia, a **taxa de faltas (no-show)** pode ultrapassar 30% da agenda, causando prejuízos financeiros graves e horários ociosos.
+
+Com a [IA da Promp](/solucoes/atendimento-fora-do-horario), clínicas conseguem transformar o WhatsApp em uma recepção digital inteligente que funciona 24 horas por dia.
+
+---
+
 ## Como a IA Transforma a Recepção da sua Clínica
 
 1. **Agendamento Noturno e aos Fins de Semana**: Pacientes frequentemente lembram de marcar consultas à noite. A IA consulta a agenda e confirma o horário em segundos.
@@ -200,6 +207,400 @@ Para saber mais sobre como otimizar o tempo da sua equipe, veja nossa solução 
 ## Conclusão
 
 Dê mais produtividade à sua equipe e proporcione uma experiência impecável para seus pacientes com a [Promp](https://app.promp.com.br/signup).
+`
+  },
+  {
+    title: "Integração de WhatsApp com CRM: Sincronize Leads e Conversas Automaticamente",
+    slug: "integrar-whatsapp-rd-station-hubspot-crm-ia",
+    description: "Elimine o trabalho manual de copiar e colar contatos. Descubra como sincronizar conversas do WhatsApp com RD Station, HubSpot, Pipedrive e Ploomes em tempo real.",
+    category: "Integrações",
+    tags: ["CRM", "HubSpot", "RD Station", "WhatsApp", "Automação"],
+    badge: "INTEGRAÇÕES & CRM",
+    readingTime: "6 min",
+    color1: "#0E1F4A",
+    color2: "#3B82F6",
+    solutionLink: "/solucoes/integracoes-e-automacoes",
+    solutionName: "Integrações e API",
+    faq: [
+      {
+        question: "Quais CRMs são compatíveis com a Promp?",
+        answer: "A Promp integra-se nativamente com HubSpot, RD Station CRM, Pipedrive, Ploomes, Bitrix24, ActiveCampaign e qualquer sistema via Webhooks e API REST."
+      },
+      {
+        question: "O histórico completo da conversa fica salvo no card do lead?",
+        answer: "Sim! Toda a transcrição, dados coletados pela IA e status da negociação são atualizados automaticamente no CRM."
+      }
+    ],
+    contentBuilder: () => `
+Vendedores gastam até **30% do seu tempo diário** apenas preenchendo cadastros manuais, colando históricos de conversas do WhatsApp e movendo cards no CRM.
+
+Além de improdutivo, esse processo causa vazamento de dados: quando um vendedor sai da empresa, ele frequentemente leva os contatos no WhatsApp pessoal.
+
+Com a [solução de Integrações e API](/solucoes/integracoes-e-automacoes) da Promp, cada interação no WhatsApp é automaticamente documentada e sincronizada com o seu funil de vendas.
+
+---
+
+## Vantagens da Sincronização Automática
+
+1. **Criação Instantânea de Oportunidades**: Assim que o lead envia a primeira mensagem no WhatsApp, a IA qualifica o perfil e cria o negócio na etapa correta do funil.
+2. **Atualização de Campos Personalizados**: Nome, empresa, faturamento, interesse e orçamento coletados na conversa são preenchidos no CRM sem intervenção humana.
+3. **Distribuição Inteligente de Leads (Round-Robin)**: Os leads qualificados são distribuídos em fila para os executivos de vendas disponíveis.
+
+---
+
+## Conclusão
+
+Integre seu WhatsApp ao seu CRM em poucos cliques com a [Promp](https://app.promp.com.br/signup) e tenha visibilidade total do seu pipeline de vendas.
+`
+  },
+  {
+    title: "Áudios Humanizados com IA no WhatsApp: O Segredo para Multiplicar Suas Conversões",
+    slug: "audios-humanizados-ia-whatsapp-aumentar-conversoes",
+    description: "Por que mensagens de voz geram 3x mais confiança no WhatsApp do que textos frios? Veja como a Promp utiliza clonagem de voz e áudios naturais com IA para vender mais.",
+    category: "Vendas & Conversão",
+    tags: ["Áudios IA", "Vendas", "Humanização", "WhatsApp", "Conversão"],
+    badge: "ÁUDIOS HUMANIZADOS & IA",
+    readingTime: "5 min",
+    color1: "#E84624",
+    color2: "#8B5CF6",
+    solutionLink: "/solucoes/escalar-vendas-whatsapp",
+    solutionName: "Escalar Vendas no WhatsApp",
+    faq: [
+      {
+        question: "Os clientes percebem que é uma inteligência artificial?",
+        answer: "Não! A voz da Promp possui entonação natural brasileira, pausas realistas e respiração, transmitindo a sensação de um consultor de vendas dedicado."
+      },
+      {
+        question: "Posso clonar a voz do meu melhor vendedor ou fundadores?",
+        answer: "Sim, a plataforma permite treinar modelos de voz exclusivos para representar a identidade da sua marca."
+      }
+    ],
+    contentBuilder: () => `
+No Brasil, o WhatsApp é um canal essencialmente pessoal. Quando um cliente entra em contato e recebe um bloco de texto corporativo e robótico, a taxa de resposta cai drasticamente.
+
+Por outro lado, quando ele recebe um **áudio curto, amigável e focado na sua dor**, a sensação de atenção exclusiva gera confiança instantânea.
+
+A [Promp](/solucoes/escalar-vendas-whatsapp) é pioneira no uso de **áudios dinâmicos e ultra-humanizados** gerados por Inteligência Artificial.
+
+---
+
+## Por que Áudios com IA Convertem Tanto?
+
+- **Quebra de Objeções complexas**: Explicar uma condição comercial por áudio soa consultivo e evita mal-entendidos.
+- **Engajamento Emocional**: O tom de voz acolhedor aproxima o cliente da decisão de compra.
+- **Velocidade de Resposta**: O cliente recebe o áudio em segundos, enquanto está pesquisando o seu produto.
+
+---
+
+## Dê o Próximo Passo
+
+Quer testar como soam os áudios humanizados na sua operação? [Crie sua conta na Promp](https://app.promp.com.br/signup) e surpreenda seus clientes.
+`
+  },
+  {
+    title: "Como Qualificar Leads de Meta Ads no WhatsApp em Menos de 3 Segundos",
+    slug: "qualificar-leads-meta-ads-whatsapp-ia",
+    description: "Investindo alto em anúncios no Instagram e Facebook? Descubra como a IA da Promp atende os cliques em tempo real, filtra curiosos e entrega leads prontos para os vendedores.",
+    category: "Tráfego & Ads",
+    tags: ["Meta Ads", "Tráfego Pago", "Qualificação", "WhatsApp", "ROI"],
+    badge: "TRÁFEGO PAGO & META ADS",
+    readingTime: "5 min",
+    color1: "#1E293B",
+    color2: "#0E1F4A",
+    solutionLink: "/solucoes/leads-que-nao-convertem",
+    solutionName: "Conversão de Anúncios",
+    faq: [
+      {
+        question: "Como a Promp rastreia a origem do anúncio (UTM)?",
+        answer: "A Promp captura os parâmetros de campanha (UTM source, medium, campaign e ad) diretamente no link de clique para o WhatsApp e registra no CRM."
+      },
+      {
+        question: "O que acontece com os leads desqualificados?",
+        answer: "A IA responde de forma educada e tira dúvidas gerais, poupando o tempo dos vendedores para focar apenas nos leads com perfil ideal (ICP)."
+      }
+    ],
+    contentBuilder: () => `
+Se você investe em anúncios do tipo **Clique para o WhatsApp (CTWA)** no Meta Ads (Facebook e Instagram), já sabe que a cada minuto de demora na resposta, o Custo por Lead (CPL) e o Custo por Aquisição (CAC) aumentam.
+
+Dados do setor revelam que responder a um lead nos **primeiros 5 minutos aumenta as chances de conversão em até 391%**.
+
+Com a nossa solução de [Conversão de Anúncios](/solucoes/leads-que-nao-convertem), a IA acolhe o lead em menos de 3 segundos com contexto completo do anúncio que ele clicou.
+
+---
+
+## O Funil de Qualificação com IA
+
+1. **Reconhecimento da Oferta**: A IA sabe exatamente qual anúncio o cliente viu e inicia a conversa abordando a oferta específica.
+2. **Perguntas de Filtro (ICP)**: A IA coleta dados-chave (orçamento, urgência, tamanho da empresa) sem parecer um formulário burocrático.
+3. **Agendamento com o Vendedor**: Se o lead estiver qualificado, a IA agenda a reunião no Google Calendar / Outlook do vendedor imediatamente.
+
+---
+
+## Conclusão
+
+Pare de queimar verba de anúncios com leads frios. [Potencialize seus Meta Ads com a Promp](https://app.promp.com.br/signup).
+`
+  },
+  {
+    title: "IA para Imobiliárias e Corretores: Como Agendar Mais Visitas e Vender Imóveis",
+    slug: "ia-para-imobiliarias-corretores-whatsapp",
+    description: "Clientes imobiliários pesquisam à noite e aos finais de semana. Veja como a Promp envia fotos, plantas e agenda visitas no WhatsApp 24 horas por dia.",
+    category: "Casos Reais",
+    tags: ["Imobiliárias", "Corretores", "Imóveis", "Agendamento", "WhatsApp"],
+    badge: "MERCADO IMOBILIÁRIO",
+    readingTime: "6 min",
+    color1: "#0E1F4A",
+    color2: "#059669",
+    solutionLink: "/solucoes/atendimento-fora-do-horario",
+    solutionName: "Atendimento 24/7",
+    faq: [
+      {
+        question: "A IA consegue enviar PDFs com fotos e plantas dos imóveis?",
+        answer: "Sim! A Promp identifica o código ou localização do imóvel desejado e envia fotos, fichas técnicas e valores diretamente no chat."
+      },
+      {
+        question: "Como o corretor é notificado quando a visita é agendada?",
+        answer: "O corretor recebe um resumo no WhatsApp e a visita é inserida automaticamente na sua agenda com todos os dados do cliente."
+      }
+    ],
+    contentBuilder: () => `
+No mercado imobiliário, velocidade e disponibilidade são os fatores decisivos para fechar uma venda ou locação.
+
+Quando um comprador encontra um imóvel nos portais (ZAP, VivaReal, OLX) às 21h e manda mensagem, ele quer saber detalhes na hora: valor do condomínio, fotos dos cômodos e se aceita financiamento.
+
+Com a [Promp para Imobiliárias](/solucoes/atendimento-fora-do-horario), seu catálogo de imóveis ganha um consultor inteligente 24/7.
+
+---
+
+## Funcionalidades para Imobiliárias
+
+- **Filtro de Preferências**: A IA pergunta número de quartos, bairro, faixa de preço e envia as opções disponíveis;
+- **Agendamento de Visitas Presenciais e Virtuais**: O cliente escolhe dia e horário livres na grade do corretor responsável;
+- **Simulação de Financiamento**: A IA calcula estimativas de parcelas e tira dúvidas de documentação.
+
+---
+
+## Conclusão
+
+Multiplique seus agendamentos de visitas com a [Promp para o Mercado Imobiliário](https://app.promp.com.br/signup).
+`
+  },
+  {
+    title: "Como Recuperar Boletos e Pix Pendentes pelo WhatsApp com IA Humanizada",
+    slug: "recuperar-boletos-pix-vendas-whatsapp",
+    description: "Boletos e Pix não pagos representam até 40% das vendas perdidas. Descubra a estratégia de reativação suave no WhatsApp que recupera receitas no piloto automático.",
+    category: "Vendas & Conversão",
+    tags: ["Recuperação de Vendas", "Pix", "Boletos", "E-commerce", "WhatsApp"],
+    badge: "RECUPERAÇÃO DE VENDAS",
+    readingTime: "5 min",
+    color1: "#E84624",
+    color2: "#1E293B",
+    solutionLink: "/solucoes/follow-up-de-leads",
+    solutionName: "Follow-up Automático de Leads",
+    faq: [
+      {
+        question: "Qual o melhor momento para enviar o lembrete de Pix?",
+        answer: "Recomendamos enviar o primeiro lembrete suave entre 30 a 60 minutos após a geração do Pix, disponibilizando novamente a chave Copia e Cola."
+      },
+      {
+        question: "A mensagem soa como uma cobrança agressiva?",
+        answer: "Não! A IA adota tom acolhedor de suporte, perguntando se o cliente teve alguma dificuldade no app do banco ou com a aprovação."
+      }
+    ],
+    contentBuilder: () => `
+Gerar um boleto ou código Pix é sinal claro de intenção de compra. Contudo, na correria do dia a dia, muitos compradores esquecem de abrir o app do banco ou deixam o código expirar.
+
+Disparar e-mails automáticos quase não traz resultado. Por outro lado, um lembrete consultivo no WhatsApp com o Pix Copia e Cola ao alcance de um clique recupera **até 38% dos pagamentos pendentes**.
+
+Aprenda a aplicar o [Follow-up Automático da Promp](/solucoes/follow-up-de-leads) para maximizar sua taxa de conversão financeira.
+
+---
+
+## Passos para Recuperar Vendas com Pix e Boleto
+
+1. **Aviso Imediato de Código Gerado**: Envio do código Pix de fácil cópia logo após a compra.
+2. **Lembrete de Vencimento**: Aviso amigável 2 horas antes de o código expirar.
+3. **Oferecimento de Alternativas**: Se o cliente desistir do boleto, a IA oferece parcelamento no cartão de crédito na hora.
+
+---
+
+## Conclusão
+
+Transforme pedidos pendentes em dinheiro no caixa. [Conecte a Promp ao seu checkout](https://app.promp.com.br/signup).
+`
+  },
+  {
+    title: "Transbordo Inteligente: Como a IA Direciona Leads Prontos para os Melhores Vendedores",
+    slug: "transbordo-inteligente-ia-atendentes-humanos",
+    description: "Saiba como criar regras de roteamento avançadas para transferir conversas da IA para atendentes humanos no momento exato do fechamento.",
+    category: "Gestão & Métricas",
+    tags: ["Transbordo", "Equipe Comercial", "Roteamento", "WhatsApp", "Gestão"],
+    badge: "GESTÃO & EQUIPE COMERCIAL",
+    readingTime: "5 min",
+    color1: "#0E1F4A",
+    color2: "#F59E0B",
+    solutionLink: "/solucoes/falta-de-controle",
+    solutionName: "Gestão e Métricas",
+    faq: [
+      {
+        question: "O atendente humano consegue ver o que a IA conversou antes?",
+        answer: "Sim! O vendedor tem acesso à transcrição completa e ao resumo dos pontos principais identificados pela IA."
+      },
+      {
+        question: "É possível configurar regras por especialidade ou região?",
+        answer: "Com certeza. A Promp direciona o atendimento com base no produto de interesse, estado/cidade do cliente ou porte da empresa."
+      }
+    ],
+    contentBuilder: () => `
+O maior benefício da Inteligência Artificial em vendas não é substituir os seres humanos, mas sim **eliminar as tarefas repetitivas** para que os vendedores dediquem seu tempo exclusivamente a negociar e fechar contratos.
+
+O **Transbordo Inteligente** da Promp atua como um maestro: a IA faz o primeiro contato, responde às perguntas frequentes e, quando detecta alta intenção de compra, transfere o lead para o vendedor certo.
+
+Conheça mais no nosso painel de [Gestão e Métricas](/solucoes/falta-de-controle).
+
+---
+
+## Como Funciona o Gatilho de Transbordo
+
+- **Detecção de Intenção**: A IA identifica frases como "quero fechar hoje", "pode me ligar?", "qual o desconto à vista?";
+- **Notificação em Tempo Real**: O vendedor recebe um aviso sonoro e no celular com o link direto para a conversa;
+- **Pausa Automática da IA**: A IA se silencia para que o humano conduza a negociação com total liberdade.
+
+---
+
+## Conclusão
+
+Garanta que seus melhores vendedores recebam apenas leads quentes. [Implemente a Promp na sua operação](https://app.promp.com.br/signup).
+`
+  },
+  {
+    title: "Segurança e LGPD no WhatsApp com IA: O Guia Completo para Empresas",
+    slug: "seguranca-lgpd-inteligencia-artificial-whatsapp",
+    description: "Como utilizar inteligência artificial conversacional no WhatsApp em total conformidade com a Lei Geral de Proteção de Dados (LGPD) e garantir a privacidade dos clientes.",
+    category: "Segurança & Legal",
+    tags: ["LGPD", "Segurança", "Privacidade", "Compliance", "WhatsApp"],
+    badge: "SEGURANÇA & CONFORMIDADE",
+    readingTime: "6 min",
+    color1: "#1E293B",
+    color2: "#0E1F4A",
+    solutionLink: "/lgpd-lei-geral-de-protecao-de-dados",
+    solutionName: "Conformidade LGPD",
+    faq: [
+      {
+        question: "Os dados das conversas dos meus clientes são usados para treinar IAs públicas?",
+        answer: "Não! A Promp opera em infraestrutura privada com isolamento estrito de dados (Zero-Data Retention para modelos públicos)."
+      },
+      {
+        question: "Como é tratado o consentimento no WhatsApp?",
+        answer: "A Promp permite configurar termos de aceite e políticas de opt-in/opt-out automáticas no primeiro contato."
+      }
+    ],
+    contentBuilder: () => `
+A adoção de ferramentas de Inteligência Artificial exige responsabilidade e conformidade jurídica rigorosa.
+
+Com a vigência da **Lei Geral de Proteção de Dados (LGPD)** no Brasil, empresas que processam dados pessoais no WhatsApp precisam garantir segurança de ponta a ponta, armazenamento seguro e controle de acesso.
+
+A [Promp é desenvolvida sob as melhores práticas de conformidade](/lgpd-lei-geral-de-protecao-de-dados).
+
+---
+
+## Pilares de Segurança da Promp
+
+1. **Criptografia em Trânsito e em Repouso**: Todos os dados são transmitidos via TLS 1.3 e armazenados com criptografia AES-256.
+2. **Direito ao Esquecimento (Exclusão)**: Suporte completo à exclusão e anonimização de dados a pedido do titular.
+3. **Controle Granular de Permissões**: Apenas atendentes e administradores autorizados têm acesso aos chats da empresa.
+
+---
+
+## Conclusão
+
+Automatize seu atendimento com a tranquilidade de uma plataforma 100% segura. [Conheça a conformidade da Promp](https://app.promp.com.br/signup).
+`
+  },
+  {
+    title: "Como Reduzir o TMA para Menos de 3 Segundos no WhatsApp e Não Perder Mais Vendas",
+    slug: "tma-reduzir-tempo-atendimento-whatsapp-ia",
+    description: "O Tempo Médio de Atendimento (TMA) é o principal indicador de conversão no WhatsApp. Veja como a IA da Promp garante respostas instantâneas e sem filas.",
+    category: "Vendas & Conversão",
+    tags: ["TMA", "Tempo de Atendimento", "Velocidade", "WhatsApp", "Conversão"],
+    badge: "RESPOSTA RÁPIDA & TMA",
+    readingTime: "4 min",
+    color1: "#E84624",
+    color2: "#0E1F4A",
+    solutionLink: "/solucoes/demora-no-atendimento",
+    solutionName: "Resposta Rápida (<3s)",
+    faq: [
+      {
+        question: "Quantos clientes a IA consegue atender ao mesmo tempo?",
+        answer: "Ilimitados! A infraestrutura em nuvem da Promp escala automaticamente para responder milhares de pessoas simultaneamente sem nenhuma fila."
+      },
+      {
+        question: "O tempo de resposta afeta o custo dos anúncios?",
+        answer: "Sim! Respostas rápidas aumentam o engajamento e sinalizam ao algoritmo de anúncios que o seu destino tem alta taxa de conversão."
+      }
+    ],
+    contentBuilder: () => `
+No mundo digital contemporâneo, a paciência do consumidor é medida em segundos. Quando um cliente pergunta o preço no WhatsApp e espera 15 minutos, a chance de ele comprar de um concorrente aumenta em mais de 70%.
+
+Com a solução de [Resposta Rápida em Menos de 3 Segundos](/solucoes/demora-no-atendimento) da Promp, sua empresa nunca mais deixará um comprador esperando.
+
+---
+
+## Impactos da Redução do TMA
+
+- **Experiência 'Uau'**: O cliente é atendido no momento exato em que está mais motivado a comprar.
+- **Fim dos Picos de Atendimento**: Lançamentos, promoções e Black Friday sem sobrecarga da equipe.
+- **Aumento de 3x na Taxa de Fechamento**: Agilidade traduz-se diretamente em faturamento.
+
+---
+
+## Conclusão
+
+Acelere o atendimento da sua empresa para a velocidade da luz com a [Promp](https://app.promp.com.br/signup).
+`
+  },
+  {
+    title: "Como Reativar Base de Clientes Inativos no WhatsApp e Aumentar seu LTV com IA",
+    slug: "reativar-clientes-inativos-whatsapp-ia",
+    description: "Vender para quem já comprou é até 7x mais barato do que adquirir novos clientes. Descubra como criar campanhas de reativação inteligentes no WhatsApp com a Promp.",
+    category: "Vendas & Conversão",
+    tags: ["Reativação de Base", "LTV", "Retenção", "WhatsApp", "Vendas"],
+    badge: "RETENÇÃO & LTV",
+    readingTime: "5 min",
+    color1: "#0E1F4A",
+    color2: "#10B981",
+    solutionLink: "/solucoes/follow-up-de-leads",
+    solutionName: "Follow-up Automático de Leads",
+    faq: [
+      {
+        question: "Existe risco de bloqueio do WhatsApp ao disparar para a base?",
+        answer: "A Promp utiliza regras inteligentes de espaçamento, aquecimento de número e mensagens hiper-personalizadas para garantir máxima segurança contra bloqueios."
+      },
+      {
+        question: "A IA sabe o que o cliente comprou anteriormente?",
+        answer: "Sim! Integrada ao seu ERP ou CRM, a Promp menciona o produto anterior e oferece itens complementares (Cross-sell e Upsell)."
+      }
+    ],
+    contentBuilder: () => `
+A maioria das empresas foca toda a sua energia em atrair novos clientes, ignorando a mina de ouro que já existe dentro do seu banco de dados: **clientes que compraram há 60, 90 ou 180 dias**.
+
+Reativar esses contatos com ofertas personalizadas aumenta o **Lifetime Value (LTV)** e reduz a dependência de anúncios caros.
+
+Veja como aplicar o [Follow-up Inteligente da Promp](/solucoes/follow-up-de-leads) para faturar mais com sua base atual.
+
+---
+
+## Estratégias de Reativação de Sucesso
+
+1. **Reposição Automática**: Para produtos de consumo recorrente (suplementos, cosméticos, café), envio de lembrete no momento provável de término do produto.
+2. **Condição Especial de Retorno**: Cupons de fidelidade para clientes que não compram há mais de 3 meses.
+3. **Lançamentos Exclusivos em Primeira Mão**: Clientes antigos recebem novidades antes do público geral.
+
+---
+
+## Conclusão
+
+Desbloqueie o faturamento escondido na sua base de contatos. [Comece a reativar clientes com a Promp](https://app.promp.com.br/signup).
 `
   }
 ];

@@ -9,6 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "start": "NITRO_HOST=0.0.0.0 NITRO_PORT=3000 node .output/server/index.mjs",
+    "blog": "node scripts/daily-blog-pipeline.mjs",
     "blog:daily": "node scripts/daily-blog-pipeline.mjs",
     "blog:covers": "node scripts/generate-blog-covers.cjs",
     "test:uazapi": "node scripts/test-uazapi.mjs"
