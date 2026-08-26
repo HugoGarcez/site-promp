@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
+import { discoverTopB2BKeywordOpportunity } from './trends-analyzer.mjs';
 
 // Carrega variáveis do arquivo .env se existir localmente
 function loadLocalEnv() {
@@ -884,7 +885,11 @@ Automatizar seu atendimento com inteligência artificial humanizada é o caminho
 }
 
 export async function runDailyBlogPipeline() {
-  console.log('🚀 Iniciando Pipeline Diário de Conteúdo Promp (Claude-Blog Engine)...');
+  console.log('🚀 Iniciando Pipeline Diário de Conteúdo Promp (Claude-Blog Engine + Google Trends B2B)...');
+
+  // Consulta tendências de mercado e intenção de busca no Brasil em tempo real
+  const trendOpportunity = await discoverTopB2BKeywordOpportunity();
+  console.log(`📈 [Google Trends B2B] Palavra-chave e intenção de mercado: "${trendOpportunity.term}" (${trendOpportunity.source})`);
 
   const existingFiles = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.md'));
   const existingSlugs = existingFiles.map(f => {
@@ -910,7 +915,15 @@ export async function runDailyBlogPipeline() {
   // 2. Data de publicação (hoje)
   const today = new Date().toISOString().split('T')[0];
 
-  // 3. Montar arquivo Markdown com profundidade máxima
+  // 3. Montar palavras-chave com base nas buscas em alta
+  const enrichedKeywords = Array.from(new Set([
+    ...nextTopic.tags.map(t => t.toLowerCase()),
+    trendOpportunity.term.toLowerCase(),
+    'promp ia',
+    'ia para empresas'
+  ]));
+
+  // 4. Montar arquivo Markdown com profundidade máxima
   const frontmatter = `---
 title: "${nextTopic.title.replace(/"/g, '\\"')}"
 slug: "${nextTopic.slug}"
@@ -925,7 +938,7 @@ coverImage: "${coverPath}"
 coverAlt: "${nextTopic.title.replace(/"/g, '\\"')}"
 readingTime: "${nextTopic.readingTime || '8 min'}"
 featured: false
-seoKeywords: ${JSON.stringify(nextTopic.tags.map(t => t.toLowerCase()))}
+seoKeywords: ${JSON.stringify(enrichedKeywords)}
 faq:
 ${nextTopic.faq.map(f => `  - question: "${f.question.replace(/"/g, '\\"')}"\n    answer: "${f.answer.replace(/"/g, '\\"')}"`).join('\n')}
 ---
@@ -941,7 +954,7 @@ ${nextTopic.faq.map(f => `  - question: "${f.question.replace(/"/g, '\\"')}"\n  
   fs.writeFileSync(filePath, fullContent.trim() + '\n', 'utf-8');
   console.log(`✔ Artigo publicado em: ${filePath}`);
 
-  // 4. Disparar notificação no WhatsApp
+  // 5. Disparar notificação no WhatsApp
   await sendWhatsAppNotification(nextTopic);
 
   console.log('🎉 Pipeline diário concluído com sucesso!');
