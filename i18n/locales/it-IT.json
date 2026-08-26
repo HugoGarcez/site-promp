@@ -156,8 +156,12 @@
                 "desc": "Ligações via WhatsApp"
             },
             "teams": {
-                "title": "Equipes",
-                "desc": "Divisão estrutural do time"
+                "title": "Team",
+                "desc": "Divisione strutturale del team"
+            },
+            "email_marketing": {
+                "title": "Email Marketing",
+                "desc": "Campagne e automazione email"
             }
         }
     },

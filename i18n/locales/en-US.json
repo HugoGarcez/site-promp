@@ -159,6 +159,10 @@
                 "teams": {
                     "title": "Teams",
                     "desc": "Structural team division"
+                },
+                "email_marketing": {
+                    "title": "Email Marketing",
+                    "desc": "Campaigns and email automation"
                 }
             }
         }

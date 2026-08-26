@@ -160,6 +160,10 @@
             "teams": {
                 "title": "Equipes",
                 "desc": "Divisão estrutural do time"
+            },
+            "email_marketing": {
+                "title": "E-mail Marketing",
+                "desc": "Campanhas e automação de e-mails"
             }
         }
     },

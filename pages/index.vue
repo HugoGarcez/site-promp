@@ -238,7 +238,7 @@ useSeoMeta({
           </div>
           <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white leading-tight">
             A IA da sua empresa <br>
-            <span class="text-4xl md:text-6xl text-secondary dark:text-blue-300 drop-shadow-sm font-black">pronta em 5
+            <span class="text-4xl md:text-6xl text-secondary dark:text-blue-300 drop-shadow-sm font-black">pronta em 15
               minutos</span>
             <br>
             <span class="text-slate-500 font-normal">e treinada para vender</span>
@@ -1428,6 +1428,25 @@ useSeoMeta({
             <div>
               <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.teams.title') }}</h3>
               <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.teams.desc') }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 21: E-mail Marketing -->
+        <div
+          class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 hover:shadow-xl hover:border-secondary/30 transition-all group">
+          <div class="flex items-center gap-4">
+            <div
+              class="w-10 h-10 bg-secondary/5 dark:bg-blue-500/10 text-secondary dark:text-blue-300 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-800 dark:text-white text-sm">{{ $t('bento_grid.items.email_marketing.title') }}</h3>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">{{ $t('bento_grid.items.email_marketing.desc') }}</p>
             </div>
           </div>
         </div>

@@ -156,8 +156,12 @@
                 "desc": "Ligações via WhatsApp"
             },
             "teams": {
-                "title": "Equipes",
-                "desc": "Divisão estrutural do time"
+                "title": "团队",
+                "desc": "团队架构与分工"
+            },
+            "email_marketing": {
+                "title": "邮件营销",
+                "desc": "营销活动与邮件自动化"
             }
         }
     },

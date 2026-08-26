@@ -156,8 +156,12 @@
                 "desc": "Ligações via WhatsApp"
             },
             "teams": {
-                "title": "Equipes",
-                "desc": "Divisão estrutural do time"
+                "title": "チーム",
+                "desc": "チーム構造の管理"
+            },
+            "email_marketing": {
+                "title": "メールマーケティング",
+                "desc": "キャンペーンとメール自動化"
             }
         }
     },

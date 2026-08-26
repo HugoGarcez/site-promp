@@ -156,8 +156,12 @@
                 "desc": "Ligações via WhatsApp"
             },
             "teams": {
-                "title": "Equipes",
-                "desc": "Divisão estrutural do time"
+                "title": "الفرق",
+                "desc": "التقسيم الهيكلي للفريق"
+            },
+            "email_marketing": {
+                "title": "التسويق عبر البريد الإلكتروني",
+                "desc": "الحملات وأتمتة البريد الإلكتروني"
             }
         }
     },
