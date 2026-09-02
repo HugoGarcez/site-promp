@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
-import { discoverTopB2BKeywordOpportunity } from './trends-analyzer.mjs';
+import { discoverDailyTrendOpportunity, B2B_THEMES } from './trends-analyzer.mjs';
 
 // Carrega variáveis do arquivo .env se existir localmente
 function loadLocalEnv() {
@@ -34,114 +34,16 @@ const COVERS_DIR = path.resolve(process.cwd(), 'public/images/blog');
 if (!fs.existsSync(BLOG_DIR)) fs.mkdirSync(BLOG_DIR, { recursive: true });
 if (!fs.existsSync(COVERS_DIR)) fs.mkdirSync(COVERS_DIR, { recursive: true });
 
-// Matriz de Pautas da Promp focadas em conversão, dores, features e integrações
-const TOPIC_BACKLOG = [
-  {
-    title: "Transbordo Inteligente: Como a IA Direciona Leads Prontos para os Melhores Vendedores no WhatsApp",
-    slug: "transbordo-inteligente-ia-vendas-humanizadas",
-    description: "Descubra como estruturar regras avançadas de transbordo e roteamento inteligente entre agentes de IA e vendedores humanos no momento exato de maior intenção de compra.",
-    category: "Operação & Gestão",
-    tags: ["Transbordo Inteligente", "Equipe Comercial", "Roteamento de Leads", "WhatsApp Business", "SDR com IA", "Gestão de Vendas", "Conversão"],
-    badge: "IA HÍBRIDA & TRANSBORDO",
-    readingTime: "13 min",
-    color1: "#E84624",
-    color2: "#0E1F4A",
-    solutionLink: "/solucoes/falta-de-controle",
-    solutionName: "Gestão e Métricas Comerciais",
-    faq: [
-      {
-        question: "O que é transbordo inteligente no atendimento com IA?",
-        answer: "É a passagem de bastão automática e contextualizada da conversa da inteligência artificial para um consultor humano especialista no momento em que o lead atinge critérios específicos de qualificação ou alta intenção de compra."
-      },
-      {
-        question: "O vendedor humano consegue ler o histórico anterior da conversa?",
-        answer: "Sim! Ao assumir o atendimento, o vendedor tem acesso à transcrição integral, resumo executivo dos pontos-chave levantados pela IA e dados cadastrais extraídos, evitando perguntas redundantes."
-      },
-      {
-        question: "A IA para de enviar mensagens quando o humano entra no chat?",
-        answer: "Sim. A plataforma detecta a intervenção humana ou o gatilho de transferência e pausa imediatamente as respostas automáticas para dar total liberdade ao consultor de vendas."
-      },
-      {
-        question: "É possível criar filas de transbordo por especialidade ou região geográfica?",
-        answer: "Com certeza. A IA pode encaminhar leads para departamentos específicos (Vendas, Suporte, Financeiro) ou distribuir por DDD, porte da empresa e tipo de produto."
-      },
-      {
-        question: "O que acontece se nenhum vendedor humano estiver disponível no momento?",
-        answer: "A IA acolhe o lead com cordialidade, informa o prazo estimado de retorno ou agenda uma reunião diretamente no Google Calendar do vendedor para o próximo horário livre."
-      }
-    ]
-  },
-  {
-    title: "SDR com Inteligência Artificial vs. SDR Humano: A Nova Era da Qualificação Comercial",
-    slug: "sdr-ia-vs-sdr-humano-prospeccao-qualificacao",
-    description: "A inteligência artificial vai substituir os pré-vendedores? Analise dados de produtividade, custos e saiba como combinar SDRs de IA e consultores humanos para bater recordes de vendas.",
-    category: "Vendas & Conversão",
-    tags: ["SDR com IA", "Inside Sales", "Qualificação de Leads", "Produtividade Comercial", "WhatsApp", "B2B Sales", "Inteligência Artificial"],
-    badge: "SDR & INSIDE SALES",
-    readingTime: "14 min",
-    color1: "#0E1F4A",
-    color2: "#6366F1",
-    solutionLink: "/solucoes/leads-que-nao-convertem",
-    solutionName: "Conversão de Leads",
-    faq: [
-      {
-        question: "Qual o papel de um SDR com Inteligência Artificial?",
-        answer: "O SDR com IA assume o primeiro contato em menos de 3 segundos, 24 horas por dia, realiza a triagem de perfil (ICP, orçamento, urgência) e agenda demonstrações para os executivos de contas (Closers)."
-      },
-      {
-        question: "Quantos leads um SDR com IA consegue atender simultaneamente?",
-        answer: "Ilimitados. Diferente de um profissional humano, que gerencia entre 30 e 50 conversas diárias com qualidade, a IA processa milhares de conversas paralelas sem degradação de tempo de resposta."
-      },
-      {
-        question: "Os pré-vendedores humanos serão extintos?",
-        answer: "Não. Os profissionais evoluem de tarefas operacionais repetitivas de digitação e qualificação fria para papéis estratégicos de relacionamento corporativo, social selling e negociações de alto ticket."
-      },
-      {
-        question: "Como a IA lida com perguntas fora do roteiro de vendas?",
-        answer: "Apoiada em grandes modelos de linguagem e bases de conhecimento proprietárias, a IA compreende perguntas abertas, gírias e analogias, respondendo com precisão contextual."
-      },
-      {
-        question: "Qual a redução média no custo de pré-vendas observada no mercado?",
-        answer: "Operações comerciais que adotam SDRs com IA registram uma redução de até 60% no custo por lead qualificado (SQL) e um aumento de até 3.5x no número de reuniões realizadas."
-      }
-    ]
-  },
-  {
-    title: "Como Reativar Base de Clientes Inativos no WhatsApp e Multiplicar seu LTV com IA",
-    slug: "reativar-clientes-inativos-whatsapp-ia",
-    description: "Vender para clientes antigos é até 7x mais barato do que atrair novos. Veja o passo a passo para reengajar contatos inativos no WhatsApp com personalização e inteligência artificial.",
-    category: "Vendas & Conversão",
-    tags: ["Reativação de Base", "LTV", "Retenção de Clientes", "WhatsApp", "Cross-sell", "Upsell", "Inteligência Artificial"],
-    badge: "RETENÇÃO & LTV",
-    readingTime: "13 min",
-    color1: "#0E1F4A",
-    color2: "#10B981",
-    solutionLink: "/solucoes/follow-up-de-leads",
-    solutionName: "Follow-up Automático de Leads",
-    faq: [
-      {
-        question: "O que é considerado um cliente inativo?",
-        answer: "Geralmente é aquele cliente que comprou ou interagiu no passado, mas não realiza uma nova compra há mais de 60, 90 ou 180 dias, dependendo do ciclo médio do produto."
-      },
-      {
-        question: "Existe risco de bloqueio do WhatsApp ao disparar para a base antiga?",
-        answer: "Quando os disparos utilizam a API Oficial, com mensagens hiper-personalizadas baseadas no histórico de compra anterior e cadência inteligente com intervalos naturais, o risco de bloqueio é praticamente nulo."
-      },
-      {
-        question: "A IA sabe o que o cliente comprou anteriormente?",
-        answer: "Sim. Integrada ao ERP, CRM ou e-commerce, a IA cita o produto anteriormente adquirido e sugere itens complementares ou reposições estratégicas."
-      },
-      {
-        question: "Qual a taxa média de conversão em campanhas de reativação com IA?",
-        answer: "Empresas registram entre 18% e 32% de taxa de reengajamento ativo e resgate de faturamento imediato na base."
-      },
-      {
-        question: "A IA pode oferecer condições especiais de recompra?",
-        answer: "Sim! A inteligência artificial pode aplicar cupons de fidelidade personalizados, frete cortesia ou bônus exclusivos para incentivar a recompra."
-      }
-    ]
-  }
-];
+function slugify(text) {
+  return String(text || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
 
 function escapeXml(unsafe) {
   return String(unsafe || '').replace(/[<>&'"]/g, function (c) {
@@ -172,7 +74,7 @@ function wrapText(text, maxChars = 28) {
 }
 
 async function generateCoverImage({ slug, title, badge, color1, color2 }) {
-  const safeBadge = escapeXml(badge);
+  const safeBadge = escapeXml(badge || 'INTELIGÊNCIA ARTIFICIAL B2B');
   const titleLines = wrapText(title, 28);
   const startY = titleLines.length === 1 ? 300 : (titleLines.length === 2 ? 270 : 230);
   const lineHeight = 60;
@@ -203,8 +105,8 @@ async function generateCoverImage({ slug, title, badge, color1, color2 }) {
     </g>
 
     <g transform="translate(100, 145)">
-      <rect width="260" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" />
-      <text x="130" y="23" fill="#FFB703" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1.5">${safeBadge}</text>
+      <rect width="280" height="36" rx="18" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" />
+      <text x="140" y="23" fill="#FFB703" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="bold" font-size="13" text-anchor="middle" letter-spacing="1.5">${safeBadge}</text>
     </g>
 
     <text fill="#FFFFFF" font-family="DejaVu Sans, Arial, Helvetica, sans-serif" font-weight="900" font-size="46">
@@ -226,7 +128,7 @@ async function generateCoverImage({ slug, title, badge, color1, color2 }) {
     .webp({ quality: 90 })
     .toFile(outputPath);
 
-  // Copia para .output/public se existir
+  // Sincroniza cópias para diretórios de build se existirem
   const outputPublicDir = path.resolve(process.cwd(), '.output/public/images/blog');
   if (fs.existsSync(outputPublicDir)) {
     fs.copyFileSync(outputPath, path.join(outputPublicDir, coverFileName));
@@ -277,15 +179,11 @@ _Promp • Inteligência Artificial & Atendimento Omnichannel_`;
   console.log('--------------------------------------------------\n');
 
   if (uazapiUrl) {
-    // Se a URL for apenas o domínio base ou não tiver endpoint, normaliza para /send/text
     if (!uazapiUrl.includes('/send/') && !uazapiUrl.includes('/message/') && !uazapiUrl.includes('/sendText') && !uazapiUrl.includes('/webhook')) {
       uazapiUrl = uazapiUrl.replace(/\/+$/, '') + '/send/text';
     }
 
-    const headers = {
-      'Content-Type': 'application/json'
-    };
-
+    const headers = { 'Content-Type': 'application/json' };
     if (uazapiToken) {
       headers['token'] = uazapiToken;
       headers['apikey'] = uazapiToken;
@@ -295,7 +193,6 @@ _Promp • Inteligência Artificial & Atendimento Omnichannel_`;
     for (const recipient of recipients) {
       try {
         console.log(`📡 Disparando via UAzapi para ${recipient} em ${uazapiUrl}...`);
-
         const payload = {
           number: recipient,
           text: messageText,
@@ -316,229 +213,468 @@ _Promp • Inteligência Artificial & Atendimento Omnichannel_`;
 
         const responseText = await response.text();
         console.log(`📡 [${recipient}] Status HTTP: ${response.status} ${response.statusText}`);
-        try {
-          const json = JSON.parse(responseText);
-          console.log(`📦 [${recipient}] Retorno UAzapi:`, JSON.stringify(json, null, 2));
-        } catch {
-          console.log(`📦 [${recipient}] Retorno UAzapi:`, responseText);
-        }
-
         if (response.ok) {
           console.log(`✅ [${recipient}] Notificação WhatsApp enviada com sucesso!`);
         } else {
-          console.warn(`⚠️ [${recipient}] UAzapi retornou status ${response.status}.`);
+          console.warn(`⚠️ [${recipient}] UAzapi retornou status ${response.status}: ${responseText}`);
         }
       } catch (err) {
         console.error(`❌ [${recipient}] Falha na conexão com a API da UAzapi:`, err.message);
       }
     }
   } else {
-    console.log('ℹ️ UAZAPI_URL não configurada no ambiente (.env). Mensagem simulada no console.');
+    console.log('ℹ️ UAZAPI_URL não configurada no ambiente. Notificação simulada.');
   }
 }
 
-function generateLongFormContent(topic) {
-  const solLink = topic.solutionLink || '/solucoes/escalar-vendas-whatsapp';
-  const solName = topic.solutionName || 'Inteligência Artificial para Vendas';
+/**
+ * Tenta gerar artigo via LLM APIs (Gemini, OpenAI, Claude, DeepSeek, Groq, OpenRouter) se chaves existirem
+ */
+async function tryGenerateWithLLM(opportunity) {
+  const prompt = `Você é a Letícia Vasconcelos, redatora sênior e especialista em Inteligência Artificial, Inside Sales e Automação Conversacional na Promp (promp.com.br).
+A Promp é uma plataforma líder de IA para WhatsApp que atende leads em menos de 3 segundos com respostas inteligentes e áudios humanizados com voz neural ultra-realista, sincronizando tudo com CRM (RD Station, HubSpot, Pipedrive, Ploomes), qualificando leads de anúncios e fazendo follow-up automático de vendas 24 horas por dia.
+
+A oportunidade em alta mapeada hoje no Google Brasil é:
+- Tema/Termo em alta: "${opportunity.term}"
+- Origem: ${opportunity.source}
+- Contexto: ${opportunity.context}
+- Pilar Estratégico Promp: ${opportunity.matchedTheme.theme}
+- Solução Promp relacionada: [${opportunity.matchedTheme.solutionName}](${opportunity.matchedTheme.solutionLink})
+
+Escreva um artigo COMPLETO, EXTREMAMENTE APROFUNDADO, AUTORITATIVO e focado em DECISORES B2B (CEOs, Diretores Comerciais, CMOs e Gestores).
+O artigo deve conter no mínimo 1.600 palavras e seguir estritamente o seguinte formato JSON:
+
+{
+  "title": "Título atraente, magnético, focado em SEO e dor real de vendas (máx 80 caracteres)",
+  "slug": "slug-em-kebab-case-limpo-sem-acentos",
+  "description": "Meta description concisa e persuasiva de 140 a 160 caracteres",
+  "category": "${opportunity.matchedTheme.category}",
+  "badge": "${opportunity.matchedTheme.badge}",
+  "readingTime": "12 min",
+  "color1": "${opportunity.matchedTheme.color1}",
+  "color2": "${opportunity.matchedTheme.color2}",
+  "tags": ["Tag 1", "Tag 2", "Tag 3", "Tag 4", "Tag 5", "Tag 6"],
+  "seoKeywords": ["${opportunity.term.toLowerCase()}", "promp ia", "ia para empresas", "whatsapp para vendas", "automacao comercial"],
+  "faq": [
+    { "question": "Pergunta 1 relevante?", "answer": "Resposta detalhada..." },
+    { "question": "Pergunta 2 relevante?", "answer": "Resposta detalhada..." },
+    { "question": "Pergunta 3 relevante?", "answer": "Resposta detalhada..." },
+    { "question": "Pergunta 4 relevante?", "answer": "Resposta detalhada..." },
+    { "question": "Pergunta 5 relevante?", "answer": "Resposta detalhada..." }
+  ],
+  "contentMarkdown": "Corpo completo em Markdown formatado com: Visão Executiva (> **Em Resumo (Visão Executiva):**), Dados de mercado (McKinsey, Gartner, HBR), Diagnóstico do problema, Diagramas conceituais em ASCII, Como a Promp resolve com link interno para ${opportunity.matchedTheme.solutionLink}, Exemplo real de conversa no WhatsApp incluindo mensagem de áudio humanizado, Tabela comparativa Markdown (Manual vs IA Promp), Tabela de ROI e impacto financeiro, Passo a passo prático de implementação e Conclusão com CTA para https://app.promp.com.br/signup."
+}
+
+Retorne SOMENTE o JSON puro, sem blocos de código com crases (\`\`\`json).`;
+
+  // 1. Google Gemini API
+  const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+  if (geminiKey) {
+    try {
+      console.log('🤖 [AI Engine] Gerando artigo via Google Gemini API...');
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiKey}`;
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.7, responseMimeType: "application/json" }
+        })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (text) {
+          const parsed = JSON.parse(text);
+          console.log(`✨ [AI Engine] Artigo gerado com sucesso via Gemini: "${parsed.title}"`);
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn('⚠️ Falha ao chamar Gemini API:', e.message);
+    }
+  }
+
+  // 2. OpenAI API
+  const openaiKey = process.env.OPENAI_API_KEY;
+  if (openaiKey) {
+    try {
+      console.log('🤖 [AI Engine] Gerando artigo via OpenAI API...');
+      const res = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${openaiKey}`
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: [{ role: 'user', content: prompt }],
+          response_format: { type: "json_object" }
+        })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const text = data.choices?.[0]?.message?.content;
+        if (text) {
+          const parsed = JSON.parse(text);
+          console.log(`✨ [AI Engine] Artigo gerado com sucesso via OpenAI: "${parsed.title}"`);
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn('⚠️ Falha ao chamar OpenAI API:', e.message);
+    }
+  }
+
+  // 3. Groq API
+  const groqKey = process.env.GROQ_API_KEY;
+  if (groqKey) {
+    try {
+      console.log('🤖 [AI Engine] Gerando artigo via Groq API...');
+      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${groqKey}`
+        },
+        body: JSON.stringify({
+          model: 'llama-3.3-70b-versatile',
+          messages: [{ role: 'user', content: prompt }],
+          response_format: { type: "json_object" }
+        })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const text = data.choices?.[0]?.message?.content;
+        if (text) {
+          const parsed = JSON.parse(text);
+          console.log(`✨ [AI Engine] Artigo gerado com sucesso via Groq: "${parsed.title}"`);
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn('⚠️ Falha ao chamar Groq API:', e.message);
+    }
+  }
+
+  // 4. Claude / Anthropic API
+  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  if (anthropicKey) {
+    try {
+      console.log('🤖 [AI Engine] Gerando artigo via Anthropic API...');
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': anthropicKey,
+          'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+          model: 'claude-3-5-haiku-20241022',
+          max_tokens: 4000,
+          messages: [{ role: 'user', content: prompt }]
+        })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const text = data.content?.[0]?.text;
+        if (text) {
+          const cleanText = text.replace(/```json\n?|\n?```/g, '').trim();
+          const parsed = JSON.parse(cleanText);
+          console.log(`✨ [AI Engine] Artigo gerado com sucesso via Claude: "${parsed.title}"`);
+          return parsed;
+        }
+      }
+    } catch (e) {
+      console.warn('⚠️ Falha ao chamar Anthropic API:', e.message);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Gerador Autônomo de Conteúdo Profundo (Fallback Robusto de Altíssima Qualidade)
+ */
+function generateAutonomousStrategicArticle(opportunity) {
+  const theme = opportunity.matchedTheme;
+  const term = opportunity.term;
+
+  // Se o termo for muito longo (ex: manchete de notícia), usa o tema comercial direto
+  const subject = (term.length > 40 || term.split(' ').length > 6)
+    ? theme.theme
+    : term;
+  const cleanSubject = subject.trim();
   
-  return `
+  const title = opportunity.preferredTitle || `${cleanSubject.charAt(0).toUpperCase() + cleanSubject.slice(1)}: O Guia Estratégico para Multiplicar Vendas e Eficiência`;
+  const baseSlug = slugify(title);
+  
+  const description = `Descubra como aplicar ${theme.theme.toLowerCase()} no WhatsApp com a IA da Promp para acelerar o fechamento de vendas e qualificar leads.`;
+  
+  const solLink = theme.solutionLink || '/solucoes/escalar-vendas-whatsapp';
+  const solName = theme.solutionName || 'Inteligência Artificial para Vendas';
+
+  const faq = [
+    {
+      question: `Por que "${cleanSubject}" se tornou um tema tão crítico para empresas brasileiras?`,
+      answer: `O mercado corporativo vive um momento em que a agilidade e a hiperpersonalização definem quem fecha a venda. Empresas que demoram minutos para responder ou falham em personalizar a abordagem perdem até 80% das oportunidades comerciais no WhatsApp.`
+    },
+    {
+      question: `Como a Promp conecta essa demanda com a inteligência artificial no WhatsApp?`,
+      answer: `A Promp conecta-se à API Oficial do WhatsApp para atender leads em menos de 3 segundos, emitir mensagens de áudio com voz neural idêntica à humana, qualificar perfil de compra e sincronizar com seu CRM em tempo real.`
+    },
+    {
+      question: "Qual o diferencial dos áudios humanizados no atendimento?",
+      answer: "Mensagens de voz personalizadas com o nome do cliente quebram a frieza de chatbots robóticos, aumentando a taxa de resposta ativa em até 68% e acelerando a confiança de compra."
+    },
+    {
+      question: "A inteligência artificial substitui os vendedores humanos?",
+      answer: "Não. A IA assume a triagem, o acolhimento 24/7 e tarefas repetitivas, realizando o transbordo contextualizado para os consultores humanos apenas quando o lead está pronto para o fechamento."
+    },
+    {
+      question: "Quanto tempo leva para colocar a plataforma em operação?",
+      answer: "A integração é realizada em minutos: basta conectar o número no painel da Promp, carregar seus materiais de conhecimento e definir os critérios comerciais de qualificação."
+    }
+  ];
+
+  const contentMarkdown = `
 > **Em Resumo (Visão Executiva):**  
-> No ambiente corporativo contemporâneo, a transformação digital dos canais de atendimento e vendas redefiniu a expectativa do consumidor por velocidade, conveniência e personalização. Empresas que adotam arquiteturas de comunicação orientadas por inteligência artificial eliminam gargalos de tempo de resposta, reduzem custos de aquisição e estabelecem vantagens competitivas duradouras no mercado.
+> A aceleração digital e a evolução dos canais de mensagens colocaram o tema **${cleanSubject}** no centro das atenções de diretores comerciais e empresários. Adotar uma estratégia orientada por inteligência artificial conversacional permite acolher 100% da demanda em menos de 3 segundos, eliminar gargalos de atendimento e multiplicar a taxa de conversão sem inflar a folha de pagamento.
 
 ---
 
-## O Panorama Macroeconômico e o Comportamento do Consumidor Digital
+## O Cenário Atual e a Demanda por Velocidade no Comércio Digital
 
-O comércio e o relacionamento corporativo atravessam uma das maiores transformações estruturais da história recente. De acordo com relatórios globais consolidados pela conceituada consultoria [McKinsey & Company](https://www.mckinsey.com) sobre personalização e experiência do cliente, mais de **71% dos tomadores de decisão esperam interações imediatas e customizadas**, e 76% expressam frustração quando encontram processos burocráticos ou lentidão de retorno.
-
-Paralelamente, dados compilados pelo [Gartner](https://www.gartner.com) e pela [Statista](https://www.statista.com) sobre o ecossistema de negócios na América Latina revelam:
-- O Brasil lidera o índice global de uso de aplicativos de mensagens instantâneas para relações comerciais, com **mais de 96% dos usuários conectados utilizando o WhatsApp diariamente**;
-- Mais de **40% das interações comerciais de alto valor ocorrem fora do horário comercial convencional** (noites, madrugadas e fins de semana);
-- Operações que demoram mais de 5 minutos para responder a uma solicitação inicial enfrentam uma queda de até **80% na probabilidade de qualificação comercial**, segundo estudos clássicos da [Harvard Business Review](https://hbr.org).
+Pesquisas recentes consolidadas por instituições globais como [McKinsey & Company](https://www.mckinsey.com) e [Gartner](https://www.gartner.com) mostram que **mais de 75% dos compradores B2B e B2C priorizam a agilidade do atendimento sobre qualquer outro critério de compra**. No ecossistema brasileiro:
+- Mais de **96% da população economicamente ativa utiliza o WhatsApp diariamente** para decisões profissionais e pessoais;
+- O índice de engajamento diminui drasticamente a cada minuto adicional de espera no primeiro contato (*Speed to Lead*);
+- Mais de **40% dos contatos de alto valor ocorrem fora do horário comercial convencional** (noites, madrugadas e fins de semana).
 
 \`\`\`
-                                  A Fricção no Modelo Tradicional
-┌───────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
-│ Lead Demonstra        │ ──►  │ Fila de Espera Manual   │ ──►  │ Lead Esfria ou Fecha    │
-│ Interesse de Compra   │      │ (> 15 a 45 minutos)     │      │ com o Concorrente       │
-└───────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
+                                O Gargalo do Modelo Convencional
+┌────────────────────────┐      ┌─────────────────────────┐      ┌─────────────────────────┐
+│ Lead Chega pelo Canal  │ ──►  │ Fila de Espera Manual   │ ──►  │ Lead Esfria e Busca     │
+│ Comercial (Anúncio/Site)      │ (> 15 a 45 minutos)     │      │ o Concorrente Direto    │
+└────────────────────────┘      └─────────────────────────┘      └─────────────────────────┘
 \`\`\`
-
-A incapacidade de escalar a equipe humana na mesma velocidade em que o volume de contatos cresce cria um gargalo financeiro invisível: milhares de reais investidos em tráfego pago e geração de demanda são desperdiçados diariamente na fila de espera.
 
 ---
 
-## Os 4 Grandes Desafios Estruturais das Empresas Modernas
+## Os 3 Grandes Desafios Enfrentados pelas Operações Comerciais
 
-Análises de mercado publicadas pelo [Sebrae](https://www.sebrae.com.br) e pela [Forrester Research](https://www.forrester.com) apontam que as falhas de conversão raramente se devem à qualidade do produto, mas sim a deficiências operacionais na jornada de atendimento:
+Análises de mercado do [Sebrae](https://www.sebrae.com.br) e da [Harvard Business Review](https://hbr.org) apontam os fatores críticos que travam o crescimento das empresas:
 
-1. **Decaimento Acelerado do Interesse (*Speed to Lead*)**: O ápice do interesse de compra ocorre nos primeiros 180 segundos após o primeiro contato. Passado esse intervalo, a atenção do comprador migra para outras prioridades.
-2. **Falta de Padronização no Discurso Comercial**: Cada atendente responde de uma maneira diferente, muitas vezes omitindo diferenciais técnicos essenciais ou falhando em quebrar objeções comuns.
-3. **Sobrecarga em Tarefas Burocráticas e Repetitivas**: Vendedores dedicam quase 70% do tempo preenchendo cadastros, tirando dúvidas banais e digitando históricos em planilhas, em vez de negociarem com leads qualificados.
-4. **Desconexão de Dados e Canais Descentralizados**: Conversas fragmentadas em múltiplos celulares impedem que a diretoria tenha visibilidade real sobre as métricas do funil de vendas.
-
----
-
-## A Arquitetura de Comunicação Baseada em Inteligência Artificial
-
-Para superar esses entraves, as operações mais eficientes do mercado adotam uma abordagem híbrida: a inteligência artificial assume o acolhimento imediato, a triagem e as tarefas repetitivas, enquanto os profissionais humanos dedicam-se ao fechamento e às negociações de alto impacto.
-
-\`\`\`
-[Lead Inicia Contato no Canal Comercial]
-                   │
-                   ▼ (Atendimento em < 3 segundos)
-[1. Acolhimento Cognitivo e Compreensão de Contexto]
-  - Identifica intenção, tom emocional e histórico prévio
-  - Responde dúvidas frequentes com precisão técnica
-                   │
-                   ▼
-[2. Qualificação Consultiva (Framework BANT / MEDDIC)]
-  - Diagnostica dores, orçamento, autoridade e urgência
-  - Separa compradores com perfil ideal de curiosos
-                   │
-                   ▼
-[3. Transbordo Inteligente e Sincronização em Nuvem]
-  - Notifica o consultor especialista com briefing completo
-  - Atualiza o card de oportunidade no CRM em tempo real
-\`\`\`
-
-É exatamente para responder a essa necessidade de escala com atendimento consultivo que a [plataforma de inteligência artificial da Promp](${solLink}) atua, integrando modelos neurais ao WhatsApp Oficial para automatizar o funil de vendas, emitir mensagens de voz humanizadas e sincronizar dados com os principais CRMs do mercado.
+1. **Perda de Oportunidades por Demora**: Vendedores humanos não conseguem responder instantaneamente centenas de conversas paralelas simultâneas.
+2. **Falta de Padronização e Erros de Registro**: Informações valiosas sobre o perfil do lead perdem-se sem sincronização imediata no CRM.
+3. **Alto Custo de Aquisição de Clientes (CAC)**: Investimentos elevados em mídia paga (Meta Ads e Google Ads) são desperdiçados quando o lead não recebe atendimento imediato.
 
 ---
 
-## Comparativo: Modelo Manual Tradicional vs. Automação Inteligente
+## A Arquitetura de Conversão com Inteligência Artificial
 
-| Indicador de Eficiência | Operação Manual Convencional | Arquitetura com Inteligência Artificial |
+Para transformar conversas em receita previsível, a [plataforma de IA da Promp](${solLink}) atua em todas as etapas da jornada comercial:
+
+\`\`\`
+[Lead Inicia Conversa no WhatsApp]
+                 │
+                 ▼ (Tempo de resposta < 3 segundos)
+[1. Acolhimento Humanizado & Análise de Contexto]
+  - Identifica intenção, tom e histórico prévio
+  - Responde com textos fluidos e áudios com voz neural
+                 │
+                 ▼
+[2. Qualificação Consultiva & Triagem Automática]
+  - Diagnostica dores, orçamento, interesse e urgência
+  - Separa compradores com perfil ideal de meros curiosos
+                 │
+                 ▼
+[3. Transbordo Inteligente & Sincronização em CRM]
+  - Notifica o especialista humano com briefing completo
+  - Atualiza a oportunidade no RD Station, HubSpot ou Pipedrive
+\`\`\`
+
+A tecnologia da Promp permite que seu time comercial dedique 100% da sua energia apenas para negociar e fechar contratos com leads prontos.
+
+---
+
+## Comparativo: Operação Manual Tradicional vs. Automação Inteligente Promp
+
+| Indicador Estratégico | Atendimento Manual Convencional | Arquitetura Promp com IA |
 |---|---|---|
 | **Tempo Médio de Primeiro Contato** | 15 a 45 minutos de espera | **Menos de 3 segundos (Instantâneo)** |
-| **Disponibilidade de Atendimento** | Apenas dias úteis em horário comercial | **24 horas por dia, 7 dias por semana** |
-| **Formato e Variedade das Mensagens** | Textos padrão copiados ou menus (1, 2, 3) | **Texto fluido e Áudios com voz neural realista** |
-| **Capacidade de Atendimento Simultâneo** | Limitada ao número físico de atendentes | **Milhares de conversas paralelas sem filas** |
-| **Sincronização com CRM e Métricas** | Manual e sujeita a esquecimento | **100% automatizada e em tempo real** |
-| **Taxa Média de Fechamento de Vendas** | 3% a 7% do volume de contatos | **Aumento de até 3x a 4x no faturamento** |
+| **Disponibilidade Operacional** | Apenas dias úteis e horário de escritório | **24 horas por dia, 7 dias por semana** |
+| **Formato e Realismo das Respostas** | Textos padronizados ou menus frios | **Mensagens naturais e Áudios com voz neural** |
+| **Capacidade de Atendimento Paralelo** | Limitada ao número físico de atendentes | **Milhares de conversas simultâneas** |
+| **Sincronização com CRM** | Manual e suscetível a esquecimentos | **100% automatizada em tempo real** |
+| **Taxa Média de Conversão** | 3% a 6% do volume total | **Aumento de até 3x a 4x no faturamento** |
 
 ---
 
-## A Matemática do ROI: Calculando o Impacto no Caixa
+## Simulação Real de Atendimento no WhatsApp
 
-A adoção de automação conversacional inteligente reflete-se diretamente nos indicadores de rentabilidade da empresa:
+Veja como a IA atua de maneira envolvente e consultiva:
 
 \`\`\`
-                                  Alavancagem de Rentabilidade
+[Cliente]: "Olá! Estava pesquisando sobre ${cleanSubject} e queria entender como funciona na prática."
+
+[IA Promp - Texto]:
+"Olá! Tudo bem? Seja muito bem-vindo! Que excelente momento para falarmos sobre isso. 😊"
+
+[IA Promp - Áudio Humanizado (0:24s)]:
+"Oi! Aqui é a consultora virtual da Promp. Nós ajudamos empresas a escalarem suas operações comerciais no WhatsApp com atendimento imediato e áudios realistas. Me conta: hoje na sua operação qual é o seu principal desafio de vendas?"
+
+[Cliente]: "Nosso time demora muito para responder os leads dos anúncios e perdemos muitas vendas à noite."
+
+[IA Promp - Áudio Humanizado (0:28s)]:
+"Entendi perfeitamente. Esse é o principal gargalo de 9 entre 10 empresas que atendemos. Com a Promp, seus leads são acolhidos em menos de 3 segundos, mesmo de madrugada. Qual o seu melhor horário hoje para vermos uma demonstração rápida de 15 minutos?"
+\`\`\`
+
+---
+
+## O Impacto no Faturamento e ROI
+
+Veja a simulação financeira em uma operação que recebe 600 oportunidades mensais:
+
+\`\`\`
+                                  Demonstrativo de Impacto no Caixa
 ┌───────────────────────────────┬───────────────────────────────┬──────────────────────────────┐
-│ Variável Operacional          │ Cenário Sem Automação IA      │ Cenário com Automação IA     │
+│ Indicador Operacional         │ Modelo Sem IA                 │ Modelo com IA Promp          │
 ├───────────────────────────────┼───────────────────────────────┼──────────────────────────────┤
-│ Volume Mensal de Oportunidades│ 800 contatos                  │ 800 contatos                 │
-│ Atendimentos em Tempo Hábil   │ 320 contatos (40%)            │ 800 contatos (100%)          │
-│ Taxa Média de Conversão       │ 4,5% (36 vendas)              │ 13,5% (108 vendas)           │
-│ Ticket Médio de Venda         │ R$ 1.200,00                   │ R$ 1.200,00                  │
-│ Faturamento Mensal Gerado     │ R$ 43.200,00                  │ R$ 129.600,00                │
-│ Ganho Incremental Anual       │ —                             │ **+ R$ 1.036.800,00 / ano**  │
+│ Oportunidades Recebidas       │ 600 contatos                  │ 600 contatos                 │
+│ Atendimentos em Tempo Hábil   │ 240 contatos (40%)            │ 600 contatos (100%)          │
+│ Taxa Média de Fechamento      │ 5% (12 vendas)                │ 15% (90 vendas)              │
+│ Ticket Médio Comercial        │ R$ 1.500,00                   │ R$ 1.500,00                  │
+│ Receita Mensal Gerada         │ R$ 18.000,00                  │ R$ 135.000,00                │
+│ Ganho Incremental Anual       │ —                             │ **+ R$ 1.404.000,00 / ano**  │
 └───────────────────────────────┴───────────────────────────────┴──────────────────────────────┘
 \`\`\`
 
-A recuperação de leads que seriam perdidos pela demora gera faturamento adicional sem exigir aumento correspondente nos custos de mídia ou contratação massiva de equipe.
+---
+
+## Como Implementar na sua Empresa em 4 Passos
+
+1. **Conexão Oficial à API do WhatsApp**: Escaneie o QR Code em menos de 2 minutos no painel da Promp.
+2. **Treinamento com seus Materiais**: Faça upload de catálogos, perguntas frequentes, políticas e diferenciais técnicos.
+3. **Calibração do Tom de Voz e Regras de Transbordo**: Configure a personalidade do assistente e os gatilhos para acionar sua equipe.
+4. **Integração com seu CRM**: Conecte eventos via [Integrações e Automações](/solucoes/integracoes-e-automacoes) para manter seu pipeline sempre atualizado.
 
 ---
 
-## Passo a Passo para Implementar na sua Operação
+## Conclusão: Dê o Próximo Passo na Eficiência Comercial
 
-A transição para um modelo escalável de atendimento pode ser conduzida em quatro etapas bem delimitadas:
+Não deixe seus leads esperando na fila enquanto a concorrência responde em tempo real. Transforme seu WhatsApp em uma máquina previsível de qualificação e fechamento com inteligência artificial.
 
-1. **Conexão Oficial à API do WhatsApp**: Garanta estabilidade, segurança e conformidade estrita com as políticas corporativas da Meta.
-2. **Treinamento com a Base de Conhecimento**: Alimente o motor de IA com manuais de produtos, políticas comerciais, regras de frete e perguntas frequentes.
-3. **Calibração de Tom de Voz e Regras de Transbordo**: Configure a personalidade do assistente (incluindo áudios neurais) e os gatilhos para acionamento de consultores humanos.
-4. **Integração com CRM e Sistemas de Pagamento**: Conecte os eventos de qualificação e venda ao seu pipeline no RD Station, HubSpot, Pipedrive ou e-commerce.
-
----
-
-## Conclusão: Construa uma Operação Comercial de Alta Eficiência
-
-No cenário competitivo atual, a vitória pertence às organizações que eliminam atritos e respondem às demandas do mercado com agilidade, precisão e empatia. Transformar o canal de atendimento em um ecossistema autônomo de alta conversão é o passo mais seguro para expandir suas receitas de forma sustentável.
-
-Modernize a comunicação da sua empresa, atenda seus clientes 24 horas por dia com mensagens humanizadas e forneça aos seus vendedores apenas oportunidades prontas para o fechamento.
-
-👉 **[Inicie seu teste gratuito na Promp](https://app.promp.com.br/signup)** e descubra como acelerar o crescimento do seu negócio hoje mesmo.
+👉 **[Comece seu teste gratuito na Promp](https://app.promp.com.br/signup)** e descubra como acelerar seus resultados hoje mesmo.
 `;
+
+  return {
+    title,
+    slug: baseSlug,
+    description,
+    category: theme.category || "Vendas & Conversão",
+    badge: theme.badge || "AUTOMAÇÃO & IA",
+    readingTime: "12 min",
+    color1: theme.color1 || "#E84624",
+    color2: theme.color2 || "#0E1F4A",
+    tags: [cleanSubject, "Inteligência Artificial", "WhatsApp Business", "Vendas B2B", "Conversão", "Automação Comercial"],
+    seoKeywords: [cleanSubject.toLowerCase(), "promp ia", "ia para empresas", "automacao whatsapp", "vendas"],
+    faq,
+    contentMarkdown
+  };
 }
 
 export async function runDailyBlogPipeline() {
-  console.log('🚀 Iniciando Pipeline Diário de Conteúdo Promp (Claude-Blog Engine + Google Trends B2B)...');
+  console.log('🚀 [Daily Blog Pipeline] Iniciando geração diária 100% autônoma baseada em tendências...');
 
-  // Consulta tendências de mercado e intenção de busca no Brasil em tempo real
-  const trendOpportunity = await discoverTopB2BKeywordOpportunity();
-  console.log(`📈 [Google Trends B2B] Palavra-chave e intenção de mercado: "${trendOpportunity.term}" (${trendOpportunity.source})`);
+  // 1. Ler artigos existentes para nunca duplicar pautas
+  const existingFiles = fs.existsSync(BLOG_DIR) 
+    ? fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.md'))
+    : [];
 
-  const existingFiles = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.md'));
-  const existingSlugs = existingFiles.map(f => {
-    const raw = fs.readFileSync(path.join(BLOG_DIR, f), 'utf-8');
-    const match = raw.match(/slug:\s*["']?([^"'\n]+)["']?/);
-    return match ? match[1] : '';
-  });
+  const existingSlugs = [];
+  const existingTitles = [];
 
-  // Encontrar o próximo artigo não publicado
-  const nextTopic = TOPIC_BACKLOG.find(t => !existingSlugs.includes(t.slug));
-
-  if (!nextTopic) {
-    console.log('✅ Todos os tópicos da matriz básica já foram publicados. Para gerar novos, adicione pautas à matriz.');
-    return;
+  for (const file of existingFiles) {
+    try {
+      const raw = fs.readFileSync(path.join(BLOG_DIR, file), 'utf-8');
+      const slugMatch = raw.match(/slug:\s*["']?([^"'\n]+)["']?/);
+      const titleMatch = raw.match(/title:\s*["']?([^"'\n]+)["']?/);
+      if (slugMatch) existingSlugs.push(slugMatch[1]);
+      if (titleMatch) existingTitles.push(titleMatch[1]);
+    } catch {}
   }
 
-  console.log(`📝 Gerando artigo longo e otimizado para SEO/LLMs: "${nextTopic.title}"...`);
+  console.log(`📚 Artigos já publicados identificados: ${existingSlugs.length}`);
 
-  // 1. Gerar imagem de capa
-  const coverPath = await generateCoverImage(nextTopic);
+  // 2. Descobrir a melhor tendência/busca do dia
+  const opportunity = await discoverDailyTrendOpportunity(existingSlugs, existingTitles);
+  console.log(`🎯 Oportunidade do dia: "${opportunity.term}" (${opportunity.source})`);
+
+  // 3. Gerar artigo rico via LLM API ou Motor Autônomo Estratégico
+  let article = await tryGenerateWithLLM(opportunity);
+  if (!article || !article.title || !article.contentMarkdown) {
+    console.log('⚡ Utilizando Motor Autônomo Estratégico para elaboração de conteúdo profundo...');
+    article = generateAutonomousStrategicArticle(opportunity);
+  }
+
+  // Garantir slug limpo e único
+  let targetSlug = slugify(article.slug || article.title);
+  if (existingSlugs.includes(targetSlug)) {
+    const todayShort = new Date().toISOString().split('T')[0].replace(/-/g, '');
+    targetSlug = `${targetSlug}-${todayShort}`;
+  }
+  article.slug = targetSlug;
+
+  console.log(`📝 Artigo preparado: "${article.title}" (slug: ${article.slug})`);
+
+  // 4. Gerar imagem de capa profissional (.webp)
+  const coverPath = await generateCoverImage(article);
   console.log(`🎨 Capa gerada em: ${coverPath}`);
 
-  // 2. Data de publicação (hoje)
+  // 5. Formatar Frontmatter e Markdown
   const today = new Date().toISOString().split('T')[0];
-
-  // 3. Montar palavras-chave com base nas buscas em alta
   const enrichedKeywords = Array.from(new Set([
-    ...nextTopic.tags.map(t => t.toLowerCase()),
-    trendOpportunity.term.toLowerCase(),
+    ...(article.tags || []).map(t => t.toLowerCase()),
+    ...(article.seoKeywords || []).map(k => k.toLowerCase()),
+    opportunity.term.toLowerCase(),
     'promp ia',
     'ia para empresas'
   ]));
 
-  // 4. Montar arquivo Markdown com profundidade máxima
   const frontmatter = `---
-title: "${nextTopic.title.replace(/"/g, '\\"')}"
-slug: "${nextTopic.slug}"
-description: "${nextTopic.description.replace(/"/g, '\\"')}"
+title: "${article.title.replace(/"/g, '\\"')}"
+slug: "${article.slug}"
+description: "${(article.description || '').replace(/"/g, '\\"')}"
 date: "${today}"
 author: "Letícia Vasconcelos"
 authorRole: "Especialista em IA & Estratégia Conversacional | Promp"
 authorAvatar: "/images/authors/leticia-vasconcelos.jpg"
-category: "${nextTopic.category}"
-tags: ${JSON.stringify(nextTopic.tags)}
+category: "${article.category || 'Vendas & Conversão'}"
+tags: ${JSON.stringify(article.tags || ['Inteligência Artificial', 'WhatsApp', 'Vendas'])}
 coverImage: "${coverPath}"
-coverAlt: "${nextTopic.title.replace(/"/g, '\\"')}"
-readingTime: "${nextTopic.readingTime || '8 min'}"
+coverAlt: "${article.title.replace(/"/g, '\\"')}"
+readingTime: "${article.readingTime || '12 min'}"
 featured: false
 seoKeywords: ${JSON.stringify(enrichedKeywords)}
 faq:
-${nextTopic.faq.map(f => `  - question: "${f.question.replace(/"/g, '\\"')}"\n    answer: "${f.answer.replace(/"/g, '\\"')}"`).join('\n')}
+${(article.faq || []).map(f => `  - question: "${f.question.replace(/"/g, '\\"')}"\n    answer: "${f.answer.replace(/"/g, '\\"')}"`).join('\n')}
 ---
 `;
 
-  const bodyContent = typeof nextTopic.contentBuilder === 'function'
-    ? nextTopic.contentBuilder()
-    : generateLongFormContent(nextTopic);
+  const fullContent = (frontmatter + (article.contentMarkdown || '')).trim() + '\n';
+  const filePath = path.join(BLOG_DIR, `${article.slug}.md`);
 
-  const fullContent = frontmatter + bodyContent;
-  const filePath = path.join(BLOG_DIR, `${nextTopic.slug}.md`);
+  fs.writeFileSync(filePath, fullContent, 'utf-8');
+  console.log(`✔ Novo artigo gravado com sucesso em: ${filePath}`);
 
-  fs.writeFileSync(filePath, fullContent.trim() + '\n', 'utf-8');
-  console.log(`✔ Artigo publicado em: ${filePath}`);
+  // 6. Notificação via WhatsApp
+  await sendWhatsAppNotification(article);
 
-  // 5. Disparar notificação no WhatsApp
-  await sendWhatsAppNotification(nextTopic);
-
-  console.log('🎉 Pipeline diário concluído com sucesso!');
+  console.log('🎉 Pipeline diário concluído com êxito!');
+  return { success: true, article, filePath, coverPath };
 }
 
-// Executar quando chamado via CLI
+// Executar quando chamado diretamente pelo terminal
 if (process.argv[1] && process.argv[1].endsWith('daily-blog-pipeline.mjs')) {
   runDailyBlogPipeline().catch(console.error);
 }
