@@ -27,5 +27,3 @@ pnpm-debug.log*
 .nodeterm
 logs/
 
-# Chave do gerador de propostas (/proposta)
-.proposta-key

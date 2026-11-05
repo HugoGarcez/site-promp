@@ -25,7 +25,6 @@ function defaults() {
 }
 
 const form = reactive(defaults())
-const chave = ref('')
 const previewHtml = ref('')
 const loadingPreview = ref(false)
 const loadingPdf = ref(false)
@@ -43,17 +42,14 @@ const nomeExibido = computed(() => form.cliente.trim() || 'Sua Empresa')
 const fmtBR = (v: string) => (v ? v.split('-').reverse().join('/') : '')
 
 onMounted(() => {
-  chave.value = localStorage.getItem('proposta_key') || ''
   atualizarPrevia()
 })
-watch(chave, (v) => localStorage.setItem('proposta_key', v))
 
 async function chamar(format?: 'html') {
   return await $fetch.raw('/api/proposta', {
     method: 'POST',
     query: format ? { format } : undefined,
     body: { ...form, artigo: form.artigo },
-    headers: chave.value ? { 'x-proposta-key': chave.value } : {},
     responseType: format ? 'text' : 'blob',
   })
 }
@@ -197,10 +193,6 @@ function resetar() {
         </section>
 
         <section class="bg-white border border-slate-200 rounded-2xl p-5 space-y-3">
-          <label class="block">
-            <span class="lbl">Chave de acesso</span>
-            <input v-model="chave" type="password" autocomplete="off" placeholder="PROPOSTA_ACCESS_KEY" class="inp" />
-          </label>
           <p v-if="erro" class="text-sm font-semibold text-red-600">{{ erro }}</p>
           <button type="submit" :disabled="loadingPdf" class="w-full rounded-xl bg-primary text-white font-bold py-3 hover:brightness-110 disabled:opacity-60">
             {{ loadingPdf ? 'Gerando PDF…' : 'Gerar PDF' }}
